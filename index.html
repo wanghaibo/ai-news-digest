@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light">
+  <meta name="theme-color" content="#f6f5f0">
+  <meta name="description" content="给 AI 创造者的中文资讯简报：产品发布、技术实践、开源项目和观点洞察，保留一手来源与历史归档。">
+  <title>AI 资讯简报 · AI News Digest</title>
+  <link rel="icon" type="image/svg+xml" href="./favicon.svg">
+  <link rel="stylesheet" href="./style.css">
+  <script src="./app.js" defer></script>
+</head>
+<body id="top">
+  <a class="skip-link" href="#digest">跳到简报内容</a>
+  <div class="page-shell">
+    <header class="site-header">
+      <a class="brand" href="./" aria-label="AI 资讯简报首页"><span class="brand-symbol" aria-hidden="true">a<span>i</span></span><span class="brand-name">AI 资讯简报<small>FOR THE BUILDERS</small></span></a>
+      <nav aria-label="主导航"><a href="#digest">读简报</a><a href="#archive">往期归档</a><a href="#sources">信息来源 <span aria-hidden="true">↗</span></a></nav>
+    </header>
+
+    <main>
+      <section class="hero" aria-labelledby="hero-title">
+        <div class="hero-copy">
+          <p class="eyebrow"><span class="small-star" aria-hidden="true">✳</span> LESS NOISE. MORE SIGNAL.</p>
+          <h1 id="hero-title">看见 AI 的变化，<br><span>找到创造的灵感。</span></h1>
+          <p class="hero-description">从产品发布到开源实践，为 AI 创造者整理值得读的信息。<br class="desktop-break">简明摘要，一手来源，随时回看。</p>
+          <a class="hero-link" href="#digest">开始阅读 <span aria-hidden="true">↓</span></a>
+        </div>
+        <div class="hero-art" aria-hidden="true">
+          <div class="art-label">IDEAS INTO POSSIBILITY</div>
+          <div class="orbit orbit-one"></div><div class="orbit orbit-two"></div><div class="orbit orbit-three"></div>
+          <div class="orbit-core">✳</div><span class="art-dot dot-one"></span><span class="art-dot dot-two"></span>
+          <div class="art-caption"><span>01 / OBSERVE</span><span>02 / BUILD</span></div>
+        </div>
+      </section>
+
+      <div class="edition-bar"><span><span class="status-dot" aria-hidden="true"></span><span id="edition-label">资讯索引</span></span><span class="edition-note">保持好奇，持续创造。</span></div>
+
+      <div class="content-layout">
+        <section class="digest-section" id="digest" aria-labelledby="digest-heading">
+          <div class="section-heading"><div><p class="eyebrow muted">THE READING ROOM</p><h2 id="digest-heading">最新简报</h2></div><span class="issue-count" id="issue-count">—</span></div>
+          <div class="filter-row" role="group" aria-label="按资讯类别筛选">
+            <button type="button" class="filter-button active" data-category="全部" aria-pressed="true">全部</button>
+            <button type="button" class="filter-button" data-category="产品发布" aria-pressed="false">产品发布</button>
+            <button type="button" class="filter-button" data-category="技术实践" aria-pressed="false">技术实践</button>
+            <button type="button" class="filter-button" data-category="开源项目" aria-pressed="false">开源项目</button>
+            <button type="button" class="filter-button" data-category="观点洞察" aria-pressed="false">观点洞察</button>
+          </div>
+          <label class="search-box" for="search"><span aria-hidden="true">⌕</span><input id="search" type="search" placeholder="搜索本期标题、摘要或来源…" autocomplete="off" maxlength="200"><span class="search-hint" aria-hidden="true">搜索本期</span></label>
+          <p class="sr-only" id="result-status" role="status" aria-live="polite"></p>
+          <div id="digest-intro" class="digest-intro" hidden></div>
+          <div id="digest-content" aria-busy="true"><div class="empty-state"><span class="empty-symbol" aria-hidden="true">⋯</span><h3>正在读取简报</h3><p>马上就好。</p></div></div>
+          <noscript><p class="notice">开启 JavaScript 即可浏览日期、筛选和搜索。也可直接查看 <a href="https://github.com/wanghaibo/ai-news-digest/tree/main/digests">Markdown 简报归档</a>。</p></noscript>
+        </section>
+
+        <aside class="sidebar" aria-label="归档与阅读说明">
+          <section class="archive-panel" id="archive" aria-labelledby="archive-heading">
+            <div class="panel-topline"><h2 id="archive-heading">往期归档</h2><span aria-hidden="true">↗</span></div>
+            <p>每一期，都值得回看。</p>
+            <label for="date-select">选择简报日期</label><div class="select-wrap"><select id="date-select" disabled><option value="">暂无已发布简报</option></select><span aria-hidden="true">⌄</span></div>
+            <div class="archive-meta"><span>已收录</span><strong id="archive-count">0 期</strong></div>
+            <ol class="recent-issues" id="recent-issues" aria-label="最近发布的简报"></ol>
+          </section>
+          <section class="reading-note" aria-labelledby="note-heading"><span class="note-mark" aria-hidden="true">“</span><h2 id="note-heading">信息的价值，<br>在于下一步行动。</h2><p>保留原文链接，让每条摘要都有出处。看到感兴趣的内容，继续读一手资料。</p><span class="note-rule" aria-hidden="true"></span><span class="note-footer">CURATED FOR CURIOSITY</span></section>
+        </aside>
+      </div>
+
+      <section class="sources-section" id="sources" aria-labelledby="sources-heading"><div class="sources-intro"><p class="eyebrow muted">BACK TO THE SOURCE</p><h2 id="sources-heading">从一手信息出发。</h2><p>阅读官方动态，探索开源实践。<br>下方是可直接访问的信息入口。</p></div><div class="source-links"><a href="https://openai.com/news/" target="_blank" rel="noopener noreferrer"><span>OpenAI<small>产品与研究</small></span><span aria-hidden="true">↗</span></a><a href="https://www.anthropic.com/news" target="_blank" rel="noopener noreferrer"><span>Anthropic<small>产品与研究</small></span><span aria-hidden="true">↗</span></a><a href="https://blog.google/innovation-and-ai/technology/ai/" target="_blank" rel="noopener noreferrer"><span>Google AI<small>技术与实践</small></span><span aria-hidden="true">↗</span></a><a href="https://huggingface.co/blog" target="_blank" rel="noopener noreferrer"><span>Hugging Face<small>开放模型与社区</small></span><span aria-hidden="true">↗</span></a><a href="https://github.com/anthropics/claude-code" target="_blank" rel="noopener noreferrer"><span>Claude Code<small>项目与更新</small></span><span aria-hidden="true">↗</span></a><a href="https://github.com/openai/codex" target="_blank" rel="noopener noreferrer"><span>OpenAI Codex<small>开源项目仓库</small></span><span aria-hidden="true">↗</span></a></div></section>
+    </main>
+    <footer class="site-footer"><a class="footer-brand" href="./">AI 资讯简报<span>为好奇心留一个入口。</span></a><div><span>独立资讯索引</span><a href="https://github.com/wanghaibo/ai-news-digest" target="_blank" rel="noopener noreferrer">在 GitHub 查看 <span aria-hidden="true">↗</span></a><a href="#top" id="back-to-top">回到顶部 ↑</a></div></footer>
+  </div>
+</body>
+</html>
