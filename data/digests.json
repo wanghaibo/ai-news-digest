@@ -1,4 +1,150 @@
 {
   "schemaVersion": 1,
-  "digests": []
+  "digests": [
+    {
+      "date": "2026-10-07",
+      "title": "AI Builders Digest｜多模态检索、长上下文与 agent 工具链",
+      "summary": "首期收录 6 条 10 月 6 日官方更新与研究，以及 7 个实时 GitHub Trending 项目。重点是端侧多模态检索、Mistral Large 4 公共预览，以及让 agent 更可用的评测和工具链。检索截止：2026-10-07 13:03 北京时间；原文仅给日期的新闻无法严格判定是否位于滚动 24 小时内。X 未收录可核验的实质新帖，播客 feed 为空。",
+      "items": [
+        {
+          "title": "EmbeddingGemma 2：将文本、图像、音频和视频放进同一检索空间",
+          "summary": "Google 发布 7.4 亿参数的 EmbeddingGemma 2，采用 Apache 2.0 许可，支持端侧多模态 embedding 与 8K 上下文；向量可从 768 维截断至 128 维。它为离线媒体搜索、本地代码索引和多模态 RAG 提供了新选项。模型权重已提供下载入口；设备内存与 benchmark 表现属于厂商测试，实际效果仍需按自己的数据和硬件验证。",
+          "category": "产品发布",
+          "source": "Google 官方博客",
+          "url": "https://blog.google/innovation-and-ai/technology/developers-tools/embeddinggemma-2/",
+          "publishedAt": "2026-10-06"
+        },
+        {
+          "title": "Mistral Large 4 进入公共预览，开放权重仍待发布",
+          "summary": "Mistral 的官方模型卡与变更日志确认 Large 4 于 10 月 6 日进入 Public Preview，提供多模态能力和 1M 上下文，支持结构化输出、函数调用及 agent 工作流。开发者可将它加入长文档与工具调用的对照测试。官方仍将权重标为 coming soon，因此本期不将它称为已经开源；不同官方页面的参数量口径不一致，暂不引用精确参数。",
+          "category": "产品发布",
+          "source": "Mistral 官方模型卡与变更日志",
+          "url": "https://docs.mistral.ai/models/mistral-large-4-0",
+          "publishedAt": "2026-10-06",
+          "additionalSources": [
+            {
+              "title": "Mistral 官方变更日志",
+              "url": "https://docs.mistral.ai/resources/changelogs"
+            }
+          ]
+        },
+        {
+          "title": "FBTriton：Meta 用 Triton 重写推荐系统 embedding 算子",
+          "summary": "Meta 团队在 PyTorch 官方博客介绍 Table-Batched Embedding 的 Triton 实现，将前向与反向稀疏路径写成更易维护的 Python/Triton。在 GB200、FP16 权重、精确 row-wise Adagrad 的 307 个 shard 配置测试中，前向中位加速为 1.28 倍。仍有 11 个 shard 慢于 CUDA，不能把特定形状的高倍加速当作整体收益。值得借鉴的是按工作负载调整分段、访存宽度和调度策略。",
+          "category": "技术实践",
+          "source": "Meta Team / PyTorch 博客",
+          "url": "https://pytorch.org/blog/modernizing-table-batched-embeddings-with-fbtriton/",
+          "publishedAt": "2026-10-06"
+        },
+        {
+          "title": "ChatGPT 新增音频文件上传，可转录、摘要并围绕录音提问",
+          "summary": "OpenAI 的 10 月 6 日更新说明新增音频文件上传：可将会议、访谈或讲座录音转成文字、结构化笔记和后续邮件草稿。功能面向付费 ChatGPT 订阅与工作区，具体可用性受工作区设置、地区、客户端版本和模型影响。转录可能出错且不同语言表现不一，涉及人名、数字与待办时仍需核对录音。",
+          "category": "产品发布",
+          "source": "OpenAI / ChatGPT Release Notes",
+          "url": "https://help.openai.com/en/articles/6825453-chatgpt-release-notes",
+          "publishedAt": "2026-10-06"
+        },
+        {
+          "title": "OpenAI 与 Atlassian 扩大合作，让 agent 接入企业工作上下文",
+          "summary": "双方宣布扩大合作，将 OpenAI 模型与 Atlassian 的 Teamwork Graph 结合，为 Rovo 和平台内 agent 提供项目、文档与决策上下文。公告称已有超过 3,000 名 Atlassian 开发者使用 Codex，并介绍了 ChatGPT/Codex 接入 Jira、Confluence 等信息的插件。更深层的 Jira 任务分配、进度跟踪与结果审查仍属于探索方向，不应当作全部已经上线。",
+          "category": "产品发布",
+          "source": "OpenAI 官方公告",
+          "url": "https://openai.com/index/atlassian-partnership/",
+          "publishedAt": "2026-10-06"
+        },
+        {
+          "title": "Ironclad 研究：用细粒度验收标准评估 agent 的完整工作流",
+          "summary": "OpenAI 与 Ironclad 构建了 11 个合同配置、审批和条款维护研究任务，每项按 8–50 个标准评分。Astra 在 Max 推理设置下平均得分 55.0%，GPT-5.6 Sol 在 High 设置下为 41.6%。这是厂商限定任务上的研究结果；耗时是模拟估算，并非客户实测节省时间。对 builder 的启发是把业务规则、异常路径与最终验收一起纳入评测，而不只检查单次操作。",
+          "category": "技术实践",
+          "source": "OpenAI / Ironclad 研究",
+          "url": "https://openai.com/index/advancing-computer-use-with-ironclad/",
+          "publishedAt": "2026-10-06"
+        },
+        {
+          "title": "mattpocock/skills：面向工程工作的可组合 agent skills",
+          "summary": "将需求澄清与工程流程拆成小型、可调整的 skills，README 提供 Claude Code 与其他 coding agents 的接入方式。适合参考如何把个人工程经验做成可复用流程，而不是一次性塞进长提示词。 GitHub 当日 Trending 页面显示新增 972 stars（检索时快照）。",
+          "category": "开源项目",
+          "source": "GitHub / mattpocock/skills",
+          "url": "https://github.com/mattpocock/skills",
+          "starsToday": 972,
+          "trendingSource": "https://github.com/trending?since=daily",
+          "observationNote": "2026-10-07 北京时间约 13:02 的实时榜单快照"
+        },
+        {
+          "title": "earthtojake/text-to-cad：让 coding agent 生成可编辑的 CAD 文件",
+          "summary": "提供本地 3D 建模工作流，可输出 STEP、GLB、STL、3MF，并支持可制造性检查和工程图。适合将自然语言设计想法推进到可继续加工的模型；制造检查仍需结合真实工艺复核。 GitHub 当日 Trending 页面显示新增 620 stars（检索时快照）。",
+          "category": "开源项目",
+          "source": "GitHub / earthtojake/text-to-cad",
+          "url": "https://github.com/earthtojake/text-to-cad",
+          "starsToday": 620,
+          "trendingSource": "https://github.com/trending?since=daily",
+          "observationNote": "2026-10-07 北京时间约 13:02 的实时榜单快照"
+        },
+        {
+          "title": "pbakaus/impeccable：为 AI 生成界面加入设计审查与迭代流程",
+          "summary": "提供设计指导、24 个命令、浏览器迭代及 60 条确定性检测规则，覆盖界面审查、排版、布局、响应式与打磨。适合把前端生成后的质量检查变成可重复步骤；规则通过不代表真实用户体验已被验证。 GitHub 当日 Trending 页面显示新增 609 stars（检索时快照）。",
+          "category": "开源项目",
+          "source": "GitHub / pbakaus/impeccable",
+          "url": "https://github.com/pbakaus/impeccable",
+          "starsToday": 609,
+          "trendingSource": "https://github.com/trending?since=daily",
+          "observationNote": "2026-10-07 北京时间约 13:02 的实时榜单快照"
+        },
+        {
+          "title": "thedotmack/claude-mem：在 agent 会话之间保留可检索的上下文",
+          "summary": "通过记录、压缩与检索，把相关历史带回后续会话，并提供多种 coding agent 的接入方式。适合研究长期任务如何减少重复交代。使用前应核对记忆的存储位置、保留范围及模型服务的数据流向，尤其是工作代码和私有资料。 GitHub 当日 Trending 页面显示新增 536 stars（检索时快照）。",
+          "category": "开源项目",
+          "source": "GitHub / thedotmack/claude-mem",
+          "url": "https://github.com/thedotmack/claude-mem",
+          "starsToday": 536,
+          "trendingSource": "https://github.com/trending?since=daily",
+          "observationNote": "2026-10-07 北京时间约 13:02 的实时榜单快照"
+        },
+        {
+          "title": "deepseek-ai/DeepGEMM：面向 LLM 的 GPU 核心计算库",
+          "summary": "将 FP8、FP4、BF16 GEMM、融合 MoE 等计算原语集中在 CUDA 代码库，并通过 DeepJIT 运行时编译。适合做推理基础设施或学习 GPU kernel 优化的开发者。本期因当日榜单收录，未将 README 中 9 月 30 日等较早更新写成今日发布。 GitHub 当日 Trending 页面显示新增 207 stars（检索时快照）。",
+          "category": "开源项目",
+          "source": "GitHub / deepseek-ai/DeepGEMM",
+          "url": "https://github.com/deepseek-ai/DeepGEMM",
+          "starsToday": 207,
+          "trendingSource": "https://github.com/trending?since=daily",
+          "observationNote": "2026-10-07 北京时间约 13:02 的实时榜单快照"
+        },
+        {
+          "title": "msitarzewski/agency-agents：按专业角色组织 agent 工作模板",
+          "summary": "收集面向工程、设计等角色的职责、流程、交付物与验收指标，并提供多种工具的接入路径。可作为团队编写角色提示与任务清单的参考；仓库关于生产可用性的描述属于作者主张，需自行测试。 GitHub 当日 Trending 页面显示新增 621 stars（检索时快照）。",
+          "category": "开源项目",
+          "source": "GitHub / msitarzewski/agency-agents",
+          "url": "https://github.com/msitarzewski/agency-agents",
+          "starsToday": 621,
+          "trendingSource": "https://github.com/trending?since=daily",
+          "observationNote": "2026-10-07 北京时间约 13:02 的实时榜单快照"
+        },
+        {
+          "title": "cathrynlavery/diagram-design：用 HTML 与 SVG 生成结构化说明图",
+          "summary": "为 coding agents 提供架构图、流程图、时序图等图形的设计方式，输出自包含 HTML 与 SVG。适合技术文档、系统说明及演示材料，重点是让语义结构和视觉布局可继续编辑。 GitHub 当日 Trending 页面显示新增 227 stars（检索时快照）。",
+          "category": "开源项目",
+          "source": "GitHub / cathrynlavery/diagram-design",
+          "url": "https://github.com/cathrynlavery/diagram-design",
+          "starsToday": 227,
+          "trendingSource": "https://github.com/trending?since=daily",
+          "observationNote": "2026-10-07 北京时间约 13:02 的实时榜单快照"
+        }
+      ],
+      "retrievedAt": "2026-10-07T13:03:06+08:00",
+      "timezone": "Asia/Shanghai",
+      "sourceStatus": {
+        "officialSources": "fresh",
+        "githubTrending": "fresh",
+        "xFeed": "empty",
+        "podcastFeed": "empty",
+        "blogFeed": "empty"
+      },
+      "sourceNotes": [
+        "官方更新来源日期均为 2026-10-06；发布日期无时区或具体时刻时不推断其精确发布时间。",
+        "GitHub 今日增星来自实时 Trending 页面，不是项目总 stars；首次刊发尚无历史，不计算连续上榜天数。",
+        "follow-builders 的 X feed 生成于 2026-10-06T06:45:56.730Z，窗口内没有符合编辑要求的可核验实质新帖。博客与播客 feed 为空；官方文章另行直接检索核验。"
+      ]
+    }
+  ]
 }
