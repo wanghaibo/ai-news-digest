@@ -22,7 +22,7 @@
 
 - `additionalSources`：可选的补充来源数组，每项为 `{ "title": "来源说明", "url": "https://..." }`。页面在主来源下显示安全的 HTTP(S) 链接；可用于 X API 正文固定存档、官方验证材料等。每条主 `url` 仍保留原始来源。
 
-所有文本均按普通文本呈现，不解释 HTML 或 Markdown。`publishedAt` 不代表本站生成时间。允许附加字段供其他流程使用，但前端仅使用以上字段；`detail` 与 `evidenceNote` 等延伸说明可供 Markdown 归档使用，重要日期及来源限制也必须写入可见的 `summary`。索引最多接受 10,000 期。
+所有文本均按普通文本呈现，不解释 HTML 或 Markdown。`publishedAt` 不代表本站生成时间。允许附加字段供其他流程使用；前端也显示下文列出的来源分栏、人物背景、原题及 `detail`。`evidenceNote` 等辅助说明可供 Markdown 归档使用，重要日期及来源限制必须写入可见的 `summary` 或 `detail`。索引最多接受 10,000 期。
 
 ## 结构示例（不是新闻，不要发布为真实简报）
 
@@ -75,6 +75,29 @@
 
 - 日期直达：`?date=YYYY-MM-DD`；不存在时提示并显示最新一期。
 - 日期切换清除期内搜索和分类筛选。浏览器前进/后退会恢复对应日期。
-- 搜索覆盖当前期的标题、摘要与来源名称，忽略大小写和常见全角/半角差异。
+- 搜索覆盖当前期的标题、摘要、来源名称、原题、人物背景与延伸细节，忽略大小写和常见全角/半角差异。
 - 无数据、无匹配结果、网络失败分别呈现明确状态。加载失败可手动重试。
 - GitHub Pages 的定时采集/生成/提交机制不由本静态页面配置。
+
+
+## 来源分栏与背景信息
+
+以下都是向后兼容的可选字段，旧文章无需补空值：
+
+- item.sourceType：`x`、`podcast`、`blog`、`github`。按此顺序显示有内容的栏目；缺失或未知类型放入“其他资讯”。
+- item.authorBackground：人物的已核实身份、相关经历和阅读视角，非空纯文本字符串。
+- item.originalTitle：真实原题，非空纯文本字符串；紧邻中文编辑标题显示，并链接同一原始来源。
+- item.sourceName：真实博客/出版方名称，非空纯文本字符串，用于博客组内小标题。
+- item.detail：补充机制、实例或短引文及必要归因，非空纯文本字符串；页面与 Markdown 都显示。
+- 上述 4 个显示字符串最长 10,000 字符，但编辑时应简短；不得在字符串内嵌 HTML 或 Markdown。
+- item.language、languageObservedAt、firstIncludedAt、priorAppearanceCount：GitHub 主要语言、其核对日期、本站首次收录日期及本期之前留存榜单记录中的出现次数。需在摘要中保留读者可见的说明，历史出现次数不等于连续上榜天数。
+- digest.githubHistory.note、githubRankingNote：GitHub 栏目可见的历史积累与排序/快照说明。
+- digest.contentStats：按来源统计的本期数量。digest.sourceNotes：可展开的来源与修订说明。
+
+搜索也覆盖作者背景、原题与延伸细节。栏目按当前筛选结果重算，没有匹配内容的栏目不会留空标题。链接仍只接受经过验证的 HTTP(S) 地址，所有正文以 textContent 渲染。
+
+## GitHub 留存历史
+
+`data/trending-history.json` 保存 `schemaVersion: 1` 与 `snapshots` 数组。每个快照包含有效 `date`、公开 `owner/repo` 标识列表 `repositories` 及 `coverage`。已迁移的 8 个历史日期不连续，10 月 7 日只记录本期核验入选集合，两者都不代表完整连续全站榜单。
+
+item.isNew 仅表示在本期之前留存的快照中未出现；githubStatus 为 `new` 或 `returning`。priorAppearanceDates 和 priorAppearanceCount 对应那些旧日期，不能称为连续上榜。新项目至多 5 个详述，旧项目简列并可展开已经发布的分析。各组按实际 starsToday 降序，采样时间差异必须公开说明。

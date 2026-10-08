@@ -59,6 +59,9 @@
         requireText(item.title, itemPath + '.title', 500);
         requireText(item.summary, itemPath + '.summary', 10000);
         requireText(item.source, itemPath + '.source', 300);
+        for (const field of ['authorBackground', 'originalTitle', 'sourceName', 'detail']) {
+          if (item[field] !== undefined) requireText(item[field], itemPath + '.' + field, 10000);
+        }
         assert(CATEGORIES.includes(item.category), itemPath + '.category must be one of: ' + CATEGORIES.join(', '));
         assert(isSafeUrl(item.url), itemPath + '.url must be an absolute HTTP(S) URL without embedded credentials.');
         assert(item.publishedAt === undefined || item.publishedAt === null || isDate(item.publishedAt) || isTimestamp(item.publishedAt), itemPath + '.publishedAt must be omitted, null, a YYYY-MM-DD date, or an ISO 8601 timestamp with a timezone.');
@@ -74,7 +77,14 @@
   function filterItems(digest, category, query) {
     const term = String(query || '').normalize('NFKC').trim().toLocaleLowerCase('zh-CN');
     return digest.items.filter(item => (category === ALL || item.category === category) &&
-      (!term || [item.title, item.summary, item.source].join(' ').normalize('NFKC').toLocaleLowerCase('zh-CN').includes(term)));
+      (!term || [item.title, item.summary, item.source, item.originalTitle, item.authorBackground, item.detail].join(' ').normalize('NFKC').toLocaleLowerCase('zh-CN').includes(term)));
+  }
+  function groupItems(items) {
+    const sections = [['x', 'X 推文精选'], ['podcast', '播客'], ['blog', '官方博客与研究'], ['github', 'GitHub AI 项目'], ['other', '其他资讯']];
+    const known = new Set(sections.slice(0, 4).map(([type]) => type));
+    return sections.map(([type, title]) => ({ type, title,
+      items: items.filter(item => (known.has(item.sourceType) ? item.sourceType : 'other') === type)
+    })).filter(group => group.items.length);
   }
   function formatDate(value) {
     return new Intl.DateTimeFormat('zh-CN', { year: 'numeric', month: 'long', day: 'numeric', timeZone: 'UTC' }).format(new Date(value + 'T12:00:00Z'));
@@ -148,8 +158,25 @@
         return;
       }
       const fragment = document.createDocumentFragment();
-      for (const item of items) {
-        const article = el('article', 'news-card');
+      for (const group of groupItems(items)) {
+        const section = el('section', 'source-section');
+        section.dataset.sourceType = group.type;
+        section.append(el('h3', 'source-section-title', group.title));
+        if (group.type === 'github') {
+          if (typeof selected.githubHistory?.note === 'string') section.append(el('p', 'source-section-note', selected.githubHistory.note));
+          if (typeof selected.githubRankingNote === 'string') section.append(el('p', 'source-section-note', selected.githubRankingNote));
+        }
+        let publisher = null, githubStatus = null;
+        for (const item of group.items) {
+        if (group.type === 'blog' && item.sourceName && item.sourceName !== publisher) {
+          publisher = item.sourceName;
+          section.append(el('p', 'publisher-heading', publisher));
+        }
+        if (group.type === 'github' && item.githubStatus && item.githubStatus !== githubStatus) {
+          githubStatus = item.githubStatus;
+          section.append(el('p', 'publisher-heading', githubStatus === 'returning' ? '持续热门｜历史记录中已出现' : '新发现｜留存历史中未出现'));
+        }
+        const article = el('article', item.githubStatus === 'returning' ? 'news-card recurring-card' : 'news-card');
         const number = el('span', 'news-number', String(selected.items.indexOf(item) + 1).padStart(2, '0'));
         number.setAttribute('aria-hidden', 'true');
         const body = el('div', 'news-body');
@@ -161,11 +188,26 @@
           time.title = '来源发布日期：' + item.publishedAt;
           meta.append(time);
         }
-        const title = el('h3');
+        const title = el('h4');
         title.append(externalLink(item.url, '', item.title));
         const source = externalLink(item.url, 'source-link', '阅读原文 ↗');
         source.setAttribute('aria-label', '阅读原文：' + item.title + '（在新标签页打开）');
-        body.append(meta, title, el('p', '', item.summary), source);
+        body.append(meta, title);
+        if (item.originalTitle) {
+          const original = el('p', 'original-title', '原题：');
+          original.append(externalLink(item.url, '', item.originalTitle));
+          body.append(original);
+        }
+        if (item.authorBackground) body.append(el('p', 'author-background', item.authorBackground));
+        body.append(el('p', '', item.summary));
+        if (item.detail) {
+          if (item.githubStatus === 'returning') {
+            const expansion = el('details', 'recurring-analysis');
+            expansion.append(el('summary', '', '展开项目分析'), el('p', 'article-detail', item.detail));
+            body.append(expansion);
+          } else body.append(el('p', 'article-detail', '进一步理解：' + item.detail));
+        }
+        body.append(source);
         const additional = supplementalSources(item);
         if (additional.length) {
           const links = el('div', 'additional-sources');
@@ -177,7 +219,17 @@
           body.append(links);
         }
         article.append(number, body);
-        fragment.append(article);
+        section.append(article);
+        }
+        fragment.append(section);
+      }
+      if (Array.isArray(selected.sourceNotes) && selected.sourceNotes.some(note => typeof note === 'string')) {
+        const notes = el('details', 'source-notes');
+        notes.append(el('summary', '', '来源与修订说明'));
+        const list = el('ul');
+        for (const note of selected.sourceNotes) if (typeof note === 'string') list.append(el('li', '', note));
+        notes.append(list);
+        fragment.append(notes);
       }
       elements.content.append(fragment);
     }
@@ -316,5 +368,6 @@
     });
     loadData();
   }
-  return { CATEGORIES, isDate, isSafeUrl, isTimestamp, validateData, filterItems, formatDate, selectDigest, supplementalSources, start };
+  return { CATEGORIES, isDate, isSafeUrl, isTimestamp, validateData, filterItems, formatDate, selectDigest, supplementalSources, groupItems, start };
 });
+
