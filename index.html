@@ -8,7 +8,7 @@
   <meta name="description" content="给 AI 创造者的中文资讯简报：产品发布、技术实践、开源项目和观点洞察，保留一手来源与历史归档。">
   <title>AI 资讯简报 · AI News Digest</title>
   <link rel="icon" type="image/svg+xml" href="./favicon.svg">
-  <link rel="stylesheet" href="./style.css?v=20261008-translations1">
+  <link rel="stylesheet" href="./style.css?v=20261008-history-top1">
   <script src="./app.js?v=20261008-translations1" defer></script>
 </head>
 <body id="top">
@@ -40,6 +40,10 @@
       <div class="content-layout">
         <section class="digest-section" id="digest" aria-labelledby="digest-heading">
           <div class="section-heading"><div><p class="eyebrow muted">THE READING ROOM</p><h2 id="digest-heading">最新简报</h2></div><span class="issue-count" id="issue-count">—</span></div>
+          <div class="issue-switcher" id="archive">
+            <label for="date-select">选择简报日期</label>
+            <div class="select-wrap"><select id="date-select" disabled><option value="">暂无已发布简报</option></select><span aria-hidden="true">⌄</span></div>
+          </div>
           <div class="filter-row" role="group" aria-label="按资讯类别筛选">
             <button type="button" class="filter-button active" data-category="全部" aria-pressed="true">全部</button>
             <button type="button" class="filter-button" data-category="产品发布" aria-pressed="false">产品发布</button>
@@ -55,10 +59,9 @@
         </section>
 
         <aside class="sidebar" aria-label="归档与阅读说明">
-          <section class="archive-panel" id="archive" aria-labelledby="archive-heading">
+          <section class="archive-panel" aria-labelledby="archive-heading">
             <div class="panel-topline"><h2 id="archive-heading">往期归档</h2><span aria-hidden="true">↗</span></div>
             <p>每一期，都值得回看。</p>
-            <label for="date-select">选择简报日期</label><div class="select-wrap"><select id="date-select" disabled><option value="">暂无已发布简报</option></select><span aria-hidden="true">⌄</span></div>
             <div class="archive-meta"><span>已收录</span><strong id="archive-count">0 期</strong></div>
             <ol class="recent-issues" id="recent-issues" aria-label="最近发布的简报"></ol>
           </section>
@@ -72,4 +75,5 @@
   </div>
 </body>
 </html>
+
 
