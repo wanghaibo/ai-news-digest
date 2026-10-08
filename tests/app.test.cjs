@@ -58,3 +58,14 @@ test('publication metadata accepts omitted, unknown, exact dates and timestamps 
   for (const publishedAt of [undefined, null, '2026-10-07', '2026-10-07T10:20:30Z']) assert.doesNotThrow(() => validateData(payload(issue(undefined, { items: [item({ publishedAt })] }))));
   for (const publishedAt of ['', '2026-02-30', 'yesterday', '2026-10-07T10:20:30']) assert.throws(() => validateData(payload(issue(undefined, { items: [item({ publishedAt })] }))));
 });
+
+test('supplementary source links preserve readable archives and reject unsafe URLs', () => {
+  const { supplementalSources } = require('../app.js');
+  assert.deepEqual(supplementalSources(item()), []);
+  assert.deepEqual(supplementalSources(item({ additionalSources: [
+    { title: 'X 正文存档', url: 'https://github.com/example/feed/blob/abc/feed-x.json#L1-L9' },
+    { title: 'unsafe', url: 'javascript:alert(1)' },
+    { title: '', url: 'https://example.com/empty' },
+    null
+  ] })), [{ title: 'X 正文存档', url: 'https://github.com/example/feed/blob/abc/feed-x.json#L1-L9' }]);
+});

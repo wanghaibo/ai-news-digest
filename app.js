@@ -66,6 +66,11 @@
     }
     return { schemaVersion: 1, digests: [...data.digests].sort((a, b) => b.date.localeCompare(a.date)) };
   }
+  function supplementalSources(item) {
+    if (!Array.isArray(item.additionalSources)) return [];
+    return item.additionalSources.filter(source => isObject(source) &&
+      typeof source.title === 'string' && source.title.trim() && source.title.length <= 300 && isSafeUrl(source.url));
+  }
   function filterItems(digest, category, query) {
     const term = String(query || '').normalize('NFKC').trim().toLocaleLowerCase('zh-CN');
     return digest.items.filter(item => (category === ALL || item.category === category) &&
@@ -161,6 +166,16 @@
         const source = externalLink(item.url, 'source-link', '阅读原文 ↗');
         source.setAttribute('aria-label', '阅读原文：' + item.title + '（在新标签页打开）');
         body.append(meta, title, el('p', '', item.summary), source);
+        const additional = supplementalSources(item);
+        if (additional.length) {
+          const links = el('div', 'additional-sources');
+          for (const entry of additional) {
+            const link = externalLink(entry.url, 'source-link', entry.title + ' ↗');
+            link.setAttribute('aria-label', entry.title + '（在新标签页打开）');
+            links.append(link, document.createTextNode(' '));
+          }
+          body.append(links);
+        }
         article.append(number, body);
         fragment.append(article);
       }
@@ -301,5 +316,5 @@
     });
     loadData();
   }
-  return { CATEGORIES, isDate, isSafeUrl, isTimestamp, validateData, filterItems, formatDate, selectDigest, start };
+  return { CATEGORIES, isDate, isSafeUrl, isTimestamp, validateData, filterItems, formatDate, selectDigest, supplementalSources, start };
 });
