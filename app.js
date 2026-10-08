@@ -62,6 +62,17 @@
         for (const field of ['authorBackground', 'originalTitle', 'sourceName', 'detail']) {
           if (item[field] !== undefined) requireText(item[field], itemPath + '.' + field, 10000);
         }
+        if (item.translations !== undefined) {
+          assert(Array.isArray(item.translations) && item.translations.length > 0 && item.translations.length <= 20, itemPath + '.translations must contain 1–20 translation blocks.');
+          for (const [translationIndex, translation] of item.translations.entries()) {
+            const translationPath = itemPath + '.translations[' + translationIndex + ']';
+            assert(isObject(translation), translationPath + ' must be an object.');
+            requireText(translation.text, translationPath + '.text', 10000);
+            assert(['excerpt', 'full'].includes(translation.scope), translationPath + '.scope must be excerpt or full.');
+            assert(isSafeUrl(translation.sourceUrl), translationPath + '.sourceUrl must be a safe absolute HTTP(S) URL.');
+            if (translation.note !== undefined) requireText(translation.note, translationPath + '.note', 2000);
+          }
+        }
         assert(CATEGORIES.includes(item.category), itemPath + '.category must be one of: ' + CATEGORIES.join(', '));
         assert(isSafeUrl(item.url), itemPath + '.url must be an absolute HTTP(S) URL without embedded credentials.');
         assert(item.publishedAt === undefined || item.publishedAt === null || isDate(item.publishedAt) || isTimestamp(item.publishedAt), itemPath + '.publishedAt must be omitted, null, a YYYY-MM-DD date, or an ISO 8601 timestamp with a timezone.');
@@ -77,7 +88,7 @@
   function filterItems(digest, category, query) {
     const term = String(query || '').normalize('NFKC').trim().toLocaleLowerCase('zh-CN');
     return digest.items.filter(item => (category === ALL || item.category === category) &&
-      (!term || [item.title, item.summary, item.source, item.originalTitle, item.authorBackground, item.detail].join(' ').normalize('NFKC').toLocaleLowerCase('zh-CN').includes(term)));
+      (!term || [item.title, item.summary, item.source, item.originalTitle, item.authorBackground, item.detail, ...(item.translations || []).flatMap(translation => [translation.text, translation.note])].join(' ').normalize('NFKC').toLocaleLowerCase('zh-CN').includes(term)));
   }
   function groupItems(items) {
     const sections = [['x', 'X 推文精选'], ['podcast', '播客'], ['blog', '官方博客与研究'], ['github', 'GitHub AI 项目'], ['other', '其他资讯']];
@@ -199,6 +210,17 @@
           body.append(original);
         }
         if (item.authorBackground) body.append(el('p', 'author-background', item.authorBackground));
+        if (item.translations?.length) {
+          for (const translation of item.translations) {
+            const block = el('div', 'tweet-translation');
+            block.append(el('p', 'translation-label', translation.scope === 'full' ? '原文翻译' : '原文节选翻译'));
+            block.append(el('p', 'translation-text', translation.text));
+            if (translation.note) block.append(el('p', 'translation-note', translation.note));
+            block.append(externalLink(translation.sourceUrl, 'source-link', '对应原帖 ↗'));
+            body.append(block);
+          }
+          body.append(el('p', 'analysis-label', '摘要与解读'));
+        }
         body.append(el('p', '', item.summary));
         if (item.detail) {
           if (item.githubStatus === 'returning') {

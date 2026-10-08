@@ -10,3 +10,5 @@
 .source-section-note,.source-notes{font-size:13px;color:var(--sub);line-height:1.8}.source-notes{padding:20px 0;border-top:1px solid var(--line)}.source-notes summary{cursor:pointer;color:var(--teal)}.source-notes li{margin:8px 0}.original-title a{text-decoration:underline;text-underline-offset:3px}
 
 .recurring-card{padding:20px 0}.recurring-card h4{font-size:18px;margin:5px 0 8px}.recurring-analysis summary{cursor:pointer;font-size:12px;color:var(--teal)}
+
+.tweet-translation{margin:18px 0;padding:16px 18px;border:1px solid var(--line);border-radius:8px;background:#fffdf8}.news-card .translation-label,.news-card .analysis-label{margin:0 0 8px;font-size:12px;font-weight:700;color:var(--teal);letter-spacing:.06em}.news-card .translation-text{margin:0 0 8px;white-space:pre-line}.news-card .translation-note{margin:8px 0;font-size:12px;color:var(--sub)}.tweet-translation .source-link{font-size:12px}@media(max-width:760px){.tweet-translation{padding:13px 14px}}

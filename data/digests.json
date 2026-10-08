@@ -27,7 +27,15 @@
           ],
           "sourceEvidence": "follow-builders 保存的 X API 正文；本次未直接读取原始 X 页面。",
           "authorBackground": "作者背景：Boris Cherny 是 Claude Code 创建者，曾在 Instagram 从事产品与基础设施工作，也是《Programming TypeScript》作者。他对任务交代与验收的判断，来自编程工具建设经验。",
-          "backgroundVerifiedAt": "2026-10-08T15:51:03+08:00"
+          "backgroundVerifiedAt": "2026-10-08T15:51:03+08:00",
+          "translations": [
+            {
+              "text": "像与同事说话那样与 Claude 交流。",
+              "scope": "excerpt",
+              "sourceUrl": "https://x.com/bcherny/status/2107565388250874193",
+              "note": "Boris Cherny 原帖节选，依据已链接的 X API 固定正文存档翻译；原帖直读不可用。"
+            }
+          ]
         },
         {
           "title": "推特精选｜Thariq Shihipar：agent 的大脑上云后，离线文件仍可能卡住任务",
@@ -58,7 +66,15 @@
           ],
           "sourceEvidence": "follow-builders 保存的 X API 正文；本次未直接读取原始 X 页面。",
           "authorBackground": "作者背景：Thariq Shihipar 是连续创业者，曾创办游戏公司 One More Multiverse，并在 MIT Media Lab 读研。他的云端与本地 agent 观点，结合了当前产品开发和创业实践。",
-          "backgroundVerifiedAt": "2026-10-08T15:51:03+08:00"
+          "backgroundVerifiedAt": "2026-10-08T15:51:03+08:00",
+          "translations": [
+            {
+              "text": "Claude 的“大脑”放在云端，并给 Claude 一双“本地的手”",
+              "scope": "excerpt",
+              "sourceUrl": "https://x.com/trq212/status/2107580785456976085",
+              "note": "Thariq Shihipar 原帖节选，依据已链接的 X API 固定正文存档翻译；原帖直读不可用。 语境：作者在讨论逐步走向的架构方向，并非声称功能已全面上线。"
+            }
+          ]
         },
         {
           "title": "推特精选｜Aaron Levie：agent 既扩大安全压力，也成为防守工具",
@@ -81,7 +97,15 @@
           ],
           "sourceEvidence": "follow-builders 保存的 X API 正文；本次未直接读取原始 X 页面。",
           "authorBackground": "作者背景：Aaron Levie 自 2005 年创办 Box 后持续参与企业内容平台的产品与战略。他讨论 agent 安全时，提供的是企业数据、权限与协作产品经营者的视角。",
-          "backgroundVerifiedAt": "2026-10-08T15:51:03+08:00"
+          "backgroundVerifiedAt": "2026-10-08T15:51:03+08:00",
+          "translations": [
+            {
+              "text": "AI agent 当然也会成为这个问题的解决方案",
+              "scope": "excerpt",
+              "sourceUrl": "https://x.com/levie/status/2107680435644039269",
+              "note": "Aaron Levie 原帖节选，依据已链接的 X API 固定正文存档翻译；原帖直读不可用。"
+            }
+          ]
         },
         {
           "title": "推特精选｜Peter Steinberger：从 X 发现任务，再让 agent 找到可能的负责人",
@@ -104,7 +128,15 @@
           ],
           "sourceEvidence": "follow-builders 保存的 X API 正文；本次未直接读取原始 X 页面。",
           "authorBackground": "作者背景：Peter Steinberger 创办过 PDF 开发工具公司 PSPDFKit，并创建 OpenClaw；个人主页记载他自 2026 年 2 月起在 OpenAI 构建面向大众的 agent。这使他的协作实践同时具有开发者工具创业与开源 agent 背景。",
-          "backgroundVerifiedAt": "2026-10-08T15:51:03+08:00"
+          "backgroundVerifiedAt": "2026-10-08T15:51:03+08:00",
+          "translations": [
+            {
+              "text": "未分配的会话，任何人都可以接手。",
+              "scope": "excerpt",
+              "sourceUrl": "https://x.com/steipete/status/2107697554448421160",
+              "note": "Peter Steinberger 原帖节选，依据已链接的 X API 固定正文存档翻译；原帖直读不可用。"
+            }
+          ]
         },
         {
           "title": "推特精选｜Amjad Masad：AI 逆向工程可能削弱闭源软件的技术壁垒",
@@ -126,7 +158,15 @@
           ],
           "sourceEvidence": "follow-builders 保存的 X API 正文；本次未直接读取原始 X 页面。",
           "authorBackground": "作者背景：Amjad Masad 曾领导 Facebook JavaScript 基础设施团队，参与 Babel、Jest 与 React Native 打包工具，也曾是 Codecademy 首位员工。这是软件开发工具建设者的预测，背景本身不能替代实验验证。",
-          "backgroundVerifiedAt": "2026-10-08T15:51:03+08:00"
+          "backgroundVerifiedAt": "2026-10-08T15:51:03+08:00",
+          "translations": [
+            {
+              "text": "很快，所有软件都将在事实上成为开源软件。",
+              "scope": "excerpt",
+              "sourceUrl": "https://x.com/amasad/status/2107671204639465961",
+              "note": "Amjad Masad 原帖节选，依据已链接的 X API 固定正文存档翻译；原帖直读不可用。"
+            }
+          ]
         },
         {
           "title": "推特精选｜Nikunj Kothari：追逐争议流量，可能让 VC 失去长期信任",
@@ -149,7 +189,15 @@
           ],
           "sourceEvidence": "follow-builders 保存的 X API 正文；本次未直接读取原始 X 页面。",
           "detail": "帖文讨论的是创投行业在社交媒体上的声誉成本，没有给出量化研究或谈及具体 AI 技术。两起交易流失的说法保持为作者自述，不推断涉及哪些人、机构或争议。",
-          "backgroundVerifiedAt": "2026-10-08T15:57:00+08:00"
+          "backgroundVerifiedAt": "2026-10-08T15:57:00+08:00",
+          "translations": [
+            {
+              "text": "X 不适合表达细微而复杂的观点",
+              "scope": "excerpt",
+              "sourceUrl": "https://x.com/nikunj/status/2107706522457497753",
+              "note": "Nikunj Kothari 原帖节选，依据已链接的 X API 固定正文存档翻译；原帖直读不可用。"
+            }
+          ]
         },
         {
           "title": "播客｜Applied Compute 的 Yash Patil：什么时候值得做 post-training？",
@@ -636,7 +684,8 @@
         "已衔接此前 8 个榜单日期的记录：本期 4 个项目在这些记录中未出现，5 个曾出现。日期不连续，累计出现次数不能叫连续上榜天数；9 个项目都属于本站首次收录。",
         "新发现与持续热门分组，各组按已保存的 starsToday 降序展示。快照分别采于 10 月 7 日 13:02 和 17:02，混合时间点，只用于本期阅读排序，不是统一时刻的全站排名。",
         "GitHub 主要语言于 10 月 8 日补核，未使用新数值替换 10 月 7 日的今日增星。",
-        "完整复核 40 条 X 正文：8 条原帖合并为 6 张 X 卡；3 条产品相关发言由博客卡覆盖；其余 29 条因缺必要上下文、宣传、泛泛短评或与本期无关而排除。博客下补充的 Claude 原帖不计入这 8 条 X 栏目原帖。"
+        "完整复核 40 条 X 正文：8 条原帖合并为 6 张 X 卡；3 条产品相关发言由博客卡覆盖；其余 29 条因缺必要上下文、宣传、泛泛短评或与本期无关而排除。博客下补充的 Claude 原帖不计入这 8 条 X 栏目原帖。",
+        "每条精选保留独立的“原文节选翻译”，忠实呈现已读取的原帖片段；“摘要与解读”另列。译文为短节选，完整语境见对应原帖及固定归档。"
       ],
       "publicationHistory": [
         {
@@ -684,7 +733,7 @@
         }
       ],
       "scheduledEdition": "2026-10-07T17:00:00+08:00",
-      "revisedAt": "2026-10-08T15:57:00+08:00",
+      "revisedAt": "2026-10-08T16:08:00+08:00",
       "editorialRevision": {
         "reason": "补齐作者/嘉宾/主持人背景、原始标题、播客转录摘句、来源分栏及 GitHub 语言/首次收录/快照排序。",
         "restoredXAuthors": 5,
