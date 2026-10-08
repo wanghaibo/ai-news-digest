@@ -2,6 +2,945 @@
   "schemaVersion": 1,
   "digests": [
     {
+      "date": "2026-10-08",
+      "title": "AI Builders Digest｜便宜模型之后，agent 还需要什么？",
+      "summary": "本期的共同问题是：模型调用变便宜之后，怎样把 agent 变成可靠的工作流程。X 作者从停止条件、用户研究和跨领域学习给出实践判断；Every 的管理与缓存复盘补充了组织和成本细节；Haiku 5.5、GPT-6 的交互界面与新开源工具则展示了可用能力的变化。共 28 条：7 位 X 作者的 8 条原帖合并为 7 条精选、1 期播客、6 篇官方文章、14 个 GitHub 项目，其中 5 个为此前留存快照中未出现的新发现。",
+      "items": [
+        {
+          "title": "Aditya Agarwal：工程能力要与技术前沿或行业深度配对",
+          "summary": "Aditya Agarwal（South Park Commons 普通合伙人、前 Dropbox CTO）认为，AI 普及了开发能力后，单凭能把软件做出来，越来越难解释个人优势。他更看好两条路线：推进 AI 研究、基础设施等技术前沿，或与深知行业痛点和买家需求的专家合作。相比之下，只带着 coding agent 更快清空原有任务清单，可能浪费了扩展责任范围的机会；他仍强调精进工程能力，并未否定这类岗位的价值。原帖直读不可用，依据 API 全文固定归档转述。",
+          "category": "观点洞察",
+          "source": "X / Aditya Agarwal（API 全文归档）",
+          "url": "https://x.com/adityaag/status/2107865115831988530",
+          "publishedAt": "2026-10-07T16:06:20Z",
+          "sourceType": "x",
+          "authorBackground": "Aditya Agarwal 是 South Park Commons 普通合伙人，曾任 Dropbox CTO、工程副总裁，也是 Facebook 早期工程师。他既参与过大型工程团队建设，也与早期创业者共事，因此这条建议重点在工程能力如何组合成创业优势。",
+          "detail": "他举的领域专家例子，是在一个行业工作十五年，知道昂贵失误发生在哪里、旧方案为何失败、谁会付费的人。编者解读：选搭档或项目时，可以先检查自己缺的是实现能力，还是对问题与客户的理解。",
+          "translations": [
+            {
+              "text": "找到一位世界级领域专家，与其合作。",
+              "scope": "excerpt",
+              "sourceUrl": "https://x.com/adityaag/status/2107865115831988530",
+              "note": "Aditya Agarwal 原帖节选，未覆盖全帖；依据所附 API 全文固定归档翻译，原帖直读不可用。这是作者列出的第二条路线。"
+            }
+          ],
+          "additionalSources": [
+            {
+              "title": "10 月 8 日 X API 正文固定归档",
+              "url": "https://github.com/zarazhangrui/follow-builders/blob/aa5fa3ec42dc099edc26d0cfdf535b3c1dbf9717/feed-x.json#L525-L535"
+            },
+            {
+              "title": "Aditya Agarwal 公开身份资料",
+              "url": "https://www.southparkcommons.com/team/aditya-agarwal/"
+            }
+          ],
+          "sourceEvidence": "完整读取 follow-builders 的 X API 正文；8 条入选原帖直达页均未能读取，未使用不可见图片、视频及引用帖背景。",
+          "backgroundVerifiedAt": "2026-10-08T17:06:00+08:00"
+        },
+        {
+          "title": "Guillermo Rauch：agent 能不停优化，停止条件仍要人来决定",
+          "summary": "Guillermo Rauch（Vercel 创始人兼 CEO）提醒，软件几乎可以无止境地加固和优化，agent 也会持续往下做，但时间、注意力和机会成本不会因此消失。他举例说，工程师可能不断覆盖永远不会触发的输入，或优化根本没人使用的功能。编者解读：委派任务时，除了定义要改什么，还应写清什么结果足以交付，以及接受哪些取舍；这不是主张跳过必要的安全与质量检查。原帖直读不可用，依据 API 全文固定归档转述。",
+          "category": "观点洞察",
+          "source": "X / Guillermo Rauch（API 全文归档）",
+          "url": "https://x.com/rauchg/status/2107962327169675566",
+          "publishedAt": "2026-10-07T22:32:37Z",
+          "sourceType": "x",
+          "authorBackground": "Guillermo Rauch 是 Vercel 创始人兼 CEO、软件工程师，也是 Next.js 的设计者与共同作者。他长期建设开发工具和云基础设施，这条观点关注工程投入与实际使用价值之间的取舍。",
+          "detail": "原帖把两类可持续工作分开：加固包括边界情况、输入约束和错误处理；优化包括 profiling、benchmark 与重写。便宜的 token 不能替团队决定哪一种改动最值得继续。",
+          "translations": [
+            {
+              "text": "无论如何，agent 都会乐此不疲地继续深挖。",
+              "scope": "excerpt",
+              "sourceUrl": "https://x.com/rauchg/status/2107962327169675566",
+              "note": "Guillermo Rauch 原帖节选，未覆盖全帖；依据所附 API 全文固定归档翻译，原帖直读不可用。语境是代码加固与性能优化可以不断延伸，原作者强调停止与取舍。"
+            }
+          ],
+          "additionalSources": [
+            {
+              "title": "10 月 8 日 X API 正文固定归档",
+              "url": "https://github.com/zarazhangrui/follow-builders/blob/aa5fa3ec42dc099edc26d0cfdf535b3c1dbf9717/feed-x.json#L274-L284"
+            },
+            {
+              "title": "Guillermo Rauch 公开身份资料",
+              "url": "https://rauchg.com/about"
+            }
+          ],
+          "sourceEvidence": "完整读取 follow-builders 的 X API 正文；8 条入选原帖直达页均未能读取，未使用不可见图片、视频及引用帖背景。",
+          "backgroundVerifiedAt": "2026-10-08T17:06:00+08:00"
+        },
+        {
+          "title": "Cat Wu：把高频用户筛选与访谈预约接成一个任务",
+          "summary": "Cat Wu（Anthropic 产品经理、Claude Code 团队成员）分享了一个收集反馈的具体用法：让 Claude 找出上周某项功能使用量最高的十位用户，整理成 artifact，再联系他们预约十五分钟访谈。这个任务把行为数据、受访者筛选和约访串了起来，缩短产品经理从发现使用者到听取反馈的路径。她称其为自己偏爱的快速反馈方式；帖文没有提供对照测试，也不能据此假定任何账户都已接通所需数据与通信工具。原帖直读不可用，依据 API 全文固定归档转述。",
+          "category": "技术实践",
+          "source": "X / Cat Wu（API 全文归档）",
+          "url": "https://x.com/_catwu/status/2107967210467803152",
+          "publishedAt": "2026-10-07T22:52:01Z",
+          "sourceType": "x",
+          "authorBackground": "Cat Wu 在 Anthropic 官方 Claude Code 活动中被列为产品经理及产品创建团队成员。她讨论的是自身 PM 工作中的用户反馈流程，适合关注研究招募与使用数据衔接的产品团队。",
+          "detail": "编者提醒：按使用量排序有助于接触重度用户，但不能自动代表新用户、流失用户或总体满意度。把这条流程用于实际研究时，应先明确访谈问题，再判断是否只需要高频用户样本。",
+          "translations": [
+            {
+              "text": "上周谁最常使用〈功能〉？",
+              "scope": "excerpt",
+              "sourceUrl": "https://x.com/_catwu/status/2107967210467803152",
+              "note": "Cat Wu 原帖节选，未覆盖全帖；依据所附 API 全文固定归档翻译，原帖直读不可用。这是作者给 Claude 的示例任务中的开头问题；其余步骤在摘要中转述。"
+            }
+          ],
+          "additionalSources": [
+            {
+              "title": "10 月 8 日 X API 正文固定归档",
+              "url": "https://github.com/zarazhangrui/follow-builders/blob/aa5fa3ec42dc099edc26d0cfdf535b3c1dbf9717/feed-x.json#L154-L164"
+            },
+            {
+              "title": "Cat Wu 公开身份资料",
+              "url": "https://resources.anthropic.com/webinar/claude-code-live"
+            }
+          ],
+          "sourceEvidence": "完整读取 follow-builders 的 X API 正文；8 条入选原帖直达页均未能读取，未使用不可见图片、视频及引用帖背景。",
+          "backgroundVerifiedAt": "2026-10-08T17:06:00+08:00"
+        },
+        {
+          "title": "Thariq Shihipar：跨领域卡住时，先让模型教会你如何问清楚",
+          "summary": "Thariq Shihipar（Anthropic Claude Code 工程师）观察到，常见失败并非只有模型做不到，而是用户进入不熟悉的领域后，无法准确写出提示词与计划，只好反复进行模糊迭代。他在同时间的另一帖补充，agent 让人更容易跨出专长，而模型本身也可以用来补齐不懂的知识。编者解读：与其不断换一种说法要求同一结果，不如先厘清关键概念、约束与判断标准；这是作者的实践观察，不是失败率统计。原帖直读不可用，依据 API 全文固定归档转述。",
+          "category": "技术实践",
+          "source": "X / Thariq Shihipar（API 全文归档）",
+          "url": "https://x.com/trq212/status/2108021247301062894",
+          "publishedAt": "2026-10-08T02:26:45Z",
+          "sourceType": "x",
+          "authorBackground": "Thariq Shihipar 是 Anthropic Claude Code 工程师和连续创业者，曾创办 One More Multiverse，并在 MIT Media Lab 读研。他的视角来自交互产品和 coding agent 的开发实践。",
+          "detail": "本条合并两条主题紧接、发布时间相同的发言，逐帖保留译文和直链。第一帖引用的外部背景未能读取，因此只采用作者正文中能够独立成立的失败模式，不推测被引帖的案例。",
+          "translations": [
+            {
+              "text": "他们不得不用很多轮对话来进行不够精准的迭代。",
+              "scope": "excerpt",
+              "sourceUrl": "https://x.com/trq212/status/2108021247301062894",
+              "note": "Thariq Shihipar 原帖节选，未覆盖全帖；依据所附 API 全文固定归档翻译，原帖直读不可用。这里指在专业领域之外，难以准确表达提示词与计划的用户。"
+            },
+            {
+              "text": "让模型教你那些你还不懂的东西。",
+              "scope": "excerpt",
+              "sourceUrl": "https://x.com/trq212/status/2108021248966135891",
+              "note": "Thariq Shihipar 原帖节选，未覆盖全帖；依据所附 API 全文固定归档翻译，原帖直读不可用。此处节选一个短语；原帖把它作为可以采取的办法。"
+            }
+          ],
+          "additionalSources": [
+            {
+              "title": "10 月 8 日 X API 正文固定归档",
+              "url": "https://github.com/zarazhangrui/follow-builders/blob/aa5fa3ec42dc099edc26d0cfdf535b3c1dbf9717/feed-x.json#L173-L194"
+            },
+            {
+              "title": "Thariq Shihipar 公开身份资料",
+              "url": "https://www.thariq.io/"
+            },
+            {
+              "title": "同时间补充帖：让模型教自己",
+              "url": "https://x.com/trq212/status/2108021248966135891"
+            }
+          ],
+          "sourceEvidence": "完整读取 follow-builders 的 X API 正文；8 条入选原帖直达页均未能读取，未使用不可见图片、视频及引用帖背景。",
+          "backgroundVerifiedAt": "2026-10-08T17:06:00+08:00"
+        },
+        {
+          "title": "Peter Yang：软件更易重建后，差异化可能转向数据和分发",
+          "summary": "Peter Yang（产品负责人、AI 教程与访谈创作者）判断，随着 AI 更容易重建软件，仅凭功能实现获得收入会变难，专有数据、分发渠道或其他优势会更重要。他尤其担心传统 SaaS：价格较高，又包含大量为人类操作设计、agent 未必需要的功能。编者解读：面向 agent 重新审视价值主张时，应区分客户真正依赖的数据与流程，以及可以被替换的操作界面；这仍是商业趋势判断，帖文没有给出可复制率或收入变化的证据。原帖直读不可用，依据 API 全文固定归档转述。",
+          "category": "观点洞察",
+          "source": "X / Peter Yang（API 全文归档）",
+          "url": "https://x.com/petergyang/status/2107981547102245101",
+          "publishedAt": "2026-10-07T23:48:59Z",
+          "sourceType": "x",
+          "authorBackground": "Peter Yang 是产品负责人和内容创作者，个人官网列出在 Roblox、Reddit、Meta 等公司超过十年的产品经历，并持续制作实用 AI 教程与访谈。官网没有明确当前雇主，因此这里不将其标成某家公司的现任负责人。",
+          "detail": "作者使用的是趋势性判断，而非证明所有软件都能被完整复制。把它用于产品决策时，更适合当作检查护城河的问题清单，不能直接推导某类 SaaS 已失去商业价值。",
+          "translations": [
+            {
+              "text": "传统 SaaS 尤其脆弱。",
+              "scope": "excerpt",
+              "sourceUrl": "https://x.com/petergyang/status/2107981547102245101",
+              "note": "Peter Yang 原帖节选，未覆盖全帖；依据所附 API 全文固定归档翻译，原帖直读不可用。原作者紧接着给出的理由是价格及为人类设计的功能；本条摘要保留这些理由。"
+            }
+          ],
+          "additionalSources": [
+            {
+              "title": "10 月 8 日 X API 正文固定归档",
+              "url": "https://github.com/zarazhangrui/follow-builders/blob/aa5fa3ec42dc099edc26d0cfdf535b3c1dbf9717/feed-x.json#L116-L126"
+            },
+            {
+              "title": "Peter Yang 公开身份资料",
+              "url": "https://www.petergyang.com/"
+            }
+          ],
+          "sourceEvidence": "完整读取 follow-builders 的 X API 正文；8 条入选原帖直达页均未能读取，未使用不可见图片、视频及引用帖背景。",
+          "backgroundVerifiedAt": "2026-10-08T17:06:00+08:00"
+        },
+        {
+          "title": "Aaron Levie：agent 的基础设施需求不止是更多 token",
+          "summary": "Aaron Levie（Box 联合创始人兼 CEO）预计，持续运行的个人 agent、企业防守、代码安全审查与数据处理，会同时扩大推理需求和执行环境需求。他明确列出了计算机、网络与文件系统，认为基础设施建设仍处早期。编者解读：规划 agent 产品成本与容量时，需要同时考虑模型调用和实际执行资源；他关于需求将以数量级增长的说法是预测，帖文未提供测算模型或时间表。原帖直读不可用，依据 API 全文固定归档转述。",
+          "category": "观点洞察",
+          "source": "X / Aaron Levie（API 全文归档）",
+          "url": "https://x.com/levie/status/2108056577697882402",
+          "publishedAt": "2026-10-08T04:47:08Z",
+          "sourceType": "x",
+          "authorBackground": "Aaron Levie 是企业内容平台 Box 的联合创始人兼 CEO。他从企业内容与工作流产品经营者的角度看 agent 的资源需求，本帖提供的是需求方向判断。",
+          "detail": "原帖提到全天候后台任务。其独立观点已完整保存在归档中；被引用帖的正文没有读取，因此不把未核实的具体投资、合作或设施消息写入本条。",
+          "translations": [
+            {
+              "text": "它们需要计算机、网络、文件系统等等。",
+              "scope": "excerpt",
+              "sourceUrl": "https://x.com/levie/status/2108056577697882402",
+              "note": "Aaron Levie 原帖节选，未覆盖全帖；依据所附 API 全文固定归档翻译，原帖直读不可用。“它们”指原帖列举的各类 AI agent。"
+            }
+          ],
+          "additionalSources": [
+            {
+              "title": "10 月 8 日 X API 正文固定归档",
+              "url": "https://github.com/zarazhangrui/follow-builders/blob/aa5fa3ec42dc099edc26d0cfdf535b3c1dbf9717/feed-x.json#L323-L333"
+            },
+            {
+              "title": "Aaron Levie 公开身份资料",
+              "url": "https://www.box.com/about-us/leadership"
+            }
+          ],
+          "sourceEvidence": "完整读取 follow-builders 的 X API 正文；8 条入选原帖直达页均未能读取，未使用不可见图片、视频及引用帖背景。",
+          "backgroundVerifiedAt": "2026-10-08T17:06:00+08:00"
+        },
+        {
+          "title": "Dan Shipper：持续 agent 的收益在省注意力，摩擦在重复授权",
+          "summary": "Dan Shipper（Every 联合创始人兼 CEO）认为，持续 agent 的实用收益是替人处理碎片任务、减少来回切换应用。他自报的一次使用中，dot 把模型测试结果发到 Slack，再带回回复，让他继续手头工作；团队还用它找遗漏消息和账户访问请求。但他也抱怨同一基础操作反复索要批准，甚至批准后仍执行失败。对 agent 产品团队而言，这是一组关于流程连贯性的真实用户反馈，并非产品能力或效率的独立测评。原帖直读不可用，依据 API 全文固定归档转述。",
+          "category": "观点洞察",
+          "source": "X / Dan Shipper（API 全文归档）",
+          "url": "https://x.com/danshipper/status/2107890633486582208",
+          "publishedAt": "2026-10-07T17:47:44Z",
+          "sourceType": "x",
+          "authorBackground": "Dan Shipper 是 Every 联合创始人兼 CEO，同时撰写 Chain of Thought 专栏并主持 The Every Podcast。他持续试用 AI 工作工具，本条来自他对自己及团队使用经历的公开描述。",
+          "detail": "他还认为，接入用户已有工作与生活生态是优势，但对某个 agent 角色的感情不保证长期留存。编者解读：减少应用切换和让授权流程可理解、可执行，可能比角色设定更直接影响持续使用。",
+          "translations": [
+            {
+              "text": "它们会保护你的注意力。",
+              "scope": "excerpt",
+              "sourceUrl": "https://x.com/danshipper/status/2107890633486582208",
+              "note": "Dan Shipper 原帖节选，未覆盖全帖；依据所附 API 全文固定归档翻译，原帖直读不可用。“它们”指作者试用的持续 agent；这是一条个人体验判断。"
+            }
+          ],
+          "additionalSources": [
+            {
+              "title": "10 月 8 日 X API 正文固定归档",
+              "url": "https://github.com/zarazhangrui/follow-builders/blob/aa5fa3ec42dc099edc26d0cfdf535b3c1dbf9717/feed-x.json#L484-L494"
+            },
+            {
+              "title": "Dan Shipper 公开身份资料",
+              "url": "https://every.to/@danshipper"
+            }
+          ],
+          "sourceEvidence": "完整读取 follow-builders 的 X API 正文；8 条入选原帖直达页均未能读取，未使用不可见图片、视频及引用帖背景。",
+          "backgroundVerifiedAt": "2026-10-08T17:06:00+08:00"
+        },
+        {
+          "title": "播客｜工程经理的杠杆是看见瓶颈，而不是多消耗 token",
+          "originalTitle": "Why Every Traded Personal Agents for One Company Agent",
+          "sourceName": "The Every Podcast",
+          "source": "The Every Podcast / Every",
+          "sourceType": "podcast",
+          "category": "观点洞察",
+          "url": "https://every.to/podcast/transcript-why-every-traded-personal-agents-for-one-company-agent",
+          "publishedAt": "2026-10-07T17:11:13Z",
+          "authorBackground": "Willie Williams 现任 Every 平台负责人，曾创办 Mori 并任 CEO，也曾负责 Lyft 的 AI 运营；他主导 Every Agent 的工程落地，能从建设和维护团队系统的经历判断 agent 的管理价值。主持人 Dan Shipper 是 Every 联合创始人兼 CEO。",
+          "summary": "Willie Williams（Every 平台负责人）认为，AI 提高工程管理效率，首先靠更及时地发现瓶颈。他把 Slack、邮件和客户反馈汇入 Tend 信息流，让 agent 每五分钟检查指标异常并分派提醒；真正需要他行动时，往往仍是找到合适的人谈清问题。主持人 Dan Shipper（Every 联合创始人兼 CEO）则设想，公司共享 agent 会按团队需求逐步分化。这是 Every 的内部经验与两人的判断，不是已验证的通用组织规律。",
+          "detail": "核心要点：自动化信息收集和初步分派，把经理精力留给协调与决策。已完整读取 00:00–33:45 的 feed 转录并对照官方全文。Willie Williams 在 24:22–24:32 的短原话：“a people job”。",
+          "additionalSources": [
+            {
+              "title": "24:22 起的单期视频（官方转录页所链接）",
+              "url": "https://www.youtube.com/watch?v=_pcy1_jU27k&t=1462s"
+            },
+            {
+              "title": "Willie Williams 官方介绍",
+              "url": "https://every.to/@williewilliams"
+            },
+            {
+              "title": "Dan Shipper 官方介绍",
+              "url": "https://every.to/@danshipper"
+            }
+          ],
+          "evidenceNote": "feed 将节目旧名写作 AI & I by Every，且 url 指向播放列表；采用当前官方节目名和可读的官方单期转录直链。发布时间来自 feed，官方单期页证实日期。YouTube 直读返回 cache miss，视频 ID 来自官方单期页的直接链接；不声称听取了音频。"
+        },
+        {
+          "title": "Haiku 5.5 降低高频小任务成本，Sonnet 缓存读取同步降价",
+          "originalTitle": "Claude Haiku 5.5",
+          "sourceName": "Anthropic",
+          "source": "Anthropic",
+          "sourceType": "blog",
+          "category": "产品发布",
+          "url": "https://www.anthropic.com/claude-haiku-5-5",
+          "publishedAt": "2026-10-07",
+          "summary": "Anthropic 发布 Haiku 5.5，面向摘要、分类、上下文压缩等高频任务，并首次为 Haiku 提供可调 effort。提示长度不超过 100K tokens 时，每百万输入／输出 tokens 为 0.10／0.50 美元；超过该长度则为 0.50／2.50 美元。Sonnet 5.5 缓存读取价格同步减半至每百万 tokens 0.10 美元。开发者可重算子 agent 与重复上下文的成本，但复杂编程仍需比较更大模型的完成质量。",
+          "detail": "价格按提示长度分档；厂商所称约 75% 的平均任务成本降幅，不等于每次请求都节省同样比例。模型已在 Claude Platform 及主要云平台提供。",
+          "additionalSources": [
+            {
+              "title": "Haiku 官方模型页及价格",
+              "url": "https://www.anthropic.com/claude/haiku"
+            },
+            {
+              "title": "10月7日官方发布帖（窗口旁证）",
+              "url": "https://x.com/claudeai/status/2107894057615987198"
+            },
+            {
+              "title": "发布帖固定API归档（原帖直读不可用）",
+              "url": "https://github.com/zarazhangrui/follow-builders/blob/aa5fa3ec42dc099edc26d0cfdf535b3c1dbf9717/feed-x.json#L585-L595"
+            }
+          ]
+        },
+        {
+          "title": "GPT-6 把回答变成可交互界面，并能边思考边交付",
+          "originalTitle": "GPT‑6 and Intelligent UI for everyone",
+          "sourceName": "OpenAI",
+          "source": "OpenAI",
+          "sourceType": "blog",
+          "category": "产品发布",
+          "url": "https://openai.com/index/gpt-6-for-everyone/",
+          "publishedAt": "2026-10-07",
+          "summary": "OpenAI 将 GPT-6 与 Intelligent UI 带入 ChatGPT 的 Chat：模型从原生组件库选择图表、按钮和交互工具，编译器在生成过程中逐步呈现界面；回答也可先交付已有结论，再继续思考和补充。付费档使用 Sol，Free／Go 使用 Luna。10 月 7 日先向付费档推出，8 日开始扩至免费档；这是分批上线，Work 与 Codex 的模型不随本次发布改变。",
+          "detail": "这种训练不仅评估回答内容，也评估布局、交互的清晰度和实用性。Intelligent UI 支持 Instant 至 Extra High；Pro 推理选项仍使用 Astra，不支持此界面能力。",
+          "additionalSources": [
+            {
+              "title": "ChatGPT 10 月 7 日更新说明",
+              "url": "https://help.openai.com/en/articles/6825453-chatgpt-release-notes"
+            }
+          ]
+        },
+        {
+          "title": "Liquid AI 开放 d1 小模型，把多模态判断压到一次前向计算",
+          "originalTitle": "Open d1: Edge decision models for text, vision, and audio",
+          "sourceName": "Liquid AI Blog",
+          "source": "Liquid AI",
+          "sourceType": "blog",
+          "category": "技术实践",
+          "url": "https://www.liquid.ai/blog/d1-open",
+          "publishedAt": "2026-10-07",
+          "summary": "Liquid AI 发布开放权重的 d1-3B 和实验版 d1-omni-600M。它们用一次前向计算给出结构化判断，不逐 token 生成回答；前者接收文字与图像，后者支持文字配图像或音频。官方单请求测试中，d1-3B 在 RTX 4090 上回答一个问题用时 8 毫秒，但 3.4K-token 输入增至 102 毫秒。对边缘设备上的路由、筛选和视觉判断，这是可试验的低延迟路径；不能把短输入延迟外推到所有任务。",
+          "detail": "模型发布即支持 llama.cpp。600M 版本仍在研究开发中，官方未报告 Decision Index 私有视觉集结果，也指出专门的音频决策评测尚不成熟。",
+          "additionalSources": [
+            {
+              "title": "Liquid AI 在 Hugging Face 的技术说明",
+              "url": "https://huggingface.co/blog/LiquidAI/open-d1"
+            }
+          ]
+        },
+        {
+          "title": "Every 的省钱复盘：先修缓存失效，再考虑模型路由",
+          "originalTitle": "Building a More Efficient Agent",
+          "sourceName": "Every · Context Window",
+          "source": "Every · Context Window",
+          "sourceType": "blog",
+          "category": "技术实践",
+          "url": "https://every.to/context-window/building-a-more-efficient-agent",
+          "publishedAt": "2026-10-07",
+          "authorBackground": "Laura Entis 是 Every 专职作者；文中的 Paridhi Agarwal 是 Every 工程师，负责这次 agent 成本优化。",
+          "summary": "Laura Entis（Every 专职作者）记录了 Paridhi Agarwal（Every 工程师）的降本实践：先用便宜模型转交复杂任务，反而因重复处理增加成本。更有效的是排查系统浪费。用户 Slack ID 被带进系统提示，导致跨用户缓存无法复用；把展示给模型的文件夹名统一，同时保留各用户的记忆隔离后，缓存恢复。团队称模型升级与多项修复合计让 11 类常用任务成本下降逾 80%，不能将该总降幅归因于单一改动。",
+          "detail": "工具返回值精简与按需加载工具说明约省 10%；缓存修复在最佳测试中再省 74%。原文建议对同一组任务逐项改动、测量成本与质量，而不是只看 token 单价。"
+        },
+        {
+          "title": "Microsoft MXC 正式可用，把 agent 权限交给运行环境强制执行",
+          "originalTitle": "Microsoft Execution Containers: Policy-driven containment for AI agents",
+          "sourceName": "Windows Developer Blog",
+          "source": "Microsoft · Windows Developer Blog",
+          "sourceType": "blog",
+          "category": "技术实践",
+          "url": "https://blogs.windows.com/windowsdeveloper/2026/10/07/microsoft-execution-containers-policy-driven-containment-for-ai-agents/",
+          "publishedAt": "2026-10-07",
+          "authorBackground": "Logan Iyer 是 Microsoft Windows Platform + Developer 企业副总裁。",
+          "summary": "Logan Iyer（Microsoft Windows Platform + Developer 企业副总裁）宣布 MXC 正式可用：开发者用统一 JSON 策略声明 agent 可读写的文件、网络目标和界面访问，再由对应容器执行边界，策略不由 agent 自行扩权。进程容器覆盖 Windows、macOS 和 Linux；独立桌面的会话容器仅支持 Windows。对本地 agent 开发者，权限可以成为可测试的运行时约束；Entra 身份区分及部分集中管理能力仍待推出。",
+          "detail": "Learning 模式会阻止并记录未授权访问，Permissive 模式则记录但允许操作，不能当作已启用最小权限隔离。不同容器后端的安全属性不同；MicroVM 仍是实验状态。",
+          "additionalSources": [
+            {
+              "title": "Windows 混合智能整体发布",
+              "url": "https://blogs.windows.com/windowsexperience/2026/10/07/building-windows-for-hybrid-intelligence/"
+            }
+          ]
+        },
+        {
+          "title": "Google Playground 让提示词直接生成、试玩和分享浏览器游戏",
+          "originalTitle": "Introducing Playground: Create and play custom games",
+          "sourceName": "Google · The Keyword",
+          "source": "Google · The Keyword",
+          "sourceType": "blog",
+          "category": "产品发布",
+          "url": "https://blog.google/innovation-and-ai/technology/ai/playground-experimental-gaming-platform/",
+          "publishedAt": "2026-10-07",
+          "authorBackground": "Maryam Karimzadehgan 是 Google AI Innovation + Research 软件工程师。",
+          "summary": "Maryam Karimzadehgan（Google AI Innovation + Research 软件工程师）介绍 Playground：用户通过对话修改游戏规则、物理、角色和环境，立即在浏览器试玩，再选择私有、链接分享或发布到社区。作品可在手机与电脑上运行，部分类型支持多人模式。它降低了验证玩法原型的门槛，但目前是面向美国 18 岁以上用户的实验，创建额度分档；更专业的 Unity Spark 集成仍在测试，封闭 beta 尚待推出。",
+          "detail": "社区展示参考玩家评分与游玩活动，公开发布的游戏需经过安全筛查。原文没有说明游戏项目能否导出到其他平台，因此不将它描述为已打通专业生产与发行。",
+          "additionalSources": [
+            {
+              "title": "Playground 官方产品入口",
+              "url": "https://playground.google"
+            },
+            {
+              "title": "10月7日官方发布帖（窗口旁证）",
+              "url": "https://x.com/GoogleLabs/status/2107800195748737042"
+            },
+            {
+              "title": "发布帖固定API归档（原帖直读不可用）",
+              "url": "https://github.com/zarazhangrui/follow-builders/blob/aa5fa3ec42dc099edc26d0cfdf535b3c1dbf9717/feed-x.json#L214-L224"
+            }
+          ]
+        },
+        {
+          "title": "morluto/rea：把 app 与二进制分析接入 agent 的证据链",
+          "summary": "REA 通过本地 MCP 与 CLI，把原生二进制、JavaScript/Electron、.NET 和网站的检查工具交给 coding agent。它返回代码、引用关系、运行观察及结论的证据与未知点，agent 可以继续追问、解释行为并验证重建结果；适合授权范围内的兼容性研究和旧系统理解。原生分析依赖 Hopper、Ghidra 或 IDA 等后端，静态 JavaScript 分析则不需要这些引擎；动态采集会以当前用户权限运行或操作目标，不能把“本地分析”当作天然隔离。 今日增星 +4,655；主要语言：TypeScript（10 月 8 日 17:04:20 北京时间榜单快照）。此前 9 个留存日期中未出现，仅表示在已追踪快照中新发现；本日报首次收录。",
+          "category": "开源项目",
+          "source": "GitHub / morluto/rea",
+          "url": "https://github.com/morluto/rea",
+          "publishedAt": null,
+          "sourceType": "github",
+          "starsToday": 4655,
+          "trendingSource": "https://github.com/trending?since=daily",
+          "trendingSources": [
+            "https://github.com/trending?since=daily"
+          ],
+          "observationNote": "2026-10-08 17:04:20 +08:00 直接读取 GitHub 日榜的快照；starsToday 为页面当时显示的今日增星，不是总 stars，不表示项目在今天发布。",
+          "trendingObservedAt": "2026-10-08T17:04:20+08:00",
+          "language": "TypeScript",
+          "languageObservedAt": "2026-10-08T17:04:20+08:00",
+          "firstIncludedAt": "2026-10-08",
+          "priorAppearanceDates": [],
+          "priorAppearanceCount": 0,
+          "isNew": true,
+          "githubStatus": "new",
+          "additionalSources": [
+            {
+              "title": "项目 README（本次直接读取）",
+              "url": "https://github.com/morluto/rea/blob/main/README.md"
+            },
+            {
+              "title": "本次核对的 GitHub 日榜",
+              "url": "https://github.com/trending?since=daily"
+            }
+          ]
+        },
+        {
+          "title": "cloudflare/security-audit-skill：把漏洞发现与证据复核分给独立 agent",
+          "summary": "这套 coding-agent skill 把单仓库安全审计拆为侦察、按覆盖表分派搜查、候选验证、结构化输出、独立记录复核和报告六个阶段。每条候选交给新的 verifier 尝试证伪，并区分 confirmed、needs_validation 与 rejected，覆盖表和 JSON 校验器让后续审计能补缺口，而不是重复一轮泛泛扫描。适合研究多 agent 审计的证据组织方式；README 要求对目标代码的执行使用操作系统级沙箱、禁外网及资源限制，条件不足时保留为待验证，不能直接确认漏洞。 今日增星 +576；主要语言：JavaScript（10 月 8 日 17:04:20 北京时间榜单快照）。此前 9 个留存日期中未出现，仅表示在已追踪快照中新发现；本日报首次收录。",
+          "category": "开源项目",
+          "source": "GitHub / cloudflare/security-audit-skill",
+          "url": "https://github.com/cloudflare/security-audit-skill",
+          "publishedAt": null,
+          "sourceType": "github",
+          "starsToday": 576,
+          "trendingSource": "https://github.com/trending?since=daily",
+          "trendingSources": [
+            "https://github.com/trending?since=daily"
+          ],
+          "observationNote": "2026-10-08 17:04:20 +08:00 直接读取 GitHub 日榜的快照；starsToday 为页面当时显示的今日增星，不是总 stars，不表示项目在今天发布。",
+          "trendingObservedAt": "2026-10-08T17:04:20+08:00",
+          "language": "JavaScript",
+          "languageObservedAt": "2026-10-08T17:04:20+08:00",
+          "firstIncludedAt": "2026-10-08",
+          "priorAppearanceDates": [],
+          "priorAppearanceCount": 0,
+          "isNew": true,
+          "githubStatus": "new",
+          "additionalSources": [
+            {
+              "title": "项目 README（本次直接读取）",
+              "url": "https://github.com/cloudflare/security-audit-skill/blob/main/README.md"
+            },
+            {
+              "title": "本次核对的 GitHub 日榜",
+              "url": "https://github.com/trending?since=daily"
+            }
+          ]
+        },
+        {
+          "title": "superdesigndev/treg：用统一入口管理 agent 工具与服务端凭证",
+          "summary": "Treg 将工具目录、团队 API 凭证、CLI 和 SKILL.md 放到同一个注册与调用入口，agent 可先按任务搜索端点，再通过统一 token 调用。代理在服务端注入上游认证并转发请求；团队自带密钥优先，托管目录中使用平台账户的调用则按次计费，README 也提供自托管路径。对需要组合多个服务的团队，价值在减少逐个接入和分发密钥；编者提醒，集中入口也集中了承载凭证与权限的责任，“一个 token”并不消除上游条款、成本和数据传输边界。 今日增星 +416；主要语言：Python（10 月 8 日 17:04:20 北京时间榜单快照）。此前 9 个留存日期中未出现，仅表示在已追踪快照中新发现；本日报首次收录。",
+          "category": "开源项目",
+          "source": "GitHub / superdesigndev/treg",
+          "url": "https://github.com/superdesigndev/treg",
+          "publishedAt": null,
+          "sourceType": "github",
+          "starsToday": 416,
+          "trendingSource": "https://github.com/trending/python?since=daily",
+          "trendingSources": [
+            "https://github.com/trending/python?since=daily"
+          ],
+          "observationNote": "2026-10-08 17:04:20 +08:00 直接读取 GitHub 日榜的快照；starsToday 为页面当时显示的今日增星，不是总 stars，不表示项目在今天发布。",
+          "trendingObservedAt": "2026-10-08T17:04:20+08:00",
+          "language": "Python",
+          "languageObservedAt": "2026-10-08T17:04:20+08:00",
+          "firstIncludedAt": "2026-10-08",
+          "priorAppearanceDates": [],
+          "priorAppearanceCount": 0,
+          "isNew": true,
+          "githubStatus": "new",
+          "additionalSources": [
+            {
+              "title": "项目 README（本次直接读取）",
+              "url": "https://github.com/superdesigndev/treg/blob/main/README.md"
+            },
+            {
+              "title": "本次核对的 GitHub 日榜",
+              "url": "https://github.com/trending/python?since=daily"
+            }
+          ]
+        },
+        {
+          "title": "trycua/cua：把桌面操作、运行环境与评测分成可组合组件",
+          "summary": "Cua Driver 通过 CLI、MCP 和 typed SDK 让 agent 检查和操作 macOS、Windows、Linux 的应用；仓库同时包含 Apple Silicon 上的 Lume 虚拟机工具、Cua SDK 和 Cua Bench。开发者可以自带 agent 与模型，把同一任务中的代码、API 与图形界面操作连接起来，并用任务和轨迹做评测。选择组件时需分别核对平台支持与许可：Driver、SDK、Lume 等主要组件为 MIT，Cua Spaces 则是 FSL-1.1-MIT 的源码可见产品，不能把整仓库一概视作无此限制的 MIT 软件。 今日增星 +228；主要语言：Rust（10 月 8 日 17:04:20 北京时间榜单快照）。此前 9 个留存日期中未出现，仅表示在已追踪快照中新发现；本日报首次收录。",
+          "category": "开源项目",
+          "source": "GitHub / trycua/cua",
+          "url": "https://github.com/trycua/cua",
+          "publishedAt": null,
+          "sourceType": "github",
+          "starsToday": 228,
+          "trendingSource": "https://github.com/trending?since=daily",
+          "trendingSources": [
+            "https://github.com/trending?since=daily"
+          ],
+          "observationNote": "2026-10-08 17:04:20 +08:00 直接读取 GitHub 日榜的快照；starsToday 为页面当时显示的今日增星，不是总 stars，不表示项目在今天发布。",
+          "trendingObservedAt": "2026-10-08T17:04:20+08:00",
+          "language": "Rust",
+          "languageObservedAt": "2026-10-08T17:04:20+08:00",
+          "firstIncludedAt": "2026-10-08",
+          "priorAppearanceDates": [],
+          "priorAppearanceCount": 0,
+          "isNew": true,
+          "githubStatus": "new",
+          "additionalSources": [
+            {
+              "title": "项目 README（本次直接读取）",
+              "url": "https://github.com/trycua/cua/blob/main/README.md"
+            },
+            {
+              "title": "本次核对的 GitHub 日榜",
+              "url": "https://github.com/trending?since=daily"
+            }
+          ]
+        },
+        {
+          "title": "microsoft/markitdown：把异构文档整理成适合 LLM 处理的 Markdown",
+          "summary": "MarkItDown 是面向 LLM 和文本分析流程的 Python 转换工具，可处理 PDF、Office、HTML、图像、音频等输入，并尽量保留标题、列表、表格与链接结构。它可通过 CLI 或 Python API 接入，格式依赖能按需安装，适合用作 RAG 和资料分析前的文本整理层。重点是机器可读内容，不是高保真排版转换；README 特别提醒它继承当前进程的文件与网络访问权限，处理不可信输入时应限制输入并选用范围最窄的转换入口。 今日增星 +188；主要语言：Python（10 月 8 日 17:04:20 北京时间榜单快照）。此前 9 个留存日期中未出现，仅表示在已追踪快照中新发现；本日报首次收录。",
+          "category": "开源项目",
+          "source": "GitHub / microsoft/markitdown",
+          "url": "https://github.com/microsoft/markitdown",
+          "publishedAt": null,
+          "sourceType": "github",
+          "starsToday": 188,
+          "trendingSource": "https://github.com/trending/python?since=daily",
+          "trendingSources": [
+            "https://github.com/trending/python?since=daily"
+          ],
+          "observationNote": "2026-10-08 17:04:20 +08:00 直接读取 GitHub 日榜的快照；starsToday 为页面当时显示的今日增星，不是总 stars，不表示项目在今天发布。",
+          "trendingObservedAt": "2026-10-08T17:04:20+08:00",
+          "language": "Python",
+          "languageObservedAt": "2026-10-08T17:04:20+08:00",
+          "firstIncludedAt": "2026-10-08",
+          "priorAppearanceDates": [],
+          "priorAppearanceCount": 0,
+          "isNew": true,
+          "githubStatus": "new",
+          "additionalSources": [
+            {
+              "title": "项目 README（本次直接读取）",
+              "url": "https://github.com/microsoft/markitdown/blob/main/README.md"
+            },
+            {
+              "title": "本次核对的 GitHub 日榜",
+              "url": "https://github.com/trending/python?since=daily"
+            }
+          ]
+        },
+        {
+          "title": "mattpocock/skills：将需求澄清、实现与工程验收拆成可组合的 coding-agent skills",
+          "summary": "🔄 历史出现：+1,403 stars；Shell；此前留存记录出现 3 次（不含今天，非连续天数；日期：2026-09-05、2026-09-06、2026-10-07）。将需求澄清、实现与工程验收拆成可组合的 coding-agent skills。",
+          "category": "开源项目",
+          "source": "GitHub / mattpocock/skills",
+          "url": "https://github.com/mattpocock/skills",
+          "publishedAt": null,
+          "sourceType": "github",
+          "starsToday": 1403,
+          "trendingSource": "https://github.com/trending?since=daily",
+          "trendingSources": [
+            "https://github.com/trending?since=daily"
+          ],
+          "observationNote": "2026-10-08 17:04:20 +08:00 直接读取 GitHub 日榜的快照；starsToday 为页面当时显示的今日增星，不是总 stars，不表示项目在今天发布。",
+          "trendingObservedAt": "2026-10-08T17:04:20+08:00",
+          "language": "Shell",
+          "languageObservedAt": "2026-10-08T17:04:20+08:00",
+          "firstIncludedAt": "2026-10-07",
+          "priorAppearanceDates": [
+            "2026-09-05",
+            "2026-09-06",
+            "2026-10-07"
+          ],
+          "priorAppearanceCount": 3,
+          "isNew": false,
+          "githubStatus": "returning",
+          "additionalSources": [
+            {
+              "title": "项目 README（本次直接读取）",
+              "url": "https://github.com/mattpocock/skills/blob/main/README.md"
+            },
+            {
+              "title": "本次核对的 GitHub 日榜",
+              "url": "https://github.com/trending?since=daily"
+            }
+          ]
+        },
+        {
+          "title": "tester-army/e2e：用自然语言驱动 Web／移动应用，再以定位器和断言验收并重放已验证操作",
+          "summary": "🔄 历史出现：+1,390 stars；TypeScript；此前留存记录出现 1 次（不含今天，非连续天数；日期：2026-10-07）。用自然语言驱动 Web／移动应用，再以定位器和断言验收并重放已验证操作。",
+          "category": "开源项目",
+          "source": "GitHub / tester-army/e2e",
+          "url": "https://github.com/tester-army/e2e",
+          "publishedAt": null,
+          "sourceType": "github",
+          "starsToday": 1390,
+          "trendingSource": "https://github.com/trending?since=daily",
+          "trendingSources": [
+            "https://github.com/trending?since=daily"
+          ],
+          "observationNote": "2026-10-08 17:04:20 +08:00 直接读取 GitHub 日榜的快照；starsToday 为页面当时显示的今日增星，不是总 stars，不表示项目在今天发布。",
+          "trendingObservedAt": "2026-10-08T17:04:20+08:00",
+          "language": "TypeScript",
+          "languageObservedAt": "2026-10-08T17:04:20+08:00",
+          "firstIncludedAt": "2026-10-07",
+          "priorAppearanceDates": [
+            "2026-10-07"
+          ],
+          "priorAppearanceCount": 1,
+          "isNew": false,
+          "githubStatus": "returning",
+          "additionalSources": [
+            {
+              "title": "项目 README（本次直接读取）",
+              "url": "https://github.com/tester-army/e2e/blob/main/README.md"
+            },
+            {
+              "title": "本次核对的 GitHub 日榜",
+              "url": "https://github.com/trending?since=daily"
+            }
+          ]
+        },
+        {
+          "title": "cathrynlavery/diagram-design：为 coding agents 提供图形设计流程，输出自包含 HTML 与 SVG 说明图",
+          "summary": "🔄 历史出现：+825 stars；HTML；此前留存记录出现 6 次（不含今天，非连续天数；日期：2026-09-05、2026-09-06、2026-09-09、2026-09-10、2026-09-11、2026-10-07）。为 coding agents 提供图形设计流程，输出自包含 HTML 与 SVG 说明图。",
+          "category": "开源项目",
+          "source": "GitHub / cathrynlavery/diagram-design",
+          "url": "https://github.com/cathrynlavery/diagram-design",
+          "publishedAt": null,
+          "sourceType": "github",
+          "starsToday": 825,
+          "trendingSource": "https://github.com/trending?since=daily",
+          "trendingSources": [
+            "https://github.com/trending?since=daily"
+          ],
+          "observationNote": "2026-10-08 17:04:20 +08:00 直接读取 GitHub 日榜的快照；starsToday 为页面当时显示的今日增星，不是总 stars，不表示项目在今天发布。",
+          "trendingObservedAt": "2026-10-08T17:04:20+08:00",
+          "language": "HTML",
+          "languageObservedAt": "2026-10-08T17:04:20+08:00",
+          "firstIncludedAt": "2026-10-07",
+          "priorAppearanceDates": [
+            "2026-09-05",
+            "2026-09-06",
+            "2026-09-09",
+            "2026-09-10",
+            "2026-09-11",
+            "2026-10-07"
+          ],
+          "priorAppearanceCount": 6,
+          "isNew": false,
+          "githubStatus": "returning",
+          "additionalSources": [
+            {
+              "title": "项目 README（本次直接读取）",
+              "url": "https://github.com/cathrynlavery/diagram-design/blob/main/README.md"
+            },
+            {
+              "title": "本次核对的 GitHub 日榜",
+              "url": "https://github.com/trending?since=daily"
+            }
+          ]
+        },
+        {
+          "title": "anthropics/knowledge-work-plugins：把岗位 skills、连接器、命令与子 agent 打包为可定制的知识工作插件",
+          "summary": "🔄 历史出现：+766 stars；Python；此前留存记录出现 1 次（不含今天，非连续天数；日期：2026-10-07）。把岗位 skills、连接器、命令与子 agent 打包为可定制的知识工作插件。",
+          "category": "开源项目",
+          "source": "GitHub / anthropics/knowledge-work-plugins",
+          "url": "https://github.com/anthropics/knowledge-work-plugins",
+          "publishedAt": null,
+          "sourceType": "github",
+          "starsToday": 766,
+          "trendingSource": "https://github.com/trending/python?since=daily",
+          "trendingSources": [
+            "https://github.com/trending/python?since=daily"
+          ],
+          "observationNote": "2026-10-08 17:04:20 +08:00 直接读取 GitHub 日榜的快照；starsToday 为页面当时显示的今日增星，不是总 stars，不表示项目在今天发布。",
+          "trendingObservedAt": "2026-10-08T17:04:20+08:00",
+          "language": "Python",
+          "languageObservedAt": "2026-10-08T17:04:20+08:00",
+          "firstIncludedAt": "2026-10-07",
+          "priorAppearanceDates": [
+            "2026-10-07"
+          ],
+          "priorAppearanceCount": 1,
+          "isNew": false,
+          "githubStatus": "returning",
+          "additionalSources": [
+            {
+              "title": "项目 README（本次直接读取）",
+              "url": "https://github.com/anthropics/knowledge-work-plugins/blob/main/README.md"
+            },
+            {
+              "title": "本次核对的 GitHub 日榜",
+              "url": "https://github.com/trending/python?since=daily"
+            }
+          ]
+        },
+        {
+          "title": "addyosmani/agent-skills：用需求、计划、构建、测试、评审与发布流程约束 coding agents 的工程工作",
+          "summary": "🔄 历史出现：+677 stars；JavaScript；此前留存记录出现 2 次（不含今天，非连续天数；日期：2026-10-04、2026-10-05）。用需求、计划、构建、测试、评审与发布流程约束 coding agents 的工程工作。",
+          "category": "开源项目",
+          "source": "GitHub / addyosmani/agent-skills",
+          "url": "https://github.com/addyosmani/agent-skills",
+          "publishedAt": null,
+          "sourceType": "github",
+          "starsToday": 677,
+          "trendingSource": "https://github.com/trending?since=daily",
+          "trendingSources": [
+            "https://github.com/trending?since=daily"
+          ],
+          "observationNote": "2026-10-08 17:04:20 +08:00 直接读取 GitHub 日榜的快照；starsToday 为页面当时显示的今日增星，不是总 stars，不表示项目在今天发布。",
+          "trendingObservedAt": "2026-10-08T17:04:20+08:00",
+          "language": "JavaScript",
+          "languageObservedAt": "2026-10-08T17:04:20+08:00",
+          "firstIncludedAt": "2026-10-08",
+          "priorAppearanceDates": [
+            "2026-10-04",
+            "2026-10-05"
+          ],
+          "priorAppearanceCount": 2,
+          "isNew": false,
+          "githubStatus": "returning",
+          "additionalSources": [
+            {
+              "title": "项目 README（本次直接读取）",
+              "url": "https://github.com/addyosmani/agent-skills/blob/main/README.md"
+            },
+            {
+              "title": "本次核对的 GitHub 日榜",
+              "url": "https://github.com/trending?since=daily"
+            }
+          ]
+        },
+        {
+          "title": "ayghri/i-have-adhd：以结论前置、编号步骤与明确下一步改善 coding assistant 的文字输出",
+          "summary": "🔄 历史出现：+619 stars；Python；此前留存记录出现 4 次（不含今天，非连续天数；日期：2026-09-09、2026-09-10、2026-09-11、2026-09-12）。以结论前置、编号步骤与明确下一步改善 coding assistant 的文字输出。",
+          "category": "开源项目",
+          "source": "GitHub / ayghri/i-have-adhd",
+          "url": "https://github.com/ayghri/i-have-adhd",
+          "publishedAt": null,
+          "sourceType": "github",
+          "starsToday": 619,
+          "trendingSource": "https://github.com/trending?since=daily",
+          "trendingSources": [
+            "https://github.com/trending?since=daily",
+            "https://github.com/trending/python?since=daily"
+          ],
+          "observationNote": "2026-10-08 17:04:20 +08:00 直接读取 GitHub 日榜的快照；starsToday 为页面当时显示的今日增星，不是总 stars，不表示项目在今天发布。",
+          "trendingObservedAt": "2026-10-08T17:04:20+08:00",
+          "language": "Python",
+          "languageObservedAt": "2026-10-08T17:04:20+08:00",
+          "firstIncludedAt": "2026-10-08",
+          "priorAppearanceDates": [
+            "2026-09-09",
+            "2026-09-10",
+            "2026-09-11",
+            "2026-09-12"
+          ],
+          "priorAppearanceCount": 4,
+          "isNew": false,
+          "githubStatus": "returning",
+          "additionalSources": [
+            {
+              "title": "项目 README（本次直接读取）",
+              "url": "https://github.com/ayghri/i-have-adhd/blob/main/README.md"
+            },
+            {
+              "title": "本次核对的 GitHub 日榜",
+              "url": "https://github.com/trending?since=daily"
+            }
+          ]
+        },
+        {
+          "title": "thedotmack/claude-mem：记录工具使用观察、生成语义摘要，并为后续 agent 会话检索相关上下文",
+          "summary": "🔄 历史出现：+578 stars；TypeScript；此前留存记录出现 3 次（不含今天，非连续天数；日期：2026-10-04、2026-10-05、2026-10-07）。记录工具使用观察、生成语义摘要，并为后续 agent 会话检索相关上下文。",
+          "category": "开源项目",
+          "source": "GitHub / thedotmack/claude-mem",
+          "url": "https://github.com/thedotmack/claude-mem",
+          "publishedAt": null,
+          "sourceType": "github",
+          "starsToday": 578,
+          "trendingSource": "https://github.com/trending?since=daily",
+          "trendingSources": [
+            "https://github.com/trending?since=daily"
+          ],
+          "observationNote": "2026-10-08 17:04:20 +08:00 直接读取 GitHub 日榜的快照；starsToday 为页面当时显示的今日增星，不是总 stars，不表示项目在今天发布。",
+          "trendingObservedAt": "2026-10-08T17:04:20+08:00",
+          "language": "TypeScript",
+          "languageObservedAt": "2026-10-08T17:04:20+08:00",
+          "firstIncludedAt": "2026-10-07",
+          "priorAppearanceDates": [
+            "2026-10-04",
+            "2026-10-05",
+            "2026-10-07"
+          ],
+          "priorAppearanceCount": 3,
+          "isNew": false,
+          "githubStatus": "returning",
+          "additionalSources": [
+            {
+              "title": "项目 README（本次直接读取）",
+              "url": "https://github.com/thedotmack/claude-mem/blob/main/README.md"
+            },
+            {
+              "title": "本次核对的 GitHub 日榜",
+              "url": "https://github.com/trending?since=daily"
+            }
+          ]
+        },
+        {
+          "title": "earthtojake/text-to-cad：让 agent 在本地生成 STEP、GLB、STL 或 3MF 模型及工程图",
+          "summary": "🔄 历史出现：+447 stars；Python；此前留存记录出现 6 次（不含今天，非连续天数；日期：2026-09-05、2026-09-09、2026-09-10、2026-10-04、2026-10-05、2026-10-07）。让 agent 在本地生成 STEP、GLB、STL 或 3MF 模型及工程图。",
+          "category": "开源项目",
+          "source": "GitHub / earthtojake/text-to-cad",
+          "url": "https://github.com/earthtojake/text-to-cad",
+          "publishedAt": null,
+          "sourceType": "github",
+          "starsToday": 447,
+          "trendingSource": "https://github.com/trending/python?since=daily",
+          "trendingSources": [
+            "https://github.com/trending/python?since=daily"
+          ],
+          "observationNote": "2026-10-08 17:04:20 +08:00 直接读取 GitHub 日榜的快照；starsToday 为页面当时显示的今日增星，不是总 stars，不表示项目在今天发布。",
+          "trendingObservedAt": "2026-10-08T17:04:20+08:00",
+          "language": "Python",
+          "languageObservedAt": "2026-10-08T17:04:20+08:00",
+          "firstIncludedAt": "2026-10-07",
+          "priorAppearanceDates": [
+            "2026-09-05",
+            "2026-09-09",
+            "2026-09-10",
+            "2026-10-04",
+            "2026-10-05",
+            "2026-10-07"
+          ],
+          "priorAppearanceCount": 6,
+          "isNew": false,
+          "githubStatus": "returning",
+          "additionalSources": [
+            {
+              "title": "项目 README（本次直接读取）",
+              "url": "https://github.com/earthtojake/text-to-cad/blob/main/README.md"
+            },
+            {
+              "title": "本次核对的 GitHub 日榜",
+              "url": "https://github.com/trending/python?since=daily"
+            }
+          ]
+        },
+        {
+          "title": "calesthio/OpenMontage：把调研、脚本、素材生成、剪辑与最终合成组织为 agent 视频制作流程",
+          "summary": "🔄 历史出现：+369 stars；Python；此前留存记录出现 2 次（不含今天，非连续天数；日期：2026-10-04、2026-10-05）。把调研、脚本、素材生成、剪辑与最终合成组织为 agent 视频制作流程。",
+          "category": "开源项目",
+          "source": "GitHub / calesthio/OpenMontage",
+          "url": "https://github.com/calesthio/OpenMontage",
+          "publishedAt": null,
+          "sourceType": "github",
+          "starsToday": 369,
+          "trendingSource": "https://github.com/trending/python?since=daily",
+          "trendingSources": [
+            "https://github.com/trending/python?since=daily"
+          ],
+          "observationNote": "2026-10-08 17:04:20 +08:00 直接读取 GitHub 日榜的快照；starsToday 为页面当时显示的今日增星，不是总 stars，不表示项目在今天发布。",
+          "trendingObservedAt": "2026-10-08T17:04:20+08:00",
+          "language": "Python",
+          "languageObservedAt": "2026-10-08T17:04:20+08:00",
+          "firstIncludedAt": "2026-10-08",
+          "priorAppearanceDates": [
+            "2026-10-04",
+            "2026-10-05"
+          ],
+          "priorAppearanceCount": 2,
+          "isNew": false,
+          "githubStatus": "returning",
+          "additionalSources": [
+            {
+              "title": "项目 README（本次直接读取）",
+              "url": "https://github.com/calesthio/OpenMontage/blob/main/README.md"
+            },
+            {
+              "title": "本次核对的 GitHub 日榜",
+              "url": "https://github.com/trending/python?since=daily"
+            }
+          ]
+        }
+      ],
+      "retrievedAt": "2026-10-08T09:15:31+00:00",
+      "timezone": "Asia/Shanghai",
+      "selectionWindow": {
+        "start": "2026-10-07T17:00:00+08:00",
+        "end": "2026-10-08T17:00:00+08:00"
+      },
+      "scheduledEdition": true,
+      "sourceStatus": {
+        "x": "fresh",
+        "podcasts": "fresh",
+        "blogsFeed": "empty",
+        "officialBlogs": "fresh",
+        "githubTrending": "fresh"
+      },
+      "sourceNotes": [
+        "主要资讯窗口为北京时间 2026-10-07 17:00 至 2026-10-08 17:00（Asia/Shanghai）。来源正文与部署核验延续至截稿之后；GitHub 使用明确标注的 17:04:20 快照，不把核验时间冒充发布日期。",
+        "X feed 本次完整读取 19 个账号、41 条帖子，生成于 2026-10-08 06:47:17Z（北京时间 14:47），约早于截稿 2 小时 13 分钟；不声称覆盖之后的全部 X 动态。固定公开版本为 aa5fa3ec42dc099edc26d0cfdf535b3c1dbf9717。",
+        "X 原帖直读不可用，依据 API 全文固定归档转述，逐条保留原帖和 SHA 固定归档链接。7 位作者的 8 条原帖合并为 7 条精选；未读到的图片、视频和引用帖背景不补写。作者观点不自动等于独立验证的事实。",
+        "每条 X 内容单列人物背景、原文节选翻译、摘要与解读及来源。翻译只覆盖必要短片段，未提供整帖翻译；Markdown 与 JSON 的同源节选合计核对版权用量。",
+        "播客 feed 有 1 期合格新内容，完整读取 00:00–33:45 转录并对照官方单期全文，校正了 feed 的播放列表错链。原话附具体单期视频与时间点；视频页本次直读未成功，视频链接由官方单期页核实，引用依据转录而非听音核验。",
+        "博客 feed 本次为空，六篇文章来自另行读取的官方正文。文章本身只确认 10 月 7 日的日历日期，不猜发布时间和时区，也不宣称全部精确落入滚动 24 小时；Haiku 与 Playground 另有窗口内官方公告帖作为时间佐证。",
+        "与 10 月 7 日已发布的 28 条按原始链接和主题去重。Every 的播客和降本复盘收录新的管理方法、缓存机制与证据，不重复上一期的共享 agent 发布介绍。旧版 Codex cloud 重新宣传未当作今日新发布。",
+        "GitHub 综合、Python 与 Jupyter Notebook 日榜均通过公开 HTTP 在 17:04:20 读取；网页检索接口返回的数周旧缓存未参与今日榜单。",
+        "共核对 21 个候选项目的主 README，其中选入 14 个；7 个通用课程／cookbook 类历史项目因缺少本期新增机制而不再简列。README 于 17:05:25–17:05:44 北京时间直接读取，功能描述以该版本为准，不把观察时间当作项目发布日期。"
+      ],
+      "contentStats": {
+        "xAuthors": 7,
+        "xPosts": 8,
+        "xItems": 7,
+        "podcastEpisodes": 1,
+        "officialArticles": 6,
+        "githubProjects": 14,
+        "githubFirstIncluded": 8,
+        "githubNewInTrackedHistory": 5,
+        "githubReturningInTrackedHistory": 9,
+        "totalItems": 28
+      },
+      "githubHistory": {
+        "priorTrackedDays": 9,
+        "priorTrackedDates": [
+          "2026-09-05",
+          "2026-09-06",
+          "2026-09-09",
+          "2026-09-10",
+          "2026-09-11",
+          "2026-09-12",
+          "2026-10-04",
+          "2026-10-05",
+          "2026-10-07"
+        ],
+        "scope": "9 个非连续留存日期，2026-10-07 为已选集合的部分快照",
+        "newCount": 5,
+        "returningCount": 9,
+        "note": "历史去重覆盖 2026-09-05 至 2026-10-07，共 9 个不连续的留存日期：2026-09-05、2026-09-06、2026-09-09、2026-09-10、2026-09-11、2026-09-12、2026-10-04、2026-10-05、2026-10-07。缺口为 9 月 7–8 日、9 月 13 日至 10 月 3 日、10 月 6 日；10 月 7 日只记录该期核验入选集合。新发现仅指此前这些快照中未出现，不等于首次登上 GitHub Trending；历史出现次数不含今天，也不是连续天数。"
+      },
+      "githubRankingNote": "2026-10-08 17:04:20（Asia/Shanghai）直接读取 GitHub 综合、Python 与 Jupyter Notebook 日榜，按仓库去重并筛选 AI 相关项目；同仓优先采用综合榜，其次 Python、Jupyter，未取跨页最大值。新发现与历史出现两组分别按页面明确给出的 starsToday 降序；新发现只详述前 5 个，不另列第 6 名以后项目。数字是三页近同时采样的日增星，不是总 stars；这是所读榜单中的 AI 精选，不是 GitHub 全站排名。"
+    },
+    {
       "date": "2026-10-07",
       "title": "AI Builders Digest｜从提示词到任务设计，agent 走进真实工作流",
       "summary": "把 agent 用好，越来越依赖目标、上下文与验收设计。本期从 6 位 builder 的任务交代、云端与本地协作、安全和团队分派观点出发，再结合后训练播客、企业协作工具、模型与研究进展，看看哪些问题需要改善流程，哪些才需要改变模型。共 28 条：6 位 X 作者的 8 条原帖合并为 6 条精选、1 期播客、12 篇官方文章与文档、9 个开源项目。10 月 8 日修订补齐人物背景、原题和播客转录摘句；资讯仍归档为 10 月 7 日。",
