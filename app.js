@@ -39,6 +39,48 @@
   function requireText(value, path, max) {
     assert(typeof value === 'string' && value.trim().length > 0 && value.length <= max, path + ' must be a non-empty string (max ' + max + ' characters).');
   }
+  function isXPostUrl(value) {
+    if (!isSafeUrl(value)) return false;
+    const url = new URL(value);
+    return /^(www\.)?(x|twitter)\.com$/.test(url.hostname) &&
+      /^\/(?:[^/]+\/status|i\/web\/status)\/\d+\/?$/.test(url.pathname);
+  }
+  function validateXItem(item, path) {
+    const allowed = ['title', 'source', 'category', 'url', 'publishedAt', 'sourceType', 'authorName', 'authorBackground', 'backgroundVerifiedAt', 'xDisplay', 'sourcePosts', 'originalPosts'];
+    for (const field of Object.keys(item)) assert(allowed.includes(field), path + '.' + field + ' is not allowed for X posts.');
+    assert(item.backgroundVerifiedAt === undefined || item.backgroundVerifiedAt === null || isDate(item.backgroundVerifiedAt) || isTimestamp(item.backgroundVerifiedAt), path + '.backgroundVerifiedAt must be omitted, null, a real date or timestamp.');
+    requireText(item.authorName, path + '.authorName', 300);
+    requireText(item.authorBackground, path + '.authorBackground', 10000);
+    assert(item.source === 'X / ' + item.authorName, path + '.source must be the neutral X / author label.');
+    assert(item.title === item.authorName + ' · X 原帖', path + '.title must be the neutral author and X post label.');
+    assert(item.xDisplay === undefined || ['link-only', 'user-provided'].includes(item.xDisplay), path + '.xDisplay must be link-only or user-provided.');
+    for (const field of ['summary', 'detail', 'translations', 'originalTitle', 'sourceEvidence', 'evidenceNote', 'additionalSources']) {
+      assert(item[field] === undefined, path + '.' + field + ' is not allowed for X posts.');
+    }
+    assert(Array.isArray(item.sourcePosts) && item.sourcePosts.length > 0 && item.sourcePosts.length <= 20, path + '.sourcePosts must contain 1–20 original post links.');
+    const urls = new Set();
+    for (const post of item.sourcePosts) {
+      assert(isObject(post) && isXPostUrl(post.url), path + '.sourcePosts must use direct X or Twitter post URLs.');
+      for (const field of Object.keys(post)) assert(['url', 'publishedAt'].includes(field), path + '.sourcePosts.' + field + ' is not allowed.');
+      assert(!urls.has(post.url), path + '.sourcePosts must not contain duplicate URLs.');
+      urls.add(post.url);
+      assert(post.publishedAt === undefined || post.publishedAt === null || isDate(post.publishedAt) || isTimestamp(post.publishedAt), path + '.sourcePosts publishedAt must be a real date or timestamp.');
+    }
+    assert(urls.has(item.url), path + '.sourcePosts must include the primary url.');
+    if (item.xDisplay === 'user-provided') {
+      assert(Array.isArray(item.originalPosts) && item.originalPosts.length > 0 && item.originalPosts.length <= 20, path + '.originalPosts must contain 1–20 user-provided originals and full translations.');
+      const originals = new Set();
+      for (const post of item.originalPosts) {
+        assert(isObject(post), path + '.originalPosts entries must be objects.');
+        for (const field of Object.keys(post)) assert(['text', 'translation', 'sourceUrl'].includes(field), path + '.originalPosts.' + field + ' is not allowed.');
+        requireText(post.text, path + '.originalPosts.text', 10000);
+        requireText(post.translation, path + '.originalPosts.translation', 10000);
+        assert(urls.has(post.sourceUrl) && !originals.has(post.sourceUrl), path + '.originalPosts must match distinct sourcePosts URLs.');
+        originals.add(post.sourceUrl);
+      }
+      assert(originals.size === urls.size, path + '.originalPosts must cover every sourcePosts URL.');
+    } else assert(item.originalPosts === undefined, path + '.originalPosts is not allowed for link-only X posts.');
+  }
   function validateData(data) {
     assert(isObject(data), 'The data must be a JSON object.');
     assert(data.schemaVersion === 1, 'schemaVersion must equal 1.');
@@ -57,7 +99,8 @@
         const itemPath = path + '.items[' + itemIndex + ']';
         assert(isObject(item), itemPath + ' must be an object.');
         requireText(item.title, itemPath + '.title', 500);
-        requireText(item.summary, itemPath + '.summary', 10000);
+        if (item.sourceType === 'x') validateXItem(item, itemPath);
+        else requireText(item.summary, itemPath + '.summary', 10000);
         requireText(item.source, itemPath + '.source', 300);
         for (const field of ['authorBackground', 'originalTitle', 'sourceName', 'detail']) {
           if (item[field] !== undefined) requireText(item[field], itemPath + '.' + field, 10000);
@@ -85,10 +128,18 @@
     return item.additionalSources.filter(source => isObject(source) &&
       typeof source.title === 'string' && source.title.trim() && source.title.length <= 300 && isSafeUrl(source.url));
   }
+  function searchableText(item) {
+    if (item.sourceType === 'x') {
+      return [item.authorName, item.authorBackground, item.source, ...(item.sourcePosts || []).flatMap(post => [post.url, post.publishedAt]),
+        ...(item.xDisplay === 'user-provided' ? (item.originalPosts || []).flatMap(post => [post.text, post.translation]) : [])].join(' ');
+    }
+    return [item.title, item.summary, item.source, item.originalTitle, item.authorBackground, item.detail,
+      ...(item.translations || []).flatMap(translation => [translation.text, translation.note])].join(' ');
+  }
   function filterItems(digest, category, query) {
     const term = String(query || '').normalize('NFKC').trim().toLocaleLowerCase('zh-CN');
     return digest.items.filter(item => (category === ALL || item.category === category) &&
-      (!term || [item.title, item.summary, item.source, item.originalTitle, item.authorBackground, item.detail, ...(item.translations || []).flatMap(translation => [translation.text, translation.note])].join(' ').normalize('NFKC').toLocaleLowerCase('zh-CN').includes(term)));
+      (!term || searchableText(item).normalize('NFKC').toLocaleLowerCase('zh-CN').includes(term)));
   }
   function groupItems(items) {
     const sections = [['x', 'X 推文精选'], ['podcast', '播客'], ['blog', '官方博客与研究'], ['github', 'GitHub AI 项目'], ['other', '其他资讯']];
@@ -192,7 +243,8 @@
         number.setAttribute('aria-hidden', 'true');
         const body = el('div', 'news-body');
         const meta = el('div', 'news-meta');
-        meta.append(el('span', 'category-tag', item.category), el('span', '', item.source));
+        if (item.sourceType !== 'x') meta.append(el('span', 'category-tag', item.category));
+        meta.append(el('span', '', item.source));
         if (item.publishedAt) {
           const time = el('time', '', item.publishedAt.slice(0, 10));
           time.dateTime = item.publishedAt;
@@ -204,12 +256,30 @@
         const source = externalLink(item.url, 'source-link', '阅读原文 ↗');
         source.setAttribute('aria-label', '阅读原文：' + item.title + '（在新标签页打开）');
         body.append(meta, title);
-        if (item.originalTitle) {
+        if (item.sourceType !== 'x' && item.originalTitle) {
           const original = el('p', 'original-title', '原题：');
           original.append(externalLink(item.url, '', item.originalTitle));
           body.append(original);
         }
         if (item.authorBackground) body.append(el('p', 'author-background', item.authorBackground));
+        if (item.sourceType === 'x') {
+          if (item.xDisplay === 'user-provided') {
+            for (const post of item.originalPosts) {
+              const block = el('div', 'tweet-original');
+              block.append(el('p', 'translation-label', '原文'), el('p', 'tweet-text', post.text));
+              block.append(el('p', 'translation-label', '原文全文翻译'), el('p', 'tweet-text', post.translation));
+              block.append(externalLink(post.sourceUrl, 'source-link', '对应原帖 ↗'));
+              body.append(block);
+            }
+          } else {
+            const links = el('div', 'original-post-links');
+            for (const [postIndex, post] of item.sourcePosts.entries()) {
+              const label = '原帖 ' + (postIndex + 1) + (post.publishedAt ? ' · ' + post.publishedAt.slice(0, 10) : '') + ' ↗';
+              links.append(externalLink(post.url, 'source-link', label));
+            }
+            body.append(links);
+          }
+        } else {
         if (item.translations?.length) {
           for (const translation of item.translations) {
             const block = el('div', 'tweet-translation');
@@ -239,6 +309,7 @@
             links.append(link, document.createTextNode(' '));
           }
           body.append(links);
+        }
         }
         article.append(number, body);
         section.append(article);
@@ -392,4 +463,5 @@
   }
   return { CATEGORIES, isDate, isSafeUrl, isTimestamp, validateData, filterItems, formatDate, selectDigest, supplementalSources, groupItems, start };
 });
+
 

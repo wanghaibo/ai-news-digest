@@ -4,207 +4,115 @@
     {
       "date": "2026-10-09",
       "title": "AI Builders Digest｜agent 的权限、纠偏与真实反馈",
-      "summary": "agent 的难题正从接入模型延伸到工作环境、权限和反馈。X 关注 agent 原生计算栈、运行中纠偏与创业现金流；两期播客分别讲数据库隔离和真实实验的学习闭环；官方文章补上漏洞处理、实体设备安全与滥用调查。共 27 条：4 位 builder 与 1 个官方账号的 6 条 X 精选、2 期播客、5 篇官方文章、14 个 GitHub 项目。GitHub 中 5 个是此前留存快照未出现的新发现，另 9 个为历史出现项目。",
+      "summary": "agent 的难题正从接入模型延伸到工作环境、权限和反馈。两期播客分别讲数据库隔离和真实实验的学习闭环；官方文章补上漏洞处理、实体设备安全与滥用调查。共 27 条：4 位 builder 与 1 个官方账号的 6 条 X 精选、2 期播客、5 篇官方文章、14 个 GitHub 项目。GitHub 中 5 个是此前留存快照未出现的新发现，另 9 个为历史出现项目。",
       "items": [
         {
-          "title": "Madhu Gurumurthy：把 agent 当主要用户，重新检查整个计算栈",
-          "summary": "Madhu Gurumurthy（在 Meta 从事 AI 产品，署名 Madhu Guru）认为，创业机会正从给软件补 API、MCP，扩展到为 agent 重做计算环境。他列举操作系统、云设施、大量代理身份的权限安全，以及人机协作界面，主张逐层检查主要用户变成 agent 后的需求。编者解读：可先找出代理仍被人的界面或身份卡住的环节；这是一组创业假说，尚非市场需求证明。 原帖直读不可用，依据 API 全文固定归档转述。",
+          "title": "Madhu Gurumurthy · X 原帖",
           "category": "观点洞察",
-          "source": "X / Madhu Guru（API 全文归档）",
+          "source": "X / Madhu Gurumurthy",
           "url": "https://x.com/realmadhuguru/status/2108236391641706813",
           "publishedAt": "2026-10-08T16:41:39Z",
           "sourceType": "x",
           "authorBackground": "Madhu Gurumurthy 在 Meta 从事 AI 产品，曾负责 Google AI 模型产品；高级总监职级据本人简介。公开入职报道与个人职业资料核对了全名、现雇主及 Madhu Guru 署名。",
-          "translations": [
+          "backgroundVerifiedAt": "2026-10-09",
+          "authorName": "Madhu Gurumurthy",
+          "xDisplay": "link-only",
+          "sourcePosts": [
             {
-              "text": "让 agent 成为一等用户的桌面与移动操作系统。",
-              "scope": "excerpt",
-              "sourceUrl": "https://x.com/realmadhuguru/status/2108236391641706813",
-              "note": "原帖列举计算栈各层的多段观点；此处选取操作系统这一项，未覆盖全文。受版权限制，仅提供节选；依据所附 API 全文固定归档翻译，原帖直读不可用。"
+              "url": "https://x.com/realmadhuguru/status/2108236391641706813",
+              "publishedAt": "2026-10-08T16:41:39Z"
             }
-          ],
-          "additionalSources": [
-            {
-              "title": "10 月 9 日 X API 正文固定归档",
-              "url": "https://github.com/zarazhangrui/follow-builders/blob/bbcf8b43ed8fcadc68102faf3d5a2ff16677db91/feed-x.json#L143-L153"
-            },
-            {
-              "title": "Madhu Gurumurthy 入职与署名核验",
-              "url": "https://www.newsbytesapp.com/news/science/google-ai-models-chief-madhu-gurumurthy-joins-meta/story"
-            },
-            {
-              "title": "Madhu Gurumurthy 个人职业资料",
-              "url": "https://www.linkedin.com/in/mgurumurthy"
-            }
-          ],
-          "sourceEvidence": "完整读取 follow-builders 的 15 个账号、32 条 API 帖文。入选原帖直读均返回 403；只使用独立成立的正文，不描述未读取的引用帖、图片或视频。",
-          "backgroundVerifiedAt": "2026-10-09"
+          ]
         },
         {
-          "title": "Nikunj Kothari：等模型成熟之前，先决定公司如何活下去",
-          "summary": "Nikunj Kothari（FPV Ventures 合伙人、前 Meter 产品与合作负责人）以营收接近 100 万美元、现金跑道却在缩短的种子公司为例，提醒创始人别把生存押在模型进步上。他提出三条路：降低消耗走向自给自足；利用已有新能力转向需求更强的领域；或出售公司、接受人才收购后加入成熟团队。编者解读：先分清能力缺口、现金期限和转向优势；三选一是作者的经验判断，并非普适结论。 原帖直读不可用，依据 API 全文固定归档转述。",
+          "title": "Nikunj Kothari · X 原帖",
           "category": "观点洞察",
-          "source": "X / Nikunj Kothari（API 全文归档）",
+          "source": "X / Nikunj Kothari",
           "url": "https://x.com/nikunj/status/2108410378233549106",
           "publishedAt": "2026-10-09T04:13:01Z",
           "sourceType": "x",
-          "authorBackground": "Nikunj Kothari 是投资种子轮与 A 轮的 FPV Ventures 合伙人，曾在 Meter 负责产品与合作、在 Opendoor 负责增长，兼有经营与融资经验。",
-          "translations": [
+          "authorBackground": "Nikunj Kothari 是 FPV Ventures 合伙人，曾在 Meter 负责产品与合作、在 Opendoor 负责增长。",
+          "backgroundVerifiedAt": "2026-10-09",
+          "authorName": "Nikunj Kothari",
+          "xDisplay": "link-only",
+          "sourcePosts": [
             {
-              "text": "借助已经出现的新能力，顺势而行。",
-              "scope": "excerpt",
-              "sourceUrl": "https://x.com/nikunj/status/2108410378233549106",
-              "note": "多段长文节选，取自作者提出的第二条路线；完整三条路线在摘要中原创转述。受版权限制，仅提供节选；依据所附 API 全文固定归档翻译，原帖直读不可用。"
+              "url": "https://x.com/nikunj/status/2108410378233549106",
+              "publishedAt": "2026-10-09T04:13:01Z"
             }
-          ],
-          "additionalSources": [
-            {
-              "title": "10 月 9 日 X API 正文固定归档",
-              "url": "https://github.com/zarazhangrui/follow-builders/blob/bbcf8b43ed8fcadc68102faf3d5a2ff16677db91/feed-x.json#L334-L344"
-            },
-            {
-              "title": "Nikunj Kothari 官方个人简历",
-              "url": "https://www.nikunjk.com/about"
-            }
-          ],
-          "sourceEvidence": "完整读取 follow-builders 的 15 个账号、32 条 API 帖文。入选原帖直读均返回 403；只使用独立成立的正文，不描述未读取的引用帖、图片或视频。",
-          "backgroundVerifiedAt": "2026-10-09"
+          ]
         },
         {
-          "title": "Aaron Levie：让企业文件直接成为 agent 的工作目录",
-          "summary": "Aaron Levie（Box 联合创始人兼 CEO）认为，复杂 agent 需要把企业文件直接作为工作环境。Box 官方资料核实，Box Mount 通过 POSIX 兼容目录处理双向同步、冲突检测和最终同步，减少开发者自建文件流转的工作。编者解读：它适合反复修改、生成并交还文件；单次检索可能用 API 或 MCP 即可，且目前仍为私有预览，沙箱副本安全仍需自行管理。 原帖直读不可用，依据 API 全文固定归档转述。",
+          "title": "Aaron Levie · X 原帖",
           "category": "技术实践",
-          "source": "X / Aaron Levie（API 全文归档）",
+          "source": "X / Aaron Levie",
           "url": "https://x.com/levie/status/2108279490510193078",
           "publishedAt": "2026-10-08T19:32:55Z",
           "sourceType": "x",
-          "authorBackground": "Aaron Levie 是 Box 联合创始人兼 CEO，身份由官方团队页核实。他从企业内容平台建设者的角度讨论 agent 的文件工作环境。",
-          "translations": [
+          "authorBackground": "Aaron Levie 是企业内容平台 Box 的联合创始人兼 CEO，自 2005 年创办 Box 后持续参与产品与战略。",
+          "backgroundVerifiedAt": "2026-10-09",
+          "authorName": "Aaron Levie",
+          "xDisplay": "link-only",
+          "sourcePosts": [
             {
-              "text": "未来是无界面的。",
-              "scope": "excerpt",
-              "sourceUrl": "https://x.com/levie/status/2108279490510193078",
-              "note": "普通长度原帖的结尾句节选；这里的 headless 指不依赖图形界面的程序化工作方式。受版权限制，仅提供节选；依据所附 API 全文固定归档翻译，原帖直读不可用。"
+              "url": "https://x.com/levie/status/2108279490510193078",
+              "publishedAt": "2026-10-08T19:32:55Z"
             }
-          ],
-          "additionalSources": [
-            {
-              "title": "10 月 9 日 X API 正文固定归档",
-              "url": "https://github.com/zarazhangrui/follow-builders/blob/bbcf8b43ed8fcadc68102faf3d5a2ff16677db91/feed-x.json#L233-L243"
-            },
-            {
-              "title": "Box 管理团队",
-              "url": "https://www.box.com/about-us/leadership"
-            },
-            {
-              "title": "Box Mount 官方技术说明与私有预览限制",
-              "url": "https://blog.box.com/meet-box-mount-box-workspace-sandboxed-ai-agents"
-            }
-          ],
-          "sourceEvidence": "完整读取 follow-builders 的 15 个账号、32 条 API 帖文。入选原帖直读均返回 403；只使用独立成立的正文，不描述未读取的引用帖、图片或视频。",
-          "backgroundVerifiedAt": "2026-10-09"
+          ]
         },
         {
-          "title": "Thibault Sottiaux：让纠偏赶得上 agent 的执行速度",
-          "summary": "Thibault Sottiaux（OpenAI Codex 与 ChatGPT 团队成员）称 steering 已能更快接受执行中的调整，并称同时发布 GPT-6.1 Sol ultrafast。10 月 8 日官方日志确认桌面端 Codex 正推出更快纠偏，可用后续消息补信息或改方向。编者解读：降低纠偏延迟能减少沿错误方向继续执行的浪费；文档未承诺零延迟，原帖也未提供 ultrafast 的实测速度或套餐范围。 原帖直读不可用，依据 API 全文固定归档转述。",
+          "title": "Thibault Sottiaux · X 原帖",
           "category": "产品发布",
-          "source": "X / Thibault Sottiaux（API 全文归档）",
+          "source": "X / Thibault Sottiaux",
           "url": "https://x.com/thsottiaux/status/2108275041276420573",
           "publishedAt": "2026-10-08T19:15:14Z",
           "sourceType": "x",
           "authorBackground": "Thibault Sottiaux 的当前简介列出 Codex 与 ChatGPT；OpenAI 官方资料确认其领导 Codex，曾在 Google DeepMind 负责 Gemini 人工数据及研究基础设施。",
-          "translations": [
+          "backgroundVerifiedAt": "2026-10-09",
+          "authorName": "Thibault Sottiaux",
+          "xDisplay": "link-only",
+          "sourcePosts": [
             {
-              "text": "我们已改进 steering，使它能即时生效。",
-              "scope": "excerpt",
-              "sourceUrl": "https://x.com/thsottiaux/status/2108275041276420573",
-              "note": "普通长度原帖开头的一个完整分句节选；“即时”保留作者原有措辞，实际发布文档仅确认“更快”。受版权限制，仅提供节选；依据所附 API 全文固定归档翻译，原帖直读不可用。"
+              "url": "https://x.com/thsottiaux/status/2108275041276420573",
+              "publishedAt": "2026-10-08T19:15:14Z"
             }
-          ],
-          "additionalSources": [
-            {
-              "title": "10 月 9 日 X API 正文固定归档",
-              "url": "https://github.com/zarazhangrui/follow-builders/blob/bbcf8b43ed8fcadc68102faf3d5a2ff16677db91/feed-x.json#L64-L74"
-            },
-            {
-              "title": "OpenAI 官方人物背景",
-              "url": "https://forum.openai.com/public/events/codex-is-for-everyone-why-codex-matters-beyond-code-fa40puy7wi"
-            },
-            {
-              "title": "OpenAI 10 月 8 日更新日志：Faster steering in Codex",
-              "url": "https://help.openai.com/en/articles/6825453-chatgpt-release-notes"
-            }
-          ],
-          "sourceEvidence": "完整读取 follow-builders 的 15 个账号、32 条 API 帖文。入选原帖直读均返回 403；只使用独立成立的正文，不描述未读取的引用帖、图片或视频。",
-          "backgroundVerifiedAt": "2026-10-09"
+          ]
         },
         {
-          "title": "Claude：创业计划暂停两项优惠，已批准未领取也会重审",
-          "summary": "Claude（Anthropic 官方产品账号）宣布，创业计划暂停 Claude Team 与 1,000 美元 API 额度优惠，官方 FAQ 已确认重新审核申请。已领取的优惠保留；已批准但未领取的申请仍可能失去资格，Startup Stack、Applied AI 答疑和订阅自带月度 API 额度继续提供。编者解读：预算应按真正到账的额度计算，不能把批准通知当成到账保证；本次公告未给出恢复日期。 原帖直读不可用，依据 API 全文固定归档转述。",
+          "title": "Claude · X 原帖",
           "category": "产品发布",
-          "source": "X / Claude（API 全文归档）",
+          "source": "X / Claude",
           "url": "https://x.com/claudeai/status/2108404561413349695",
           "publishedAt": "2026-10-09T03:49:54Z",
           "sourceType": "x",
-          "authorBackground": "Claude 是 Anthropic 官方产品账号。本条福利变更已与 Claude Startups 官方 FAQ 交叉核验。",
-          "translations": [
+          "authorBackground": "Claude 是 Anthropic 官方产品账号。",
+          "backgroundVerifiedAt": "2026-10-09",
+          "authorName": "Claude",
+          "xDisplay": "link-only",
+          "sourcePosts": [
             {
-              "text": "它们仍会保留在你的账户中。",
-              "scope": "excerpt",
-              "sourceUrl": "https://x.com/claudeai/status/2108404561413349695",
-              "note": "多段公告节选；“它们”指此前已经领取的 Claude 优惠，不包括仅获批准却尚未领取的申请。受版权限制，仅提供节选；依据所附 API 全文固定归档翻译，原帖直读不可用。"
+              "url": "https://x.com/claudeai/status/2108404561413349695",
+              "publishedAt": "2026-10-09T03:49:54Z"
             }
-          ],
-          "additionalSources": [
-            {
-              "title": "10 月 9 日 X API 正文固定归档",
-              "url": "https://github.com/zarazhangrui/follow-builders/blob/bbcf8b43ed8fcadc68102faf3d5a2ff16677db91/feed-x.json#L443-L453"
-            },
-            {
-              "title": "Claude Startups 官方 FAQ：优惠容量与重新审核",
-              "url": "https://claude.com/programs/startups"
-            }
-          ],
-          "sourceEvidence": "完整读取 follow-builders 的 15 个账号、32 条 API 帖文。入选原帖直读均返回 403；只使用独立成立的正文，不描述未读取的引用帖、图片或视频。",
-          "backgroundVerifiedAt": "2026-10-09"
+          ]
         },
         {
-          "title": "Claude：Docs、Slides 与 Design 结束 beta，Free 也可使用",
-          "summary": "Claude（Anthropic 官方产品账号）宣布，Docs、Slides 与 Design 结束 beta，向包括 Free 在内的全部套餐开放，团队可与 Claude 共同编辑同一文档、幻灯片或设计。官方帮助文档核实，这些产物支持对话修改与直接编辑；Enterprise 默认开启日为 10 月 15 日，管理员可提前开启。编者解读：团队可在同一份产物上迭代，减少生成后再搬到编辑器的步骤，但仍应确认组织设置和分享权限。原帖直读不可用，依据 API 全文固定归档转述。",
+          "title": "Claude · X 原帖",
           "category": "产品发布",
-          "source": "X / Claude（API 全文归档）",
+          "source": "X / Claude",
           "url": "https://x.com/claudeai/status/2108271559928389679",
           "publishedAt": "2026-10-08T19:01:24Z",
           "sourceType": "x",
-          "authorBackground": "Claude 是 Anthropic 官方产品账号。此次开放范围已由 Claude 官方产品公告索引与 Artifacts 帮助文档交叉核验。",
-          "translations": [
+          "authorBackground": "Claude 是 Anthropic 官方产品账号。",
+          "backgroundVerifiedAt": "2026-10-09",
+          "authorName": "Claude",
+          "xDisplay": "link-only",
+          "sourcePosts": [
             {
-              "text": "Claude Docs、Slides 和 Design 已结束 beta 测试。",
-              "scope": "excerpt",
-              "sourceUrl": "https://x.com/claudeai/status/2108271559928389679",
-              "note": "普通长度公告中的一个完整分句节选，未覆盖全帖。受版权限制，仅提供节选；依据所附 API 全文固定归档翻译，原帖直读不可用。"
+              "url": "https://x.com/claudeai/status/2108271559928389679",
+              "publishedAt": "2026-10-08T19:01:24Z"
             }
-          ],
-          "additionalSources": [
-            {
-              "title": "10 月 9 日 X API 正文固定归档",
-              "url": "https://github.com/zarazhangrui/follow-builders/blob/bbcf8b43ed8fcadc68102faf3d5a2ff16677db91/feed-x.json#L465-L475"
-            },
-            {
-              "title": "Claude 官方公告索引：10 月 8 日功能发布",
-              "url": "https://claude.com/resources/product-announcements"
-            },
-            {
-              "title": "Claude Artifacts 官方帮助：套餐与协作能力",
-              "url": "https://support.claude.com/en/articles/17153992-what-are-artifacts-and-how-do-i-use-them"
-            },
-            {
-              "title": "Claude Team 与 Enterprise 管理指南",
-              "url": "https://support.claude.com/en/articles/16994751-artifacts-admin-guide-for-team-and-enterprise-plans"
-            }
-          ],
-          "sourceEvidence": "完整读取 follow-builders 的 15 个账号、32 条 API 帖文。该原帖直读返回 403；原帖完整正文与官方帮助资料可相互核验，未使用不可见图片或视频。",
-          "backgroundVerifiedAt": "2026-10-09"
+          ]
         },
         {
           "title": "播客｜Andy Pavlo：先给 agent 数据库分支和权限，再谈新架构",
@@ -875,8 +783,7 @@
         "主要资讯窗口为北京时间 2026-10-08 17:00 至 2026-10-09 17:00（Asia/Shanghai）。来源复核与发布延续至截稿之后；GitHub 采用明确标注的 17:00:12–13 快照，不将读取时间当作发布日期。",
         "5 篇官方文章与 Latent Space 单期仅确认 10 月 8 日的日历日期，未取得确切时刻和时区。本期将其作为该日期新内容补充收录，不宣称都能精确划入滚动 24 小时；MAD 播客与全部入选 X 帖均有窗口内精确时间。",
         "X feed 完整读取 15 个账号、32 条帖子，生成于 2026-10-09 06:47:11.550Z（北京时间 14:47），早于截稿约 2 小时 13 分钟，不覆盖之后全部动态。固定公开版本为 bbcf8b43ed8fcadc68102faf3d5a2ff16677db91。",
-        "X 原帖直读不可用，依据完整 API 固定归档转述，保留原帖与 SHA 固定归档链接；未读到的图片、视频和引用帖不补写。入选 4 位 builder 与 Claude 官方账号的 6 帖，无此前两期原帖链接重复。",
-        "X 每条保留独立人物背景、原文节选翻译与精炼摘要解读。6 块均为版权节选，未获完整翻译许可，不能称作全文；仓库许可不等于其中第三方帖文的转载授权。短且缺少信息的反应帖没有为增加全文比例而收录。",
+        "X 栏目仅保留作者信息、背景与原帖链接，正文请打开对应原帖查看。 X 原帖本轮未能直接读取；原帖链接与日期由当时的 API 记录核对。4 位 builder 与 Claude 官方账号的 6 条原帖均无此前两期链接重复。",
         "播客 feed 仍为 10 月 6 日旧内容，本期改从两档节目官方单期页读取完整转录。MAD 已读 00:52–1:16:46，Latent Space 已读 00:00–1:23:47；均按转录核验短引文，未听音核验。",
         "博客 feed 本次为空，5 篇文章均另行读取官方正文。Anthropic 的新使用政策于 11 月 12 日生效；旧产品说明和旧科研方法文章仅作核验背景，不作为当日发布。",
         "与 10 月 7 日、10 月 8 日两期按原始来源和主题去重；数据库访谈与相关 X 宣传只选访谈，不重复计数。GitHub 历史出现项目单列，不称为今日首次发布。",
@@ -922,234 +829,136 @@
     {
       "date": "2026-10-08",
       "title": "AI Builders Digest｜便宜模型之后，agent 还需要什么？",
-      "summary": "本期的共同问题是：模型调用变便宜之后，怎样把 agent 变成可靠的工作流程。X 作者从停止条件、用户研究和跨领域学习给出实践判断；Every 的管理与缓存复盘补充了组织和成本细节；Haiku 5.5、GPT-6 的交互界面与新开源工具则展示了可用能力的变化。共 28 条：7 位 X 作者的 8 条原帖合并为 7 条精选、1 期播客、6 篇官方文章、14 个 GitHub 项目，其中 5 个为此前留存快照中未出现的新发现。",
+      "summary": "本期的共同问题是：模型调用变便宜之后，怎样把 agent 变成可靠的工作流程。Every 的管理与缓存复盘补充了组织和成本细节；Haiku 5.5、GPT-6 的交互界面与新开源工具则展示了可用能力的变化。共 28 条：7 位 X 作者的 8 条原帖合并为 7 条精选、1 期播客、6 篇官方文章、14 个 GitHub 项目，其中 5 个为此前留存快照中未出现的新发现。",
       "items": [
         {
-          "title": "Aditya Agarwal：工程能力要与技术前沿或行业深度配对",
-          "summary": "Aditya Agarwal（South Park Commons 普通合伙人、前 Dropbox CTO）认为，AI 普及了开发能力后，单凭能把软件做出来，越来越难解释个人优势。他更看好两条路线：推进 AI 研究、基础设施等技术前沿，或与深知行业痛点和买家需求的专家合作。相比之下，只带着 coding agent 更快清空原有任务清单，可能浪费了扩展责任范围的机会；他仍强调精进工程能力，并未否定这类岗位的价值。原帖直读不可用，依据 API 全文固定归档转述。",
+          "title": "Aditya Agarwal · X 原帖",
           "category": "观点洞察",
-          "source": "X / Aditya Agarwal（API 全文归档）",
+          "source": "X / Aditya Agarwal",
           "url": "https://x.com/adityaag/status/2107865115831988530",
           "publishedAt": "2026-10-07T16:06:20Z",
           "sourceType": "x",
-          "authorBackground": "Aditya Agarwal 是 South Park Commons 普通合伙人，曾任 Dropbox CTO、工程副总裁，也是 Facebook 早期工程师。他既参与过大型工程团队建设，也与早期创业者共事，因此这条建议重点在工程能力如何组合成创业优势。",
-          "detail": "他举的领域专家例子，是在一个行业工作十五年，知道昂贵失误发生在哪里、旧方案为何失败、谁会付费的人。编者解读：选搭档或项目时，可以先检查自己缺的是实现能力，还是对问题与客户的理解。",
-          "translations": [
+          "authorBackground": "Aditya Agarwal 是 South Park Commons 普通合伙人，曾任 Dropbox CTO、工程副总裁，也是 Facebook 早期工程师。",
+          "backgroundVerifiedAt": "2026-10-08T17:06:00+08:00",
+          "authorName": "Aditya Agarwal",
+          "xDisplay": "link-only",
+          "sourcePosts": [
             {
-              "text": "找到一位世界级领域专家，与其合作。",
-              "scope": "excerpt",
-              "sourceUrl": "https://x.com/adityaag/status/2107865115831988530",
-              "note": "Aditya Agarwal 原帖节选，未覆盖全帖；依据所附 API 全文固定归档翻译，原帖直读不可用。这是作者列出的第二条路线。"
+              "url": "https://x.com/adityaag/status/2107865115831988530",
+              "publishedAt": "2026-10-07T16:06:20Z"
             }
-          ],
-          "additionalSources": [
-            {
-              "title": "10 月 8 日 X API 正文固定归档",
-              "url": "https://github.com/zarazhangrui/follow-builders/blob/aa5fa3ec42dc099edc26d0cfdf535b3c1dbf9717/feed-x.json#L525-L535"
-            },
-            {
-              "title": "Aditya Agarwal 公开身份资料",
-              "url": "https://www.southparkcommons.com/team/aditya-agarwal/"
-            }
-          ],
-          "sourceEvidence": "完整读取 follow-builders 的 X API 正文；8 条入选原帖直达页均未能读取，未使用不可见图片、视频及引用帖背景。",
-          "backgroundVerifiedAt": "2026-10-08T17:06:00+08:00"
+          ]
         },
         {
-          "title": "Guillermo Rauch：agent 能不停优化，停止条件仍要人来决定",
-          "summary": "Guillermo Rauch（Vercel 创始人兼 CEO）提醒，软件几乎可以无止境地加固和优化，agent 也会持续往下做，但时间、注意力和机会成本不会因此消失。他举例说，工程师可能不断覆盖永远不会触发的输入，或优化根本没人使用的功能。编者解读：委派任务时，除了定义要改什么，还应写清什么结果足以交付，以及接受哪些取舍；这不是主张跳过必要的安全与质量检查。原帖直读不可用，依据 API 全文固定归档转述。",
+          "title": "Guillermo Rauch · X 原帖",
           "category": "观点洞察",
-          "source": "X / Guillermo Rauch（API 全文归档）",
+          "source": "X / Guillermo Rauch",
           "url": "https://x.com/rauchg/status/2107962327169675566",
           "publishedAt": "2026-10-07T22:32:37Z",
           "sourceType": "x",
-          "authorBackground": "Guillermo Rauch 是 Vercel 创始人兼 CEO、软件工程师，也是 Next.js 的设计者与共同作者。他长期建设开发工具和云基础设施，这条观点关注工程投入与实际使用价值之间的取舍。",
-          "detail": "原帖把两类可持续工作分开：加固包括边界情况、输入约束和错误处理；优化包括 profiling、benchmark 与重写。便宜的 token 不能替团队决定哪一种改动最值得继续。",
-          "translations": [
+          "authorBackground": "Guillermo Rauch 是 Vercel 创始人兼 CEO、软件工程师，也是 Next.js 的设计者与共同作者。",
+          "backgroundVerifiedAt": "2026-10-08T17:06:00+08:00",
+          "authorName": "Guillermo Rauch",
+          "xDisplay": "link-only",
+          "sourcePosts": [
             {
-              "text": "无论如何，agent 都会乐此不疲地继续深挖。",
-              "scope": "excerpt",
-              "sourceUrl": "https://x.com/rauchg/status/2107962327169675566",
-              "note": "Guillermo Rauch 原帖节选，未覆盖全帖；依据所附 API 全文固定归档翻译，原帖直读不可用。语境是代码加固与性能优化可以不断延伸，原作者强调停止与取舍。"
+              "url": "https://x.com/rauchg/status/2107962327169675566",
+              "publishedAt": "2026-10-07T22:32:37Z"
             }
-          ],
-          "additionalSources": [
-            {
-              "title": "10 月 8 日 X API 正文固定归档",
-              "url": "https://github.com/zarazhangrui/follow-builders/blob/aa5fa3ec42dc099edc26d0cfdf535b3c1dbf9717/feed-x.json#L274-L284"
-            },
-            {
-              "title": "Guillermo Rauch 公开身份资料",
-              "url": "https://rauchg.com/about"
-            }
-          ],
-          "sourceEvidence": "完整读取 follow-builders 的 X API 正文；8 条入选原帖直达页均未能读取，未使用不可见图片、视频及引用帖背景。",
-          "backgroundVerifiedAt": "2026-10-08T17:06:00+08:00"
+          ]
         },
         {
-          "title": "Cat Wu：把高频用户筛选与访谈预约接成一个任务",
-          "summary": "Cat Wu（Anthropic 产品经理、Claude Code 团队成员）分享了一个收集反馈的具体用法：让 Claude 找出上周某项功能使用量最高的十位用户，整理成 artifact，再联系他们预约十五分钟访谈。这个任务把行为数据、受访者筛选和约访串了起来，缩短产品经理从发现使用者到听取反馈的路径。她称其为自己偏爱的快速反馈方式；帖文没有提供对照测试，也不能据此假定任何账户都已接通所需数据与通信工具。原帖直读不可用，依据 API 全文固定归档转述。",
+          "title": "Cat Wu · X 原帖",
           "category": "技术实践",
-          "source": "X / Cat Wu（API 全文归档）",
+          "source": "X / Cat Wu",
           "url": "https://x.com/_catwu/status/2107967210467803152",
           "publishedAt": "2026-10-07T22:52:01Z",
           "sourceType": "x",
-          "authorBackground": "Cat Wu 在 Anthropic 官方 Claude Code 活动中被列为产品经理及产品创建团队成员。她讨论的是自身 PM 工作中的用户反馈流程，适合关注研究招募与使用数据衔接的产品团队。",
-          "detail": "编者提醒：按使用量排序有助于接触重度用户，但不能自动代表新用户、流失用户或总体满意度。把这条流程用于实际研究时，应先明确访谈问题，再判断是否只需要高频用户样本。",
-          "translations": [
+          "authorBackground": "Cat Wu 在 Anthropic 官方 Claude Code 活动中被列为产品经理及产品创建团队成员。",
+          "backgroundVerifiedAt": "2026-10-08T17:06:00+08:00",
+          "authorName": "Cat Wu",
+          "xDisplay": "link-only",
+          "sourcePosts": [
             {
-              "text": "上周谁最常使用〈功能〉？",
-              "scope": "excerpt",
-              "sourceUrl": "https://x.com/_catwu/status/2107967210467803152",
-              "note": "Cat Wu 原帖节选，未覆盖全帖；依据所附 API 全文固定归档翻译，原帖直读不可用。这是作者给 Claude 的示例任务中的开头问题；其余步骤在摘要中转述。"
+              "url": "https://x.com/_catwu/status/2107967210467803152",
+              "publishedAt": "2026-10-07T22:52:01Z"
             }
-          ],
-          "additionalSources": [
-            {
-              "title": "10 月 8 日 X API 正文固定归档",
-              "url": "https://github.com/zarazhangrui/follow-builders/blob/aa5fa3ec42dc099edc26d0cfdf535b3c1dbf9717/feed-x.json#L154-L164"
-            },
-            {
-              "title": "Cat Wu 公开身份资料",
-              "url": "https://resources.anthropic.com/webinar/claude-code-live"
-            }
-          ],
-          "sourceEvidence": "完整读取 follow-builders 的 X API 正文；8 条入选原帖直达页均未能读取，未使用不可见图片、视频及引用帖背景。",
-          "backgroundVerifiedAt": "2026-10-08T17:06:00+08:00"
+          ]
         },
         {
-          "title": "Thariq Shihipar：跨领域卡住时，先让模型教会你如何问清楚",
-          "summary": "Thariq Shihipar（Anthropic Claude Code 工程师）观察到，常见失败并非只有模型做不到，而是用户进入不熟悉的领域后，无法准确写出提示词与计划，只好反复进行模糊迭代。他在同时间的另一帖补充，agent 让人更容易跨出专长，而模型本身也可以用来补齐不懂的知识。编者解读：与其不断换一种说法要求同一结果，不如先厘清关键概念、约束与判断标准；这是作者的实践观察，不是失败率统计。原帖直读不可用，依据 API 全文固定归档转述。",
+          "title": "Thariq Shihipar · X 原帖",
           "category": "技术实践",
-          "source": "X / Thariq Shihipar（API 全文归档）",
+          "source": "X / Thariq Shihipar",
           "url": "https://x.com/trq212/status/2108021247301062894",
           "publishedAt": "2026-10-08T02:26:45Z",
           "sourceType": "x",
-          "authorBackground": "Thariq Shihipar 是 Anthropic Claude Code 工程师和连续创业者，曾创办 One More Multiverse，并在 MIT Media Lab 读研。他的视角来自交互产品和 coding agent 的开发实践。",
-          "detail": "本条合并两条主题紧接、发布时间相同的发言，逐帖保留译文和直链。第一帖引用的外部背景未能读取，因此只采用作者正文中能够独立成立的失败模式，不推测被引帖的案例。",
-          "translations": [
+          "authorBackground": "Thariq Shihipar 是 Anthropic Claude Code 工程师和连续创业者，曾创办 One More Multiverse，并在 MIT Media Lab 读研。",
+          "backgroundVerifiedAt": "2026-10-08T17:06:00+08:00",
+          "authorName": "Thariq Shihipar",
+          "xDisplay": "link-only",
+          "sourcePosts": [
             {
-              "text": "他们不得不用很多轮对话来进行不够精准的迭代。",
-              "scope": "excerpt",
-              "sourceUrl": "https://x.com/trq212/status/2108021247301062894",
-              "note": "Thariq Shihipar 原帖节选，未覆盖全帖；依据所附 API 全文固定归档翻译，原帖直读不可用。这里指在专业领域之外，难以准确表达提示词与计划的用户。"
+              "url": "https://x.com/trq212/status/2108021247301062894",
+              "publishedAt": "2026-10-08T02:26:45Z"
             },
             {
-              "text": "让模型教你那些你还不懂的东西。",
-              "scope": "excerpt",
-              "sourceUrl": "https://x.com/trq212/status/2108021248966135891",
-              "note": "Thariq Shihipar 原帖节选，未覆盖全帖；依据所附 API 全文固定归档翻译，原帖直读不可用。此处节选一个短语；原帖把它作为可以采取的办法。"
-            }
-          ],
-          "additionalSources": [
-            {
-              "title": "10 月 8 日 X API 正文固定归档",
-              "url": "https://github.com/zarazhangrui/follow-builders/blob/aa5fa3ec42dc099edc26d0cfdf535b3c1dbf9717/feed-x.json#L173-L194"
-            },
-            {
-              "title": "Thariq Shihipar 公开身份资料",
-              "url": "https://www.thariq.io/"
-            },
-            {
-              "title": "同时间补充帖：让模型教自己",
               "url": "https://x.com/trq212/status/2108021248966135891"
             }
-          ],
-          "sourceEvidence": "完整读取 follow-builders 的 X API 正文；8 条入选原帖直达页均未能读取，未使用不可见图片、视频及引用帖背景。",
-          "backgroundVerifiedAt": "2026-10-08T17:06:00+08:00"
+          ]
         },
         {
-          "title": "Peter Yang：软件更易重建后，差异化可能转向数据和分发",
-          "summary": "Peter Yang（产品负责人、AI 教程与访谈创作者）判断，随着 AI 更容易重建软件，仅凭功能实现获得收入会变难，专有数据、分发渠道或其他优势会更重要。他尤其担心传统 SaaS：价格较高，又包含大量为人类操作设计、agent 未必需要的功能。编者解读：面向 agent 重新审视价值主张时，应区分客户真正依赖的数据与流程，以及可以被替换的操作界面；这仍是商业趋势判断，帖文没有给出可复制率或收入变化的证据。原帖直读不可用，依据 API 全文固定归档转述。",
+          "title": "Peter Yang · X 原帖",
           "category": "观点洞察",
-          "source": "X / Peter Yang（API 全文归档）",
+          "source": "X / Peter Yang",
           "url": "https://x.com/petergyang/status/2107981547102245101",
           "publishedAt": "2026-10-07T23:48:59Z",
           "sourceType": "x",
           "authorBackground": "Peter Yang 是产品负责人和内容创作者，个人官网列出在 Roblox、Reddit、Meta 等公司超过十年的产品经历，并持续制作实用 AI 教程与访谈。官网没有明确当前雇主，因此这里不将其标成某家公司的现任负责人。",
-          "detail": "作者使用的是趋势性判断，而非证明所有软件都能被完整复制。把它用于产品决策时，更适合当作检查护城河的问题清单，不能直接推导某类 SaaS 已失去商业价值。",
-          "translations": [
+          "backgroundVerifiedAt": "2026-10-08T17:06:00+08:00",
+          "authorName": "Peter Yang",
+          "xDisplay": "link-only",
+          "sourcePosts": [
             {
-              "text": "传统 SaaS 尤其脆弱。",
-              "scope": "excerpt",
-              "sourceUrl": "https://x.com/petergyang/status/2107981547102245101",
-              "note": "Peter Yang 原帖节选，未覆盖全帖；依据所附 API 全文固定归档翻译，原帖直读不可用。原作者紧接着给出的理由是价格及为人类设计的功能；本条摘要保留这些理由。"
+              "url": "https://x.com/petergyang/status/2107981547102245101",
+              "publishedAt": "2026-10-07T23:48:59Z"
             }
-          ],
-          "additionalSources": [
-            {
-              "title": "10 月 8 日 X API 正文固定归档",
-              "url": "https://github.com/zarazhangrui/follow-builders/blob/aa5fa3ec42dc099edc26d0cfdf535b3c1dbf9717/feed-x.json#L116-L126"
-            },
-            {
-              "title": "Peter Yang 公开身份资料",
-              "url": "https://www.petergyang.com/"
-            }
-          ],
-          "sourceEvidence": "完整读取 follow-builders 的 X API 正文；8 条入选原帖直达页均未能读取，未使用不可见图片、视频及引用帖背景。",
-          "backgroundVerifiedAt": "2026-10-08T17:06:00+08:00"
+          ]
         },
         {
-          "title": "Aaron Levie：agent 的基础设施需求不止是更多 token",
-          "summary": "Aaron Levie（Box 联合创始人兼 CEO）预计，持续运行的个人 agent、企业防守、代码安全审查与数据处理，会同时扩大推理需求和执行环境需求。他明确列出了计算机、网络与文件系统，认为基础设施建设仍处早期。编者解读：规划 agent 产品成本与容量时，需要同时考虑模型调用和实际执行资源；他关于需求将以数量级增长的说法是预测，帖文未提供测算模型或时间表。原帖直读不可用，依据 API 全文固定归档转述。",
+          "title": "Aaron Levie · X 原帖",
           "category": "观点洞察",
-          "source": "X / Aaron Levie（API 全文归档）",
+          "source": "X / Aaron Levie",
           "url": "https://x.com/levie/status/2108056577697882402",
           "publishedAt": "2026-10-08T04:47:08Z",
           "sourceType": "x",
-          "authorBackground": "Aaron Levie 是企业内容平台 Box 的联合创始人兼 CEO。他从企业内容与工作流产品经营者的角度看 agent 的资源需求，本帖提供的是需求方向判断。",
-          "detail": "原帖提到全天候后台任务。其独立观点已完整保存在归档中；被引用帖的正文没有读取，因此不把未核实的具体投资、合作或设施消息写入本条。",
-          "translations": [
+          "authorBackground": "Aaron Levie 是企业内容平台 Box 的联合创始人兼 CEO，自 2005 年创办 Box 后持续参与产品与战略。",
+          "backgroundVerifiedAt": "2026-10-08T17:06:00+08:00",
+          "authorName": "Aaron Levie",
+          "xDisplay": "link-only",
+          "sourcePosts": [
             {
-              "text": "它们需要计算机、网络、文件系统等等。",
-              "scope": "excerpt",
-              "sourceUrl": "https://x.com/levie/status/2108056577697882402",
-              "note": "Aaron Levie 原帖节选，未覆盖全帖；依据所附 API 全文固定归档翻译，原帖直读不可用。“它们”指原帖列举的各类 AI agent。"
+              "url": "https://x.com/levie/status/2108056577697882402",
+              "publishedAt": "2026-10-08T04:47:08Z"
             }
-          ],
-          "additionalSources": [
-            {
-              "title": "10 月 8 日 X API 正文固定归档",
-              "url": "https://github.com/zarazhangrui/follow-builders/blob/aa5fa3ec42dc099edc26d0cfdf535b3c1dbf9717/feed-x.json#L323-L333"
-            },
-            {
-              "title": "Aaron Levie 公开身份资料",
-              "url": "https://www.box.com/about-us/leadership"
-            }
-          ],
-          "sourceEvidence": "完整读取 follow-builders 的 X API 正文；8 条入选原帖直达页均未能读取，未使用不可见图片、视频及引用帖背景。",
-          "backgroundVerifiedAt": "2026-10-08T17:06:00+08:00"
+          ]
         },
         {
-          "title": "Dan Shipper：持续 agent 的收益在省注意力，摩擦在重复授权",
-          "summary": "Dan Shipper（Every 联合创始人兼 CEO）认为，持续 agent 的实用收益是替人处理碎片任务、减少来回切换应用。他自报的一次使用中，dot 把模型测试结果发到 Slack，再带回回复，让他继续手头工作；团队还用它找遗漏消息和账户访问请求。但他也抱怨同一基础操作反复索要批准，甚至批准后仍执行失败。对 agent 产品团队而言，这是一组关于流程连贯性的真实用户反馈，并非产品能力或效率的独立测评。原帖直读不可用，依据 API 全文固定归档转述。",
+          "title": "Dan Shipper · X 原帖",
           "category": "观点洞察",
-          "source": "X / Dan Shipper（API 全文归档）",
+          "source": "X / Dan Shipper",
           "url": "https://x.com/danshipper/status/2107890633486582208",
           "publishedAt": "2026-10-07T17:47:44Z",
           "sourceType": "x",
-          "authorBackground": "Dan Shipper 是 Every 联合创始人兼 CEO，同时撰写 Chain of Thought 专栏并主持 The Every Podcast。他持续试用 AI 工作工具，本条来自他对自己及团队使用经历的公开描述。",
-          "detail": "他还认为，接入用户已有工作与生活生态是优势，但对某个 agent 角色的感情不保证长期留存。编者解读：减少应用切换和让授权流程可理解、可执行，可能比角色设定更直接影响持续使用。",
-          "translations": [
+          "authorBackground": "Dan Shipper 是 Every 联合创始人兼 CEO，同时撰写 Chain of Thought 专栏并主持 The Every Podcast。",
+          "backgroundVerifiedAt": "2026-10-08T17:06:00+08:00",
+          "authorName": "Dan Shipper",
+          "xDisplay": "link-only",
+          "sourcePosts": [
             {
-              "text": "它们会保护你的注意力。",
-              "scope": "excerpt",
-              "sourceUrl": "https://x.com/danshipper/status/2107890633486582208",
-              "note": "Dan Shipper 原帖节选，未覆盖全帖；依据所附 API 全文固定归档翻译，原帖直读不可用。“它们”指作者试用的持续 agent；这是一条个人体验判断。"
+              "url": "https://x.com/danshipper/status/2107890633486582208",
+              "publishedAt": "2026-10-07T17:47:44Z"
             }
-          ],
-          "additionalSources": [
-            {
-              "title": "10 月 8 日 X API 正文固定归档",
-              "url": "https://github.com/zarazhangrui/follow-builders/blob/aa5fa3ec42dc099edc26d0cfdf535b3c1dbf9717/feed-x.json#L484-L494"
-            },
-            {
-              "title": "Dan Shipper 公开身份资料",
-              "url": "https://every.to/@danshipper"
-            }
-          ],
-          "sourceEvidence": "完整读取 follow-builders 的 X API 正文；8 条入选原帖直达页均未能读取，未使用不可见图片、视频及引用帖背景。",
-          "backgroundVerifiedAt": "2026-10-08T17:06:00+08:00"
+          ]
         },
         {
           "title": "播客｜工程经理的杠杆是看见瓶颈，而不是多消耗 token",
@@ -1818,8 +1627,7 @@
       "sourceNotes": [
         "主要资讯窗口为北京时间 2026-10-07 17:00 至 2026-10-08 17:00（Asia/Shanghai）。来源正文与部署核验延续至截稿之后；GitHub 使用明确标注的 17:04:20 快照，不把核验时间冒充发布日期。",
         "X feed 本次完整读取 19 个账号、41 条帖子，生成于 2026-10-08 06:47:17Z（北京时间 14:47），约早于截稿 2 小时 13 分钟；不声称覆盖之后的全部 X 动态。固定公开版本为 aa5fa3ec42dc099edc26d0cfdf535b3c1dbf9717。",
-        "X 原帖直读不可用，依据 API 全文固定归档转述，逐条保留原帖和 SHA 固定归档链接。7 位作者的 8 条原帖合并为 7 条精选；未读到的图片、视频和引用帖背景不补写。作者观点不自动等于独立验证的事实。",
-        "每条 X 内容单列人物背景、原文节选翻译、摘要与解读及来源。翻译只覆盖必要短片段，未提供整帖翻译；Markdown 与 JSON 的同源节选合计核对版权用量。",
+        "X 栏目仅保留作者信息、背景与原帖链接，正文请打开对应原帖查看。 X 原帖本轮未能直接读取；原帖链接与日期由当时的 API 记录核对。7 位作者的 8 条原帖保留为 7 张作者卡。",
         "播客 feed 有 1 期合格新内容，完整读取 00:00–33:45 转录并对照官方单期全文，校正了 feed 的播放列表错链。原话附具体单期视频与时间点；视频页本次直读未成功，视频链接由官方单期页核实，引用依据转录而非听音核验。",
         "博客 feed 本次为空，六篇文章来自另行读取的官方正文。文章本身只确认 10 月 7 日的日历日期，不猜发布时间和时区，也不宣称全部精确落入滚动 24 小时；Haiku 与 Playground 另有窗口内官方公告帖作为时间佐证。",
         "与 10 月 7 日已发布的 28 条按原始链接和主题去重。Every 的播客和降本复盘收录新的管理方法、缓存机制与证据，不重复上一期的共享 agent 发布介绍。旧版 Codex cloud 重新宣传未当作今日新发布。",
@@ -1861,198 +1669,119 @@
     {
       "date": "2026-10-07",
       "title": "AI Builders Digest｜从提示词到任务设计，agent 走进真实工作流",
-      "summary": "把 agent 用好，越来越依赖目标、上下文与验收设计。本期从 6 位 builder 的任务交代、云端与本地协作、安全和团队分派观点出发，再结合后训练播客、企业协作工具、模型与研究进展，看看哪些问题需要改善流程，哪些才需要改变模型。共 28 条：6 位 X 作者的 8 条原帖合并为 6 条精选、1 期播客、12 篇官方文章与文档、9 个开源项目。10 月 8 日修订补齐人物背景、原题和播客转录摘句；资讯仍归档为 10 月 7 日。",
+      "summary": "本期结合后训练播客、企业协作工具、模型与研究进展，看看哪些问题需要改善流程，哪些才需要改变模型。共 28 条：6 位 X 作者的 8 条原帖合并为 6 条精选、1 期播客、12 篇官方文章与文档、9 个开源项目。10 月 8 日修订补齐人物背景、原题和播客转录摘句；资讯仍归档为 10 月 7 日。",
       "items": [
         {
-          "title": "推特精选｜Boris Cherny：少设计提示词，多讲清目标、投入与验收",
-          "summary": "Boris Cherny（Anthropic 软件工程师、Claude Code 创建者） 认为，与如今的 Claude 协作，重点已从精雕提示词转向把三件事交代清楚：希望完成什么、愿意让它投入多少精力，以及如何验证结果。他拿 Sonnet 3.5 时期作比较，认为多数任务不再需要人为规定每一步操作，可以像向同事交代工作一样，让模型自行寻找完成路径。对 builder 来说，这个观点把注意力拉回了任务定义与验收设计；它是作者的使用判断，并不意味着复杂任务可以省略必要的约束。根据 X API 正文存档转述，原帖本轮未能直接读取。",
+          "title": "Boris Cherny · X 原帖",
           "category": "观点洞察",
-          "source": "X / Boris Cherny（API 正文存档）",
+          "source": "X / Boris Cherny",
           "url": "https://x.com/bcherny/status/2107565388250874193",
           "publishedAt": "2026-10-06T20:15:19Z",
           "sourceType": "x",
-          "detail": "读这条时，值得留意他改变的是任务交代的粒度：从规定动作，转向约定结果与判断完成的依据。存档里同日另一条帖子的具体提示词放在图片或外链中，本次未读取那些内容，因此不复述不存在于正文中的示例。",
-          "additionalSources": [
-            {
-              "title": "10 月 7 日 X API 正文固定存档",
-              "url": "https://github.com/zarazhangrui/follow-builders/blob/01496eb35b433208f8eb9b68eb9a09a1c7b8e184/feed-x.json#L60-L70"
-            },
-            {
-              "title": "作者公开简介",
-              "url": "https://borischerny.com/about/"
-            }
-          ],
-          "sourceEvidence": "follow-builders 保存的 X API 正文；本次未直接读取原始 X 页面。",
-          "authorBackground": "作者背景：Boris Cherny 是 Claude Code 创建者，曾在 Instagram 从事产品与基础设施工作，也是《Programming TypeScript》作者。他对任务交代与验收的判断，来自编程工具建设经验。",
+          "authorBackground": "Boris Cherny 是 Anthropic 软件工程师、Claude Code 创建者，曾在 Instagram 从事产品与基础设施工作，也是《Programming TypeScript》作者。",
           "backgroundVerifiedAt": "2026-10-08T15:51:03+08:00",
-          "translations": [
+          "authorName": "Boris Cherny",
+          "xDisplay": "link-only",
+          "sourcePosts": [
             {
-              "text": "像与同事说话那样与 Claude 交流。",
-              "scope": "excerpt",
-              "sourceUrl": "https://x.com/bcherny/status/2107565388250874193",
-              "note": "Boris Cherny 原帖节选，依据已链接的 X API 固定正文存档翻译；原帖直读不可用。"
+              "url": "https://x.com/bcherny/status/2107565388250874193",
+              "publishedAt": "2026-10-06T20:15:19Z"
             }
           ]
         },
         {
-          "title": "推特精选｜Thariq Shihipar：agent 的大脑上云后，离线文件仍可能卡住任务",
-          "summary": "Thariq Shihipar（Anthropic Claude Code 工程师） 判断，Claude 会越来越多地把持续运行的“大脑”放在云端，同时保留操作用户电脑的本地执行能力。难题随之从“模型会不会做”转向“任务能否继续”：文件只在电脑在线时可访问，电脑一离线，云端任务也可能停住；加入同步机制，又会带来需要处理的边界情况。他同日还强调，提升工作抽象层次并不免除理解底层的责任，coding agent 也一样。这里讨论的是架构方向及其代价，并非已经全面落地的功能承诺；以上根据 X API 正文存档整理，原帖未直接读取。",
+          "title": "Thariq Shihipar · X 原帖",
           "category": "观点洞察",
-          "source": "X / Thariq Shihipar（API 正文存档）",
+          "source": "X / Thariq Shihipar",
           "url": "https://x.com/trq212/status/2107580785456976085",
           "publishedAt": "2026-10-06T21:16:30Z",
           "sourceType": "x",
-          "detail": "三条相关发言共同指向一个工程问题：计算所在的位置、数据所在的位置和用户在线的时间并不总是一致。把 agent 放到云端并没有自动解决这个问题；本条保留作者提出的离线和同步障碍，不替他推导某种同步协议已经实现。帖中的播客短链本次也未展开，不能据此补写节目观点。",
-          "additionalSources": [
+          "authorBackground": "Thariq Shihipar 是 Anthropic Claude Code 工程师和连续创业者，曾创办 One More Multiverse，并在 MIT Media Lab 读研。",
+          "backgroundVerifiedAt": "2026-10-08T15:51:03+08:00",
+          "authorName": "Thariq Shihipar",
+          "xDisplay": "link-only",
+          "sourcePosts": [
             {
-              "title": "Thariq Shihipar：离线访问与同步问题",
+              "url": "https://x.com/trq212/status/2107580785456976085",
+              "publishedAt": "2026-10-06T21:16:30Z"
+            },
+            {
               "url": "https://x.com/trq212/status/2107580787277340835"
             },
             {
-              "title": "Thariq Shihipar：抽象层与底层理解",
               "url": "https://x.com/trq212/status/2107504677143368163"
-            },
-            {
-              "title": "10 月 7 日 X API 正文固定存档",
-              "url": "https://github.com/zarazhangrui/follow-builders/blob/01496eb35b433208f8eb9b68eb9a09a1c7b8e184/feed-x.json#L185-L225"
-            },
-            {
-              "title": "作者公开简介",
-              "url": "https://www.thariq.io/"
-            }
-          ],
-          "sourceEvidence": "follow-builders 保存的 X API 正文；本次未直接读取原始 X 页面。",
-          "authorBackground": "作者背景：Thariq Shihipar 是连续创业者，曾创办游戏公司 One More Multiverse，并在 MIT Media Lab 读研。他的云端与本地 agent 观点，结合了当前产品开发和创业实践。",
-          "backgroundVerifiedAt": "2026-10-08T15:51:03+08:00",
-          "translations": [
-            {
-              "text": "Claude 的“大脑”放在云端，并给 Claude 一双“本地的手”",
-              "scope": "excerpt",
-              "sourceUrl": "https://x.com/trq212/status/2107580785456976085",
-              "note": "Thariq Shihipar 原帖节选，依据已链接的 X API 固定正文存档翻译；原帖直读不可用。 语境：作者在讨论逐步走向的架构方向，并非声称功能已全面上线。"
             }
           ]
         },
         {
-          "title": "推特精选｜Aaron Levie：agent 既扩大安全压力，也成为防守工具",
-          "summary": "Aaron Levie（Box 联合创始人兼 CEO） 认为，AI 会给本就人手紧张的企业安全团队增加三类压力：vibe coding 产生的问题、agent 驱动的攻击，以及无意间搜寻数据的 agent 群体。他的判断是，防守也会越来越依赖 agent，工作对象覆盖代码、企业系统、关键基础设施和数据，因此他看好真正能把安全 agent 部署进企业的产品与人才。值得区分的是，他论证的是攻防工作如何变化，并没有给出岗位增长或市场规模的实测数据。根据 X API 正文存档转述，原帖未直接读取。",
+          "title": "Aaron Levie · X 原帖",
           "category": "观点洞察",
-          "source": "X / Aaron Levie（API 正文存档）",
+          "source": "X / Aaron Levie",
           "url": "https://x.com/levie/status/2107680435644039269",
           "publishedAt": "2026-10-07T03:52:29Z",
           "sourceType": "x",
-          "detail": "这条观点把“生成更多代码”和“部署更多 agent”的另一面放到了台前：企业增加的不只是生产能力，也包括需要管理的行为与数据访问。作者提到的一则 OpenAI 与 Hugging Face 引用帖没有保存正文，本条不依赖那项事件，也不由此补写未核实的合作细节。",
-          "additionalSources": [
-            {
-              "title": "10 月 7 日 X API 正文固定存档",
-              "url": "https://github.com/zarazhangrui/follow-builders/blob/01496eb35b433208f8eb9b68eb9a09a1c7b8e184/feed-x.json#L286-L304"
-            },
-            {
-              "title": "作者公开简介",
-              "url": "https://www.box.com/events/cards/resource/57771?resource_id=AaronLevie-57771"
-            }
-          ],
-          "sourceEvidence": "follow-builders 保存的 X API 正文；本次未直接读取原始 X 页面。",
-          "authorBackground": "作者背景：Aaron Levie 自 2005 年创办 Box 后持续参与企业内容平台的产品与战略。他讨论 agent 安全时，提供的是企业数据、权限与协作产品经营者的视角。",
+          "authorBackground": "Aaron Levie 是企业内容平台 Box 的联合创始人兼 CEO，自 2005 年创办 Box 后持续参与产品与战略。",
           "backgroundVerifiedAt": "2026-10-08T15:51:03+08:00",
-          "translations": [
+          "authorName": "Aaron Levie",
+          "xDisplay": "link-only",
+          "sourcePosts": [
             {
-              "text": "AI agent 当然也会成为这个问题的解决方案",
-              "scope": "excerpt",
-              "sourceUrl": "https://x.com/levie/status/2107680435644039269",
-              "note": "Aaron Levie 原帖节选，依据已链接的 X API 固定正文存档翻译；原帖直读不可用。"
+              "url": "https://x.com/levie/status/2107680435644039269",
+              "publishedAt": "2026-10-07T03:52:29Z"
             }
           ]
         },
         {
-          "title": "推特精选｜Peter Steinberger：从 X 发现任务，再让 agent 找到可能的负责人",
-          "summary": "Peter Steinberger（OpenClaw 创建者，现于 OpenAI 构建 agent） 分享了一种团队实践：把团队使用的 claw 接到 X，让外部动态更快触发工作；尚未分派的 session 由成员自行领取，agent 会查看相关代码最近由谁处理过，再到团队服务器提醒对应成员。他称这次连接通过一次提示完成，插件热重载也让团队服务器能够扩展自身能力。具体可借鉴之处是把“发现任务、定位代码、寻找负责人、通知团队”接成连续流程，而不是只在聊天里给建议；这是作者自报的实践，没有独立效率测试。根据 X API 正文存档整理，原帖未直接读取。",
+          "title": "Peter Steinberger · X 原帖",
           "category": "技术实践",
-          "source": "X / Peter Steinberger（API 正文存档）",
+          "source": "X / Peter Steinberger",
           "url": "https://x.com/steipete/status/2107697554448421160",
           "publishedAt": "2026-10-07T05:00:30Z",
           "sourceType": "x",
-          "detail": "他的分派机制保留了两条路径：人可以主动领取未分配会话，agent 也可以根据代码历史主动提醒可能相关的人。代码最近的修改者并不必然等于最终责任人，因此这更像协作中的线索发现，而不是可以不经核对就自动认定责任归属的规则。后一层是编者对机制的理解。",
-          "additionalSources": [
-            {
-              "title": "10 月 7 日 X API 正文固定存档",
-              "url": "https://github.com/zarazhangrui/follow-builders/blob/01496eb35b433208f8eb9b68eb9a09a1c7b8e184/feed-x.json#L425-L443"
-            },
-            {
-              "title": "作者公开简介",
-              "url": "https://steipete.me/about"
-            }
-          ],
-          "sourceEvidence": "follow-builders 保存的 X API 正文；本次未直接读取原始 X 页面。",
-          "authorBackground": "作者背景：Peter Steinberger 创办过 PDF 开发工具公司 PSPDFKit，并创建 OpenClaw；个人主页记载他自 2026 年 2 月起在 OpenAI 构建面向大众的 agent。这使他的协作实践同时具有开发者工具创业与开源 agent 背景。",
+          "authorBackground": "Peter Steinberger 创办过 PDF 开发工具公司 PSPDFKit，并创建 OpenClaw；个人主页记载他自 2026 年 2 月起在 OpenAI 构建面向大众的 agent。",
           "backgroundVerifiedAt": "2026-10-08T15:51:03+08:00",
-          "translations": [
+          "authorName": "Peter Steinberger",
+          "xDisplay": "link-only",
+          "sourcePosts": [
             {
-              "text": "未分配的会话，任何人都可以接手。",
-              "scope": "excerpt",
-              "sourceUrl": "https://x.com/steipete/status/2107697554448421160",
-              "note": "Peter Steinberger 原帖节选，依据已链接的 X API 固定正文存档翻译；原帖直读不可用。"
+              "url": "https://x.com/steipete/status/2107697554448421160",
+              "publishedAt": "2026-10-07T05:00:30Z"
             }
           ]
         },
         {
-          "title": "推特精选｜Amjad Masad：AI 逆向工程可能削弱闭源软件的技术壁垒",
-          "summary": "Amjad Masad（Replit 创始人兼 CEO） 对 AI 辅助逆向工程和反编译给出激进预测：如果当前进展持续，软件可能越来越接近“事实上可被看透和重建”的状态。他用“事实上开源”形容这种趋势，但帖子没有提供具体项目、实验或复现证据，也不意味着软件许可证、版权或合法使用权限发生了变化。根据 X API 正文存档转述，原帖本轮未能直接读取。",
+          "title": "Amjad Masad · X 原帖",
           "category": "观点洞察",
-          "source": "X / Amjad Masad（API 正文存档）",
+          "source": "X / Amjad Masad",
           "url": "https://x.com/amasad/status/2107671204639465961",
           "publishedAt": "2026-10-07T03:15:48Z",
           "sourceType": "x",
-          "additionalSources": [
-            {
-              "title": "10 月 7 日 X API 正文固定存档",
-              "url": "https://github.com/zarazhangrui/follow-builders/blob/01496eb35b433208f8eb9b68eb9a09a1c7b8e184/feed-x.json#L226-L242"
-            },
-            {
-              "title": "作者公开简介",
-              "url": "https://amasad.me/about"
-            }
-          ],
-          "sourceEvidence": "follow-builders 保存的 X API 正文；本次未直接读取原始 X 页面。",
-          "authorBackground": "作者背景：Amjad Masad 曾领导 Facebook JavaScript 基础设施团队，参与 Babel、Jest 与 React Native 打包工具，也曾是 Codecademy 首位员工。这是软件开发工具建设者的预测，背景本身不能替代实验验证。",
+          "authorBackground": "Amjad Masad 是 Replit 创始人兼 CEO，曾领导 Facebook JavaScript 基础设施团队，参与 Babel、Jest 与 React Native 打包工具，也曾是 Codecademy 首位员工。",
           "backgroundVerifiedAt": "2026-10-08T15:51:03+08:00",
-          "translations": [
+          "authorName": "Amjad Masad",
+          "xDisplay": "link-only",
+          "sourcePosts": [
             {
-              "text": "很快，所有软件都将在事实上成为开源软件。",
-              "scope": "excerpt",
-              "sourceUrl": "https://x.com/amasad/status/2107671204639465961",
-              "note": "Amjad Masad 原帖节选，依据已链接的 X API 固定正文存档翻译；原帖直读不可用。"
+              "url": "https://x.com/amasad/status/2107671204639465961",
+              "publishedAt": "2026-10-07T03:15:48Z"
             }
           ]
         },
         {
-          "title": "推特精选｜Nikunj Kothari：追逐争议流量，可能让 VC 失去长期信任",
-          "summary": "Nikunj Kothari（FPV Ventures 合伙人）认为，VC 为争夺 X 上的注意力而刻意制造争议，可能以长期品牌和交易关系为代价，连带影响同一团队的人。他称自己知道两起原本接近敲定、却因 X 上争议而流失的交易；这是作者的个人见闻，帖文没有披露可独立核实的细节。在资本供应选择众多的环境里，他主张投资人更重视长期声誉，而不是短期曝光。以上依据 X API 正文存档转述，未直接读取原帖页面。",
+          "title": "Nikunj Kothari · X 原帖",
           "category": "观点洞察",
-          "source": "X / Nikunj Kothari（API 正文存档）",
+          "source": "X / Nikunj Kothari",
           "url": "https://x.com/nikunj/status/2107706522457497753",
           "publishedAt": "2026-10-07T05:36:08Z",
           "sourceType": "x",
-          "authorBackground": "作者背景：Nikunj Kothari 现为 FPV Ventures 合伙人，曾在 Meter 负责产品与合作、在 Opendoor 负责增长；其产品运营与早期投资经历，为这条关于 VC 声誉和交易关系的判断提供了背景。",
-          "additionalSources": [
-            {
-              "title": "10 月 7 日 X API 正文固定存档",
-              "url": "https://github.com/zarazhangrui/follow-builders/blob/01496eb35b433208f8eb9b68eb9a09a1c7b8e184/feed-x.json#L384-L400"
-            },
-            {
-              "title": "作者官方简介",
-              "url": "https://www.nikunjk.com/about"
-            }
-          ],
-          "sourceEvidence": "follow-builders 保存的 X API 正文；本次未直接读取原始 X 页面。",
-          "detail": "帖文讨论的是创投行业在社交媒体上的声誉成本，没有给出量化研究或谈及具体 AI 技术。两起交易流失的说法保持为作者自述，不推断涉及哪些人、机构或争议。",
+          "authorBackground": "Nikunj Kothari 是 FPV Ventures 合伙人，曾在 Meter 负责产品与合作、在 Opendoor 负责增长。",
           "backgroundVerifiedAt": "2026-10-08T15:57:00+08:00",
-          "translations": [
+          "authorName": "Nikunj Kothari",
+          "xDisplay": "link-only",
+          "sourcePosts": [
             {
-              "text": "X 不适合表达细微而复杂的观点",
-              "scope": "excerpt",
-              "sourceUrl": "https://x.com/nikunj/status/2107706522457497753",
-              "note": "Nikunj Kothari 原帖节选，依据已链接的 X API 固定正文存档翻译；原帖直读不可用。"
+              "url": "https://x.com/nikunj/status/2107706522457497753",
+              "publishedAt": "2026-10-07T05:36:08Z"
             }
           ]
         },
@@ -2531,7 +2260,7 @@
       "sourceNotes": [
         "本期仍归档为 2026-10-07，初版检索截止 13:03、晚间版截止 17:04（北京时间）；本次于 10 月 8 日修订阅读结构与摘要，恢复 6 位作者的当时 X 记录，不将它们标成 10 月 8 日新闻。",
         "X feed 固定于 01496eb35b433208f8eb9b68eb9a09a1c7b8e184，生成时间为 2026-10-07T06:45:10.543Z（北京时间 14:45），包含 19 位作者、40 条帖子。采集脚本使用 X API v2，优先保存 note_tweet.text；这是一份正文抓取记录，不是另一层 AI 摘要。",
-        "原始 X 页面本次仍无法直接读取。X 栏目明确转述存档中的作者观点，保留原帖与固定存档链接；缺失图片、视频、引用帖正文或 thread 上下文的部分不补写。每作者最多采集三条，不能称作完整 X 覆盖。",
+        "X 栏目仅保留作者信息、背景与原帖链接，正文请打开对应原帖查看。 X 原帖本轮未能直接读取；原帖链接与日期由当时的 API 记录核对。每作者最多采集三条，不能称作完整 X 覆盖。",
         "重点文章于修订时重新读取；Every 原文当前标注 Updated Oct 8，相关条目明确区分原发布日期与本次重读版本。本轮播客补读了完整固定存档转录并核对官方说明；不声称逐字听音核验。",
         "官方文章多数只提供日期，未提供精确时间和时区，不宣称严格落入滚动 24 小时。NVIDIA AICR 按 10 月 6 日介绍文章收录，release 页面显示 10 月 5 日。",
         "GitHub 今日增星保留 10 月 7 日约 13:02 或 17:02 的原始实时榜单快照，未用 10 月 8 日数值覆盖。9 个项目是 AI 相关精选，不代表首次发布、首次上榜或连续上榜。",
@@ -2541,8 +2270,7 @@
         "已衔接此前 8 个榜单日期的记录：本期 4 个项目在这些记录中未出现，5 个曾出现。日期不连续，累计出现次数不能叫连续上榜天数；9 个项目都属于本站首次收录。",
         "新发现与持续热门分组，各组按已保存的 starsToday 降序展示。快照分别采于 10 月 7 日 13:02 和 17:02，混合时间点，只用于本期阅读排序，不是统一时刻的全站排名。",
         "GitHub 主要语言于 10 月 8 日补核，未使用新数值替换 10 月 7 日的今日增星。",
-        "完整复核 40 条 X 正文：8 条原帖合并为 6 张 X 卡；3 条产品相关发言由博客卡覆盖；其余 29 条因缺必要上下文、宣传、泛泛短评或与本期无关而排除。博客下补充的 Claude 原帖不计入这 8 条 X 栏目原帖。",
-        "每条精选保留独立的“原文节选翻译”，忠实呈现已读取的原帖片段；“摘要与解读”另列。译文为短节选，完整语境见对应原帖及固定归档。"
+        "完整复核 40 条 X 正文：8 条原帖合并为 6 张 X 卡；3 条产品相关发言由博客卡覆盖；其余 29 条因缺必要上下文、宣传、泛泛短评或与本期无关而排除。博客下补充的 Claude 原帖不计入这 8 条 X 栏目原帖。"
       ],
       "publicationHistory": [
         {
