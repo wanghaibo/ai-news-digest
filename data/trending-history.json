@@ -3,6 +3,42 @@
   "note": "仅用于有界历史查重；记录不连续，不能据此推断连续上榜或绝对首次上榜。",
   "snapshots": [
     {
+      "date": "2026-10-10",
+      "repositories": [
+        "hugohe3/ppt-master",
+        "alibaba/open-code-review",
+        "datawhalechina/hello-agents",
+        "unslothai/unsloth",
+        "K-Dense-AI/scientific-agent-skills",
+        "morluto/rea",
+        "storytold/artcraft",
+        "cathrynlavery/diagram-design",
+        "mattpocock/skills",
+        "anthropics/knowledge-work-plugins",
+        "addyosmani/agent-skills",
+        "ayghri/i-have-adhd",
+        "bojieli/ai-agent-book",
+        "Lordog/dive-into-llms",
+        "microsoft/generative-ai-for-beginners",
+        "openai/openai-cookbook",
+        "OpenBMB/MiniCPM",
+        "datawhalechina/happy-llm",
+        "NirDiamant/RAG_Techniques",
+        "microsoft/ML-For-Beginners",
+        "gepa-ai/gepa",
+        "openai/CLIP",
+        "karpathy/micrograd",
+        "karpathy/nn-zero-to-hero"
+      ],
+      "coverage": "本期已核验入选的 24 个 AI 相关项目（5 个历史中新发现、19 个历史出现）；来自 17:06:21 +08:00 综合、Python、Jupyter Notebook 日榜的部分快照，不是完整榜单",
+      "observedAt": "2026-10-10T17:06:21+08:00",
+      "sources": [
+        "https://github.com/trending?since=daily",
+        "https://github.com/trending/python?since=daily",
+        "https://github.com/trending/jupyter%20notebook?since=daily"
+      ]
+    },
+    {
       "date": "2026-10-09",
       "repositories": [
         "storytold/artcraft",
