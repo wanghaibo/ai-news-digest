@@ -1,6 +1,6 @@
 # AI 资讯简报
 
-面向 AI 创造者的中文静态资讯站。暖色浅色界面，支持按日期浏览、来源分栏、人物背景、X 作者背景与原帖链接（用户提供原文时保留原文和全文翻译）、分类筛选、期内搜索、一手来源与 Markdown 归档。无需构建、数据库、第三方字体或运行时依赖。
+面向 AI 创造者的中文静态资讯站。暖色浅色界面，支持按日期浏览、来源分栏、人物背景、X 作者背景与官方原帖卡片（用户提供原文时保留原文和全文翻译）、分类筛选、期内搜索、一手来源与 Markdown 归档。无需构建、数据库或第三方字体。X 原帖卡片使用 X 官方 widgets.js。
 
 ## 发布状态
 
@@ -47,6 +47,13 @@ node scripts/validate-data.cjs
 
 ## 隐私与安全
 
-无登录、埋点、广告或外部资源加载。新闻字段通过 `textContent` 渲染，不作为 HTML 执行。来源仅接受不含内嵌凭据的绝对 HTTP(S) 链接；新标签页链接带 `noopener noreferrer`。浏览器仍会正常向提供静态站点的托管服务请求页面与数据。
+本站无登录、站内埋点或广告。X 栏目会连接 X，加载其官方脚本、原帖和媒体；已设置 dnt 选项，但不代表没有对 X 的网络请求或完全匿名。第三方服务可能设置 Cookie，受 X 隐私政策约束。长帖可能由 X 折叠，嵌入不自动翻译；X 不可达、原帖删除或保护时显示提示、重试按钮和原帖直链。新闻字段通过 `textContent` 渲染，不作为 HTML 执行。来源仅接受不含内嵌凭据的绝对 HTTP(S) 链接；新标签页链接带 `noopener noreferrer`。浏览器仍会正常向提供静态站点的托管服务请求页面与数据。
 
 
+
+
+## X 官方原帖展示
+
+网站逐条嵌入 sourcePosts，包括往期保留的 link-only 数据；仓库不存储自行抓取的第三方帖文正文或翻译。Markdown 继续保存作者、背景、日期与链接。搜索不会进入 X 的跨域卡片。
+
+官方说明：[嵌入帖子](https://help.x.com/en/using-x/how-to-embed-a-post)、[开发者协议](https://developer.x.com/overview/terms/agreement)、[开发者政策](https://developer.x.com/overview/terms/policy)、[X 隐私政策](https://x.com/en/privacy)。

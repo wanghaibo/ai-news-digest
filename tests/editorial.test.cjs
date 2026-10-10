@@ -70,6 +70,8 @@ test('render X links and provided originals separately, keep non-X views and fil
  assert.ok(!xSection.textContent.includes('摘要与解读'));assert.ok(!xSection.textContent.includes('原文节选翻译'));
  assert.deepEqual(xCards[0].querySelectorAll('a').filter(a=>a.className==='source-link').map(a=>a.href),['https://x.com/example/status/123','https://x.com/example/status/456']);
  assert.equal(xCards[0].querySelectorAll('div').filter(n=>n.className==='tweet-translation').length,0);
+ assert.deepEqual(xCards[0].querySelectorAll('div').filter(n=>n.className==='tweet-embed-block').map(n=>n.dataset.postUrl),fixture.digests[0].items[0].sourcePosts.map(p=>p.url));
+ assert.equal(xCards[1].querySelectorAll('div').filter(n=>n.className==='tweet-embed-block').length,0);
  const texts=xCards[1].querySelectorAll('p').filter(n=>n.className==='tweet-text').map(n=>n.textContent);assert.deepEqual(texts,[original.text,original.translation]);
  assert.match(xCards[1].textContent,/原文全文翻译/);
  for(const text of ['Verified creator background','Original title','A useful mechanism','Official research blog'])assert.ok(content.textContent.includes(text),text);
@@ -87,3 +89,4 @@ test('X background verification metadata cannot contain hidden prose',()=>{
  for(const backgroundVerifiedAt of [{summary:'Hidden analysis'},'Analysis text','2026-02-30'])assert.throws(()=>app.validateData(data([xItem({backgroundVerifiedAt})])),/backgroundVerifiedAt/);
  for(const backgroundVerifiedAt of [undefined,null,'2026-10-08','2026-10-08T11:30:00Z'])assert.doesNotThrow(()=>app.validateData(data([xItem({backgroundVerifiedAt})])));
 });
+

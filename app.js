@@ -1,4 +1,4 @@
-/* No dependencies. Shared validation is also used by the publishing checks. */
+/* Shared validation is also used by the publishing checks. */
 (function (root, factory) {
   'use strict';
   const api = factory();
@@ -53,7 +53,7 @@
     requireText(item.authorBackground, path + '.authorBackground', 10000);
     assert(item.source === 'X / ' + item.authorName, path + '.source must be the neutral X / author label.');
     assert(item.title === item.authorName + ' · X 原帖', path + '.title must be the neutral author and X post label.');
-    assert(item.xDisplay === undefined || ['link-only', 'user-provided'].includes(item.xDisplay), path + '.xDisplay must be link-only or user-provided.');
+    assert(item.xDisplay === undefined || ['official-embed', 'link-only', 'user-provided'].includes(item.xDisplay), path + '.xDisplay must be official-embed, link-only or user-provided.');
     for (const field of ['summary', 'detail', 'translations', 'originalTitle', 'sourceEvidence', 'evidenceNote', 'additionalSources']) {
       assert(item[field] === undefined, path + '.' + field + ' is not allowed for X posts.');
     }
@@ -79,7 +79,7 @@
         originals.add(post.sourceUrl);
       }
       assert(originals.size === urls.size, path + '.originalPosts must cover every sourcePosts URL.');
-    } else assert(item.originalPosts === undefined, path + '.originalPosts is not allowed for link-only X posts.');
+    } else assert(item.originalPosts === undefined, path + '.originalPosts is not allowed for externally embedded X posts.');
   }
   function validateData(data) {
     assert(isObject(data), 'The data must be a JSON object.');
@@ -199,6 +199,7 @@
       });
     }
     function renderArticles() {
+      if (typeof XEmbeds !== 'undefined') XEmbeds.render({ querySelectorAll: () => [] });
       elements.content.replaceChildren();
       if (!selected) return;
       const items = filterItems(selected, category, elements.search.value);
@@ -224,6 +225,7 @@
         const section = el('section', 'source-section');
         section.dataset.sourceType = group.type;
         section.append(el('h3', 'source-section-title', group.title));
+        if (group.type === 'x') section.append(el('p', 'source-section-note', '原帖由 X 官方加载，需连接 X。保留原文与媒体；长帖可能需点 Show more，不自动翻译。加载失败可使用原帖链接。期内搜索仅检索作者、背景与链接。'));
         if (group.type === 'github') {
           if (typeof selected.githubHistory?.note === 'string') section.append(el('p', 'source-section-note', selected.githubHistory.note));
           if (typeof selected.githubRankingNote === 'string') section.append(el('p', 'source-section-note', selected.githubRankingNote));
@@ -272,10 +274,12 @@
               body.append(block);
             }
           } else {
-            const links = el('div', 'original-post-links');
+            const links = el('div', 'original-post-embeds');
             for (const [postIndex, post] of item.sourcePosts.entries()) {
               const label = '原帖 ' + (postIndex + 1) + (post.publishedAt ? ' · ' + post.publishedAt.slice(0, 10) : '') + ' ↗';
-              links.append(externalLink(post.url, 'source-link', label));
+              const postBlock = el('div', 'tweet-embed-block');
+              postBlock.dataset.postUrl = post.url;
+              links.append(postBlock, externalLink(post.url, 'source-link', label));
             }
             body.append(links);
           }
@@ -325,6 +329,7 @@
         fragment.append(notes);
       }
       elements.content.append(fragment);
+      if (typeof XEmbeds !== 'undefined') XEmbeds.render(elements.content);
     }
     function renderSelection() {
       elements.intro.replaceChildren();
@@ -463,5 +468,6 @@
   }
   return { CATEGORIES, isDate, isSafeUrl, isTimestamp, validateData, filterItems, formatDate, selectDigest, supplementalSources, groupItems, start };
 });
+
 
 

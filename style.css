@@ -28,3 +28,13 @@
 .tweet-original{margin:18px 0;padding:16px 18px;border:1px solid var(--line);border-radius:8px;background:#fffdf8}
 .news-card .tweet-text{white-space:pre-wrap;overflow-wrap:anywhere}
 .original-post-links{display:flex;flex-wrap:wrap;gap:8px 20px}
+
+
+/* Official widgets size themselves; never clip their text, media or controls. */
+.original-post-embeds{display:block;min-width:0}
+.tweet-embed-block{margin:18px 0 6px;min-width:0}
+.tweet-embed-target{width:100%;max-width:550px;min-width:0}
+.tweet-embed-target .twitter-tweet{max-width:100%!important}
+.news-card .tweet-embed-status{font-size:13px;color:var(--sub)}
+.tweet-embed-retry{padding:8px 12px;min-height:40px;border:1px solid var(--line);border-radius:4px;background:var(--mint);color:var(--teal)}
+@media(max-width:380px){.source-section[data-source-type="x"] .news-card{grid-template-columns:minmax(0,1fr)}.source-section[data-source-type="x"] .news-number{display:none}}

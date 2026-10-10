@@ -102,9 +102,9 @@
 
 item.isNew 仅表示在本期之前留存的快照中未出现；githubStatus 为 `new` 或 `returning`。priorAppearanceDates 和 priorAppearanceCount 对应那些旧日期，不能称为连续上榜。新项目至多 5 个详述，旧项目简列并可展开已经发布的分析。各组按实际 starsToday 降序，采样时间差异必须公开说明。
 
-## X 原帖链接与用户提供的原文
+## X 官方嵌入与用户提供的原文
 
-自行抓取的第三方 X 帖文只展示作者身份、背景、日期与原帖直链。不得加入原文、节选、译文、摘要、解读或从帖子观点提炼的标题。Markdown、JSON、搜索和详情遵守同一合同；不能只是隐藏旧字段。
+自行抓取的第三方 X 帖文在仓库中只保存作者身份、背景、日期与原帖直链；网站通过 X 官方组件逐条显示 sourcePosts 的原帖正文和媒体。不得加入原文、节选、译文、摘要、解读或从帖子观点提炼的标题。Markdown、JSON、搜索和详情遵守同一合同；不能只是隐藏旧字段。
 
 所有 X 条目使用 `sourceType: "x"`，并遵守以下字段：
 
@@ -113,11 +113,11 @@ item.isNew 仅表示在本期之前留存的快照中未出现；githubStatus �
 - `title`：必须恰好是 `authorName + " · X 原帖"`，不添加解释性标题。
 - `source`：必须恰好是 `"X / " + authorName`，例如 `X / Example Author`。保留已有 `category` 供筛选，X 卡不显示主题分类标签。
 - `url`：主原帖直链，必须同时存在于 `sourcePosts`。
-- `xDisplay`：`link-only` 或 `user-provided`。省略时按 `link-only` 处理，发布时建议显式填写。
+- `xDisplay`：`official-embed` 或 `user-provided`。新发布的第三方帖文使用 `official-embed`。旧 `link-only` 与省略值继续接受，网站统一按官方嵌入渲染，不必重写历史数据。
 - `sourcePosts`：1–20 个 `{ "url": "https://x.com/author/status/123", "publishedAt": "2026-10-08" }`。URL 必须是安全、无内嵌凭据的 X / Twitter 具体 status 直链，同一卡不重复。逐字保留已核实的原帖 URL。日期可省略或为 null，已知时使用本页规定的真实日期/时间，不能拿首帖日期代替其他帖子的日期。
 - `summary`、`detail`、`translations`、`originalTitle`、`sourceEvidence`、`evidenceNote`、`additionalSources` 对 X 条目一律禁止；不得把移除的内容转存到其他隐藏字段。X 条目只允许本节字段、`sourceType`、已有 `category`、`publishedAt` 和 `backgroundVerifiedAt`；嵌套原帖/原文块也只允许列出的字段。
 
-`link-only` 模式不允许 `originalPosts`。前端逐条显示中性的“原帖 1 / 原帖 2”链接及已知日期；不展示 API 全文归档或二手分析链接。
+`official-embed`、旧 `link-only` 和省略值都不允许 `originalPosts`。前端逐条加载 X 官方原帖卡片，同时始终保留中性的“原帖 1 / 原帖 2”直链及已知日期。不得复制抓取到的正文、翻译或截图到仓库；不展示 API 全文归档或二手分析链接。X 控制原帖内容与媒体，长帖可能出现 Show more，官方嵌入不自动翻译。组件加载失败或超时显示提示和重试按钮，直链不受影响。期内搜索不检索跨域嵌入正文。
 
 只有用户实际提供了对应原帖的文字，并且用途符合其授权及适用政策时，才使用 `user-provided`。给链接、上传技能或允许读取 feed 都不等于提供了这条原文。此模式增加：
 
@@ -126,3 +126,4 @@ item.isNew 仅表示在本期之前留存的快照中未出现；githubStatus �
 - 每条原帖各有“原文”和“原文全文翻译”块及对应直链，不增加摘要、节选或解读。不得为字段上限截断原文；超限时保留完整稿件并报告限制，不能发布成部分原文。
 
 Markdown 同步保留对应作者、背景、原帖链接和日期；用户提供模式额外逐帖保留相同原文与完整译文。无论模式，都不把 X 观点或分析带进导读、附注或搜索字段。
+
