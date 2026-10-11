@@ -3,6 +3,37 @@
   "note": "仅用于有界历史查重；记录不连续，不能据此推断连续上榜或绝对首次上榜。",
   "snapshots": [
     {
+      "date": "2026-10-11",
+      "repositories": [
+        "debpalash/VoiceStudio",
+        "Robbyant/lingbot-map",
+        "multica-ai/andrej-karpathy-skills",
+        "microsoft/TRELLIS.2",
+        "mksglu/context-mode",
+        "morluto/rea",
+        "storytold/artcraft",
+        "mattpocock/skills",
+        "cathrynlavery/diagram-design",
+        "anthropics/knowledge-work-plugins",
+        "hugohe3/ppt-master",
+        "datawhalechina/hello-agents",
+        "Lordog/dive-into-llms",
+        "NirDiamant/RAG_Techniques",
+        "sgl-project/sglang",
+        "datawhalechina/happy-llm",
+        "OpenBMB/MiniCPM",
+        "openai/CLIP",
+        "NVIDIA/cosmos"
+      ],
+      "coverage": "本期核验入选的 19 个 AI 相关项目（5 个历史中新发现、14 个历史出现）；综合、Python、Jupyter Notebook 日榜的部分快照，不是完整榜单",
+      "observedAt": "2026-10-11T16:58:36+08:00",
+      "sources": [
+        "https://github.com/trending?since=daily",
+        "https://github.com/trending/python?since=daily",
+        "https://github.com/trending/jupyter%20notebook?since=daily"
+      ]
+    },
+    {
       "date": "2026-10-10",
       "repositories": [
         "hugohe3/ppt-master",
