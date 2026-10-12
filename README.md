@@ -1,6 +1,6 @@
 # AI 资讯简报
 
-面向 AI 创造者的中文静态资讯站。暖色浅色界面，支持按日期浏览、来源分栏、人物背景、X 作者背景与官方原帖卡片（用户提供原文时保留原文和全文翻译）、分类筛选、期内搜索、一手来源与 Markdown 归档。无需构建、数据库或第三方字体。X 原帖卡片使用 X 官方 widgets.js。
+面向 AI 创造者的中文静态资讯站。暖色浅色界面，支持按日期浏览、来源分栏、人物背景、X 作者背景、内容原文与全文翻译（用户提供、核实许可或合规完整短帖）及官方原帖卡片、分类筛选、期内搜索、一手来源与 Markdown 归档。无需构建、数据库或第三方字体。X 原帖卡片使用 X 官方 widgets.js。
 
 ## 发布状态
 
@@ -54,6 +54,6 @@ node scripts/validate-data.cjs
 
 ## X 官方原帖展示
 
-网站逐条嵌入 sourcePosts，包括往期保留的 link-only 数据；仓库不存储自行抓取的第三方帖文正文或翻译。Markdown 继续保存作者、背景、日期与链接。搜索不会进入 X 的跨域卡片。
+符合 user-provided、licensed-original 或 short-quotation 合同的条目逐帖展示完整原文与忠实翻译，保留对应原帖链接。新模式须记录公开核验依据，短帖按作者/来源汇总计算原文、译文及 Markdown + JSON 两份交付的额度，具体要求见数据格式文档。其余条目逐条嵌入 sourcePosts，包括历史 link-only 数据，并明确提示本条未提供全文翻译。搜索覆盖本站显示的原文和译文，不进入 X 的跨域卡片。历史 JSON 和 Markdown 无需重写。
 
 官方说明：[嵌入帖子](https://help.x.com/en/using-x/how-to-embed-a-post)、[开发者协议](https://developer.x.com/overview/terms/agreement)、[开发者政策](https://developer.x.com/overview/terms/policy)、[X 隐私政策](https://x.com/en/privacy)。

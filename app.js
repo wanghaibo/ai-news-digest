@@ -45,6 +45,65 @@
     return /^(www\.)?(x|twitter)\.com$/.test(url.hostname) &&
       /^\/(?:[^/]+\/status|i\/web\/status)\/\d+\/?$/.test(url.pathname);
   }
+  function hasOriginalPosts(item) {
+    return ['user-provided', 'licensed-original', 'short-quotation'].includes(item.xDisplay);
+  }
+  function conservativeWordCount(text) {
+    // Count unspaced CJK characters separately; never let punctuation/emoji or
+    // whitespace-only tokenization reduce the editor's source-word evidence.
+    const spaced = text.replace(/[\p{Script=Han}\p{Script=Hiragana}\p{Script=Katakana}\p{Script=Hangul}]/gu, ' $& ');
+    const lexical = spaced.match(/[\p{L}\p{N}]+/gu) || [];
+    return Math.max(1, lexical.length, spaced.trim().split(/\s+/u).length);
+  }
+  function isPublicEvidenceUrl(value) {
+    if (!isSafeUrl(value)) return false;
+    const hostname = new URL(value).hostname.toLowerCase().replace(/\.$/, '');
+    // Public provenance uses web hostnames, not intranet names or IP literals.
+    // A publisher must still check that the actual page is publicly accessible.
+    return hostname.includes('.') && !/^[\d.]+$/.test(hostname) && !hostname.includes(':') &&
+      !/(^|\.)(localhost|local|internal|test|invalid|example)$/.test(hostname);
+  }
+  function validateProvenance(post, mode, path) {
+    const proof = post.provenance;
+    assert(isObject(proof), path + '.provenance must record verified public provenance.');
+    const fields = ['authorUrl', 'verifiedAt', 'evidenceUrl', 'complete', ...(mode === 'licensed-original' ? ['licenseUrl', 'licenseScope'] : ['sourceWordCount', 'isLyrics', 'toolWordLimit'])];
+    for (const field of Object.keys(proof)) assert(fields.includes(field), path + '.provenance.' + field + ' is not allowed.');
+    assert(typeof proof.authorUrl === 'string' && /^https:\/\/x\.com\/[A-Za-z0-9_]{1,15}$/.test(proof.authorUrl), path + '.provenance.authorUrl must be a canonical X author profile URL.');
+    const sourceAuthor = new URL(post.sourceUrl).pathname.match(/^\/([^/]+)\/status\//);
+    assert(!sourceAuthor || sourceAuthor[1].toLowerCase() === proof.authorUrl.split('/').pop().toLowerCase(), path + '.provenance.authorUrl must match the source post author.');
+    assert(isDate(proof.verifiedAt) || isTimestamp(proof.verifiedAt), path + '.provenance.verifiedAt must be a real date or timestamp.');
+    assert(isPublicEvidenceUrl(proof.evidenceUrl), path + '.provenance.evidenceUrl must be a safe public evidence URL.');
+    assert(proof.complete === true, path + '.provenance.complete must confirm verified complete original text.');
+    if (mode === 'licensed-original') {
+      assert(isPublicEvidenceUrl(proof.licenseUrl), path + '.provenance.licenseUrl must reference the applicable public license.');
+      requireText(proof.licenseScope, path + '.provenance.licenseScope', 2000);
+    } else {
+      assert(Number.isSafeInteger(proof.sourceWordCount) && proof.sourceWordCount >= conservativeWordCount(post.text) && proof.sourceWordCount <= 25, path + '.provenance.sourceWordCount must conservatively count the complete source text (1–25 words).');
+      assert(typeof proof.isLyrics === 'boolean', path + '.provenance.isLyrics must record whether the source is lyrics.');
+      assert(proof.toolWordLimit === undefined || (Number.isSafeInteger(proof.toolWordLimit) && proof.toolWordLimit > 0), path + '.provenance.toolWordLimit must be a positive integer when supplied.');
+    }
+  }
+  function validateQuotationBudgets(items, path) {
+    const totals = new Map();
+    for (const item of items) {
+      if (item.sourceType !== 'x' || item.xDisplay !== 'short-quotation') continue;
+      for (const post of item.originalPosts) {
+        const proof = post.provenance;
+        // Each normal publication delivers original + source-equivalent full
+        // translation twice (JSON and Markdown). Card boundaries cannot reset it.
+        const words = proof.sourceWordCount * 4;
+        const limit = Math.min(proof.isLyrics ? 10 : 25, proof.toolWordLimit ?? 25);
+        const postId = new URL(post.sourceUrl).pathname.match(/\/status\/(\d+)/)[1];
+        for (const key of ['author:' + proof.authorUrl.toLowerCase(), 'post:' + postId]) {
+          const total = totals.get(key) || { words: 0, limit: 25 };
+          total.words += words;
+          total.limit = Math.min(total.limit, limit);
+          assert(total.words <= total.limit, path + ' short-quotation budget exceeded for ' + key + ': ' + total.words + ' source-equivalent words > ' + total.limit + '.');
+          totals.set(key, total);
+        }
+      }
+    }
+  }
   function validateXItem(item, path) {
     const allowed = ['title', 'source', 'category', 'url', 'publishedAt', 'sourceType', 'authorName', 'authorBackground', 'backgroundVerifiedAt', 'xDisplay', 'sourcePosts', 'originalPosts'];
     for (const field of Object.keys(item)) assert(allowed.includes(field), path + '.' + field + ' is not allowed for X posts.');
@@ -53,7 +112,7 @@
     requireText(item.authorBackground, path + '.authorBackground', 10000);
     assert(item.source === 'X / ' + item.authorName, path + '.source must be the neutral X / author label.');
     assert(item.title === item.authorName + ' · X 原帖', path + '.title must be the neutral author and X post label.');
-    assert(item.xDisplay === undefined || ['official-embed', 'link-only', 'user-provided'].includes(item.xDisplay), path + '.xDisplay must be official-embed, link-only or user-provided.');
+    assert(item.xDisplay === undefined || ['official-embed', 'link-only', 'user-provided', 'licensed-original', 'short-quotation'].includes(item.xDisplay), path + '.xDisplay must be official-embed, link-only, user-provided, licensed-original or short-quotation.');
     for (const field of ['summary', 'detail', 'translations', 'originalTitle', 'sourceEvidence', 'evidenceNote', 'additionalSources']) {
       assert(item[field] === undefined, path + '.' + field + ' is not allowed for X posts.');
     }
@@ -67,15 +126,16 @@
       assert(post.publishedAt === undefined || post.publishedAt === null || isDate(post.publishedAt) || isTimestamp(post.publishedAt), path + '.sourcePosts publishedAt must be a real date or timestamp.');
     }
     assert(urls.has(item.url), path + '.sourcePosts must include the primary url.');
-    if (item.xDisplay === 'user-provided') {
-      assert(Array.isArray(item.originalPosts) && item.originalPosts.length > 0 && item.originalPosts.length <= 20, path + '.originalPosts must contain 1–20 user-provided originals and full translations.');
+    if (hasOriginalPosts(item)) {
+      assert(Array.isArray(item.originalPosts) && item.originalPosts.length > 0 && item.originalPosts.length <= 20, path + '.originalPosts must contain 1–20 complete originals and full translations.');
       const originals = new Set();
       for (const post of item.originalPosts) {
         assert(isObject(post), path + '.originalPosts entries must be objects.');
-        for (const field of Object.keys(post)) assert(['text', 'translation', 'sourceUrl'].includes(field), path + '.originalPosts.' + field + ' is not allowed.');
+        for (const field of Object.keys(post)) assert(['text', 'translation', 'sourceUrl', ...(item.xDisplay === 'user-provided' ? [] : ['provenance'])].includes(field), path + '.originalPosts.' + field + ' is not allowed.');
         requireText(post.text, path + '.originalPosts.text', 10000);
         requireText(post.translation, path + '.originalPosts.translation', 10000);
         assert(urls.has(post.sourceUrl) && !originals.has(post.sourceUrl), path + '.originalPosts must match distinct sourcePosts URLs.');
+        if (item.xDisplay !== 'user-provided') validateProvenance(post, item.xDisplay, path + '.originalPosts');
         originals.add(post.sourceUrl);
       }
       assert(originals.size === urls.size, path + '.originalPosts must cover every sourcePosts URL.');
@@ -120,6 +180,7 @@
         assert(isSafeUrl(item.url), itemPath + '.url must be an absolute HTTP(S) URL without embedded credentials.');
         assert(item.publishedAt === undefined || item.publishedAt === null || isDate(item.publishedAt) || isTimestamp(item.publishedAt), itemPath + '.publishedAt must be omitted, null, a YYYY-MM-DD date, or an ISO 8601 timestamp with a timezone.');
       }
+      validateQuotationBudgets(digest.items, path);
     }
     return { schemaVersion: 1, digests: [...data.digests].sort((a, b) => b.date.localeCompare(a.date)) };
   }
@@ -131,7 +192,7 @@
   function searchableText(item) {
     if (item.sourceType === 'x') {
       return [item.authorName, item.authorBackground, item.source, ...(item.sourcePosts || []).flatMap(post => [post.url, post.publishedAt]),
-        ...(item.xDisplay === 'user-provided' ? (item.originalPosts || []).flatMap(post => [post.text, post.translation]) : [])].join(' ');
+        ...(hasOriginalPosts(item) ? (item.originalPosts || []).flatMap(post => [post.text, post.translation]) : [])].join(' ');
     }
     return [item.title, item.summary, item.source, item.originalTitle, item.authorBackground, item.detail,
       ...(item.translations || []).flatMap(translation => [translation.text, translation.note])].join(' ');
@@ -225,7 +286,7 @@
         const section = el('section', 'source-section');
         section.dataset.sourceType = group.type;
         section.append(el('h3', 'source-section-title', group.title));
-        if (group.type === 'x') section.append(el('p', 'source-section-note', '原帖由 X 官方加载，需连接 X。保留原文与媒体；长帖可能需点 Show more，不自动翻译。加载失败可使用原帖链接。期内搜索仅检索作者、背景与链接。'));
+        if (group.type === 'x') section.append(el('p', 'source-section-note', '可提供完整原文的条目逐帖展示原文与全文翻译。其他条目由 X 官方加载，需连接 X；长帖可能需点 Show more。期内搜索包含本站展示的原文与译文，不检索跨域卡片。'));
         if (group.type === 'github') {
           if (typeof selected.githubHistory?.note === 'string') section.append(el('p', 'source-section-note', selected.githubHistory.note));
           if (typeof selected.githubRankingNote === 'string') section.append(el('p', 'source-section-note', selected.githubRankingNote));
@@ -265,15 +326,28 @@
         }
         if (item.authorBackground) body.append(el('p', 'author-background', item.authorBackground));
         if (item.sourceType === 'x') {
-          if (item.xDisplay === 'user-provided') {
+          if (hasOriginalPosts(item)) {
             for (const post of item.originalPosts) {
               const block = el('div', 'tweet-original');
+              const sourcePost = item.sourcePosts.find(source => source.url === post.sourceUrl);
+              if (sourcePost?.publishedAt) {
+                const time = el('time', 'translation-note', sourcePost.publishedAt.slice(0, 10));
+                time.dateTime = sourcePost.publishedAt;
+                time.title = '来源发布日期：' + sourcePost.publishedAt;
+                block.append(time);
+              }
               block.append(el('p', 'translation-label', '原文'), el('p', 'tweet-text', post.text));
               block.append(el('p', 'translation-label', '原文全文翻译'), el('p', 'tweet-text', post.translation));
               block.append(externalLink(post.sourceUrl, 'source-link', '对应原帖 ↗'));
+              if (item.xDisplay === 'licensed-original') {
+                const permission = el('p', 'translation-note', '许可与署名：' + post.provenance.licenseScope + ' ');
+                permission.append(externalLink(post.provenance.licenseUrl, 'source-link', '许可依据 ↗'));
+                block.append(permission);
+              }
               body.append(block);
             }
           } else {
+            body.append(el('p', 'translation-note', '本条未提供全文翻译。下方为 X 官方原帖；加载失败时可使用原帖链接。'));
             const links = el('div', 'original-post-embeds');
             for (const [postIndex, post] of item.sourcePosts.entries()) {
               const label = '原帖 ' + (postIndex + 1) + (post.publishedAt ? ' · ' + post.publishedAt.slice(0, 10) : '') + ' ↗';
