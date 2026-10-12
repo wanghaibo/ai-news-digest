@@ -3,6 +3,39 @@
   "note": "仅用于有界历史查重；记录不连续，不能据此推断连续上榜或绝对首次上榜。",
   "snapshots": [
     {
+      "date": "2026-10-12",
+      "repositories": [
+        "bilawalsidhu/gods-eye-view",
+        "MadsLorentzen/ai-job-search",
+        "huggingface/transformers",
+        "pytorch/pytorch",
+        "Shubhamsaboo/awesome-llm-apps",
+        "morluto/rea",
+        "storytold/artcraft",
+        "debpalash/VoiceStudio",
+        "hugohe3/ppt-master",
+        "cathrynlavery/diagram-design",
+        "lyogavin/airllm",
+        "Alishahryar1/free-claude-code",
+        "anthropics/knowledge-work-plugins",
+        "Lordog/dive-into-llms",
+        "datawhalechina/hello-agents",
+        "microsoft/TRELLIS.2",
+        "NirDiamant/RAG_Techniques",
+        "sgl-project/sglang",
+        "NirDiamant/GenAI_Agents",
+        "datawhalechina/happy-llm",
+        "OpenBMB/MiniCPM"
+      ],
+      "coverage": "本期核验入选的 21 个 AI 相关项目（5 个历史中新发现、16 个历史出现）；综合、Python、Jupyter Notebook 日榜的部分快照，不是完整榜单",
+      "observedAt": "2026-10-12T09:01:22.779488+00:00",
+      "sources": [
+        "https://github.com/trending?since=daily",
+        "https://github.com/trending/python?since=daily",
+        "https://github.com/trending/jupyter%20notebook?since=daily"
+      ]
+    },
+    {
       "date": "2026-10-11",
       "repositories": [
         "debpalash/VoiceStudio",
