@@ -4,7 +4,7 @@
     {
       "date": "2026-10-12",
       "title": "AI Builders Digest — 2026-10-12",
-      "summary": "本期收录 6 位 builder 的 7 条 X 原帖（6 条精选）、1 集播客、1 篇研究笔记，以及 5 个留存历史中新发现的 GitHub 项目和 16 个历史出现项目。非 X 内容关注 AI 商业模式中的用量与客户集中度、token 边界随机化的训练取舍，以及语音驱动三维界面与求职材料工作流。研究笔记仅核实到 10 月 12 日日期，并明确区分新博文与旧论文。",
+      "summary": "本期收录 6 位 builder 的 7 条 X 原帖（6 条精选）、1 集播客、1 篇研究笔记，以及 5 个留存历史中新发现的 GitHub 项目和 16 个历史出现项目。非 X 内容关注 AI 商业模式中的用量与客户集中度、token 边界随机化的训练取舍，以及语音驱动三维界面与求职材料工作流。研究笔记仅核实到 10 月 12 日日期，并明确区分新博文与旧论文。 补充 3 篇当日公众号精选及原文链接，热度未核实，不作全平台热门排名。",
       "items": [
         {
           "title": "Andrej Karpathy · X 原帖",
@@ -175,6 +175,83 @@
             {
               "title": "2020 年 BPE-Dropout 论文及表 5",
               "url": "https://aclanthology.org/2020.acl-main.170.pdf"
+            }
+          ]
+        },
+        {
+          "title": "公众号精选｜AI从「造图」卷到「造世界」，这次真有点科幻了。。。",
+          "originalTitle": "AI从「造图」卷到「造世界」，这次真有点科幻了。。。",
+          "summary": "量子位作者梦瑶介绍了字节在抖音《2026 美好奇妙夜》展示的世界模型：一句话生成三维场景，用户可自由移动、生成并操作物体，还能连接不同空间。文章把关键能力归为持续追踪空间结构、环境状态及动作后的变化，并讨论其用于自动驾驶长尾场景和机器人虚拟训练的可能性。模型尚未正式发布，报道依据主要是现场演示。",
+          "category": "产品发布",
+          "source": "微信公众号 / 量子位",
+          "sourceName": "微信公众号 / 量子位",
+          "sourceType": "blog",
+          "url": "https://mp.weixin.qq.com/s?__biz=MzIzNjc1NzUzMw==&chksm=e9715e3c22b177f41262b08df5219b1be210de60c11f9679e4c0cae0eb5daae34df72d5514ed&idx=1&mid=2247932564&sn=f0410a817f7bc924df83745c7235e651#rd",
+          "publishedAt": "2026-10-12",
+          "authorBackground": "梦瑶，量子位该文的公开署名作者；未核实真实姓名或其他履历。",
+          "detail": "热度未核实；本条为当日精选，不作热门排名。已读取量子位官网同名正文，官网与公开公众号目录均标注 2026-10-12；微信原文页未直读，未核实微信端精确发布时间。补充检索截止：北京时间 2026-10-12 20:38:45。",
+          "additionalSources": [
+            {
+              "title": "发布媒体官网同文与日期",
+              "url": "https://www.qbitai.com/2026/10/502701.html"
+            },
+            {
+              "title": "公众号原文链接与日期发现目录",
+              "url": "https://www.aireadinghub.com/article/17130"
+            }
+          ]
+        },
+        {
+          "title": "公众号精选｜刚刚，GPT-6 Astra联手非职业数学家，证明57年「摆圆」 难题",
+          "originalTitle": "刚刚，GPT-6 Astra联手非职业数学家，证明57年「摆圆」 难题",
+          "summary": "量子位作者鱼羊报道，数学爱好者 nor 借助 GPT-6 Astra，给出了圆内摆圆问题中 N 为 15、16、17、18、20 时的最优性证明。核心方法是用几何约束缩小候选范围，再结合计算机枚举与刚性论证。原文强调，人类仍负责问题选择、引导、修补和反复核查；这些是报道中的证明主张，本次未独立复核数学正确性。",
+          "category": "技术实践",
+          "source": "微信公众号 / 量子位",
+          "sourceName": "微信公众号 / 量子位",
+          "sourceType": "blog",
+          "url": "https://mp.weixin.qq.com/s?__biz=MzIzNjc1NzUzMw==&chksm=e945691227edcd21c2cc783869b79ccb24ed6b2cd7818a386256964ecc99c55ae69c5dba31b0&idx=2&mid=2247932564&sn=93909753f912f1d1e8ddb6f796a44b5f#rd",
+          "publishedAt": "2026-10-12",
+          "authorBackground": "鱼羊，量子位该文的公开署名作者；nor 为文中介绍的数学爱好者及技术作者，未核实其真实姓名或正式任职。",
+          "detail": "热度未核实；本条为当日精选，不作热门排名。已读取量子位官网同名正文，官网与公开公众号目录均标注 2026-10-12；微信原文页未直读，未核实微信端精确发布时间。补充检索截止：北京时间 2026-10-12 20:38:45。",
+          "additionalSources": [
+            {
+              "title": "发布媒体官网同文与日期",
+              "url": "https://www.qbitai.com/2026/10/502667.html"
+            },
+            {
+              "title": "公众号原文链接与日期发现目录",
+              "url": "https://www.aireadinghub.com/article/17131"
+            }
+          ]
+        },
+        {
+          "title": "公众号精选｜具身智能开始卷系统了：RoboFoundry让机器人自主进化",
+          "originalTitle": "具身智能开始卷系统了：RoboFoundry让机器人自主进化",
+          "summary": "机器之心解读 RoboFoundry：冻结基座模型，让执行经验持续改进上下文、记忆和技能系统，验证有效的改动再进入通用系统。论文项目页显示，GPT-5.5 在 EmbodiedBench 的平均成功率从 56.9% 提升至 72.7%，增加 15.8 个百分点。文章还介绍跨机器人迁移和真机实验；论文于 9 月 26 日提交，本条是当天的公众号解读。",
+          "category": "技术实践",
+          "source": "微信公众号 / 机器之心",
+          "sourceName": "微信公众号 / 机器之心",
+          "sourceType": "blog",
+          "url": "https://mp.weixin.qq.com/s?__biz=MzA3MzI4MjgzMw==&chksm=857bff008e258798b583ef167d0cbd1aae97d54828cb3a6fb3d1996ce6dd09b7e902cc5b76bc&idx=3&mid=2651062250&sn=0bf24d2253fc8b154cf8a6852eb1c6b8#rd",
+          "publishedAt": "2026-10-12",
+          "authorBackground": "机器之心为该文发布公众号，未核实文章个人署名。研究共同第一作者为梁靖松（新加坡南洋理工大学博士生）和廖书昊（北京航空航天大学博士生）；身份见转载全文作者信息，姓名与机构可由原项目页交叉核对。",
+          "detail": "热度未核实；本条为当日精选，不作热门排名。已读取明确署名机器之心的转载全文，并与原始项目及论文交叉核对；公开公众号目录标注 2026-10-12，微信原文页未直读，未核实微信端精确发布时间。补充检索截止：北京时间 2026-10-12 20:38:45。",
+          "additionalSources": [
+            {
+              "title": "署名机器之心的转载全文",
+              "url": "https://finance.sina.com.cn/roll/2026-10-12/doc-iniuxwif5324044.shtml"
+            },
+            {
+              "title": "公众号原文链接与日期发现目录",
+              "url": "https://www.aireadinghub.com/article/17125"
+            },
+            {
+              "title": "原始项目与实验结果",
+              "url": "https://jingsongliang.com/robofoundry/"
+            },
+            {
+              "title": "原论文与提交日期",
+              "url": "https://arxiv.org/abs/2609.32862"
             }
           ]
         },
@@ -960,7 +1037,8 @@
         "independentPodcasts": "fresh",
         "independentBlogs": "fresh",
         "officialSources": "unchanged",
-        "githubTrending": "fresh"
+        "githubTrending": "fresh",
+        "wechat": "fresh"
       },
       "sourceNotes": [
         "检索截止北京时间 2026-10-12 17:07:20（Asia/Shanghai）。优先窗口为 2026-10-11T17:07:20+08:00 至 2026-10-12T17:07:20+08:00；GitHub 采用各榜实际采集快照。",
@@ -972,7 +1050,8 @@
         "Tibo Vanleke 的个人研究笔记标注 2026-10-12，但未提供时分或时区，作为日期精度补充；所解读论文发表于 2018 年和 2020 年，不是今天的新论文。身份由大学官方页面核验，实验数字对照原论文。",
         "已检查 OpenAI News、Anthropic News/Research、Google Research、Hugging Face Blog、Latent Space、Every、Cognitive Revolution 与 Simon Willison；未发现适合收录的窗口内公司官方新发布，不代表全行业没有更新。已发布旧内容和周回顾未重复收录。",
         "GitHub 综合、Python、Jupyter Notebook 实时日榜共 39 条记录，去重 37 个仓库；筛选 AI 项目后，新发现只详述今日增星前 5 个，另简列 16 个历史出现项目。未将其他新候选塞入简列。",
-        "网页检索返回的上月 GitHub Trending 缓存未采用；今日增星来自北京时间 17:01:22 直接读取的三个日榜，主要语言由仓库元数据复核。项目介绍依据本次读取的 README，未安装或独立测试。历史中新发现不等于项目刚创建或首次登上全站榜单。"
+        "网页检索返回的上月 GitHub Trending 缓存未采用；今日增星来自北京时间 17:01:22 直接读取的三个日榜，主要语言由仓库元数据复核。项目介绍依据本次读取的 README，未安装或独立测试。历史中新发现不等于项目刚创建或首次登上全站榜单。",
+        "微信公众号补充检索截止北京时间 2026-10-12 20:38:45。收录 3 篇当日公众号精选，来自量子位与机器之心的公开目录样本，不是全平台热度榜；微信阅读、点赞、在看及文章热度均未核实。公众号原文页未直接读取，精确原文链接与日期据公开目录核对：量子位两篇正文及同日日期由官网同文确认，机器之心一篇依据明确署名转载全文并与原项目及论文交叉核对。未验证微信端精确发布时间，未用转载时间充当公众号时间。"
       ],
       "contentStats": {
         "xAuthors": 6,
@@ -986,7 +1065,8 @@
         "githubFirstIncluded": 8,
         "githubNewInTrackedHistory": 5,
         "githubReturningInTrackedHistory": 16,
-        "totalItems": 29
+        "totalItems": 32,
+        "wechatArticles": 3
       },
       "githubHistory": {
         "priorTrackedDays": 13,
@@ -995,7 +1075,8 @@
         "returningCount": 16,
         "note": "已核验历史为 2026-09-05 至 2026-10-11 的 13 个实际快照日期（不含今天）：2026-09-05、2026-09-06、2026-09-09、2026-09-10、2026-09-11、2026-09-12、2026-10-04、2026-10-05、2026-10-07、2026-10-08、2026-10-09、2026-10-10、2026-10-11。日期不连续，且部分日期只保存日报入选项目；未记录日期及未入选项目不在覆盖范围内。新发现只表示此前留存快照中未出现，出现次数不是连续上榜天数。"
       },
-      "githubRankingNote": "2026-10-12 09:01:22（UTC，北京时间 17:01:22）直接读取 GitHub 综合、Python 与 Jupyter Notebook 日榜，合并去重并筛选 AI 项目；新发现取今日增星前 5 个，历史出现项目单独按今日增星降序。不是全站绝对排名；starsToday 为页面明确的今日增星，主要语言另由仓库元数据复核。"
+      "githubRankingNote": "2026-10-12 09:01:22（UTC，北京时间 17:01:22）直接读取 GitHub 综合、Python 与 Jupyter Notebook 日榜，合并去重并筛选 AI 项目；新发现取今日增星前 5 个，历史出现项目单独按今日增星降序。不是全站绝对排名；starsToday 为页面明确的今日增星，主要语言另由仓库元数据复核。",
+      "wechatSupplementRetrievedAt": "2026-10-12T20:38:45+08:00"
     },
     {
       "date": "2026-10-11",
