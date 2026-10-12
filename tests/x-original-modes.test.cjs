@@ -139,3 +139,8 @@ test('licensed originals expose safe license attribution and each post retains i
     assert.ok(license); assert.equal(license.href, proof.licenseUrl); assert.equal(license.rel, 'noopener noreferrer');
   });
 });
+
+test('published HTML refreshes the renderer cache for original and translation modes', () => {
+  const html = fs.readFileSync(require('node:path').join(__dirname, '../index.html'), 'utf8');
+  assert.match(html, /src="\.\/app\.js\?v=20261012-originals1"/);
+});
