@@ -105,7 +105,7 @@
     }
   }
   function validateXItem(item, path) {
-    const allowed = ['title', 'source', 'category', 'url', 'publishedAt', 'sourceType', 'authorName', 'authorBackground', 'backgroundVerifiedAt', 'xDisplay', 'sourcePosts', 'originalPosts'];
+    const allowed = ['title', 'source', 'category', 'url', 'publishedAt', 'sourceType', 'authorName', 'authorBackground', 'backgroundVerifiedAt', 'xDisplay', 'sourcePosts', 'originalPosts', 'summary'];
     for (const field of Object.keys(item)) assert(allowed.includes(field), path + '.' + field + ' is not allowed for X posts.');
     assert(item.backgroundVerifiedAt === undefined || item.backgroundVerifiedAt === null || isDate(item.backgroundVerifiedAt) || isTimestamp(item.backgroundVerifiedAt), path + '.backgroundVerifiedAt must be omitted, null, a real date or timestamp.');
     requireText(item.authorName, path + '.authorName', 300);
@@ -113,7 +113,9 @@
     assert(item.source === 'X / ' + item.authorName, path + '.source must be the neutral X / author label.');
     assert(item.title === item.authorName + ' · X 原帖', path + '.title must be the neutral author and X post label.');
     assert(item.xDisplay === undefined || ['official-embed', 'link-only', 'user-provided', 'licensed-original', 'short-quotation'].includes(item.xDisplay), path + '.xDisplay must be official-embed, link-only, user-provided, licensed-original or short-quotation.');
-    for (const field of ['summary', 'detail', 'translations', 'originalTitle', 'sourceEvidence', 'evidenceNote', 'additionalSources']) {
+    if (hasOriginalPosts(item)) assert(item.summary === undefined, path + '.summary is not allowed for full-text X posts.');
+    else if (item.summary !== undefined) requireText(item.summary, path + '.summary', 10000);
+    for (const field of ['detail', 'translations', 'originalTitle', 'sourceEvidence', 'evidenceNote', 'additionalSources']) {
       assert(item[field] === undefined, path + '.' + field + ' is not allowed for X posts.');
     }
     assert(Array.isArray(item.sourcePosts) && item.sourcePosts.length > 0 && item.sourcePosts.length <= 20, path + '.sourcePosts must contain 1–20 original post links.');
@@ -192,7 +194,7 @@
   function searchableText(item) {
     if (item.sourceType === 'x') {
       return [item.authorName, item.authorBackground, item.source, ...(item.sourcePosts || []).flatMap(post => [post.url, post.publishedAt]),
-        ...(hasOriginalPosts(item) ? (item.originalPosts || []).flatMap(post => [post.text, post.translation]) : [])].join(' ');
+        ...(hasOriginalPosts(item) ? (item.originalPosts || []).flatMap(post => [post.text, post.translation]) : [item.summary])].join(' ');
     }
     return [item.title, item.summary, item.source, item.originalTitle, item.authorBackground, item.detail,
       ...(item.translations || []).flatMap(translation => [translation.text, translation.note])].join(' ');
@@ -286,7 +288,7 @@
         const section = el('section', 'source-section');
         section.dataset.sourceType = group.type;
         section.append(el('h3', 'source-section-title', group.title));
-        if (group.type === 'x') section.append(el('p', 'source-section-note', '可提供完整原文的条目逐帖展示原文与全文翻译。其他条目由 X 官方加载，需连接 X；长帖可能需点 Show more。期内搜索包含本站展示的原文与译文，不检索跨域卡片。'));
+        if (group.type === 'x') section.append(el('p', 'source-section-note', '可提供完整原文的条目逐帖展示原文与全文翻译。其他条目在有核实正文时提供中文摘要，原帖由 X 官方加载，需连接 X；长帖可能需点 Show more。期内搜索包含本站展示的摘要、原文与译文，不检索跨域卡片。'));
         if (group.type === 'github') {
           if (typeof selected.githubHistory?.note === 'string') section.append(el('p', 'source-section-note', selected.githubHistory.note));
           if (typeof selected.githubRankingNote === 'string') section.append(el('p', 'source-section-note', selected.githubRankingNote));
@@ -347,6 +349,11 @@
               body.append(block);
             }
           } else {
+            if (item.summary) {
+              const summary = el('div', 'tweet-summary');
+              summary.append(el('p', 'translation-label', '中文摘要'), el('p', '', item.summary));
+              body.append(summary);
+            }
             body.append(el('p', 'translation-note', '本条未提供全文翻译。下方为 X 官方原帖；加载失败时可使用原帖链接。'));
             const links = el('div', 'original-post-embeds');
             for (const [postIndex, post] of item.sourcePosts.entries()) {

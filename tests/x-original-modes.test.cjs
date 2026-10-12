@@ -140,7 +140,60 @@ test('licensed originals expose safe license attribution and each post retains i
   });
 });
 
-test('published HTML refreshes the renderer cache for original and translation modes', () => {
+test('published HTML refreshes the renderer cache for Chinese embed summaries', () => {
   const html = fs.readFileSync(require('node:path').join(__dirname, '../index.html'), 'utf8');
-  assert.match(html, /src="\.\/app\.js\?v=20261012-originals1"/);
+  assert.match(html, /src="\.\/app\.js\?v=20261012-summaries1"/);
+});
+
+
+test('effective embed modes accept optional nonempty summaries with the existing 10000 character limit', () => {
+  for (const mode of ['official-embed', 'link-only', undefined]) {
+    const item = row(); item.xDisplay = mode; delete item.originalPosts;
+    assert.doesNotThrow(() => check(item));
+    assert.doesNotThrow(() => check({ ...item, summary: '作者说明了测试方法与适用条件。' }));
+    assert.doesNotThrow(() => check({ ...item, summary: '测'.repeat(10000) }));
+    for (const summary of ['', '  ', null, 42, {}, [], '测'.repeat(10001)]) {
+      assert.throws(() => check({ ...item, summary }), /summary/);
+    }
+    assert.throws(() => check({ ...item, originalPosts: row().originalPosts }), /originalPosts/);
+    for (const field of ['detail', 'translations', 'originalTitle', 'sourceEvidence', 'evidenceNote', 'additionalSources', 'rawText']) {
+      assert.throws(() => check({ ...item, [field]: 'unallowed copied text' }), /not allowed/);
+    }
+  }
+});
+
+test('all full-text modes still forbid summaries and exclude them from search', () => {
+  for (const mode of ['user-provided', 'licensed-original', 'short-quotation']) {
+    const item = row(mode);
+    if (mode === 'user-provided') delete item.originalPosts[0].provenance;
+    assert.doesNotThrow(() => check(item));
+    for (const summary of ['Forbidden commentary', '', null]) assert.throws(() => check({ ...item, summary }), /summary.*not allowed/);
+    assert.equal(app.filterItems({ items: [{ ...item, summary: 'Forbidden commentary' }] }, '全部', 'Forbidden commentary').length, 0);
+  }
+});
+
+test('effective embed summaries render as labeled safe text after background and before official embeds', async t => {
+  const rows = ['official-embed', 'link-only', undefined].map(mode => {
+    const item = row(); item.xDisplay = mode; delete item.originalPosts;
+    item.summary = '作者介绍 Alpha 机制与适用条件。 <script>alert(1)</script> & **原样文字**';
+    return item;
+  });
+  const historical = row(); historical.xDisplay = 'link-only'; delete historical.originalPosts;
+  const content = await render(t, data([...rows, historical]));
+  assert.match(content.querySelectorAll('p').find(n => n.className === 'source-section-note').textContent, /期内搜索包含本站展示的摘要、原文与译文/);
+  const cards = content.querySelectorAll('article'); assert.equal(cards.length, 4);
+  cards.slice(0, 3).forEach((card, i) => {
+    const item = rows[i], body = card.querySelectorAll('div').find(n => n.className === 'news-body');
+    const summary = body.children.find(n => n.className === 'tweet-summary');
+    assert.ok(summary); assert.equal(summary.textContent, '中文摘要' + item.summary);
+    assert.ok(body.children.indexOf(summary) > body.children.findIndex(n => n.className === 'author-background'));
+    assert.ok(body.children.indexOf(summary) < body.children.findIndex(n => n.className === 'original-post-embeds'));
+    assert.equal(card.querySelectorAll('script').length, 0);
+    assert.match(card.textContent, /本条未提供全文翻译/);
+    assert.deepEqual(card.querySelectorAll('div').filter(n => n.className === 'tweet-embed-block').map(n => n.dataset.postUrl), item.sourcePosts.map(p => p.url));
+    assert.ok(card.querySelectorAll('a').some(n => n.href === item.url));
+    for (const term of ['适用条件', 'ａｌｐｈａ']) assert.equal(app.filterItems({ items: [item] }, '全部', term).length, 1);
+  });
+  assert.equal(cards[3].querySelectorAll('div').filter(n => n.className === 'tweet-summary').length, 0);
+  assert.ok(!cards[3].textContent.includes('中文摘要'));
 });

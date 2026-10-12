@@ -20,7 +20,10 @@ function verifyXArchive(digest, markdown) {
      assert.ok(archiveText.includes(']('+post.provenance.licenseUrl+')'),post.sourceUrl+' license link');
     }
    }
-  } else assert.equal(item.originalPosts,undefined);
+  } else {
+   assert.equal(item.originalPosts,undefined);
+   if(item.summary!==undefined)assert.ok(archiveText.includes(item.summary),item.authorName+' same Chinese summary');
+  }
   assert.equal(item.title,item.authorName+' · X 原帖');
   assert.ok(archiveText.includes(item.authorBackground),item.authorName+' same biography');
   for(const post of item.sourcePosts)assert.ok(archiveText.includes(']('+post.url+')'),post.url);
@@ -42,4 +45,13 @@ test('synthetic new-mode Markdown checks catch missing or mismatched full text, 
   assert.doesNotThrow(()=>verifyXArchive(digest,markdown));
   for(const text of [item.originalPosts[0].text,'测试完整译文',item.authorBackground,']('+url+')',...(mode==='licensed-original'?[proof.licenseScope,']('+proof.licenseUrl+')']:[])])assert.throws(()=>verifyXArchive(digest,markdown.replace(text,'MISMATCH')));
  }
+});
+
+test('synthetic embedded summaries must also appear unchanged in the Markdown archive',()=>{
+ const url='https://x.com/example/status/123';
+ const item={title:'Example Author · X 原帖',source:'X / Example Author',authorName:'Example Author',authorBackground:'Synthetic author background.',sourceType:'x',xDisplay:'official-embed',category:'技术实践',url,sourcePosts:[{url}],summary:'作者概述了测试机制，并说明适用条件。'};
+ const digest={date:'2026-10-12',title:'Fixture',summary:'Fixture',items:[item]};
+ const markdown='## X 推文精选\n'+item.authorBackground+'\n中文摘要：'+item.summary+'\n[原帖]('+url+')\n';
+ assert.doesNotThrow(()=>verifyXArchive(digest,markdown));
+ assert.throws(()=>verifyXArchive(digest,markdown.replace(item.summary,'Different summary')),/same Chinese summary/);
 });

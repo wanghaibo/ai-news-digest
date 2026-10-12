@@ -21,7 +21,7 @@ test('non-X original titles, details and backgrounds remain searchable and valid
 test('link-only X validates without a summary and rejects removed commentary fields',()=>{
  assert.doesNotThrow(()=>app.validateData(data([xItem()])));
  assert.doesNotThrow(()=>app.validateData(data([xItem({xDisplay:undefined})])));
- for(const field of ['summary','detail','translations','originalTitle','sourceEvidence','evidenceNote','additionalSources','originalPosts']){
+ for(const field of ['detail','translations','originalTitle','sourceEvidence','evidenceNote','additionalSources','originalPosts']){
   assert.throws(()=>app.validateData(data([xItem({[field]:'Removed material'})])),new RegExp(field));
  }
  assert.throws(()=>app.validateData(data([xItem({title:'An explanatory headline'})])),/title/);
@@ -32,10 +32,10 @@ test('X source posts retain exact direct URLs and validate safe hosts, dates and
  for(const sourcePosts of [undefined,[],[{}],[{url:'javascript:alert(1)'}],[{url:'https://example.com/post'}],[{url:base.url,publishedAt:'2026-02-30'}],[{url:base.url},{url:base.url}],[{url:'https://x.com/example/status/456'}]])assert.throws(()=>app.validateData(data([xItem({sourcePosts})])),/sourcePosts/);
  assert.doesNotThrow(()=>app.validateData(data([xItem({sourcePosts:[...base.sourcePosts,{url:'https://twitter.com/example/status/456?s=20'}]})])));
 });
-test('link-only search never matches stale summaries, excerpts, detail or derived headlines',()=>{
+test('link-only search includes its summary but ignores excerpts, detail and derived headlines',()=>{
  const row=xItem({title:'Staleheadline',summary:'Stalesummary',detail:'Staledetail',originalTitle:'Staleoriginaltitle',translations:[{text:'Staletranslation',note:'Stalenote'}]});
- for(const term of ['staleheadline','stalesummary','staledetail','staleoriginaltitle','staletranslation','stalenote'])assert.equal(app.filterItems({items:[row]},'全部',term).length,0);
- for(const term of ['example author','developer','x.com/example/status/123'])assert.equal(app.filterItems({items:[row]},'全部',term).length,1);
+ for(const term of ['staleheadline','staledetail','staleoriginaltitle','staletranslation','stalenote'])assert.equal(app.filterItems({items:[row]},'全部',term).length,0);
+ for(const term of ['stalesummary','example author','developer','x.com/example/status/123'])assert.equal(app.filterItems({items:[row]},'全部',term).length,1);
 });
 test('user-provided X text requires complete original and translation blocks, without analysis',()=>{
  const original={text:'One line\n\n  indented line 😊',translation:'第一行\n\n  缩进行 😊',sourceUrl:'https://x.com/example/status/123'};
