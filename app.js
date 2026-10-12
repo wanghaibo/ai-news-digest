@@ -211,6 +211,26 @@
       items: items.filter(item => (known.has(item.sourceType) ? item.sourceType : 'other') === type)
     })).filter(group => group.items.length);
   }
+  // Presentation is derived without migrating historical source types or data.
+  function sourcePresentation(item) {
+    const type = item.sourceType || 'other';
+    if (type === 'x') return { kind: 'x' };
+    const name = item.sourceName || item.source;
+    const wechat = type === 'blog' && ((isSafeUrl(item.url) && new URL(item.url).hostname.toLowerCase() === 'mp.weixin.qq.com') ||
+      /^微信公众号\s*[/／]/.test(name) || /^微信公众号\s*[/／]/.test(item.source));
+    if (wechat) return { kind: 'wechat', name: name.replace(/^微信公众号\s*[/／]\s*/, ''), label: '微信公众号', mark: '微信', action: '阅读公众号原文' };
+    if (type === 'github') return { kind: 'github', name: 'GitHub', label: '开源项目', mark: 'GH', action: '查看 GitHub 仓库' };
+    if (type === 'podcast') return { kind: 'podcast', name, label: '播客', mark: '♫', action: '打开本期节目' };
+    return { kind: type };
+  }
+  function projectFacts(item) {
+    const facts = [];
+    if (typeof item.language === 'string' && item.language.trim()) facts.push(item.language.trim());
+    if (Number.isSafeInteger(item.starsToday) && item.starsToday >= 0) facts.push('今日增星 +' + item.starsToday.toLocaleString('en-US'));
+    if (item.githubStatus === 'new') facts.push('留存历史中新发现');
+    else if (item.githubStatus === 'returning') facts.push(Number.isSafeInteger(item.priorAppearanceCount) && item.priorAppearanceCount > 0 ? '历史出现 ' + item.priorAppearanceCount + ' 次' : '历史已收录');
+    return facts;
+  }
   function formatDate(value) {
     return new Intl.DateTimeFormat('zh-CN', { year: 'numeric', month: 'long', day: 'numeric', timeZone: 'UTC' }).format(new Date(value + 'T12:00:00Z'));
   }
@@ -295,7 +315,9 @@
         }
         let publisher = null, githubStatus = null;
         for (const item of group.items) {
-        if (group.type === 'blog' && item.sourceName && item.sourceName !== publisher) {
+        const presentation = sourcePresentation(item);
+        const branded = ['wechat', 'github', 'podcast'].includes(presentation.kind);
+        if (group.type === 'blog' && presentation.kind !== 'wechat' && item.sourceName && item.sourceName !== publisher) {
           publisher = item.sourceName;
           section.append(el('p', 'publisher-heading', publisher));
         }
@@ -304,12 +326,16 @@
           section.append(el('p', 'publisher-heading', githubStatus === 'returning' ? '持续热门｜历史记录中已出现' : '新发现｜留存历史中未出现'));
         }
         const article = el('article', item.githubStatus === 'returning' ? 'news-card recurring-card' : 'news-card');
+        if (branded) {
+          article.className += ' source-card source-card--' + presentation.kind;
+          article.dataset.presentation = presentation.kind;
+        }
         const number = el('span', 'news-number', String(selected.items.indexOf(item) + 1).padStart(2, '0'));
         number.setAttribute('aria-hidden', 'true');
         const body = el('div', 'news-body');
         const meta = el('div', 'news-meta');
         if (item.sourceType !== 'x') meta.append(el('span', 'category-tag', item.category));
-        meta.append(el('span', '', item.source));
+        if (!branded) meta.append(el('span', '', item.source));
         if (item.publishedAt) {
           const time = el('time', '', item.publishedAt.slice(0, 10));
           time.dateTime = item.publishedAt;
@@ -317,16 +343,36 @@
           meta.append(time);
         }
         const title = el('h4');
-        title.append(externalLink(item.url, '', item.title));
-        const source = externalLink(item.url, 'source-link', '阅读原文 ↗');
-        source.setAttribute('aria-label', '阅读原文：' + item.title + '（在新标签页打开）');
+        const displayTitle = presentation.kind === 'wechat' ? item.title.replace(/^公众号精选[｜|]\s*/, '') :
+          presentation.kind === 'podcast' ? item.title.replace(/^播客[｜|]\s*/, '') : item.title;
+        title.append(externalLink(item.url, '', displayTitle));
+        const action = presentation.action || '阅读原文';
+        const source = externalLink(item.url, 'source-link', action + ' ↗');
+        source.setAttribute('aria-label', action + '：' + item.title + '（在新标签页打开）');
+        if (branded) {
+          const identity = el('div', 'source-identity');
+          const mark = el('span', 'source-mark', presentation.mark);
+          mark.setAttribute('aria-hidden', 'true');
+          const name = el('div', 'source-identity-text');
+          name.append(el('span', 'source-platform', presentation.label), el('span', 'source-name', presentation.name));
+          identity.append(mark, name);
+          body.append(identity);
+        }
         body.append(meta, title);
-        if (item.sourceType !== 'x' && item.originalTitle) {
+        if (presentation.kind === 'github') {
+          const facts = projectFacts(item);
+          if (facts.length) {
+            const list = el('div', 'project-facts');
+            for (const fact of facts) list.append(el('span', 'project-fact', fact));
+            body.append(list);
+          }
+        }
+        if (item.sourceType !== 'x' && item.originalTitle && (!branded || item.originalTitle !== displayTitle)) {
           const original = el('p', 'original-title', '原题：');
           original.append(externalLink(item.url, '', item.originalTitle));
           body.append(original);
         }
-        if (item.authorBackground) body.append(el('p', 'author-background', item.authorBackground));
+        if (item.authorBackground && !branded) body.append(el('p', 'author-background', item.authorBackground));
         if (item.sourceType === 'x') {
           if (hasOriginalPosts(item)) {
             for (const post of item.originalPosts) {
@@ -376,12 +422,22 @@
           }
           body.append(el('p', 'analysis-label', '摘要与解读'));
         }
-        body.append(el('p', '', item.summary));
+        if (branded) body.append(el('p', 'source-summary-label', presentation.kind === 'podcast' ? '本期要点' : presentation.kind === 'wechat' ? '文章导读' : '项目简介'));
+        body.append(el('p', branded ? 'source-summary' : '', item.summary));
+        if (branded && item.authorBackground) {
+          const background = el('div', 'source-background');
+          background.append(el('p', 'source-detail-label', presentation.kind === 'podcast' ? '节目与人物背景' : '作者与背景'), el('p', '', item.authorBackground));
+          body.append(background);
+        }
         if (item.detail) {
           if (item.githubStatus === 'returning') {
             const expansion = el('details', 'recurring-analysis');
             expansion.append(el('summary', '', '展开项目分析'), el('p', 'article-detail', item.detail));
             body.append(expansion);
+          } else if (branded) {
+            const detail = el('div', 'source-context');
+            detail.append(el('p', 'source-detail-label', presentation.kind === 'wechat' ? '来源说明' : '延伸与来源说明'), el('p', 'article-detail', item.detail));
+            body.append(detail);
           } else body.append(el('p', 'article-detail', '进一步理解：' + item.detail));
         }
         body.append(source);
@@ -393,7 +449,11 @@
             link.setAttribute('aria-label', entry.title + '（在新标签页打开）');
             links.append(link, document.createTextNode(' '));
           }
-          body.append(links);
+          if (branded) {
+            const evidence = el('details', 'source-evidence');
+            evidence.append(el('summary', '', '查看补充来源 · ' + additional.length), links);
+            body.append(evidence);
+          } else body.append(links);
         }
         }
         article.append(number, body);
@@ -547,7 +607,7 @@
     });
     loadData();
   }
-  return { CATEGORIES, isDate, isSafeUrl, isTimestamp, validateData, filterItems, formatDate, selectDigest, supplementalSources, groupItems, start };
+  return { CATEGORIES, isDate, isSafeUrl, isTimestamp, validateData, filterItems, formatDate, selectDigest, supplementalSources, groupItems, sourcePresentation, projectFacts, start };
 });
 
 

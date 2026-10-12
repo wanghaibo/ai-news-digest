@@ -38,3 +38,42 @@
 .news-card .tweet-embed-status{font-size:13px;color:var(--sub)}
 .tweet-embed-retry{padding:8px 12px;min-height:40px;border:1px solid var(--line);border-radius:4px;background:var(--mint);color:var(--teal)}
 @media(max-width:380px){.source-section[data-source-type="x"] .news-card{grid-template-columns:minmax(0,1fr)}.source-section[data-source-type="x"] .news-number{display:none}}
+
+/* Source-specific cards keep the shared editorial layout and reading order. */
+.source-card{--source-accent:#18794e;--source-tint:#edf7f0;--source-border:#d7e7dc;position:relative;margin:18px 0 24px;padding:24px 22px 25px;background:var(--paper);border:1px solid var(--source-border);border-top:3px solid var(--source-accent);border-radius:12px;grid-template-columns:20px minmax(0,1fr);gap:14px}
+.source-card--github{--source-accent:#35465a;--source-tint:#eef1f5;--source-border:#dce1e7}
+.source-card--podcast{--source-accent:#7050a0;--source-tint:#f2edf8;--source-border:#e3daed}
+.source-card .news-number{font:11px/1.6 var(--sans);padding-top:10px;color:#757e75}
+.source-identity{display:flex;align-items:center;gap:11px;margin-bottom:18px;min-width:0}
+.source-mark{flex:0 0 40px;width:40px;height:40px;display:grid;place-items:center;border-radius:10px;background:var(--source-tint);color:var(--source-accent);font:700 12px/1 var(--sans)}
+.source-card--podcast .source-mark{font-size:25px;border-radius:50%}
+.source-card--github .source-mark{font-family:ui-monospace,SFMono-Regular,Consolas,monospace;font-size:15px}
+.source-identity-text{display:flex;flex-direction:column;min-width:0;line-height:1.5}
+.source-platform{font-size:10px;color:var(--sub);letter-spacing:.06em}
+.source-name{font-size:14px;font-weight:600;color:var(--source-accent);overflow-wrap:anywhere}
+.source-card .news-meta{gap:10px;font-size:11px}
+.source-card .category-tag{background:var(--source-tint);color:var(--source-accent);font-size:10px}
+.source-card h4{font-family:var(--sans);font-size:21px;line-height:1.55;font-weight:650;margin:10px 0 15px;letter-spacing:-.01em}
+.source-card--wechat h4{font-family:var(--serif);font-weight:600;font-size:23px}
+.source-card--github h4{font-family:ui-monospace,SFMono-Regular,Consolas,"Microsoft YaHei",monospace;font-size:20px;letter-spacing:-.025em}
+.source-card p.source-summary-label{color:var(--source-accent);font-size:11px;font-weight:650;letter-spacing:.05em;margin:18px 0 6px}
+.source-card p.source-summary{font-size:15px;line-height:1.9;color:var(--ink)}
+.source-card .original-title{margin:0 0 12px;font-size:12px}
+.source-background,.source-context{margin-top:18px;padding-top:14px;border-top:1px solid var(--source-border)}
+.source-card .source-background p,.source-card .source-context p{font-size:12px;line-height:1.85;color:var(--sub);white-space:pre-line}
+.source-card p.source-detail-label{font-size:11px;font-weight:600;color:var(--source-accent);margin:0 0 5px}
+.project-facts{display:flex;flex-wrap:wrap;gap:7px;margin:0 0 16px}
+.project-fact{display:inline-block;padding:4px 8px;border-radius:5px;background:var(--source-tint);color:var(--source-accent);font-size:11px;line-height:1.5;overflow-wrap:anywhere}
+.source-card .source-link{color:var(--source-accent);font-size:12px;min-height:40px;margin-top:14px;gap:8px;font-weight:500}
+.source-card .news-body>a.source-link{padding:7px 12px;border-radius:6px;background:var(--source-tint)}
+.source-card a:hover{text-decoration:underline;text-underline-offset:3px;color:var(--source-accent)}
+.source-evidence{margin-top:14px;border-top:1px solid var(--source-border);padding-top:12px;font-size:12px;color:var(--sub)}
+.source-evidence summary{cursor:pointer;min-height:32px;line-height:1.8;display:list-item}
+.source-evidence .additional-sources{display:flex;flex-direction:column;align-items:flex-start;gap:3px;padding-top:5px}
+.source-evidence .source-link{margin-top:0;line-height:1.6;overflow-wrap:anywhere}
+.source-card.recurring-card{padding-top:20px;padding-bottom:20px}
+.source-card.recurring-card .source-identity{margin-bottom:12px}
+.source-card .recurring-analysis{margin-top:14px}
+.source-card .recurring-analysis summary{min-height:36px;line-height:2;color:var(--source-accent)}
+@media(max-width:760px){.source-card{padding:19px 17px 20px;grid-template-columns:minmax(0,1fr);gap:0;margin:16px 0 22px}.source-card .news-number{display:none}.source-card .news-meta{font-size:12px}.source-card .category-tag{font-size:11px}.source-card h4{font-size:20px}.source-card--wechat h4{font-size:22px}.source-card--github h4{font-size:19px}.source-card p.source-summary{font-size:15px}.source-platform{font-size:11px}.source-name{font-size:14px}.source-card .source-link{font-size:13px;min-height:44px}.source-card .source-background p,.source-card .source-context p{font-size:13px}.project-fact{font-size:12px}.source-evidence summary{min-height:40px}.source-card.recurring-card{padding:18px 17px}}
+@media print{.source-card{border-color:#bbb;background:white;box-shadow:none}.source-card .news-body>a.source-link{background:none;padding:0}.source-evidence .additional-sources{display:block}}
