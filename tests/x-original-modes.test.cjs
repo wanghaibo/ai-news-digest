@@ -142,7 +142,7 @@ test('licensed originals expose safe license attribution and each post retains i
 
 test('published HTML refreshes the renderer cache for Chinese embed summaries', () => {
   const html = fs.readFileSync(require('node:path').join(__dirname, '../index.html'), 'utf8');
-  assert.match(html, /src="\.\/app\.js\?v=20261012-sourcecards1"/);
+  assert.match(html, /src="\.\/app\.js\?v=20261013-reponames1"/);
 });
 
 

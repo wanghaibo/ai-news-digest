@@ -156,6 +156,7 @@
       dates.add(digest.date);
       requireText(digest.title, path + '.title', 300);
       requireText(digest.summary, path + '.summary', 5000);
+      if (digest.githubHistory?.newLabel !== undefined) assert(digest.githubHistory.newLabel === '首次收录于本日报', path + '.githubHistory.newLabel must be 首次收录于本日报.');
       assert(Array.isArray(digest.items) && digest.items.length > 0 && digest.items.length <= 100, path + '.items must contain 1–100 articles.');
       for (const [itemIndex, item] of digest.items.entries()) {
         const itemPath = path + '.items[' + itemIndex + ']';
@@ -223,11 +224,11 @@
     if (type === 'podcast') return { kind: 'podcast', name, label: '播客', mark: '♫', action: '打开本期节目' };
     return { kind: type };
   }
-  function projectFacts(item) {
+  function projectFacts(item, newLabel) {
     const facts = [];
     if (typeof item.language === 'string' && item.language.trim()) facts.push(item.language.trim());
     if (Number.isSafeInteger(item.starsToday) && item.starsToday >= 0) facts.push('今日增星 +' + item.starsToday.toLocaleString('en-US'));
-    if (item.githubStatus === 'new') facts.push('留存历史中新发现');
+    if (item.githubStatus === 'new') facts.push(newLabel === '首次收录于本日报' ? newLabel : '留存历史中新发现');
     else if (item.githubStatus === 'returning') facts.push(Number.isSafeInteger(item.priorAppearanceCount) && item.priorAppearanceCount > 0 ? '历史出现 ' + item.priorAppearanceCount + ' 次' : '历史已收录');
     return facts;
   }
@@ -323,7 +324,7 @@
         }
         if (group.type === 'github' && item.githubStatus && item.githubStatus !== githubStatus) {
           githubStatus = item.githubStatus;
-          section.append(el('p', 'publisher-heading', githubStatus === 'returning' ? '持续热门｜历史记录中已出现' : '新发现｜留存历史中未出现'));
+          section.append(el('p', 'publisher-heading', githubStatus === 'returning' ? '持续热门｜历史记录中已出现' : (selected.githubHistory?.newLabel || '新发现｜留存历史中未出现')));
         }
         const article = el('article', item.githubStatus === 'returning' ? 'news-card recurring-card' : 'news-card');
         if (branded) {
@@ -345,7 +346,12 @@
         const title = el('h4');
         const displayTitle = presentation.kind === 'wechat' ? item.title.replace(/^公众号精选[｜|]\s*/, '') :
           presentation.kind === 'podcast' ? item.title.replace(/^播客[｜|]\s*/, '') : item.title;
-        title.append(externalLink(item.url, '', displayTitle));
+        const titleLink = externalLink(item.url, '', displayTitle);
+        if (presentation.kind === 'github') {
+          title.setAttribute('translate', 'no'); title.className = 'notranslate';
+          titleLink.setAttribute('translate', 'no'); titleLink.className = 'notranslate';
+        }
+        title.append(titleLink);
         const action = presentation.action || '阅读原文';
         const source = externalLink(item.url, 'source-link', action + ' ↗');
         source.setAttribute('aria-label', action + '：' + item.title + '（在新标签页打开）');
@@ -360,7 +366,7 @@
         }
         body.append(meta, title);
         if (presentation.kind === 'github') {
-          const facts = projectFacts(item);
+          const facts = projectFacts(item, selected.githubHistory?.newLabel);
           if (facts.length) {
             const list = el('div', 'project-facts');
             for (const fact of facts) list.append(el('span', 'project-fact', fact));
