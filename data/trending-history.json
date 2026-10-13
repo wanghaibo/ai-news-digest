@@ -3,6 +3,42 @@
   "note": "仅用于有界历史查重；记录不连续，不能据此推断连续上榜或绝对首次上榜。",
   "snapshots": [
     {
+      "date": "2026-10-13",
+      "repositories": [
+        "OpenBMB/VoxCPM",
+        "multimodal-art-projection/YuE",
+        "open-webui/open-webui",
+        "microsoft/BitNet",
+        "NirDiamant/agents-towards-production",
+        "morluto/rea",
+        "storytold/artcraft",
+        "cathrynlavery/diagram-design",
+        "bilawalsidhu/gods-eye-view",
+        "debpalash/VoiceStudio",
+        "lyogavin/airllm",
+        "hugohe3/ppt-master",
+        "calesthio/OpenMontage",
+        "Alishahryar1/free-claude-code",
+        "pytorch/pytorch",
+        "MadsLorentzen/ai-job-search",
+        "mksglu/context-mode",
+        "Lordog/dive-into-llms",
+        "huggingface/transformers",
+        "google/skills",
+        "NirDiamant/RAG_Techniques",
+        "NirDiamant/GenAI_Agents",
+        "facebookresearch/audiocraft",
+        "datawhalechina/llm-algo-leetcode"
+      ],
+      "coverage": "本期核验入选的 24 个 AI 相关项目（5 个历史中新发现、19 个历史出现）；综合、Python、Jupyter Notebook 日榜的部分快照，不是完整榜单",
+      "observedAt": "2026-10-13T09:09:35.830539+00:00",
+      "sources": [
+        "https://github.com/trending?since=daily",
+        "https://github.com/trending/python?since=daily",
+        "https://github.com/trending/jupyter%20notebook?since=daily"
+      ]
+    },
+    {
       "date": "2026-10-12",
       "repositories": [
         "bilawalsidhu/gods-eye-view",
