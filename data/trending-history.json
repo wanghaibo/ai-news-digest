@@ -3,6 +3,36 @@
   "note": "仅用于有界历史查重；记录不连续，不能据此推断连续上榜或绝对首次上榜。",
   "snapshots": [
     {
+      "date": "2026-10-15",
+      "repositories": [
+        "vxcontrol/pentagi",
+        "MakazhanAlpamys/Soup",
+        "p-e-w/heretic",
+        "anthropics/claude-plugins-official",
+        "jamiepine/voicebox",
+        "morluto/rea",
+        "debpalash/VoiceStudio",
+        "ifixai-ai/iFixAi",
+        "mksglu/context-mode",
+        "Alishahryar1/free-claude-code",
+        "lyogavin/airllm",
+        "K-Dense-AI/scientific-agent-skills",
+        "microsoft/ai-agents-for-beginners",
+        "sgl-project/sglang",
+        "datawhalechina/happy-llm",
+        "OpenBMB/MiniCPM",
+        "karpathy/nn-zero-to-hero",
+        "ageron/handson-ml3",
+        "facebookresearch/dinov2",
+        "google-gemini/cookbook",
+        "facebookresearch/audiocraft",
+        "ageron/handson-mlp",
+        "DataTalksClub/llm-zoomcamp",
+        "fastai/fastbook"
+      ],
+      "coverage": "本期直接核验并入选日报的 GitHub AI 项目部分快照；不是三张日榜或全站完整榜单。"
+    },
+    {
       "date": "2026-10-14",
       "repositories": [
         "harry0703/MoneyPrinterTurbo",
