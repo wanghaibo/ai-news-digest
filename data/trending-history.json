@@ -3,6 +3,45 @@
   "note": "仅用于有界历史查重；记录不连续，不能据此推断连续上榜或绝对首次上榜。",
   "snapshots": [
     {
+      "date": "2026-10-16",
+      "repositories": [
+        "HKUDS/CLI-Anything",
+        "xerj-org/xerj",
+        "ShawnPana/phone-harness",
+        "ahujasid/mcp-for-blender",
+        "trailofbits/skills",
+        "morluto/rea",
+        "debpalash/VoiceStudio",
+        "ifixai-ai/iFixAi",
+        "K-Dense-AI/scientific-agent-skills",
+        "affaan-m/ECC",
+        "mksglu/context-mode",
+        "harry0703/MoneyPrinterTurbo",
+        "obra/superpowers",
+        "JuliusBrussee/caveman",
+        "anthropics/claude-plugins-official",
+        "bojieli/ai-agent-book",
+        "lyogavin/airllm",
+        "ruvnet/ruflo",
+        "volcengine/OpenViking",
+        "anthropics/claude-cookbooks",
+        "datawhalechina/happy-llm",
+        "gepa-ai/gepa",
+        "NirDiamant/RAG_Techniques",
+        "ageron/handson-ml3",
+        "ed-donner/agents",
+        "facebookresearch/dinov2",
+        "mrdbourke/zero-to-mastery-ml"
+      ],
+      "coverage": "本期直接核验并入选日报的 27 个 GitHub AI 项目部分快照（5 个首次收录、22 个历史出现）；不是三张日榜或全站完整榜单。",
+      "observedAt": "2026-10-16T09:06:40Z",
+      "sources": [
+        "https://github.com/trending?since=daily",
+        "https://github.com/trending/python?since=daily",
+        "https://github.com/trending/jupyter%20notebook?since=daily"
+      ]
+    },
+    {
       "date": "2026-10-15",
       "repositories": [
         "vxcontrol/pentagi",
