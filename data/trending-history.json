@@ -3,6 +3,46 @@
   "note": "仅用于有界历史查重；记录不连续，不能据此推断连续上榜或绝对首次上榜。",
   "snapshots": [
     {
+      "date": "2026-10-18",
+      "repositories": [
+        "stablyai/orca",
+        "akitaonrails/ai-memory",
+        "ScrapeCreators/social-media-research-skills",
+        "HandsOnLLM/Hands-On-Large-Language-Models",
+        "chiphuyen/aie-book",
+        "debpalash/VoiceStudio",
+        "anthropics/claude-plugins-official",
+        "MadsLorentzen/ai-job-search",
+        "xerj-org/xerj",
+        "affaan-m/ECC",
+        "K-Dense-AI/scientific-agent-skills",
+        "HKUDS/CLI-Anything",
+        "anomalyco/opencode",
+        "ruvnet/ruflo",
+        "android/skills",
+        "anthropics/claude-code",
+        "google/artemis",
+        "microsoft/AI-For-Beginners",
+        "bmad-code-org/BMAD-METHOD",
+        "The-Swarm-Corporation/AutoHedge",
+        "microsoft/ML-For-Beginners",
+        "AI4Finance-Foundation/FinRL",
+        "lightseekorg/tokenspeed",
+        "Liquid4All/cookbook",
+        "ageron/handson-ml3",
+        "facebookresearch/audiocraft",
+        "NVIDIA-NeMo/Nemotron",
+        "mrdbourke/zero-to-mastery-ml"
+      ],
+      "coverage": "本期直接核验并入选日报的 28 个 GitHub AI 项目部分快照（5 个首次收录、23 个历史出现）；不是三张日榜或全站完整榜单。",
+      "observedAt": "2026-10-18T09:08:43Z",
+      "sources": [
+        "https://github.com/trending?since=daily",
+        "https://github.com/trending/python?since=daily",
+        "https://github.com/trending/jupyter-notebook?since=daily"
+      ]
+    },
+    {
       "date": "2026-10-17",
       "repositories": [
         "lightseekorg/tokenspeed",
