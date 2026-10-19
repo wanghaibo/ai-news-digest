@@ -3,6 +3,46 @@
   "note": "仅用于有界历史查重；记录不连续，不能据此推断连续上榜或绝对首次上榜。",
   "snapshots": [
     {
+      "date": "2026-10-19",
+      "repositories": [
+        "Graphify-Labs/graphify",
+        "YuJunZhiXue/dsh-purge",
+        "Comfy-Org/ComfyUI",
+        "Kruk2/jasna",
+        "NVlabs/ASPIRE",
+        "MadsLorentzen/ai-job-search",
+        "debpalash/VoiceStudio",
+        "anomalyco/opencode",
+        "anthropics/claude-plugins-official",
+        "stablyai/orca",
+        "K-Dense-AI/scientific-agent-skills",
+        "HKUDS/CLI-Anything",
+        "ruvnet/ruflo",
+        "akitaonrails/ai-memory",
+        "android/skills",
+        "cursor/plugins",
+        "TauricResearch/TradingAgents",
+        "ahujasid/mcp-for-blender",
+        "superdesigndev/treg",
+        "microsoft/AI-For-Beginners",
+        "microsoft/ML-For-Beginners",
+        "HandsOnLLM/Hands-On-Large-Language-Models",
+        "chiphuyen/aie-book",
+        "AI4Finance-Foundation/FinRL",
+        "NirDiamant/RAG_Techniques",
+        "Liquid4All/cookbook",
+        "greyhatguy007/Machine-Learning-Specialization-Coursera",
+        "FareedKhan-dev/all-agentic-architectures"
+      ],
+      "coverage": "本期直接核验并入选日报的 28 个 GitHub AI 项目部分快照（5 个首次收录、23 个历史出现）；不是三张日榜或全站完整榜单。",
+      "observedAt": "2026-10-19T09:04:38Z",
+      "sources": [
+        "https://github.com/trending?since=daily",
+        "https://github.com/trending/python?since=daily",
+        "https://github.com/trending/jupyter-notebook?since=daily"
+      ]
+    },
+    {
       "date": "2026-10-18",
       "repositories": [
         "stablyai/orca",
