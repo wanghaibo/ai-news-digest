@@ -3,6 +3,35 @@
   "note": "仅用于有界历史查重；记录不连续，不能据此推断连续上榜或绝对首次上榜。",
   "snapshots": [
     {
+      "date": "2026-10-20",
+      "repositories": [
+        "usestrix/strix",
+        "666ghj/MiroFish",
+        "shiyu-coder/Kronos",
+        "headroomlabs-ai/headroom",
+        "withmarbleapp/os-taxonomy",
+        "MadsLorentzen/ai-job-search",
+        "stablyai/orca",
+        "anomalyco/opencode",
+        "Comfy-Org/ComfyUI",
+        "Graphify-Labs/graphify",
+        "anthropics/claude-plugins-official",
+        "akitaonrails/ai-memory",
+        "HKUDS/CLI-Anything",
+        "google/artemis",
+        "ruvnet/ruflo",
+        "Imbad0202/academic-research-skills",
+        "anthropics/claude-code",
+        "mrdbourke/zero-to-mastery-ml",
+        "microsoft/generative-ai-for-beginners",
+        "anthropics/claude-cookbooks",
+        "NirDiamant/RAG_Techniques",
+        "fastai/fastbook",
+        "FareedKhan-dev/all-agentic-architectures"
+      ],
+      "coverage": "本期核验入选的 23 个 AI 相关项目；综合、Python、Jupyter Notebook 日榜部分快照，非完整榜单。"
+    },
+    {
       "date": "2026-10-19",
       "repositories": [
         "Graphify-Labs/graphify",

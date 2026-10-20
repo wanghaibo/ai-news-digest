@@ -2,6 +2,806 @@
   "schemaVersion": 1,
   "digests": [
     {
+      "date": "2026-10-20",
+      "title": "AI Builders Digest — 2026-10-20",
+      "summary": "Google 将 BigQuery 全量数据分析接入 Sheets，并支持把 Gemini 交互应用导出为 Sites 私有草稿；Anthropic 更新自动红队与推理完整性验证进展。另收录 4 位 builder 的 4 条 X 原帖及 23 个 GitHub AI 项目，其中 5 个首次收录。播客与当日公众号未获得合格新内容，未用旧内容补位。",
+      "items": [
+        {
+          "title": "Guillermo Rauch · X 原帖",
+          "source": "X / Guillermo Rauch",
+          "category": "观点洞察",
+          "sourceType": "x",
+          "authorName": "Guillermo Rauch",
+          "authorBackground": "Vercel 创始人兼 CEO",
+          "backgroundVerifiedAt": "2026-10-20",
+          "xDisplay": "official-embed",
+          "summary": "Rauch 宣布开源 HTML artifact builder，借助 libfx 持久化执行，处理服务器崩溃和模型调用不稳定。",
+          "url": "https://x.com/rauchg/status/2112247046082363821",
+          "publishedAt": "2026-10-19T18:18:34.000Z",
+          "sourcePosts": [
+            {
+              "url": "https://x.com/rauchg/status/2112247046082363821",
+              "publishedAt": "2026-10-19T18:18:34.000Z"
+            }
+          ]
+        },
+        {
+          "title": "Aaron Levie · X 原帖",
+          "source": "X / Aaron Levie",
+          "category": "观点洞察",
+          "sourceType": "x",
+          "authorName": "Aaron Levie",
+          "authorBackground": "Box 联合创始人兼 CEO",
+          "backgroundVerifiedAt": "2026-10-20",
+          "xDisplay": "official-embed",
+          "summary": "Levie 认为，更长任务、专用数据和工具编排会扩大企业 AI 的行业差异化；靠近模型厂商核心场景则更难。",
+          "url": "https://x.com/levie/status/2112404676436222170",
+          "publishedAt": "2026-10-20T04:44:56.000Z",
+          "sourcePosts": [
+            {
+              "url": "https://x.com/levie/status/2112404676436222170",
+              "publishedAt": "2026-10-20T04:44:56.000Z"
+            }
+          ]
+        },
+        {
+          "title": "Nikunj Kothari · X 原帖",
+          "source": "X / Nikunj Kothari",
+          "category": "观点洞察",
+          "sourceType": "x",
+          "authorName": "Nikunj Kothari",
+          "authorBackground": "FPV Ventures 合伙人；曾任 Meter 产品与合作负责人",
+          "backgroundVerifiedAt": "2026-10-20",
+          "xDisplay": "official-embed",
+          "summary": "Kothari 肯定 Wabi 按事件创建、共享并归档聊天的设计，但认为主动提醒过多，应用体验仍需改进。",
+          "url": "https://x.com/nikunj/status/2112219327881761008",
+          "publishedAt": "2026-10-19T16:28:25.000Z",
+          "sourcePosts": [
+            {
+              "url": "https://x.com/nikunj/status/2112219327881761008",
+              "publishedAt": "2026-10-19T16:28:25.000Z"
+            }
+          ]
+        },
+        {
+          "title": "Thariq Shihipar · X 原帖",
+          "source": "X / Thariq Shihipar",
+          "category": "观点洞察",
+          "sourceType": "x",
+          "authorName": "Thariq Shihipar",
+          "authorBackground": "Anthropic Claude Code 团队成员",
+          "backgroundVerifiedAt": "2026-10-20",
+          "xDisplay": "official-embed",
+          "summary": "Shihipar 建议 agent 多任务使用者先明确最高优先级，把注意力集中到真正重要的工作。",
+          "url": "https://x.com/trq212/status/2112219173288120531",
+          "publishedAt": "2026-10-19T16:27:48.000Z",
+          "sourcePosts": [
+            {
+              "url": "https://x.com/trq212/status/2112219173288120531",
+              "publishedAt": "2026-10-19T16:27:48.000Z"
+            }
+          ]
+        },
+        {
+          "title": "Gemini 在 Sheets 中直接分析完整 BigQuery 数据集",
+          "originalTitle": "Analyze BigQuery data using natural language with Gemini in Google Sheets",
+          "source": "Google Workspace Updates",
+          "sourceName": "Google Workspace Updates",
+          "category": "产品发布",
+          "sourceType": "blog",
+          "url": "https://workspaceupdates.googleblog.com/2026/10/analyze-bigquery-data-using-natural-language-with-Gemini-in-Google-Sheets.html",
+          "publishedAt": "2026-10-19",
+          "summary": "Gemini 在 Connected Sheets 中查询完整 BigQuery 数据，而不只分析表格已显示的行；用户可追问，再让它先展示分析计划，随后生成带可刷新公式、透视表与图表的新工作表。数据团队因此可少做一些一次性取数与报表工作。功能仅面向具有查询权限和适用订阅的用户，10 月 19 日开始渐进推出，最长约 15 天。",
+          "detail": "来源仅标注 2026-10-19，未提供准确发布时间或时区；因此作为近日报告更新收录，不声称已精确确认落在最近 24 小时。已读取官方正文。"
+        },
+        {
+          "title": "Gemini 交互应用可导出为 Google Sites 私有草稿",
+          "originalTitle": "Publish interactive apps from the Gemini app to Google Sites",
+          "source": "Google Workspace Updates",
+          "sourceName": "Google Workspace Updates",
+          "category": "产品发布",
+          "sourceType": "blog",
+          "url": "https://workspaceupdates.googleblog.com/2026/10/publish-interactive-apps-from-gemini-app-to-Google-Sites.html",
+          "publishedAt": "2026-10-19",
+          "summary": "Gemini 生成的交互应用可通过 Export → Google Sites 直接变成新建的私有站点草稿，继续编辑后再自行发布，无需复制代码重建。它缩短了原型到团队展示页的步骤，但导出不等于公开发布；用户仍须获准创建和编辑 Sites，组织原有 Sites 与 Drive 政策继续生效。官方称网页、Android 和 iOS 均已可用。",
+          "detail": "官方归档正文已核验，原文直链来自该归档；独立文章页在网页工具中返回 Internal Error。日期为 2026-10-19，小时与时区未披露，不能严格断言处于最近 24 小时。"
+        },
+        {
+          "title": "Anthropic 更新安全路线图：自动红队与推理完整性验证",
+          "originalTitle": "Frontier Safety Roadmap",
+          "source": "Anthropic",
+          "sourceName": "Anthropic",
+          "category": "技术实践",
+          "sourceType": "blog",
+          "url": "https://www.anthropic.com/responsible-scaling-policy/roadmap",
+          "publishedAt": "2026-10-19",
+          "summary": "Anthropic 报告，其自动红队在 8 道生物安全测试题、3 代生产分类器组成的 24 个组合中，全部达到或超过最佳人工提交，其中 23 个胜出，耗时 24–48 小时。它还报告已对内部 token 流量签名，并运行检查输出是否来自指定权重的原型。结果来自该公司的特定内部比较，不能外推为所有安全测试优于人类；更完整研究尚待发表。",
+          "detail": "这是持续更新的官方路线图在 2026-10-19 的更新，不是同日新论文；更新时刻及其时区未披露。已核验日期与完整变更段落。"
+        },
+        {
+          "title": "usestrix/strix",
+          "summary": "把动态安全测试组织成多 agent 工作流，针对应用运行测试、验证问题并生成修复建议，而不只输出静态扫描告警。README 提供本地 Docker + LLM 接入，以及 PR / CI 测试入口，适合研发团队把授权范围内的安全验证前移。它会主动测试目标，必须限定在自有或明确书面授权的系统；自动发现与修复结果仍须复核。 本日报首次收录，非项目今日发布或首次登上 GitHub Trending。",
+          "category": "开源项目",
+          "source": "GitHub / usestrix/strix",
+          "url": "https://github.com/usestrix/strix",
+          "sourceType": "github",
+          "language": "Python",
+          "languageObservedAt": "2026-10-20",
+          "starsToday": 509,
+          "trendingSource": "https://github.com/trending/python?since=daily",
+          "observationNote": "2026-10-20 北京时间约 17:01 直接读取 GitHub Trending，三页采集于 17:01:27 完成；今日增星不是总星数。",
+          "firstIncludedAt": "2026-10-20",
+          "priorAppearanceDates": [],
+          "priorAppearanceCount": 0,
+          "isNew": true,
+          "githubStatus": "new",
+          "additionalSources": [
+            {
+              "title": "本轮核对的 README",
+              "url": "https://github.com/usestrix/strix/blob/main/README.md"
+            }
+          ]
+        },
+        {
+          "title": "666ghj/MiroFish",
+          "summary": "把输入资料先转成关系图与角色设定，再让带记忆的 agent 在模拟环境中互动，最后由 ReportAgent 整理结果。工作流包含 GraphRAG、双平台并行模拟和动态记忆更新，底层模拟引擎使用 OASIS，可用于探索情景假设。README 提醒模型调用消耗较高，建议先少于 40 轮；“预测万物”是项目愿景，不是经过验证的预测准确率。 本日报首次收录，非项目今日发布或首次登上 GitHub Trending。",
+          "category": "开源项目",
+          "source": "GitHub / 666ghj/MiroFish",
+          "url": "https://github.com/666ghj/MiroFish",
+          "sourceType": "github",
+          "language": "Python",
+          "languageObservedAt": "2026-10-20",
+          "starsToday": 386,
+          "trendingSource": "https://github.com/trending/python?since=daily",
+          "observationNote": "2026-10-20 北京时间约 17:01 直接读取 GitHub Trending，三页采集于 17:01:27 完成；今日增星不是总星数。",
+          "firstIncludedAt": "2026-10-20",
+          "priorAppearanceDates": [],
+          "priorAppearanceCount": 0,
+          "isNew": true,
+          "githubStatus": "new",
+          "additionalSources": [
+            {
+              "title": "本轮核对的 README",
+              "url": "https://github.com/666ghj/MiroFish/blob/main/README.md"
+            }
+          ]
+        },
+        {
+          "title": "shiyu-coder/Kronos",
+          "summary": "以金融 K 线为专门建模对象，先把 OHLCV 连续数据量化成分层离散 token，再用自回归 Transformer 学习序列。仓库提供预测、批量推理及 Qlib 微调示例，其中 small / base 的上下文上限为 512。适合研究金融时间序列模型，而不是开箱即用的交易策略；作者明确指出示例回测不等于生产系统，仍缺完整的交易成本、滑点与风险控制评估。 本日报首次收录，非项目今日发布或首次登上 GitHub Trending。",
+          "category": "开源项目",
+          "source": "GitHub / shiyu-coder/Kronos",
+          "url": "https://github.com/shiyu-coder/Kronos",
+          "sourceType": "github",
+          "language": "Python",
+          "languageObservedAt": "2026-10-20",
+          "starsToday": 363,
+          "trendingSource": "https://github.com/trending?since=daily",
+          "observationNote": "2026-10-20 北京时间约 17:01 直接读取 GitHub Trending，三页采集于 17:01:27 完成；今日增星不是总星数。",
+          "firstIncludedAt": "2026-10-20",
+          "priorAppearanceDates": [],
+          "priorAppearanceCount": 0,
+          "isNew": true,
+          "githubStatus": "new",
+          "additionalSources": [
+            {
+              "title": "本轮核对的 README",
+              "url": "https://github.com/shiyu-coder/Kronos/blob/master/README.md"
+            }
+          ]
+        },
+        {
+          "title": "headroomlabs-ai/headroom",
+          "summary": "在工具结果进入 LLM 前按内容类型压缩：JSON、代码和自然语言分别走不同处理器，原文保存在本地，模型需要时通过 CCR 检索回来。可作为库、代理或 MCP 服务接入；仓库自测的 SRE 调试例子由 55,957 降至 24,340 tokens，属于特定负载结果。重复日志更受益，短对话与高密度文本可能几乎不省；另有默认开启的匿名统计信标，部署时需检查配置。 本日报首次收录，非项目今日发布或首次登上 GitHub Trending。",
+          "category": "开源项目",
+          "source": "GitHub / headroomlabs-ai/headroom",
+          "url": "https://github.com/headroomlabs-ai/headroom",
+          "sourceType": "github",
+          "language": "Python",
+          "languageObservedAt": "2026-10-20",
+          "starsToday": 310,
+          "trendingSource": "https://github.com/trending?since=daily",
+          "observationNote": "2026-10-20 北京时间约 17:01 直接读取 GitHub Trending，三页采集于 17:01:27 完成；今日增星不是总星数。",
+          "firstIncludedAt": "2026-10-20",
+          "priorAppearanceDates": [],
+          "priorAppearanceCount": 0,
+          "isNew": true,
+          "githubStatus": "new",
+          "additionalSources": [
+            {
+              "title": "本轮核对的 README",
+              "url": "https://github.com/headroomlabs-ai/headroom/blob/main/README.md"
+            }
+          ]
+        },
+        {
+          "title": "withmarbleapp/os-taxonomy",
+          "summary": "把小学阶段学习内容整理成可直接读取的 JSON 知识图：1,591 个细粒度主题通过 3,225 条先修关系连接，可作为教育 agent 的课程检索与学习路径数据层。另附科学、数学 1,051 个主题的教学建议，但这些内容由 agent 编写，发布时未重新抓取核验引用来源，也不是验证过的教学干预。数据库、原创文字与第三方课程标准分属不同许可，复用前须逐层核对。 本日报首次收录，非项目今日发布或首次登上 GitHub Trending。",
+          "category": "开源项目",
+          "source": "GitHub / withmarbleapp/os-taxonomy",
+          "url": "https://github.com/withmarbleapp/os-taxonomy",
+          "sourceType": "github",
+          "language": "JavaScript",
+          "languageObservedAt": "2026-10-20",
+          "starsToday": 284,
+          "trendingSource": "https://github.com/trending?since=daily",
+          "observationNote": "2026-10-20 北京时间约 17:01 直接读取 GitHub Trending，三页采集于 17:01:27 完成；今日增星不是总星数。",
+          "firstIncludedAt": "2026-10-20",
+          "priorAppearanceDates": [],
+          "priorAppearanceCount": 0,
+          "isNew": true,
+          "githubStatus": "new",
+          "additionalSources": [
+            {
+              "title": "本轮核对的 README",
+              "url": "https://github.com/withmarbleapp/os-taxonomy/blob/main/README.md"
+            }
+          ]
+        },
+        {
+          "title": "MadsLorentzen/ai-job-search",
+          "summary": "🔄 +3,856 stars · Python · 此前 21 个留存日期中出现 6 次（不含今天，非连续天数）· 以 Claude Code 编排职位匹配、简历定制和面试准备。",
+          "category": "开源项目",
+          "source": "GitHub / MadsLorentzen/ai-job-search",
+          "url": "https://github.com/MadsLorentzen/ai-job-search",
+          "sourceType": "github",
+          "language": "Python",
+          "languageObservedAt": "2026-10-20",
+          "starsToday": 3856,
+          "trendingSource": "https://github.com/trending?since=daily",
+          "observationNote": "2026-10-20 北京时间约 17:01 直接读取 GitHub Trending，三页采集于 17:01:27 完成；今日增星不是总星数。",
+          "firstIncludedAt": "2026-10-12",
+          "priorAppearanceDates": [
+            "2026-10-12",
+            "2026-10-13",
+            "2026-10-14",
+            "2026-10-17",
+            "2026-10-18",
+            "2026-10-19"
+          ],
+          "priorAppearanceCount": 6,
+          "isNew": false,
+          "githubStatus": "returning",
+          "additionalSources": [
+            {
+              "title": "本轮核对的 README",
+              "url": "https://github.com/MadsLorentzen/ai-job-search/blob/master/README.md"
+            }
+          ]
+        },
+        {
+          "title": "stablyai/orca",
+          "summary": "🔄 +1,590 stars · TypeScript · 此前 21 个留存日期中出现 2 次（不含今天，非连续天数）· 在独立 Git worktree 中并行管理多个 coding agent。",
+          "category": "开源项目",
+          "source": "GitHub / stablyai/orca",
+          "url": "https://github.com/stablyai/orca",
+          "sourceType": "github",
+          "language": "TypeScript",
+          "languageObservedAt": "2026-10-20",
+          "starsToday": 1590,
+          "trendingSource": "https://github.com/trending?since=daily",
+          "observationNote": "2026-10-20 北京时间约 17:01 直接读取 GitHub Trending，三页采集于 17:01:27 完成；今日增星不是总星数。",
+          "firstIncludedAt": "2026-10-18",
+          "priorAppearanceDates": [
+            "2026-10-18",
+            "2026-10-19"
+          ],
+          "priorAppearanceCount": 2,
+          "isNew": false,
+          "githubStatus": "returning",
+          "additionalSources": [
+            {
+              "title": "本轮核对的 README",
+              "url": "https://github.com/stablyai/orca/blob/main/README.md"
+            }
+          ]
+        },
+        {
+          "title": "anomalyco/opencode",
+          "summary": "🔄 +1,311 stars · TypeScript · 此前 21 个留存日期中出现 4 次（不含今天，非连续天数）· 开源 AI coding agent，提供终端与桌面使用入口。",
+          "category": "开源项目",
+          "source": "GitHub / anomalyco/opencode",
+          "url": "https://github.com/anomalyco/opencode",
+          "sourceType": "github",
+          "language": "TypeScript",
+          "languageObservedAt": "2026-10-20",
+          "starsToday": 1311,
+          "trendingSource": "https://github.com/trending?since=daily",
+          "observationNote": "2026-10-20 北京时间约 17:01 直接读取 GitHub Trending，三页采集于 17:01:27 完成；今日增星不是总星数。",
+          "firstIncludedAt": "2026-10-18",
+          "priorAppearanceDates": [
+            "2026-09-05",
+            "2026-09-06",
+            "2026-10-18",
+            "2026-10-19"
+          ],
+          "priorAppearanceCount": 4,
+          "isNew": false,
+          "githubStatus": "returning",
+          "additionalSources": [
+            {
+              "title": "本轮核对的 README",
+              "url": "https://github.com/anomalyco/opencode/blob/dev/README.md"
+            }
+          ]
+        },
+        {
+          "title": "Comfy-Org/ComfyUI",
+          "summary": "🔄 +1,011 stars · Python · 此前 21 个留存日期中出现 1 次（不含今天，非连续天数）· 以节点图编排 AI 图像等内容生成流程。",
+          "category": "开源项目",
+          "source": "GitHub / Comfy-Org/ComfyUI",
+          "url": "https://github.com/Comfy-Org/ComfyUI",
+          "sourceType": "github",
+          "language": "Python",
+          "languageObservedAt": "2026-10-20",
+          "starsToday": 1011,
+          "trendingSource": "https://github.com/trending?since=daily",
+          "observationNote": "2026-10-20 北京时间约 17:01 直接读取 GitHub Trending，三页采集于 17:01:27 完成；今日增星不是总星数。",
+          "firstIncludedAt": "2026-10-19",
+          "priorAppearanceDates": [
+            "2026-10-19"
+          ],
+          "priorAppearanceCount": 1,
+          "isNew": false,
+          "githubStatus": "returning",
+          "additionalSources": [
+            {
+              "title": "本轮核对的 README",
+              "url": "https://github.com/Comfy-Org/ComfyUI/blob/master/README.md"
+            }
+          ]
+        },
+        {
+          "title": "Graphify-Labs/graphify",
+          "summary": "🔄 +751 stars · Python · 此前 21 个留存日期中出现 1 次（不含今天，非连续天数）· 将代码与文档组织为可查询知识图，区分直接提取和推断关系。",
+          "category": "开源项目",
+          "source": "GitHub / Graphify-Labs/graphify",
+          "url": "https://github.com/Graphify-Labs/graphify",
+          "sourceType": "github",
+          "language": "Python",
+          "languageObservedAt": "2026-10-20",
+          "starsToday": 751,
+          "trendingSource": "https://github.com/trending/python?since=daily",
+          "observationNote": "2026-10-20 北京时间约 17:01 直接读取 GitHub Trending，三页采集于 17:01:27 完成；今日增星不是总星数。",
+          "firstIncludedAt": "2026-10-19",
+          "priorAppearanceDates": [
+            "2026-10-19"
+          ],
+          "priorAppearanceCount": 1,
+          "isNew": false,
+          "githubStatus": "returning",
+          "additionalSources": [
+            {
+              "title": "本轮核对的 README",
+              "url": "https://github.com/Graphify-Labs/graphify/blob/v8/README.md"
+            }
+          ]
+        },
+        {
+          "title": "anthropics/claude-plugins-official",
+          "summary": "🔄 +733 stars · Python · 此前 21 个留存日期中出现 5 次（不含今天，非连续天数）· 维护 Claude Code 官方及社区插件目录，使用前仍须核对插件信任范围。",
+          "category": "开源项目",
+          "source": "GitHub / anthropics/claude-plugins-official",
+          "url": "https://github.com/anthropics/claude-plugins-official",
+          "sourceType": "github",
+          "language": "Python",
+          "languageObservedAt": "2026-10-20",
+          "starsToday": 733,
+          "trendingSource": "https://github.com/trending/python?since=daily",
+          "observationNote": "2026-10-20 北京时间约 17:01 直接读取 GitHub Trending，三页采集于 17:01:27 完成；今日增星不是总星数。",
+          "firstIncludedAt": "2026-10-15",
+          "priorAppearanceDates": [
+            "2026-10-15",
+            "2026-10-16",
+            "2026-10-17",
+            "2026-10-18",
+            "2026-10-19"
+          ],
+          "priorAppearanceCount": 5,
+          "isNew": false,
+          "githubStatus": "returning",
+          "additionalSources": [
+            {
+              "title": "本轮核对的 README",
+              "url": "https://github.com/anthropics/claude-plugins-official/blob/main/README.md"
+            }
+          ]
+        },
+        {
+          "title": "akitaonrails/ai-memory",
+          "summary": "🔄 +666 stars · Rust · 此前 21 个留存日期中出现 2 次（不含今天，非连续天数）· 在多种 coding agent 之间保存长期记忆和任务交接信息。",
+          "category": "开源项目",
+          "source": "GitHub / akitaonrails/ai-memory",
+          "url": "https://github.com/akitaonrails/ai-memory",
+          "sourceType": "github",
+          "language": "Rust",
+          "languageObservedAt": "2026-10-20",
+          "starsToday": 666,
+          "trendingSource": "https://github.com/trending?since=daily",
+          "observationNote": "2026-10-20 北京时间约 17:01 直接读取 GitHub Trending，三页采集于 17:01:27 完成；今日增星不是总星数。",
+          "firstIncludedAt": "2026-10-18",
+          "priorAppearanceDates": [
+            "2026-10-18",
+            "2026-10-19"
+          ],
+          "priorAppearanceCount": 2,
+          "isNew": false,
+          "githubStatus": "returning",
+          "additionalSources": [
+            {
+              "title": "本轮核对的 README",
+              "url": "https://github.com/akitaonrails/ai-memory/blob/main/README.md"
+            }
+          ]
+        },
+        {
+          "title": "HKUDS/CLI-Anything",
+          "summary": "🔄 +606 stars · Python · 此前 21 个留存日期中出现 4 次（不含今天，非连续天数）· 为软件构建供 AI agent 调用的 CLI harness。",
+          "category": "开源项目",
+          "source": "GitHub / HKUDS/CLI-Anything",
+          "url": "https://github.com/HKUDS/CLI-Anything",
+          "sourceType": "github",
+          "language": "Python",
+          "languageObservedAt": "2026-10-20",
+          "starsToday": 606,
+          "trendingSource": "https://github.com/trending?since=daily",
+          "observationNote": "2026-10-20 北京时间约 17:01 直接读取 GitHub Trending，三页采集于 17:01:27 完成；今日增星不是总星数。",
+          "firstIncludedAt": "2026-10-16",
+          "priorAppearanceDates": [
+            "2026-10-16",
+            "2026-10-17",
+            "2026-10-18",
+            "2026-10-19"
+          ],
+          "priorAppearanceCount": 4,
+          "isNew": false,
+          "githubStatus": "returning",
+          "additionalSources": [
+            {
+              "title": "本轮核对的 README",
+              "url": "https://github.com/HKUDS/CLI-Anything/blob/main/README.md"
+            }
+          ]
+        },
+        {
+          "title": "google/artemis",
+          "summary": "🔄 +597 stars · Python · 此前 21 个留存日期中出现 2 次（不含今天，非连续天数）· 通过自然语言与 MCP 连接 Android 自动化、截图和日志诊断。",
+          "category": "开源项目",
+          "source": "GitHub / google/artemis",
+          "url": "https://github.com/google/artemis",
+          "sourceType": "github",
+          "language": "Python",
+          "languageObservedAt": "2026-10-20",
+          "starsToday": 597,
+          "trendingSource": "https://github.com/trending/python?since=daily",
+          "observationNote": "2026-10-20 北京时间约 17:01 直接读取 GitHub Trending，三页采集于 17:01:27 完成；今日增星不是总星数。",
+          "firstIncludedAt": "2026-10-17",
+          "priorAppearanceDates": [
+            "2026-10-17",
+            "2026-10-18"
+          ],
+          "priorAppearanceCount": 2,
+          "isNew": false,
+          "githubStatus": "returning",
+          "additionalSources": [
+            {
+              "title": "本轮核对的 README",
+              "url": "https://github.com/google/artemis/blob/main/README.md"
+            }
+          ]
+        },
+        {
+          "title": "ruvnet/ruflo",
+          "summary": "🔄 +564 stars · TypeScript · 此前 21 个留存日期中出现 5 次（不含今天，非连续天数）· 为 coding agent 提供工具、任务编排和运行控制。",
+          "category": "开源项目",
+          "source": "GitHub / ruvnet/ruflo",
+          "url": "https://github.com/ruvnet/ruflo",
+          "sourceType": "github",
+          "language": "TypeScript",
+          "languageObservedAt": "2026-10-20",
+          "starsToday": 564,
+          "trendingSource": "https://github.com/trending?since=daily",
+          "observationNote": "2026-10-20 北京时间约 17:01 直接读取 GitHub Trending，三页采集于 17:01:27 完成；今日增星不是总星数。",
+          "firstIncludedAt": "2026-10-16",
+          "priorAppearanceDates": [
+            "2026-09-06",
+            "2026-10-16",
+            "2026-10-17",
+            "2026-10-18",
+            "2026-10-19"
+          ],
+          "priorAppearanceCount": 5,
+          "isNew": false,
+          "githubStatus": "returning",
+          "additionalSources": [
+            {
+              "title": "本轮核对的 README",
+              "url": "https://github.com/ruvnet/ruflo/blob/main/README.md"
+            }
+          ]
+        },
+        {
+          "title": "Imbad0202/academic-research-skills",
+          "summary": "🔄 +260 stars · Python · 此前 21 个留存日期中出现 2 次（不含今天，非连续天数）· 把研究、写作和核验拆成保留人工确认的 Claude Code skills。",
+          "category": "开源项目",
+          "source": "GitHub / Imbad0202/academic-research-skills",
+          "url": "https://github.com/Imbad0202/academic-research-skills",
+          "sourceType": "github",
+          "language": "Python",
+          "languageObservedAt": "2026-10-20",
+          "starsToday": 260,
+          "trendingSource": "https://github.com/trending/python?since=daily",
+          "observationNote": "2026-10-20 北京时间约 17:01 直接读取 GitHub Trending，三页采集于 17:01:27 完成；今日增星不是总星数。",
+          "firstIncludedAt": "2026-10-17",
+          "priorAppearanceDates": [
+            "2026-09-06",
+            "2026-10-17"
+          ],
+          "priorAppearanceCount": 2,
+          "isNew": false,
+          "githubStatus": "returning",
+          "additionalSources": [
+            {
+              "title": "本轮核对的 README",
+              "url": "https://github.com/Imbad0202/academic-research-skills/blob/main/README.md"
+            }
+          ]
+        },
+        {
+          "title": "anthropics/claude-code",
+          "summary": "🔄 +167 stars · TypeScript · 此前 21 个留存日期中出现 2 次（不含今天，非连续天数）· 在终端及 IDE 中理解代码、执行开发任务并处理 Git 工作流。",
+          "category": "开源项目",
+          "source": "GitHub / anthropics/claude-code",
+          "url": "https://github.com/anthropics/claude-code",
+          "sourceType": "github",
+          "language": "TypeScript",
+          "languageObservedAt": "2026-10-20",
+          "starsToday": 167,
+          "trendingSource": "https://github.com/trending?since=daily",
+          "observationNote": "2026-10-20 北京时间约 17:01 直接读取 GitHub Trending，三页采集于 17:01:27 完成；今日增星不是总星数。",
+          "firstIncludedAt": "2026-10-18",
+          "priorAppearanceDates": [
+            "2026-09-05",
+            "2026-10-18"
+          ],
+          "priorAppearanceCount": 2,
+          "isNew": false,
+          "githubStatus": "returning",
+          "additionalSources": [
+            {
+              "title": "本轮核对的 README",
+              "url": "https://github.com/anthropics/claude-code/blob/main/README.md"
+            }
+          ]
+        },
+        {
+          "title": "mrdbourke/zero-to-mastery-ml",
+          "summary": "🔄 +70 stars · Jupyter Notebook · 此前 21 个留存日期中出现 7 次（不含今天，非连续天数）· 整理机器学习课程的代码、Notebook 与端到端练习。",
+          "category": "开源项目",
+          "source": "GitHub / mrdbourke/zero-to-mastery-ml",
+          "url": "https://github.com/mrdbourke/zero-to-mastery-ml",
+          "sourceType": "github",
+          "language": "Jupyter Notebook",
+          "languageObservedAt": "2026-10-20",
+          "starsToday": 70,
+          "trendingSource": "https://github.com/trending/jupyter%20notebook?since=daily",
+          "observationNote": "2026-10-20 北京时间约 17:01 直接读取 GitHub Trending，三页采集于 17:01:27 完成；今日增星不是总星数。",
+          "firstIncludedAt": "2026-10-16",
+          "priorAppearanceDates": [
+            "2026-09-09",
+            "2026-09-10",
+            "2026-09-12",
+            "2026-10-04",
+            "2026-10-05",
+            "2026-10-16",
+            "2026-10-18"
+          ],
+          "priorAppearanceCount": 7,
+          "isNew": false,
+          "githubStatus": "returning",
+          "additionalSources": [
+            {
+              "title": "本轮核对的 README",
+              "url": "https://github.com/mrdbourke/zero-to-mastery-ml/blob/master/README.md"
+            }
+          ]
+        },
+        {
+          "title": "microsoft/generative-ai-for-beginners",
+          "summary": "🔄 +65 stars · Jupyter Notebook · 此前 21 个留存日期中出现 3 次（不含今天，非连续天数）· 提供生成式 AI 应用入门课程与代码示例。",
+          "category": "开源项目",
+          "source": "GitHub / microsoft/generative-ai-for-beginners",
+          "url": "https://github.com/microsoft/generative-ai-for-beginners",
+          "sourceType": "github",
+          "language": "Jupyter Notebook",
+          "languageObservedAt": "2026-10-20",
+          "starsToday": 65,
+          "trendingSource": "https://github.com/trending/jupyter%20notebook?since=daily",
+          "observationNote": "2026-10-20 北京时间约 17:01 直接读取 GitHub Trending，三页采集于 17:01:27 完成；今日增星不是总星数。",
+          "firstIncludedAt": "2026-10-10",
+          "priorAppearanceDates": [
+            "2026-09-05",
+            "2026-10-10",
+            "2026-10-17"
+          ],
+          "priorAppearanceCount": 3,
+          "isNew": false,
+          "githubStatus": "returning",
+          "additionalSources": [
+            {
+              "title": "本轮核对的 README",
+              "url": "https://github.com/microsoft/generative-ai-for-beginners/blob/main/README.md"
+            }
+          ]
+        },
+        {
+          "title": "anthropics/claude-cookbooks",
+          "summary": "🔄 +25 stars · Jupyter Notebook · 此前 21 个留存日期中出现 8 次（不含今天，非连续天数）· 提供可集成到应用中的 Claude API 示例与指南。",
+          "category": "开源项目",
+          "source": "GitHub / anthropics/claude-cookbooks",
+          "url": "https://github.com/anthropics/claude-cookbooks",
+          "sourceType": "github",
+          "language": "Jupyter Notebook",
+          "languageObservedAt": "2026-10-20",
+          "starsToday": 25,
+          "trendingSource": "https://github.com/trending/jupyter%20notebook?since=daily",
+          "observationNote": "2026-10-20 北京时间约 17:01 直接读取 GitHub Trending，三页采集于 17:01:27 完成；今日增星不是总星数。",
+          "firstIncludedAt": "2026-10-16",
+          "priorAppearanceDates": [
+            "2026-09-05",
+            "2026-09-06",
+            "2026-09-09",
+            "2026-09-10",
+            "2026-10-04",
+            "2026-10-05",
+            "2026-10-16",
+            "2026-10-17"
+          ],
+          "priorAppearanceCount": 8,
+          "isNew": false,
+          "githubStatus": "returning",
+          "additionalSources": [
+            {
+              "title": "本轮核对的 README",
+              "url": "https://github.com/anthropics/claude-cookbooks/blob/main/README.md"
+            }
+          ]
+        },
+        {
+          "title": "NirDiamant/RAG_Techniques",
+          "summary": "🔄 +11 stars · Jupyter Notebook · 此前 21 个留存日期中出现 7 次（不含今天，非连续天数）· 用可运行 Notebook 展示多种检索增强生成方法。",
+          "category": "开源项目",
+          "source": "GitHub / NirDiamant/RAG_Techniques",
+          "url": "https://github.com/NirDiamant/RAG_Techniques",
+          "sourceType": "github",
+          "language": "Jupyter Notebook",
+          "languageObservedAt": "2026-10-20",
+          "starsToday": 11,
+          "trendingSource": "https://github.com/trending/jupyter%20notebook?since=daily",
+          "observationNote": "2026-10-20 北京时间约 17:01 直接读取 GitHub Trending，三页采集于 17:01:27 完成；今日增星不是总星数。",
+          "firstIncludedAt": "2026-10-10",
+          "priorAppearanceDates": [
+            "2026-09-06",
+            "2026-10-10",
+            "2026-10-11",
+            "2026-10-12",
+            "2026-10-13",
+            "2026-10-16",
+            "2026-10-19"
+          ],
+          "priorAppearanceCount": 7,
+          "isNew": false,
+          "githubStatus": "returning",
+          "additionalSources": [
+            {
+              "title": "本轮核对的 README",
+              "url": "https://github.com/NirDiamant/RAG_Techniques/blob/main/README.md"
+            }
+          ]
+        },
+        {
+          "title": "fastai/fastbook",
+          "summary": "🔄 +8 stars · Jupyter Notebook · 此前 21 个留存日期中出现 3 次（不含今天，非连续天数）· 用 Notebook 教授 fastai、PyTorch 与深度学习。",
+          "category": "开源项目",
+          "source": "GitHub / fastai/fastbook",
+          "url": "https://github.com/fastai/fastbook",
+          "sourceType": "github",
+          "language": "Jupyter Notebook",
+          "languageObservedAt": "2026-10-20",
+          "starsToday": 8,
+          "trendingSource": "https://github.com/trending/jupyter%20notebook?since=daily",
+          "observationNote": "2026-10-20 北京时间约 17:01 直接读取 GitHub Trending，三页采集于 17:01:27 完成；今日增星不是总星数。",
+          "firstIncludedAt": "2026-10-15",
+          "priorAppearanceDates": [
+            "2026-09-09",
+            "2026-09-10",
+            "2026-10-15"
+          ],
+          "priorAppearanceCount": 3,
+          "isNew": false,
+          "githubStatus": "returning",
+          "additionalSources": [
+            {
+              "title": "本轮核对的 README",
+              "url": "https://github.com/fastai/fastbook/blob/master/README.md"
+            }
+          ]
+        },
+        {
+          "title": "FareedKhan-dev/all-agentic-architectures",
+          "summary": "🔄 +6 stars · Jupyter Notebook · 此前 21 个留存日期中出现 4 次（不含今天，非连续天数）· 汇集可运行的 agent 架构、Notebook 与统一 Python 接口。",
+          "category": "开源项目",
+          "source": "GitHub / FareedKhan-dev/all-agentic-architectures",
+          "url": "https://github.com/FareedKhan-dev/all-agentic-architectures",
+          "sourceType": "github",
+          "language": "Jupyter Notebook",
+          "languageObservedAt": "2026-10-20",
+          "starsToday": 6,
+          "trendingSource": "https://github.com/trending/jupyter%20notebook?since=daily",
+          "observationNote": "2026-10-20 北京时间约 17:01 直接读取 GitHub Trending，三页采集于 17:01:27 完成；今日增星不是总星数。",
+          "firstIncludedAt": "2026-10-19",
+          "priorAppearanceDates": [
+            "2026-09-09",
+            "2026-09-10",
+            "2026-09-11",
+            "2026-10-19"
+          ],
+          "priorAppearanceCount": 4,
+          "isNew": false,
+          "githubStatus": "returning",
+          "additionalSources": [
+            {
+              "title": "本轮核对的 README",
+              "url": "https://github.com/FareedKhan-dev/all-agentic-architectures/blob/main/README.md"
+            }
+          ]
+        }
+      ],
+      "retrievedAt": "2026-10-20T17:05:08+08:00",
+      "timezone": "Asia/Shanghai",
+      "sourceNotes": [
+        "优先检索窗口为北京时间 2026-10-19 17:00 至 2026-10-20 17:00；核验延续至本期截止时间。3 条官方更新仅有 10 月 19 日日期，无准确小时或时区，因此不宣称严格落在最近 24 小时。",
+        "X feed 生成于 2026-10-20T06:41:44.391Z，完整读取 11 位作者的 21 帖，选入 4 位作者的 4 帖，均在优先窗口内；其余因缺少实质信息、依赖未读语境、重复或非 AI 议题未选。原帖页面本轮读取失败；作者、精确链接、日期及正文通过公开 feed 核对，作者身份另行核验。中文摘要不是全文翻译，官方原帖组件是否可用取决于 X。",
+        "播客 feed 虽于 10 月 20 日更新，唯一单期实际发布于 10 月 7 日，且链接指向播放列表，因此排除。独立官方节目页面未核实新单期；部分 RSS 返回访问拒绝，未绕过，不把旧节目改标为今日新闻。",
+        "博客 feed 为空，3 条更新来自独立官方来源。Anthropic 条目是持续维护路线图的 10 月 19 日更新，不是同日新论文；Google Sites 条目由官方归档正文核验，独立文章页本轮读取失败。",
+        "微信公众号未核实到当日同时具备原文直链、充分正文和真实日期的文章，未用转载时间替代首发时间，也未将搜索排序当作热度。",
+        "GitHub 仅留存本期选入项目的部分快照。5 个首次收录项目完整读取 README，18 个历史项目按相关段落核对用途；不把采样时间当成项目发布日期。",
+        "按原始 URL 和仓库身份去重，保留此前 13 期历史及未知字段。本次未改前端、发布设置或调度。"
+      ],
+      "sourceStatus": {
+        "xFeed": "fresh",
+        "podcastFeed": "stale",
+        "blogFeed": "empty",
+        "officialSources": "fresh",
+        "wechat": "unavailable",
+        "githubTrending": "fresh"
+      },
+      "githubHistory": {
+        "priorTrackedDays": 21,
+        "scope": "21 个非连续留存榜单日期，并核对 13 期历史日报",
+        "newCount": 5,
+        "returningCount": 18,
+        "newLabel": "首次收录于本日报",
+        "note": "已核对 2026-09-05 至 2026-10-19 的 21 个非连续留存日期：2026-09-05、2026-09-06、2026-09-09、2026-09-10、2026-09-11、2026-09-12、2026-10-04、2026-10-05、2026-10-07、2026-10-08、2026-10-09、2026-10-10、2026-10-11、2026-10-12、2026-10-13、2026-10-14、2026-10-15、2026-10-16、2026-10-17、2026-10-18、2026-10-19。同时核对 10 月 7 日至 19 日全部 13 期日报。历史仅是留存/入选集合，不能推断首次登上全站榜单；本期 5 个首次收录、18 个历史重复，出现次数不含今天，也不代表连续天数。"
+      },
+      "githubRankingNote": "北京时间 2026-10-20 约 17:01 直接读取（三页于 17:01:27 完成）综合、Python、Jupyter Notebook 日榜，分别 12、15、14 项；41 行去重为 35 个仓库。仅精选 AI 相关项目，新项目最多 5 个详述，历史项目简列；两组分别按当页今日增星降序。不是全站绝对排名，不将今日采样当作项目发布日期。",
+      "contentStats": {
+        "xAuthors": 4,
+        "xOfficialAccounts": 0,
+        "xAccounts": 4,
+        "xPosts": 4,
+        "xItems": 4,
+        "podcastEpisodes": 0,
+        "officialArticles": 3,
+        "wechatArticles": 0,
+        "githubProjects": 23,
+        "githubFirstIncluded": 5,
+        "githubNewInTrackedHistory": 5,
+        "githubReturningInTrackedHistory": 18,
+        "totalItems": 30
+      }
+    },
+    {
       "date": "2026-10-19",
       "title": "AI Builders Digest — 2026-10-19",
       "summary": "本期收录 5 位 builder 的 5 条 X 原帖、1 集播客、1 篇官方博客、0 篇公众号文章；详述 5 个首次收录于本日报的 GitHub 项目，另简列 23 个历史出现项目。非 X 重点：EliseAI 的生产评测方法、Anthropic 公益基金的股权与治理安排，以及代码知识图谱和具身技能学习项目。官方博客仅知 10 月 18 日，精确时刻未核实。",
