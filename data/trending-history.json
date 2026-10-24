@@ -3,6 +3,45 @@
   "note": "仅用于有界历史查重；记录不连续，不能据此推断连续上榜或绝对首次上榜。",
   "snapshots": [
     {
+      "date": "2026-10-24",
+      "repositories": [
+        "NVIDIA/OpenShell",
+        "SnailSploit/Claude-Red",
+        "virgiliojr94/book-to-skill",
+        "Anil-matcha/open-duet",
+        "nebius/token-factory-cookbook",
+        "cloudflare/security-audit-skill",
+        "Graphify-Labs/graphify",
+        "luongnv89/claude-howto",
+        "anthropics/knowledge-work-plugins",
+        "TauricResearch/TradingAgents",
+        "lyogavin/airllm",
+        "OpenBMB/VoxCPM",
+        "Lordog/dive-into-llms",
+        "vllm-project/vllm",
+        "microsoft/generative-ai-for-beginners",
+        "onyx-dot-app/onyx",
+        "baidu/Unlimited-OCR",
+        "microsoft/AI-For-Beginners",
+        "datawhalechina/happy-llm",
+        "greyhatguy007/Machine-Learning-Specialization-Coursera",
+        "GokuMohandas/Made-With-ML",
+        "NirDiamant/GenAI_Agents",
+        "karpathy/micrograd",
+        "facebookresearch/sam2",
+        "langchain-ai/rag-from-scratch",
+        "NVIDIA-NeMo/Nemotron",
+        "datawhalechina/llm-algo-leetcode"
+      ],
+      "coverage": "本期直接核验并入选日报的 27 个 GitHub AI 项目部分快照（5 个首次收录、22 个历史出现）；不是三张日榜或全站完整榜单。",
+      "observedAt": "2026-10-24T17:01:56+08:00",
+      "sources": [
+        "https://github.com/trending?since=daily",
+        "https://github.com/trending/python?since=daily",
+        "https://github.com/trending/jupyter%20notebook?since=daily"
+      ]
+    },
+    {
       "date": "2026-10-23",
       "repositories": [
         "onyx-dot-app/onyx",
