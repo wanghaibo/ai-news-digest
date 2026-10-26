@@ -3,6 +3,43 @@
   "note": "仅用于有界历史查重；记录不连续，不能据此推断连续上榜或绝对首次上榜。",
   "snapshots": [
     {
+      "date": "2026-10-26",
+      "repositories": [
+        "Nutlope/hallmark",
+        "makecindy/cindy",
+        "pollen-robotics/microduck",
+        "aws/agent-toolkit-for-aws",
+        "AstrBotDevs/AstrBot",
+        "cloudflare/security-audit-skill",
+        "debpalash/VoiceStudio",
+        "experientiallabs/experiential",
+        "pbakaus/impeccable",
+        "TauricResearch/TradingAgents",
+        "Lordog/dive-into-llms",
+        "AgriciDaniel/claude-seo",
+        "SnailSploit/Claude-Red",
+        "Shubhamsaboo/awesome-llm-apps",
+        "browser-use/video-use",
+        "microsoft/generative-ai-for-beginners",
+        "microsoft/AI-For-Beginners",
+        "unslothai/unsloth",
+        "anthropics/claude-cookbooks",
+        "microsoft/ML-For-Beginners",
+        "openai/openai-cookbook",
+        "ed-donner/agents",
+        "ed-donner/llm_engineering",
+        "NirDiamant/agents-towards-production",
+        "DataTalksClub/llm-zoomcamp"
+      ],
+      "coverage": "本期直接核验并入选日报的 25 个 GitHub AI 项目部分快照（5 个首次收录、20 个历史出现）；不是三张日榜或全站完整榜单。",
+      "observedAt": "2026-10-26T17:03:48+08:00",
+      "sources": [
+        "https://github.com/trending?since=daily",
+        "https://github.com/trending/python?since=daily",
+        "https://github.com/trending/jupyter%20notebook?since=daily"
+      ]
+    },
+    {
       "date": "2026-10-24",
       "repositories": [
         "NVIDIA/OpenShell",
