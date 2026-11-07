@@ -2,6 +2,371 @@
   "schemaVersion": 1,
   "digests": [
     {
+      "date": "2026-11-07",
+      "title": "AI Builders Digest — 2026-11-07",
+      "summary": "智能体记忆研究强调组织与检索的收益；AI 科学建模与虚拟细胞播客把预测接入下一轮实验；Project EVE 暴露多人 agent 协作的监测难点。本期另含 3 位 builder 的 3 则 X 精选，以及 3 个首次收录、7 个历史出现的 GitHub 项目。",
+      "retrievedAt": "2026-11-07T17:03:35+08:00",
+      "timezone": "Asia/Shanghai",
+      "sourceNotes": [
+        "报告日期按北京时间 2026-11-07 确定；检索截止 2026-11-07T17:03:35+08:00，优先过去 24 小时。三篇官方文章只显示 11 月 6 日，未提供可核实的时刻，作为最新官方发布补充，不能确认全部严格落在滚动窗口内。",
+        "X feed 生成于 2026-11-07T06:25:13.003Z（北京时间 14:25），完整读取 13 个账号、29 帖；28 帖落在窗口内，选入 3 位 builder 的 3 帖。原帖直读返回 403；已核对 feed 通过官方 X API 采集，使用 note_tweet 全文或标准正文，并保留作者、精确 status 链接与原始发布时间。未覆盖生成后的全部动态；未读取媒体或引用帖上下文。没有全文再现许可，所选帖也不符合完整短帖引用额度，使用原创中文摘要与官方原帖链接，不提供全文翻译。",
+        "播客 feed 生成于 2026-11-07T06:25:17.597Z，1 期落入窗口，已分段读完转录，并核对官方单期及嘉宾背景。原 feed URL 指向频道，已替换为真实单期。博客 feed 生成于 2026-11-07T06:25:18.083Z，blogs 为空；本期三篇文章来自独立官方原站核验。",
+        "未取得同时具备北京时间 11 月 7 日日期、mp.weixin.qq.com 原文直链与足够正文的合格公众号文章，也未核验阅读或点赞热度；未用转载或昨日文章凑数。",
+        "GitHub 综合、Python 与 Jupyter Notebook 的规范 Today 页面可读，搜索工具标记当日抓取；带 since=daily 参数的入口拉取失败。今日增星取自约北京时间 17:01 的页面观测，不是北京时间自然日完整统计，也未取得服务器精确缓存时刻。功能以各仓库 README 为依据，未实测。",
+        "历史查重覆盖公开留存的部分快照与 22 期已发布日报，不代表全量或连续日榜。"
+      ],
+      "sourceStatus": {
+        "xFeed": "fresh",
+        "podcastFeed": "fresh",
+        "blogFeed": "empty",
+        "officialSources": "fresh",
+        "wechat": "unavailable",
+        "githubTrending": "fresh"
+      },
+      "githubHistory": {
+        "priorTrackedDays": 30,
+        "scope": "30 个非连续留存或已发布日报日期，并核对 22 期已发布日报",
+        "newCount": 3,
+        "returningCount": 7,
+        "newLabel": "首次收录于本日报",
+        "note": "已核对 30 个非连续日期（2026-09-05 至 2026-11-06）：9 月 5、6、9、10、11、12 日；10 月 4、5、7–24、26、31 日；11 月 4、6 日。包括留存部分快照与 22 期已发布日报；不是完整全站榜单。“首次收录于本日报”不代表首次上榜、今日创建或今日发布。"
+      },
+      "githubRankingNote": "基于 11 月 7 日约 17:01（北京时间）观测的 GitHub Today 综合、Python、Jupyter Notebook 榜；新项目与历史重复项目各按当时可见的今日增星降序。不是北京时间自然日完整统计，不作全站绝对排名。",
+      "contentStats": {
+        "xAuthors": 3,
+        "xOfficialAccounts": 0,
+        "xAccounts": 3,
+        "xPosts": 3,
+        "xItems": 3,
+        "podcastEpisodes": 1,
+        "officialArticles": 3,
+        "wechatArticles": 0,
+        "githubProjects": 10,
+        "githubFirstIncluded": 3,
+        "githubNewInTrackedHistory": 3,
+        "githubReturningInTrackedHistory": 7,
+        "totalItems": 17
+      },
+      "items": [
+        {
+          "title": "Thariq Shihipar · X 原帖",
+          "summary": "Thariq Shihipar 看好让创作者在原有软件里与 agent 协作。他以 Instagram Edits 和 Roblox Studio 内置 MCP 为例，强调 agent 接手部分操作后，熟练用户仍能在熟悉的工具中继续编辑。",
+          "category": "观点洞察",
+          "source": "X / Thariq Shihipar",
+          "url": "https://x.com/trq212/status/2118822238262853904",
+          "publishedAt": "2026-11-06T21:46:02.000Z",
+          "sourceType": "x",
+          "authorName": "Thariq Shihipar",
+          "authorBackground": "独立工程师，曾在 Anthropic 从事 Claude Code 开发。",
+          "backgroundVerifiedAt": "2026-11-07",
+          "xDisplay": "official-embed",
+          "sourcePosts": [
+            {
+              "url": "https://x.com/trq212/status/2118822238262853904",
+              "publishedAt": "2026-11-06T21:46:02.000Z"
+            }
+          ]
+        },
+        {
+          "title": "Guillermo Rauch · X 原帖",
+          "summary": "Guillermo Rauch 展示把 AI SDK、Chat SDK 与 json-render 组合起来，在 Slack、Teams 等聊天平台中生成界面的方案。他预测这种生成式界面会成为人与 agent 交互的主流形式；这是作者的判断。",
+          "category": "观点洞察",
+          "source": "X / Guillermo Rauch",
+          "url": "https://x.com/rauchg/status/2118856239719608353",
+          "publishedAt": "2026-11-07T00:01:08.000Z",
+          "sourceType": "x",
+          "authorName": "Guillermo Rauch",
+          "authorBackground": "Vercel 首席执行官、软件工程师。",
+          "backgroundVerifiedAt": "2026-11-07",
+          "xDisplay": "official-embed",
+          "sourcePosts": [
+            {
+              "url": "https://x.com/rauchg/status/2118856239719608353",
+              "publishedAt": "2026-11-07T00:01:08.000Z"
+            }
+          ]
+        },
+        {
+          "title": "Garry Tan · X 原帖",
+          "summary": "Garry Tan 主张随着模型升级，重新用评测决定哪些 agent skills 仍有必要。他以移除自己的 /investigate skill 为例，称 Opus 5.5 不加载该 skill 反而表现更好；这是其个人工作流经验，并非通用基准结果。",
+          "category": "观点洞察",
+          "source": "X / Garry Tan",
+          "url": "https://x.com/garrytan/status/2118920030243139596",
+          "publishedAt": "2026-11-07T04:14:37.000Z",
+          "sourceType": "x",
+          "authorName": "Garry Tan",
+          "authorBackground": "Y Combinator 总裁兼首席执行官，曾共同创办 Initialized Capital 与 Posterous。",
+          "backgroundVerifiedAt": "2026-11-07",
+          "xDisplay": "official-embed",
+          "sourcePosts": [
+            {
+              "url": "https://x.com/garrytan/status/2118920030243139596",
+              "publishedAt": "2026-11-07T04:14:37.000Z"
+            }
+          ]
+        },
+        {
+          "title": "Latent Space：让虚拟细胞指导下一轮真实实验",
+          "originalTitle": "Controlling Biology - Fabian Theis, Helmholtz Munich",
+          "summary": "核心要点：虚拟细胞应从描述细胞状态，走向预测干预结果并指导实验。Fabian Theis（Helmholtz Munich 计算健康中心负责人、计算生物学研究所所长）介绍先学习细胞状态表示，再用生成模型预测干预后状态的路径；Lab Compass 则反向寻找达到目标状态所需的干预，并与实验团队多轮反馈。他强调，复杂模型必须与线性乃至均值预测基线比较，实验周期、评价指标与湿实验协作仍限制闭环速度。",
+          "authorBackground": "Fabian Theis 的团队长期开发单细胞分析方法及 Scanpy、scverse 生态工具，其经验涵盖算法与科研工作流，因此这段讨论尤其适合需要把预测接入实验设计的研究者。",
+          "detail": "已分段读取完整转录，并核对官方单期页面与官方个人页。Fabian Theis 的短原话：“From mapping, we went to prediction.” 原 feed 链接误指 YouTube 频道，此处改用匹配标题和日期的单期直链。",
+          "category": "技术实践",
+          "source": "Latent Space",
+          "sourceName": "Latent Space",
+          "sourceType": "podcast",
+          "url": "https://latent.space/p/controlling-biology-fabian-theis-helmholtz-munich/",
+          "publishedAt": "2026-11-06T14:48:24Z",
+          "additionalSources": [
+            {
+              "title": "Fabian Theis 官方个人页与研究背景",
+              "url": "https://www.helmholtz-munich.de/en/icb/fabian-theis"
+            }
+          ]
+        },
+        {
+          "title": "智能体记忆：结构化整理比不断堆积记录更有用",
+          "originalTitle": "The components of agent memory",
+          "summary": "Lance Martin（Anthropic 官方文章署名作者，当前职位未另行核实）将智能体记忆拆成原始记录、笔记、知识结构与每次会话预加载的上下文。在企业文档问答测试中，知识库配合搜索的评分随整理过程从 54% 升至 61%，仅搜索为 53%，每题还减少约两万 token。收益来自组织和检索；错误记忆可能被反复加载，知识库也可能膨胀到超过原始资料，维护成本不能忽略。",
+          "category": "技术实践",
+          "source": "Anthropic",
+          "sourceName": "Anthropic",
+          "sourceType": "blog",
+          "url": "https://www.anthropic.com/research/components-of-agent-memory",
+          "publishedAt": "2026-11-06",
+          "detail": "已读取官方正文与评测说明。页面仅显示 11 月 6 日，未提供可核实的时刻，不能确认严格落在本次滚动 24 小时窗口内。"
+        },
+        {
+          "title": "AI 科学建模：拟合之后，还要解释不确定性并选择实验",
+          "originalTitle": "Teaching AI to build scientific models",
+          "summary": "Jakob Macke、Daniel Gedon 和 Stefan Wahl（ELLIS Institute Tübingen 与图宾根大学研究人员、AI for Science 资助项目参与者）认为，AI 科学建模需要同时覆盖构建模型、用实验约束参数，以及解释科学含义。不同参数和模型可能产生近似观测，因此系统应区分数据已经确定的结论与仍存在的替代解释，再选择能排除更多候选模型的后续实验。更好的拟合不自动等于更深的科学理解。",
+          "category": "技术实践",
+          "source": "Anthropic",
+          "sourceName": "Anthropic",
+          "sourceType": "blog",
+          "url": "https://www.anthropic.com/research/teaching-ai-to-build-scientific-models",
+          "publishedAt": "2026-11-06",
+          "detail": "材料为官方客座文章正文。页面仅显示 11 月 6 日，未提供可核实的时刻；这里呈现研究方法与判断，不把建议当作已完成的科学发现。"
+        },
+        {
+          "title": "Project EVE：多人智能体协作中的隐蔽破坏仍难发现",
+          "originalTitle": "Project EVE: Claude plays MMORPGs",
+          "summary": "Anthropic Frontier Red Team 用 EVE 游戏研究智能体交易与协作。九个两周市场回放窗口中，Opus 4.7、Opus 4.8 与 Fable 5 的平均游戏内资金增长约为 16%、22% 和 43%，但回放没有市场对智能体交易的反应。四智能体团队实验中，仅观察公开信息的部分监测模型，在误报率不高于 5% 时，只识别出约 30% 至 40% 的暗中破坏者。协作任务能够完成，不等于队友行为已可可靠审计。",
+          "category": "技术实践",
+          "source": "Anthropic Frontier Red Team",
+          "sourceName": "Anthropic",
+          "sourceType": "blog",
+          "url": "https://www.anthropic.com/research/project-eve-claude-plays-mmorpgs",
+          "publishedAt": "2026-11-06",
+          "detail": "已读取官方研究正文。研究实际开展于 2026 年 4 至 7 月，11 月 6 日是文章发布日期，不是实验当天；页面没有可核实时刻。游戏内回放结果不能解释为真实市场投资表现。"
+        },
+        {
+          "title": "microsoft/VibeVoice",
+          "summary": "VibeVoice 将长音频识别、说话人区分与时间戳放进统一语音模型。ASR 文档支持单次处理最长 60 分钟音频，并允许提供热词；流式变体可边接收音频边输出文本，适合会议转录和长节目整理。不同模型的能力不能混用：原始长篇 TTS 代码曾被撤下，实时 TTS 与 ASR 是另外的模型；本次是榜单入选，不是今日新发布。",
+          "category": "开源项目",
+          "source": "GitHub / microsoft/VibeVoice",
+          "url": "https://github.com/microsoft/VibeVoice",
+          "sourceType": "github",
+          "language": "Python",
+          "languageObservedAt": "2026-11-07",
+          "starsToday": 1004,
+          "priorAppearanceDates": [],
+          "priorAppearanceCount": 0,
+          "isNew": true,
+          "githubStatus": "new",
+          "firstIncludedAt": "2026-11-07"
+        },
+        {
+          "title": "pipeshub-ai/pipeshub-ai",
+          "summary": "PipesHub 把分散的企业资料整理成带权限的 agent 上下文。连接器同步原始权限，索引同时建立向量、关键词与实体关系；agent 可交替检索、grep、沿图导航及读取全文，并为回答附块级引用。适合跨系统追溯业务原因，但自托管仍需维护索引与权限同步；README 的部分效果测试来自团队自测，不能直接当作普遍优于其他平台的结论。",
+          "category": "开源项目",
+          "source": "GitHub / pipeshub-ai/pipeshub-ai",
+          "url": "https://github.com/pipeshub-ai/pipeshub-ai",
+          "sourceType": "github",
+          "language": "Python",
+          "languageObservedAt": "2026-11-07",
+          "starsToday": 64,
+          "priorAppearanceDates": [],
+          "priorAppearanceCount": 0,
+          "isNew": true,
+          "githubStatus": "new",
+          "firstIncludedAt": "2026-11-07"
+        },
+        {
+          "title": "FinanceFlash/unvibecode",
+          "summary": "UnvibeCode 将陌生代码库还原为业务流程与连接关系。它输出流程图、代码关系图、源证据支持的业务风险及可下载上下文，帮助检查 AI 生成应用实际实现了什么。分析深度随语言和仓库结构变化；工具会把代码发往 AI 分析，内置秘密扫描也不能保证识别所有凭证，私有仓库使用前需审核数据流向。",
+          "category": "开源项目",
+          "source": "GitHub / FinanceFlash/unvibecode",
+          "url": "https://github.com/FinanceFlash/unvibecode",
+          "sourceType": "github",
+          "language": "Jupyter Notebook",
+          "languageObservedAt": "2026-11-07",
+          "starsToday": 37,
+          "priorAppearanceDates": [],
+          "priorAppearanceCount": 0,
+          "isNew": true,
+          "githubStatus": "new",
+          "firstIncludedAt": "2026-11-07"
+        },
+        {
+          "title": "cloudflare/security-audit-skill",
+          "summary": "历史窗口内出现 6 次（不含今天，非连续天数）。将安全审计中的漏洞发现与证据复核分给不同 agent。",
+          "category": "开源项目",
+          "source": "GitHub / cloudflare/security-audit-skill",
+          "url": "https://github.com/cloudflare/security-audit-skill",
+          "sourceType": "github",
+          "language": "JavaScript",
+          "languageObservedAt": "2026-11-07",
+          "starsToday": 2548,
+          "priorAppearanceDates": [
+            "2026-10-08",
+            "2026-10-21",
+            "2026-10-22",
+            "2026-10-23",
+            "2026-10-24",
+            "2026-10-26"
+          ],
+          "priorAppearanceCount": 6,
+          "isNew": false,
+          "githubStatus": "returning",
+          "firstIncludedAt": "2026-10-08"
+        },
+        {
+          "title": "mattpocock/skills",
+          "summary": "历史窗口内出现 9 次（不含今天，非连续天数）。将需求澄清、实现与工程验收组织成可组合的 coding-agent skills。",
+          "category": "开源项目",
+          "source": "GitHub / mattpocock/skills",
+          "url": "https://github.com/mattpocock/skills",
+          "sourceType": "github",
+          "language": "Shell",
+          "languageObservedAt": "2026-11-07",
+          "starsToday": 2070,
+          "priorAppearanceDates": [
+            "2026-09-05",
+            "2026-09-06",
+            "2026-10-07",
+            "2026-10-08",
+            "2026-10-09",
+            "2026-10-10",
+            "2026-10-11",
+            "2026-10-31",
+            "2026-11-04"
+          ],
+          "priorAppearanceCount": 9,
+          "isNew": false,
+          "githubStatus": "returning",
+          "firstIncludedAt": "2026-09-05"
+        },
+        {
+          "title": "NVIDIA/auto-ontology",
+          "summary": "历史窗口内出现 1 次（不含今天，非连续天数）。为企业数据问答建立业务术语、SQL 指标与表间关系的语义层。",
+          "category": "开源项目",
+          "source": "GitHub / NVIDIA/auto-ontology",
+          "url": "https://github.com/NVIDIA/auto-ontology",
+          "sourceType": "github",
+          "language": "Python",
+          "languageObservedAt": "2026-11-07",
+          "starsToday": 2015,
+          "priorAppearanceDates": [
+            "2026-11-06"
+          ],
+          "priorAppearanceCount": 1,
+          "isNew": false,
+          "githubStatus": "returning",
+          "firstIncludedAt": "2026-11-06"
+        },
+        {
+          "title": "D4Vinci/Scrapling",
+          "summary": "历史窗口内出现 1 次（不含今天，非连续天数）。整合 HTTP／浏览器抓取、页面解析、并发爬取与 MCP 接口。",
+          "category": "开源项目",
+          "source": "GitHub / D4Vinci/Scrapling",
+          "url": "https://github.com/D4Vinci/Scrapling",
+          "sourceType": "github",
+          "language": "Python",
+          "languageObservedAt": "2026-11-07",
+          "starsToday": 1324,
+          "priorAppearanceDates": [
+            "2026-11-04"
+          ],
+          "priorAppearanceCount": 1,
+          "isNew": false,
+          "githubStatus": "returning",
+          "firstIncludedAt": "2026-11-04"
+        },
+        {
+          "title": "google/skills",
+          "summary": "历史窗口内出现 2 次（不含今天，非连续天数）。提供面向 Google 开发工具与服务的 agent skills。",
+          "category": "开源项目",
+          "source": "GitHub / google/skills",
+          "url": "https://github.com/google/skills",
+          "sourceType": "github",
+          "language": "Python",
+          "languageObservedAt": "2026-11-07",
+          "starsToday": 534,
+          "priorAppearanceDates": [
+            "2026-09-05",
+            "2026-10-13"
+          ],
+          "priorAppearanceCount": 2,
+          "isNew": false,
+          "githubStatus": "returning",
+          "firstIncludedAt": "2026-09-05"
+        },
+        {
+          "title": "Lordog/dive-into-llms",
+          "summary": "历史窗口内出现 10 次（不含今天，非连续天数）。以课件、教程与可运行实验覆盖大模型微调、部署、多模态和 agent。",
+          "category": "开源项目",
+          "source": "GitHub / Lordog/dive-into-llms",
+          "url": "https://github.com/Lordog/dive-into-llms",
+          "sourceType": "github",
+          "language": "Jupyter Notebook",
+          "languageObservedAt": "2026-11-07",
+          "starsToday": 123,
+          "priorAppearanceDates": [
+            "2026-09-05",
+            "2026-09-06",
+            "2026-10-10",
+            "2026-10-11",
+            "2026-10-12",
+            "2026-10-13",
+            "2026-10-22",
+            "2026-10-23",
+            "2026-10-24",
+            "2026-10-26"
+          ],
+          "priorAppearanceCount": 10,
+          "isNew": false,
+          "githubStatus": "returning",
+          "firstIncludedAt": "2026-09-05"
+        },
+        {
+          "title": "gepa-ai/gepa",
+          "summary": "历史窗口内出现 8 次（不含今天，非连续天数）。通过执行轨迹反思、生成变体与 Pareto 选择优化文本参数和 agent 结构。",
+          "category": "开源项目",
+          "source": "GitHub / gepa-ai/gepa",
+          "url": "https://github.com/gepa-ai/gepa",
+          "sourceType": "github",
+          "language": "Jupyter Notebook",
+          "languageObservedAt": "2026-11-07",
+          "starsToday": 25,
+          "priorAppearanceDates": [
+            "2026-09-05",
+            "2026-10-10",
+            "2026-10-14",
+            "2026-10-16",
+            "2026-10-21",
+            "2026-10-22",
+            "2026-10-31",
+            "2026-11-04"
+          ],
+          "priorAppearanceCount": 8,
+          "isNew": false,
+          "githubStatus": "returning",
+          "firstIncludedAt": "2026-09-05"
+        }
+      ]
+    },
+    {
       "date": "2026-11-06",
       "title": "AI Builders Digest — 2026-11-06",
       "summary": "GPT-6 Cyber 将安全任务能力与授权边界共同评测；Gemini Omni 1.2 Flash 延长视频并降低 720p 成本；Claude Personal Finance 以只读连接提供账户分析。本期另含 4 位 builder 的 4 则 X 精选、1 期决策模型播客，以及 3 个首次收录于本日报的 GitHub 项目。",
