@@ -2,6 +2,435 @@
   "schemaVersion": 1,
   "digests": [
     {
+      "date": "2026-11-08",
+      "title": "AI Builders Digest — 2026-11-08",
+      "summary": "本期补充 Antigravity 语音编程、OpenAI 与 Hacktron 的跨服务安全研究，以及 No Priors 关于交易 agent 边界和数学工具的访谈。另收录3位 builder 的3则X精选、5个首次收录与9个历史出现的GitHub项目。播客与博客均明确保留11月5–6日的真实发布日期。",
+      "retrievedAt": "2026-11-08T17:01:38+08:00",
+      "timezone": "Asia/Shanghai",
+      "sourceNotes": [
+        "报告日期按北京时间 2026-11-08 确定；检索截止时间见本期元数据，优先过去 24 小时。两篇官方博客与一期播客为 11 月 5–6 日尚未收录的补充，并非今日首发。",
+        "X feed 生成于 2026-11-08T06:25:57.526Z（北京时间14:25），完整读取10个账号19帖，其中16帖落在本次过去24小时窗口内，选入3位 builder 的3帖。原帖直读返回403；已核验 feed 使用官方X API采集，并优先使用 note_tweet 全文。依照作者、精确原帖链接、时间与正文筛选。未覆盖feed生成后的全部动态，未读取媒体或引用帖上下文。没有全文转载许可，所选帖子不满足完整短帖引用额度，因此提供原创中文摘要与官方原帖链接，不提供全文翻译。",
+        "播客feed生成于北京时间11月8日14:26，仅有11月5日一期；已分段读取完整转录，并核对官方分发单期与嘉宾背景。原feed指向频道，已改用Apple Podcasts单期直链。博客feed为空；两篇文章通过官方原站独立核验，均只显示11月6日，未提供可核实的时刻和时区。历史已收录的Anthropic记忆文章未重复刊登。",
+        "未取得同时具备北京时间11月8日真实日期、mp.weixin.qq.com原文直链和足够正文的合格公众号文章，也未核验阅读或点赞热度，未用旧文凑数。",
+        "GitHub综合和Python规范Today页面可读；带since=daily的入口读取失败，Jupyter Notebook页仅提供上周缓存，未将它作为今日榜单。今天增星为观测快照，不是北京时间自然日完整统计。功能以README及官方文档为依据，未实测。"
+      ],
+      "sourceStatus": {
+        "xFeed": "fresh",
+        "podcastFeed": "stale",
+        "blogFeed": "empty",
+        "officialSources": "stale",
+        "wechat": "unavailable",
+        "githubTrending": "fresh"
+      },
+      "githubHistory": {
+        "priorTrackedDays": 31,
+        "scope": "31 个非连续留存或已发布日报日期，并核对 23 期已发布日报",
+        "newCount": 5,
+        "returningCount": 9,
+        "newLabel": "首次收录于本日报",
+        "note": "已核对 31 个非连续日期（2026-09-05 至 2026-11-07）：9 月 5、6、9、10、11、12 日；10 月 4、5、7–24、26、31 日；11 月 4、6、7 日。包括留存部分快照与 23 期已发布日报，不是全量或连续日榜。新标签仅指“首次收录于本日报”，不代表首次登上 GitHub Trending；出现次数按不同历史日期去重，不含本期。"
+      },
+      "githubRankingNote": "今日增星来自北京时间 2026-11-08 约 16:58 观测的 GitHub Trending 综合与 Python 的 Today 页面；规范页面可读且检索工具标记当日抓取，但未取得服务器精确缓存时刻。它是观测时的榜单值，不是北京时间自然日完整统计，也不代表项目今日发布。只在已核验的 AI 相关候选中分组排序：首次收录项目按今日增星取前 5 个，历史重复项目另行简列并各自降序；不是全站绝对排名。功能以 README 和必要官方文档为依据，未实测。",
+      "contentStats": {
+        "xAuthors": 3,
+        "xOfficialAccounts": 0,
+        "xAccounts": 3,
+        "xPosts": 3,
+        "xItems": 3,
+        "podcastEpisodes": 1,
+        "officialArticles": 2,
+        "wechatArticles": 0,
+        "githubProjects": 14,
+        "githubFirstIncluded": 5,
+        "githubNewInTrackedHistory": 5,
+        "githubReturningInTrackedHistory": 9,
+        "totalItems": 20
+      },
+      "items": [
+        {
+          "title": "Andrej Karpathy · X 原帖",
+          "summary": "Andrej Karpathy 分享了把一份 YouTube 频道清单做成视频浏览工具的个人实践。他称该工具汇集约 4.7 万个视频并提供电视模式，使用 Claude Code 约三分钟一次生成；这些数字和过程是作者自述，未独立测试。",
+          "category": "观点洞察",
+          "source": "X / Andrej Karpathy",
+          "url": "https://x.com/karpathy/status/2119114537442189652",
+          "publishedAt": "2026-11-07T17:07:31.000Z",
+          "sourceType": "x",
+          "authorName": "Andrej Karpathy",
+          "authorBackground": "AI 研究者与教育者，OpenAI 创始团队成员，曾任 Tesla AI 总监。",
+          "backgroundVerifiedAt": "2026-11-08",
+          "xDisplay": "official-embed",
+          "sourcePosts": [
+            {
+              "url": "https://x.com/karpathy/status/2119114537442189652",
+              "publishedAt": "2026-11-07T17:07:31.000Z"
+            }
+          ]
+        },
+        {
+          "title": "Aaron Levie · X 原帖",
+          "summary": "Aaron Levie 认为，部分软件开发场景已出现远高于 AI 普及前的产出，但关键条件包括领域经验、合适的 agent 工具框架、并行协作能力，以及顺畅的测试和部署流程。他强调既有专业积累与改变工作方式的意愿会共同放大收益；这是其观察与判断，不是通用生产率基准。",
+          "category": "观点洞察",
+          "source": "X / Aaron Levie",
+          "url": "https://x.com/levie/status/2119111328099168409",
+          "publishedAt": "2026-11-07T16:54:46.000Z",
+          "sourceType": "x",
+          "authorName": "Aaron Levie",
+          "authorBackground": "Box 联合创始人兼首席执行官。",
+          "backgroundVerifiedAt": "2026-11-08",
+          "xDisplay": "official-embed",
+          "sourcePosts": [
+            {
+              "url": "https://x.com/levie/status/2119111328099168409",
+              "publishedAt": "2026-11-07T16:54:46.000Z"
+            }
+          ]
+        },
+        {
+          "title": "Thibault Sottiaux · X 原帖",
+          "summary": "Thibault Sottiaux 澄清其所述 Pro 方案的使用额度：相对 Plus，Pro 100、200、500 分别为 10、20、50 倍，并称这些 Pro 方案没有五小时用量限制，最高档还可使用 ultrafast。此处转述该帖当时的说明，未把它扩展为所有产品或 API 的统一额度政策。",
+          "category": "观点洞察",
+          "source": "X / Thibault Sottiaux",
+          "url": "https://x.com/thsottiaux/status/2119296267545419987",
+          "publishedAt": "2026-11-08T05:09:39.000Z",
+          "sourceType": "x",
+          "authorName": "Thibault Sottiaux",
+          "authorBackground": "OpenAI 技术人员，参与 Codex 与 ChatGPT；曾负责 Codex，当前具体职务未在本次官方资料中重新核实。",
+          "backgroundVerifiedAt": "2026-11-08",
+          "xDisplay": "official-embed",
+          "sourcePosts": [
+            {
+              "url": "https://x.com/thsottiaux/status/2119296267545419987",
+              "publishedAt": "2026-11-08T05:09:39.000Z"
+            }
+          ]
+        },
+        {
+          "title": "No Priors：交易 agent 的账户边界与数学工具的开放",
+          "originalTitle": "Tokenization, Agentic Trading, Harmonic: Robinhood's Mission to Expand Ownership with CEO Vlad Tenev",
+          "source": "No Priors",
+          "sourceType": "podcast",
+          "category": "观点洞察",
+          "url": "https://podcasts.apple.com/nz/podcast/tokenization-agentic-trading-harmonic-robinhoods-mission/id1668002688?i=1000800029787",
+          "publishedAt": "2026-11-05T11:00:00Z",
+          "summary": "核心要点：Vlad Tenev 认为，AI 的价值应通过个人可用的工具扩散，交易 agent 则需要明确的账户隔离与授权边界。Vlad Tenev 是 Robinhood 联合创始人、董事长兼 CEO，亦为 Harmonic 联合创始人兼执行董事长；数学教育和零售交易平台经历，使其视角横跨可验证推理与金融产品。Robinhood Agents 将 MCP 接口整合为账户内执行环境，支持策略循环、组合再平衡和数据插件。他自述已有超过 15 万客户开设 agentic trading 账户，每日工具调用约 3000 万次，资金放在与主账户隔离的新账户，默认仍需批准交易。数学方面，他主张把模型和 Lean 验证工具交给研究者，而不是由少数实验室包办发现。采用量为嘉宾披露，不代表投资收益或风险已独立验证。",
+          "authorBackground": "Vlad Tenev：Robinhood 联合创始人、董事长兼 CEO；Harmonic 联合创始人兼执行董事长。拥有 Stanford 数学学士与 UCLA 数学硕士背景。",
+          "detail": "近四日未收录补充，非今日首发。已分段读取完整转录，并以 Apple Podcasts 单期页核对标题、日期和章节。短原话（13:24–14:13）：“So now math has kind of converged with coding.”",
+          "additionalSources": [
+            {
+              "title": "Robinhood 官方人物介绍",
+              "url": "https://investors.robinhood.com/management/vlad-tenev"
+            },
+            {
+              "title": "Harmonic 官方介绍",
+              "url": "https://www.harmonic.fun/about/"
+            }
+          ]
+        },
+        {
+          "title": "Antigravity：用语音延续当前编程会话",
+          "originalTitle": "Voice mode in Antigravity",
+          "source": "Google Antigravity",
+          "sourceName": "Google Antigravity",
+          "sourceType": "blog",
+          "category": "产品发布",
+          "url": "https://antigravity.google/blog/antigravity-voice-mode",
+          "publishedAt": "2026-11-06",
+          "summary": "Nick Van der Auwermeulen（Google Antigravity 开发者关系工程师）介绍将 Gemini Live 接入应用和 CLI：开发者可以边看代码边口头分派任务、补充条件或中断执行。语音承接当前会话上下文，代码修改和命令结果仍留在会话中，挂断后未完成任务可以继续。普通审批可用语音回答，但删除文件、提权命令、强制推送等高风险操作仍需屏幕确认。CLI 要求 1.5.0 或更新版本；语音层只能访问启动它的会话，不改变原有权限。",
+          "authorBackground": "Nick Van der Auwermeulen：Google Antigravity 开发者关系工程师，身份由文章署名核实。",
+          "detail": "近四日未收录补充，非今日首发。已读取官方完整正文；来源仅显示 2026-11-06，未给出可核实的发布时间及时区。"
+        },
+        {
+          "title": "OpenAI 与 Hacktron 联合检查跨服务安全边界",
+          "originalTitle": "Partnering with Hacktron to find vulnerabilities in OpenAI’s systems",
+          "source": "OpenAI",
+          "sourceName": "OpenAI",
+          "sourceType": "blog",
+          "category": "技术实践",
+          "url": "https://openai.com/index/partnering-with-hacktron/",
+          "publishedAt": "2026-11-06",
+          "summary": "OpenAI 与 Hacktron 建立联合安全研究合作，优先检查 OpenAI 系统与第三方服务交互时的薄弱点，并通过 Daybreak Red 扩大合作方对前沿模型的访问。Hacktron 将代码审查、渗透测试与红队 agent 用于应用、云基础设施和身份系统之间的边界问题。合作把 agent 安全检查从单个组件延伸到跨服务连接，但公告未披露发现数量或效果评测，也不表示向所有开发者开放模型。",
+          "detail": "近四日未收录补充，非今日首发。已读取官方公告完整正文，机构署名为 OpenAI；来源仅显示 2026-11-06，未给出可核实的发布时间及时区。"
+        },
+        {
+          "title": "zed-industries/zed",
+          "summary": "Zed 把高性能多人代码编辑器与多种 agent 工作方式放在同一界面。除原生 Zed Agent 外，它可通过 ACP 接入外部 agent，或以终端线程运行 CLI；线程侧栏支持跨项目和 worktree 并行工作，模型也可选托管服务、自有 API 或本地模型。对已有编码 agent 的团队，价值在于把上下文、改动审阅和并行任务收进编辑器；外部 agent 仍沿用自己的进程和配置，需要分别核对模型、工具与数据边界。",
+          "category": "开源项目",
+          "source": "GitHub / zed-industries/zed",
+          "url": "https://github.com/zed-industries/zed",
+          "sourceType": "github",
+          "language": "Rust",
+          "languageObservedAt": "2026-11-08",
+          "starsToday": 1114,
+          "priorAppearanceDates": [],
+          "priorAppearanceCount": 0,
+          "isNew": true,
+          "githubStatus": "new",
+          "firstIncludedAt": "2026-11-08",
+          "additionalSources": [
+            {
+              "title": "Zed 官方 AI 功能文档",
+              "url": "https://github.com/zed-industries/zed/blob/main/docs/src/ai/overview.md"
+            }
+          ]
+        },
+        {
+          "title": "ranxianglei/billion-context",
+          "summary": "billion-context 在编码 agent 与模型 API 之间压缩会话历史，帮助长任务在有限上下文窗口内持续运行。模型可调用 compress 将一段消息折叠成摘要，再用 decompress 恢复细节，或用 search_context 搜索历史；增量处理还试图保留前缀缓存。它管理的是累计会话而非扩大模型的原生窗口，适合研究长周期 coding-agent 工作流；README 仍标注早期阶段，实际模型集成与稳定性需要自行验证。",
+          "category": "开源项目",
+          "source": "GitHub / ranxianglei/billion-context",
+          "url": "https://github.com/ranxianglei/billion-context",
+          "sourceType": "github",
+          "language": "TypeScript",
+          "languageObservedAt": "2026-11-08",
+          "starsToday": 191,
+          "priorAppearanceDates": [],
+          "priorAppearanceCount": 0,
+          "isNew": true,
+          "githubStatus": "new",
+          "firstIncludedAt": "2026-11-08"
+        },
+        {
+          "title": "vercel-labs/agent-browser",
+          "summary": "agent-browser 给 AI agent 提供可逐步执行的浏览器命令行。snapshot 把页面转成带元素引用的紧凑无障碍树，agent 根据引用点击或填写，再读取页面验证结果；后台进程通过 Chrome DevTools Protocol 保持会话，也可经 MCP 接入。它适合把网页操作纳入可检查的工具循环，但元素引用只对应当时页面，导航或 DOM 改动后必须重新取快照，不能反复使用旧引用。",
+          "category": "开源项目",
+          "source": "GitHub / vercel-labs/agent-browser",
+          "url": "https://github.com/vercel-labs/agent-browser",
+          "sourceType": "github",
+          "language": "Rust",
+          "languageObservedAt": "2026-11-08",
+          "starsToday": 190,
+          "priorAppearanceDates": [],
+          "priorAppearanceCount": 0,
+          "isNew": true,
+          "githubStatus": "new",
+          "firstIncludedAt": "2026-11-08"
+        },
+        {
+          "title": "Usagi-org/ai-goofish-monitor",
+          "summary": "ai-goofish-monitor 把闲鱼商品搜索、图文判断与提醒串成可配置的监控任务。Playwright 采集商品详情和图片，多模态模型按自然语言需求筛选，结果与价格历史写入 SQLite，并可按 Cron 调度、通过企业微信或 Webhook 通知。它适合持续筛选特定二手商品，但依赖账号登录态与支持图片输入的模型；应保护登录态、修改默认管理口令，并遵守平台规则控制访问频率。",
+          "category": "开源项目",
+          "source": "GitHub / Usagi-org/ai-goofish-monitor",
+          "url": "https://github.com/Usagi-org/ai-goofish-monitor",
+          "sourceType": "github",
+          "language": "Python",
+          "languageObservedAt": "2026-11-08",
+          "starsToday": 144,
+          "priorAppearanceDates": [],
+          "priorAppearanceCount": 0,
+          "isNew": true,
+          "githubStatus": "new",
+          "firstIncludedAt": "2026-11-08"
+        },
+        {
+          "title": "dsx-ai-factory/nvke",
+          "summary": "NVKE 是供平台团队在自有 NVIDIA GPU 基础设施上运营 Kubernetes 集群的管理平面。它通过 NICo 提供机器，为每个工作负载集群建立独立控制平面、etcd 和节点池，并使用 TPM 与 SPIFFE/SPIRE 验证节点身份。适合评估自建 AI 基础设施的多集群服务，但目前仍是 preview，官方不建议用于生产；默认 API 未启用认证且使用 HTTP，评估前必须配置受保护访问。",
+          "category": "开源项目",
+          "source": "GitHub / dsx-ai-factory/nvke",
+          "url": "https://github.com/dsx-ai-factory/nvke",
+          "sourceType": "github",
+          "language": "Go",
+          "languageObservedAt": "2026-11-08",
+          "starsToday": 123,
+          "priorAppearanceDates": [],
+          "priorAppearanceCount": 0,
+          "isNew": true,
+          "githubStatus": "new",
+          "firstIncludedAt": "2026-11-08"
+        },
+        {
+          "title": "cloudflare/security-audit-skill",
+          "summary": "历史窗口内出现 7 次（不含今天，非连续天数）。以独立 agent 分工执行漏洞发现、候选验证与报告证据复核。",
+          "category": "开源项目",
+          "source": "GitHub / cloudflare/security-audit-skill",
+          "url": "https://github.com/cloudflare/security-audit-skill",
+          "sourceType": "github",
+          "language": "JavaScript",
+          "languageObservedAt": "2026-11-08",
+          "starsToday": 2085,
+          "priorAppearanceDates": [
+            "2026-10-08",
+            "2026-10-21",
+            "2026-10-22",
+            "2026-10-23",
+            "2026-10-24",
+            "2026-10-26",
+            "2026-11-07"
+          ],
+          "priorAppearanceCount": 7,
+          "isNew": false,
+          "githubStatus": "returning",
+          "firstIncludedAt": "2026-10-08",
+          "detail": "历史记录（2026-11-07）：历史窗口内出现 6 次（不含今天，非连续天数）。将安全审计中的漏洞发现与证据复核分给不同 agent。"
+        },
+        {
+          "title": "milind-soni/OpenMausBot",
+          "summary": "历史窗口内出现 1 次（不含今天，非连续天数）。以聊天联系人形式管理运行在本地 Claude、Codex 等 CLI 上的多个 agent，并接入电脑与应用。",
+          "category": "开源项目",
+          "source": "GitHub / milind-soni/OpenMausBot",
+          "url": "https://github.com/milind-soni/OpenMausBot",
+          "sourceType": "github",
+          "language": "TypeScript",
+          "languageObservedAt": "2026-11-08",
+          "starsToday": 1955,
+          "priorAppearanceDates": [
+            "2026-10-31"
+          ],
+          "priorAppearanceCount": 1,
+          "isNew": false,
+          "githubStatus": "returning",
+          "firstIncludedAt": "2026-10-31",
+          "detail": "历史记录（2026-10-31）：将多名 AI agent 组织为聊天联系人，每个 bot 可拥有独立模型、会话与计算机环境。本机回环地址上的 harness 管理 Claude、Codex 等 CLI 进程，记录保存在本地，工具操作通过审批卡片交给用户决定，并可连接云 Linux 桌面或隔离本地虚拟机。适合研究个人 agent 的界面与权限编排；外部模型和应用仍涉及各自服务，且 Ubuntu Wayland 的宿主控制目前明确禁用。"
+        },
+        {
+          "title": "NVIDIA/auto-ontology",
+          "summary": "历史窗口内出现 2 次（不含今天，非连续天数）。从企业元数据构建业务语义层，为数据问答提供指标定义、关系与来源依据。",
+          "category": "开源项目",
+          "source": "GitHub / NVIDIA/auto-ontology",
+          "url": "https://github.com/NVIDIA/auto-ontology",
+          "sourceType": "github",
+          "language": "Python",
+          "languageObservedAt": "2026-11-08",
+          "starsToday": 1155,
+          "priorAppearanceDates": [
+            "2026-11-06",
+            "2026-11-07"
+          ],
+          "priorAppearanceCount": 2,
+          "isNew": false,
+          "githubStatus": "returning",
+          "firstIncludedAt": "2026-11-06",
+          "detail": "历史记录（2026-11-07）：历史窗口内出现 1 次（不含今天，非连续天数）。为企业数据问答建立业务术语、SQL 指标与表间关系的语义层。"
+        },
+        {
+          "title": "mattpocock/skills",
+          "summary": "历史窗口内出现 10 次（不含今天，非连续天数）。以可组合的 coding-agent skills 串联需求澄清、工程实施与验证。",
+          "category": "开源项目",
+          "source": "GitHub / mattpocock/skills",
+          "url": "https://github.com/mattpocock/skills",
+          "sourceType": "github",
+          "language": "Shell",
+          "languageObservedAt": "2026-11-08",
+          "starsToday": 1100,
+          "priorAppearanceDates": [
+            "2026-09-05",
+            "2026-09-06",
+            "2026-10-07",
+            "2026-10-08",
+            "2026-10-09",
+            "2026-10-10",
+            "2026-10-11",
+            "2026-10-31",
+            "2026-11-04",
+            "2026-11-07"
+          ],
+          "priorAppearanceCount": 10,
+          "isNew": false,
+          "githubStatus": "returning",
+          "firstIncludedAt": "2026-10-07",
+          "detail": "历史记录（2026-11-07）：历史窗口内出现 9 次（不含今天，非连续天数）。将需求澄清、实现与工程验收组织成可组合的 coding-agent skills。"
+        },
+        {
+          "title": "google/skills",
+          "summary": "历史窗口内出现 3 次（不含今天，非连续天数）。提供面向 Google 产品与云服务的 agent 操作指南和工作流技能。",
+          "category": "开源项目",
+          "source": "GitHub / google/skills",
+          "url": "https://github.com/google/skills",
+          "sourceType": "github",
+          "language": "Python",
+          "languageObservedAt": "2026-11-08",
+          "starsToday": 443,
+          "priorAppearanceDates": [
+            "2026-09-05",
+            "2026-10-13",
+            "2026-11-07"
+          ],
+          "priorAppearanceCount": 3,
+          "isNew": false,
+          "githubStatus": "returning",
+          "firstIncludedAt": "2026-10-13",
+          "detail": "历史记录（2026-11-07）：历史窗口内出现 2 次（不含今天，非连续天数）。提供面向 Google 开发工具与服务的 agent skills。"
+        },
+        {
+          "title": "anthropics/skills",
+          "summary": "历史窗口内出现 3 次（不含今天，非连续天数）。提供文档处理、开发与企业工作流的 Agent Skills 示例和规范。",
+          "category": "开源项目",
+          "source": "GitHub / anthropics/skills",
+          "url": "https://github.com/anthropics/skills",
+          "sourceType": "github",
+          "language": "Python",
+          "languageObservedAt": "2026-11-08",
+          "starsToday": 390,
+          "priorAppearanceDates": [
+            "2026-09-05",
+            "2026-09-06",
+            "2026-10-31"
+          ],
+          "priorAppearanceCount": 3,
+          "isNew": false,
+          "githubStatus": "returning",
+          "firstIncludedAt": "2026-10-31",
+          "detail": "历史记录（2026-10-31）：Anthropic 公开的 Agent Skills 示例与能力组织方式。"
+        },
+        {
+          "title": "jamiepine/voicebox",
+          "summary": "历史窗口内出现 1 次（不含今天，非连续天数）。把本地语音克隆、语音生成、听写及 agent 语音接口整合为桌面工作室。",
+          "category": "开源项目",
+          "source": "GitHub / jamiepine/voicebox",
+          "url": "https://github.com/jamiepine/voicebox",
+          "sourceType": "github",
+          "language": "Python",
+          "languageObservedAt": "2026-11-08",
+          "starsToday": 378,
+          "priorAppearanceDates": [
+            "2026-10-15"
+          ],
+          "priorAppearanceCount": 1,
+          "isNew": false,
+          "githubStatus": "returning",
+          "firstIncludedAt": "2026-10-15",
+          "detail": "历史记录（2026-10-15）：Voicebox 把语音输入与输出放进本地工作台：通过 Whisper 转录听写，调用多种语音合成引擎克隆或设计音色，并以多轨时间线组织播客、对话与长文配音。它还提供 REST 与 MCP 接口，让智能体调用指定声音播报结果，模型和音频可留在本机。适合重视本地处理的创作者和开发者；语言覆盖、情绪标签与硬件要求因引擎而异，Linux 当前需自行构建，不能将所有引擎视为功能完全一致。 今日增星 +121；主要语言：Python。首次收录于本日报；此前 16 个部分历史快照未记录，不能据此判断首次上榜日期。"
+        },
+        {
+          "title": "microsoft/VibeVoice",
+          "summary": "历史窗口内出现 1 次（不含今天，非连续天数）。提供带说话人和时间戳的长音频识别、流式识别及独立实时语音生成模型。",
+          "category": "开源项目",
+          "source": "GitHub / microsoft/VibeVoice",
+          "url": "https://github.com/microsoft/VibeVoice",
+          "sourceType": "github",
+          "language": "Python",
+          "languageObservedAt": "2026-11-08",
+          "starsToday": 245,
+          "priorAppearanceDates": [
+            "2026-11-07"
+          ],
+          "priorAppearanceCount": 1,
+          "isNew": false,
+          "githubStatus": "returning",
+          "firstIncludedAt": "2026-11-07",
+          "detail": "历史记录（2026-11-07）：VibeVoice 将长音频识别、说话人区分与时间戳放进统一语音模型。ASR 文档支持单次处理最长 60 分钟音频，并允许提供热词；流式变体可边接收音频边输出文本，适合会议转录和长节目整理。不同模型的能力不能混用：原始长篇 TTS 代码曾被撤下，实时 TTS 与 ASR 是另外的模型；本次是榜单入选，不是今日新发布。"
+        },
+        {
+          "title": "aws/agent-toolkit-for-aws",
+          "summary": "历史窗口内出现 1 次（不含今天，非连续天数）。通过 skills 与 MCP 工具帮助 coding agent 构建、部署和管理 AWS 应用。",
+          "category": "开源项目",
+          "source": "GitHub / aws/agent-toolkit-for-aws",
+          "url": "https://github.com/aws/agent-toolkit-for-aws",
+          "sourceType": "github",
+          "language": "Python",
+          "languageObservedAt": "2026-11-08",
+          "starsToday": 8,
+          "priorAppearanceDates": [
+            "2026-10-26"
+          ],
+          "priorAppearanceCount": 1,
+          "isNew": false,
+          "githubStatus": "returning",
+          "firstIncludedAt": "2026-10-26",
+          "detail": "历史记录（2026-10-26）：Agent Toolkit for AWS 为编码 agent 打包云端工具与任务知识，帮助构建、部署和管理 AWS 应用。插件组合 MCP 配置与按需加载的 skills：前者提供 AWS API、隔离的 Python 脚本执行及实时文档检索，后者指导 CDK、CloudFormation、Bedrock 等任务。IAM 条件键可区分 agent 与人工操作，并配合 CloudTrail 留下审计记录，便于团队约束助手权限。实际 API 调用需配置 AWS 凭据，文档检索与 skills 发现不要求账号认证。 本日报首次收录，不代表项目今日发布或首次登上全站 Trending。"
+        }
+      ]
+    },
+    {
       "date": "2026-11-07",
       "title": "AI Builders Digest — 2026-11-07",
       "summary": "智能体记忆研究强调组织与检索的收益；AI 科学建模与虚拟细胞播客把预测接入下一轮实验；Project EVE 暴露多人 agent 协作的监测难点。本期另含 3 位 builder 的 3 则 X 精选，以及 3 个首次收录、7 个历史出现的 GitHub 项目。",
