@@ -2,6 +2,674 @@
   "schemaVersion": 1,
   "digests": [
     {
+      "date": "2026-11-13",
+      "title": "AI Builders Digest — 2026-11-13",
+      "summary": "本期关注 Claude Managed Agents 整体自托管、Gemini 4 Hydrogen 的多模型工作流，以及 Claude 的制造和会议协作工具；另有 No Priors 关于 AI 药物设计与真实实验验证的访谈。收录3位builder的3则X精选、1期播客、4篇官方博客，以及5个首次收录和19个历史出现的GitHub项目。",
+      "retrievedAt": "2026-11-13T17:12:00+08:00",
+      "timezone": "Asia/Shanghai",
+      "sourceNotes": [
+        "本期日期按北京时间2026-11-13确定，检索截止为2026-11-13T17:12:00+08:00，优先过去24小时；缺少精确发布时间的官方文章按来源日期补充，不能保证全部落入严格窗口。",
+        "X feed生成于2026-11-13T06:28:02.651Z（北京时间14:28），完整读取16个账号38帖，其中35帖为北京时间今天发布，选入3位builder的3帖，均在本次24小时窗口内。已核验采集脚本使用官方X API、优先note_tweet全文；原帖网页直读返回403，依照feed正文、精确链接、作者和时间核验，未读取媒体或引用帖上下文。feed生成后的动态覆盖不完整；没有全文再现许可，采用原创中文摘要和官方原帖链接，不提供全文翻译。",
+        "播客 feed 生成于 2026-11-13T06:28:38.649Z，唯一一期已分段读取完整自动转录，并核对官方分发单期和嘉宾官网背景。节目发布于北京时间 11 月 12 日 19:00，不是 11 月 13 日首发。",
+        "博客 feed 生成于 2026-11-13T06:28:39.097Z，但 blogs 为空；本期四篇官方文章由原站独立补查并阅读全文。仅核实 11 月 12 日来源日期，未取得第一方精确时分与时区，不能保证全部落在严格 24 小时窗口内。",
+        "微信公众号经当日日期、出版方与主题交叉检索，未取得同时具有mp.weixin.qq.com原文直链、真实首发日期和足够正文的合格条目；热度未核验，不以转载或搜索排名凑数。",
+        "本次检索读取的综合、Python、Jupyter Notebook规范Today页面均可读，检索工具标记今日抓取；带since=daily参数的入口失败，未取得服务器精确缓存时刻。今日增星是观测快照，不是北京时间完整自然日统计。只在已核验AI相关候选中分组排序，首次收录取前5，历史出现另行简列，不作全站绝对排名。"
+      ],
+      "sourceStatus": {
+        "xFeed": "fresh",
+        "podcastFeed": "fresh",
+        "blogFeed": "empty",
+        "officialSources": "fresh",
+        "wechat": "unavailable",
+        "githubTrending": "fresh"
+      },
+      "githubHistory": {
+        "priorTrackedDays": 35,
+        "scope": "35个非连续留存或已刊日期、27期日报",
+        "newCount": 5,
+        "returningCount": 19,
+        "newLabel": "首次收录于本日报",
+        "note": "核对35个非连续历史日期（2026-09-05至2026-11-12）及27期已发布日报：2026-09-05、2026-09-06、2026-09-09、2026-09-10、2026-09-11、2026-09-12、2026-10-04、2026-10-05、2026-10-07、2026-10-08、2026-10-09、2026-10-10、2026-10-11、2026-10-12、2026-10-13、2026-10-14、2026-10-15、2026-10-16、2026-10-17、2026-10-18、2026-10-19、2026-10-20、2026-10-21、2026-10-22、2026-10-23、2026-10-24、2026-10-26、2026-10-31、2026-11-04、2026-11-06、2026-11-07、2026-11-08、2026-11-10、2026-11-11、2026-11-12。留存快照与日报按日期合并，不是完整连续日榜。“首次收录于本日报”不表示首次登上GitHub Trending。"
+      },
+      "githubRankingNote": "本次检索读取的综合、Python、Jupyter Notebook规范Today页面均可读，检索工具标记今日抓取；带since=daily参数的入口失败，未取得服务器精确缓存时刻。今日增星是观测快照，不是北京时间完整自然日统计。只在已核验AI相关候选中分组排序，首次收录取前5，历史出现另行简列，不作全站绝对排名。",
+      "contentStats": {
+        "xAuthors": 3,
+        "xOfficialAccounts": 0,
+        "xAccounts": 3,
+        "xPosts": 3,
+        "xItems": 3,
+        "podcastEpisodes": 1,
+        "officialArticles": 4,
+        "wechatArticles": 0,
+        "githubProjects": 24,
+        "githubFirstIncluded": 5,
+        "githubNewInTrackedHistory": 5,
+        "githubReturningInTrackedHistory": 19,
+        "totalItems": 32
+      },
+      "items": [
+        {
+          "title": "Josh Woodward · X 原帖",
+          "summary": "Josh Woodward 宣布 Gemini 4 Hydrogen 已进入 Gemini App，强调它面向更广泛用户提供快速、智能的使用体验。这是发布介绍，原帖没有提供具体性能测试条件。",
+          "category": "观点洞察",
+          "source": "X / Josh Woodward",
+          "url": "https://x.com/joshwoodward/status/2120942262054232392",
+          "publishedAt": "2026-11-12T18:10:15.000Z",
+          "sourceType": "x",
+          "authorName": "Josh Woodward",
+          "authorBackground": "Google 副总裁，负责 Google Labs、Gemini app 与 AI Studio。",
+          "backgroundVerifiedAt": "2026-11-13",
+          "xDisplay": "official-embed",
+          "sourcePosts": [
+            {
+              "url": "https://x.com/joshwoodward/status/2120942262054232392",
+              "publishedAt": "2026-11-12T18:10:15.000Z"
+            }
+          ]
+        },
+        {
+          "title": "Aaron Levie · X 原帖",
+          "summary": "Aaron Levie 报告了 Box 提前试用 Gemini 4 Hydrogen 的结果：在其企业文档复杂工作评测中，准确率比 Gemini 3.8 Flash 高5个百分点，任务耗时不到一半，典型任务token用量约少12%。这些数字来自Box自己的评测，不能外推所有任务；他称模型将接入Box AI Studio。",
+          "category": "观点洞察",
+          "source": "X / Aaron Levie",
+          "url": "https://x.com/levie/status/2120947988143198302",
+          "publishedAt": "2026-11-12T18:33:00.000Z",
+          "sourceType": "x",
+          "authorName": "Aaron Levie",
+          "authorBackground": "Box 联合创始人兼首席执行官。",
+          "backgroundVerifiedAt": "2026-11-13",
+          "xDisplay": "official-embed",
+          "sourcePosts": [
+            {
+              "url": "https://x.com/levie/status/2120947988143198302",
+              "publishedAt": "2026-11-12T18:33:00.000Z"
+            }
+          ]
+        },
+        {
+          "title": "Guillermo Rauch · X 原帖",
+          "summary": "Guillermo Rauch 主张面向agent重新拆分界面开发工具：UI SDK提供可复用的交互行为，让agent按具体需求生成组件，而不是受限于固定框架和高层抽象。他认为这能兼顾可访问性、性能与一致性；这是作者的设计判断，原帖未提供独立效果验证。",
+          "category": "观点洞察",
+          "source": "X / Guillermo Rauch",
+          "url": "https://x.com/rauchg/status/2120966768483262648",
+          "publishedAt": "2026-11-12T19:47:37.000Z",
+          "sourceType": "x",
+          "authorName": "Guillermo Rauch",
+          "authorBackground": "Vercel 首席执行官、软件工程师。",
+          "backgroundVerifiedAt": "2026-11-13",
+          "xDisplay": "official-embed",
+          "sourcePosts": [
+            {
+              "url": "https://x.com/rauchg/status/2120966768483262648",
+              "publishedAt": "2026-11-12T19:47:37.000Z"
+            }
+          ]
+        },
+        {
+          "title": "No Priors：让计算机多做预测，让真实实验负责验证",
+          "originalTitle": "Powering AI-Driven Drug Discovery with President of Isomorphic Labs Max Jaderberg",
+          "source": "No Priors",
+          "sourceType": "podcast",
+          "category": "技术实践",
+          "url": "https://www.iheart.com/podcast/867-no-priors-artificial-intel-110460921/episode/powering-ai-driven-drug-discovery-with-president-349865789/",
+          "publishedAt": "2026-11-12T11:00:00.000Z",
+          "summary": "核心要点：AI 药物设计的目标不是取消实验，而是把更多试错移到计算机上。Max Jaderberg（Isomorphic Labs 总裁、创始团队成员）主张以实验准确度为模型目标，用主动生成的数据减少历史药物数据的偏差，让一个项目积累的知识帮助下一个项目。他把结构预测扩展到毒性及药物相互作用，希望减少昂贵的真实世界迭代；但新分子最终仍须验证安全性和效果，访谈没有给出首个临床试验的确定日期。",
+          "authorBackground": "Max Jaderberg 是 Isomorphic Labs 总裁、创始团队成员，曾领导 Google DeepMind 的 Open-Ended Learning 团队，参与开发 AlphaFold 3，拥有牛津大学计算机视觉博士学位。其横跨基础模型与药物设计平台的经历，为模型目标和数据策略提供背景，不是临床有效性的证据。",
+          "detail": "已分段读取 feed 收录的完整自动转录，并核对单期分发页面及公司官网背景。发布于北京时间 11 月 12 日 19:00。约 25:49–26:15 的短原话：“So you have to go into the real world to validate.” 未把访谈中的研发预测表述为已完成临床验证。",
+          "additionalSources": [
+            {
+              "title": "Isomorphic Labs 官方个人背景",
+              "url": "https://www.isomorphiclabs.com/people/max-jaderberg-phd"
+            }
+          ]
+        },
+        {
+          "title": "Claude Managed Agents：从自托管沙箱扩展到整个控制面",
+          "originalTitle": "Operate Claude Managed Agents inside your security perimeter",
+          "source": "Anthropic / Claude",
+          "sourceType": "blog",
+          "category": "产品发布",
+          "url": "https://claude.com/resources/articles/self-hosted-claude-managed-agents",
+          "publishedAt": "2026-11-12",
+          "summary": "Anthropic 将 Managed Agents 的自托管范围从沙箱扩展到整个服务：团队运营控制服务器、数据库和执行工具的 workers，把 agent 循环、凭据和会话历史留在自有云或本地环境。沙箱与控制逻辑分离，凭据可由沙箱外代理注入，运行记录可导出到 OpenTelemetry。模型请求仍发送到所选 Claude 服务或网关，并非模型本地化；目前为私测。",
+          "detail": "已读取官方正文全文；页面没有个人署名。模型请求仍通过 Anthropic、Bedrock、Google Agent Platform、Foundry 或自有网关等路径调用 Claude；自托管不是离线运行模型。未实测部署。来源仅提供 11 月 12 日日期，未取得精确发布时间与时区，不能保证严格落在本期 24 小时窗口内。"
+        },
+        {
+          "title": "Claude for Manufacturing：把报价和质量报告推进到人工审核",
+          "originalTitle": "Introducing Claude for Manufacturing",
+          "source": "Anthropic / Claude",
+          "sourceType": "blog",
+          "category": "产品发布",
+          "url": "https://claude.com/resources/articles/claude-for-manufacturing",
+          "publishedAt": "2026-11-12",
+          "summary": "Claude for Manufacturing 用 17 个 skills 和四类连接器，把历史工单、库存、成本及文档汇总为报价、故障分析或质量报告，交负责人审核。它连接 Autodesk Fusion、Infor、Microsoft 365 和 Oracle NetSuite；Infor 的独立插件可在批准后修改业务记录，而制造插件本身不操作设备。它适合已有制造系统上的资料整理与流程协作，不能视为自动控制产线。",
+          "detail": "已读取官方正文全文；页面没有个人署名。官方区分制造插件与单独的 Infor 插件，也区分资料工作流与控制设备的研究预览，不能混为同一产品能力。未实测。来源仅提供 11 月 12 日日期，未取得精确发布时间与时区，不能保证严格落在本期 24 小时窗口内。"
+        },
+        {
+          "title": "Claude Meetings：会中协作，同时明确谁能看见结果",
+          "originalTitle": "Introducing Claude Meetings",
+          "source": "Anthropic / Claude",
+          "sourceType": "blog",
+          "category": "产品发布",
+          "url": "https://claude.com/resources/articles/claude-meetings",
+          "publishedAt": "2026-11-12",
+          "summary": "Claude Meetings 进入测试：Claude 作为可见参会者，在 Google Meet 中生成文档、白板和行动项，并在获得许可后调用个人连接的工具。它保存转录、摘要和屏幕描述，不保存音频；会议聊天里的答案对全体参会者可见。当前面向 Team 和 Enterprise 分批开放，默认避开外部来宾会议，部分启用 ZDR、HIPAA-ready 或 CMEK 的组织不能使用。",
+          "detail": "已读取官方正文全文；页面没有个人署名。加入会议前涉及转录许可与管理员设置，本文只报道功能，未操作会议或连接工具。未实测。来源仅提供 11 月 12 日日期，未取得精确发布时间与时区，不能保证严格落在本期 24 小时窗口内。"
+        },
+        {
+          "title": "Gemini 4 Hydrogen：把快速执行接入多模型工作流",
+          "originalTitle": "Introducing Gemini 4 Hydrogen",
+          "source": "Google",
+          "sourceType": "blog",
+          "category": "产品发布",
+          "url": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/introducing-gemini-4-hydrogen/",
+          "publishedAt": "2026-11-12",
+          "summary": "Koray Kavukcuoglu（Google DeepMind 高级副总裁、Google 首席 AI 架构师）介绍 Gemini 4 Hydrogen：面向日常编码和 agent 执行，提供四档思考深度。Antigravity 的 Orchestrator 可在同一会话切换 Carbon 与 Hydrogen，把复杂判断与快速执行分工。官方报告其在特定 Terminal-Bench 评测上接近 Carbon 成功率，平均少用 24% 配额、快 19%；这些是特定评测结果，不是所有项目的收益保证。",
+          "detail": "已读取官方文章及开发者说明全文，核对作者背景。单个 agent 在同一轨迹中切换模型，不等于多个 agent 并行执行；未实测。来源仅提供 11 月 12 日日期，未取得精确发布时间与时区，不能保证严格落在本期 24 小时窗口内。",
+          "additionalSources": [
+            {
+              "title": "Google 官方开发者说明",
+              "url": "https://blog.google/innovation-and-ai/technology/developers-tools/build-with-gemini-4-hydrogen/"
+            }
+          ]
+        },
+        {
+          "title": "CopilotKit/OpenBot",
+          "summary": "OpenBot 把不同 agent 放进同一个可自托管工作区，为它们提供浏览器、文件、工具以及统一的权限、审批和审计。已有 agent 可通过 AG-UI 接入，模型可用自有 OpenAI 兼容端点，团队部署提供 Kubernetes 与 PostgreSQL 路径。这适合希望保留自有模型和执行平台、同时补齐用户工作台的团队；应用模板是 MIT，但配套 CopilotKit Intelligence 另行授权，生产部署不能把整套服务当作无条件免费软件。",
+          "category": "开源项目",
+          "source": "GitHub / CopilotKit/OpenBot",
+          "url": "https://github.com/CopilotKit/OpenBot",
+          "sourceType": "github",
+          "language": "TypeScript",
+          "languageObservedAt": "2026-11-13",
+          "starsToday": 298,
+          "priorAppearanceDates": [],
+          "priorAppearanceCount": 0,
+          "isNew": true,
+          "githubStatus": "new",
+          "firstIncludedAt": "2026-11-13",
+          "detail": "功能根据本次读取的仓库 README 概括，未下载源码深入核验或实测。今日增星是观测快照，不表示项目今日发布；首次收录仅相对于本日报已核验的非连续历史。"
+        },
+        {
+          "title": "ggml-org/llama.cpp",
+          "summary": "llama.cpp 用 C/C++ 为本地和云端部署提供 LLM/VLM 推理，支持多种整数位宽量化及 CPU、CUDA、Metal、Vulkan 等后端。模型放不进显存时可采用 CPU 与 GPU 混合执行，并通过 OpenAI 兼容服务接口接入现有应用。它给异构或资源受限机器提供了部署选择，但硬件、量化和模型架构会影响实际速度与质量；本次仅核对 README，未做性能测试。",
+          "category": "开源项目",
+          "source": "GitHub / ggml-org/llama.cpp",
+          "url": "https://github.com/ggml-org/llama.cpp",
+          "sourceType": "github",
+          "language": "C++",
+          "languageObservedAt": "2026-11-13",
+          "starsToday": 176,
+          "priorAppearanceDates": [],
+          "priorAppearanceCount": 0,
+          "isNew": true,
+          "githubStatus": "new",
+          "firstIncludedAt": "2026-11-13",
+          "detail": "功能根据本次读取的仓库 README 概括，未下载源码深入核验或实测。今日增星是观测快照，不表示项目今日发布；首次收录仅相对于本日报已核验的非连续历史。"
+        },
+        {
+          "title": "QwenLM/qwen-code",
+          "summary": "Qwen Code 是可连接多种模型协议的开源编码 agent，提供终端、编辑器、桌面、Web 与 SDK 入口，包含子 agent、团队协作、MCP 和自动记忆等能力。常驻服务可让多个客户端共享会话，适合把编码助手接进已有开发工具。README 将主版本与 1.0 Preview 分开说明；常驻服务默认仅监听本机且不启用 bearer 认证，共享或不可信主机必须额外配置认证，不能直接当成公网服务。",
+          "category": "开源项目",
+          "source": "GitHub / QwenLM/qwen-code",
+          "url": "https://github.com/QwenLM/qwen-code",
+          "sourceType": "github",
+          "language": "TypeScript",
+          "languageObservedAt": "2026-11-13",
+          "starsToday": 151,
+          "priorAppearanceDates": [],
+          "priorAppearanceCount": 0,
+          "isNew": true,
+          "githubStatus": "new",
+          "firstIncludedAt": "2026-11-13",
+          "detail": "功能根据本次读取的仓库 README 概括，未下载源码深入核验或实测。今日增星是观测快照，不表示项目今日发布；首次收录仅相对于本日报已核验的非连续历史。"
+        },
+        {
+          "title": "openai/whisper",
+          "summary": "Whisper 将多语言语音识别、语言检测与向英语翻译放在同一套序列模型中，提供命令行和 Python 接口。转录流程以滑动的 30 秒窗口处理音频，多个模型尺寸让部署者在速度与显存之间选择。可用于字幕或音频整理的基础环节，但各语言表现不同；turbo 面向快速转录，并未训练语音翻译任务，翻译应选择支持该任务的多语言模型。",
+          "category": "开源项目",
+          "source": "GitHub / openai/whisper",
+          "url": "https://github.com/openai/whisper",
+          "sourceType": "github",
+          "language": "Python",
+          "languageObservedAt": "2026-11-13",
+          "starsToday": 113,
+          "priorAppearanceDates": [],
+          "priorAppearanceCount": 0,
+          "isNew": true,
+          "githubStatus": "new",
+          "firstIncludedAt": "2026-11-13",
+          "detail": "功能根据本次读取的仓库 README 概括，未下载源码深入核验或实测。今日增星是观测快照，不表示项目今日发布；首次收录仅相对于本日报已核验的非连续历史。"
+        },
+        {
+          "title": "NVIDIA/SkillEvaluator",
+          "summary": "SkillEvaluator 把 agent skill 的静态质量、安全检查、语义重复检查和真实任务效果评估分开，最后比较加载与不加载 skill 的结果。它可接入 GitHub/GitLab 检查流程，真实运行由沙箱承载，适合将技能维护从“写了多少条规则”转向验证是否帮助完成任务。无模型的质量检查不等于安全与效果已验证，真实评测需要 provider、agent 和沙箱，并可能产生费用；项目支持级别仍为实验性。",
+          "category": "开源项目",
+          "source": "GitHub / NVIDIA/SkillEvaluator",
+          "url": "https://github.com/NVIDIA/SkillEvaluator",
+          "sourceType": "github",
+          "language": "Python",
+          "languageObservedAt": "2026-11-13",
+          "starsToday": 108,
+          "priorAppearanceDates": [],
+          "priorAppearanceCount": 0,
+          "isNew": true,
+          "githubStatus": "new",
+          "firstIncludedAt": "2026-11-13",
+          "detail": "功能根据本次读取的仓库 README 概括，未下载源码深入核验或实测。今日增星是观测快照，不表示项目今日发布；首次收录仅相对于本日报已核验的非连续历史。"
+        },
+        {
+          "title": "meta/astryx",
+          "summary": "面向人和编码 agent 的 React 设计系统，提供组件、主题、模板与 CLI。",
+          "category": "开源项目",
+          "source": "GitHub / meta/astryx",
+          "url": "https://github.com/meta/astryx",
+          "sourceType": "github",
+          "language": "TypeScript",
+          "languageObservedAt": "2026-11-13",
+          "starsToday": 1830,
+          "priorAppearanceDates": [
+            "2026-11-10",
+            "2026-11-12"
+          ],
+          "priorAppearanceCount": 2,
+          "isNew": false,
+          "githubStatus": "returning",
+          "detail": "功能根据本次读取的仓库 README 概括，未下载源码深入核验或实测。今日增星是观测快照，不表示项目今日发布；首次收录仅相对于本日报已核验的非连续历史。"
+        },
+        {
+          "title": "ZhuLinsen/daily_stock_analysis",
+          "summary": "汇集行情和新闻并用 LLM 生成股票分析看板及通知，输出不等于投资保证。",
+          "category": "开源项目",
+          "source": "GitHub / ZhuLinsen/daily_stock_analysis",
+          "url": "https://github.com/ZhuLinsen/daily_stock_analysis",
+          "sourceType": "github",
+          "language": "Python",
+          "languageObservedAt": "2026-11-13",
+          "starsToday": 1294,
+          "priorAppearanceDates": [
+            "2026-11-10",
+            "2026-11-12"
+          ],
+          "priorAppearanceCount": 2,
+          "isNew": false,
+          "githubStatus": "returning",
+          "detail": "功能根据本次读取的仓库 README 概括，未下载源码深入核验或实测。今日增星是观测快照，不表示项目今日发布；首次收录仅相对于本日报已核验的非连续历史。"
+        },
+        {
+          "title": "addyosmani/agent-skills",
+          "summary": "把规格、计划、测试、审查和发布流程封装为编码 agent 可加载的技能。",
+          "category": "开源项目",
+          "source": "GitHub / addyosmani/agent-skills",
+          "url": "https://github.com/addyosmani/agent-skills",
+          "sourceType": "github",
+          "language": "JavaScript",
+          "languageObservedAt": "2026-11-13",
+          "starsToday": 816,
+          "priorAppearanceDates": [
+            "2026-10-04",
+            "2026-10-05",
+            "2026-10-08",
+            "2026-10-10",
+            "2026-11-12"
+          ],
+          "priorAppearanceCount": 5,
+          "isNew": false,
+          "githubStatus": "returning",
+          "detail": "功能根据本次读取的仓库 README 概括，未下载源码深入核验或实测。今日增星是观测快照，不表示项目今日发布；首次收录仅相对于本日报已核验的非连续历史。"
+        },
+        {
+          "title": "GoogleChrome/modern-web-guidance-src",
+          "summary": "维护和评估现代 Web 开发指南，让编码 agent 使用较新的平台能力与兼容性知识。",
+          "category": "开源项目",
+          "source": "GitHub / GoogleChrome/modern-web-guidance-src",
+          "url": "https://github.com/GoogleChrome/modern-web-guidance-src",
+          "sourceType": "github",
+          "language": "TypeScript",
+          "languageObservedAt": "2026-11-13",
+          "starsToday": 739,
+          "priorAppearanceDates": [
+            "2026-11-12"
+          ],
+          "priorAppearanceCount": 1,
+          "isNew": false,
+          "githubStatus": "returning",
+          "detail": "功能根据本次读取的仓库 README 概括，未下载源码深入核验或实测。今日增星是观测快照，不表示项目今日发布；首次收录仅相对于本日报已核验的非连续历史。"
+        },
+        {
+          "title": "homeassistant-ai/ha-mcp",
+          "summary": "通过 MCP 让 AI 助手配置和自动化 Home Assistant，接入需要相应管理权限。",
+          "category": "开源项目",
+          "source": "GitHub / homeassistant-ai/ha-mcp",
+          "url": "https://github.com/homeassistant-ai/ha-mcp",
+          "sourceType": "github",
+          "language": "Python",
+          "languageObservedAt": "2026-11-13",
+          "starsToday": 714,
+          "priorAppearanceDates": [
+            "2026-11-12"
+          ],
+          "priorAppearanceCount": 1,
+          "isNew": false,
+          "githubStatus": "returning",
+          "detail": "功能根据本次读取的仓库 README 概括，未下载源码深入核验或实测。今日增星是观测快照，不表示项目今日发布；首次收录仅相对于本日报已核验的非连续历史。"
+        },
+        {
+          "title": "openai/codex-security",
+          "summary": "用 CLI、SDK 和 CI 流程发现、验证并修复代码漏洞，报告保留覆盖范围与排除项。",
+          "category": "开源项目",
+          "source": "GitHub / openai/codex-security",
+          "url": "https://github.com/openai/codex-security",
+          "sourceType": "github",
+          "language": "TypeScript",
+          "languageObservedAt": "2026-11-13",
+          "starsToday": 643,
+          "priorAppearanceDates": [
+            "2026-11-12"
+          ],
+          "priorAppearanceCount": 1,
+          "isNew": false,
+          "githubStatus": "returning",
+          "detail": "功能根据本次读取的仓库 README 概括，未下载源码深入核验或实测。今日增星是观测快照，不表示项目今日发布；首次收录仅相对于本日报已核验的非连续历史。"
+        },
+        {
+          "title": "Alishahryar1/free-claude-code",
+          "summary": "把多种编码客户端路由到不同模型提供方；独立项目，免费额度由各提供方决定。",
+          "category": "开源项目",
+          "source": "GitHub / Alishahryar1/free-claude-code",
+          "url": "https://github.com/Alishahryar1/free-claude-code",
+          "sourceType": "github",
+          "language": "Python",
+          "languageObservedAt": "2026-11-13",
+          "starsToday": 415,
+          "priorAppearanceDates": [
+            "2026-09-09",
+            "2026-09-10",
+            "2026-10-12",
+            "2026-10-13",
+            "2026-10-14",
+            "2026-10-15",
+            "2026-11-12"
+          ],
+          "priorAppearanceCount": 7,
+          "isNew": false,
+          "githubStatus": "returning",
+          "detail": "功能根据本次读取的仓库 README 概括，未下载源码深入核验或实测。今日增星是观测快照，不表示项目今日发布；首次收录仅相对于本日报已核验的非连续历史。"
+        },
+        {
+          "title": "NVIDIA/SkillSpector",
+          "summary": "在安装前对 agent skills 做静态与可选模型语义检查，查找注入、泄露和供应链风险。",
+          "category": "开源项目",
+          "source": "GitHub / NVIDIA/SkillSpector",
+          "url": "https://github.com/NVIDIA/SkillSpector",
+          "sourceType": "github",
+          "language": "Python",
+          "languageObservedAt": "2026-11-13",
+          "starsToday": 297,
+          "priorAppearanceDates": [
+            "2026-09-05",
+            "2026-09-06"
+          ],
+          "priorAppearanceCount": 2,
+          "isNew": false,
+          "githubStatus": "returning",
+          "detail": "功能根据本次读取的仓库 README 概括，未下载源码深入核验或实测。今日增星是观测快照，不表示项目今日发布；首次收录仅相对于本日报已核验的非连续历史。"
+        },
+        {
+          "title": "langchain-ai/rag-from-scratch",
+          "summary": "通过配套视频和 notebooks 学习索引、检索与生成的 RAG 基础。",
+          "category": "开源项目",
+          "source": "GitHub / langchain-ai/rag-from-scratch",
+          "url": "https://github.com/langchain-ai/rag-from-scratch",
+          "sourceType": "github",
+          "language": "Jupyter Notebook",
+          "languageObservedAt": "2026-11-13",
+          "starsToday": 124,
+          "priorAppearanceDates": [
+            "2026-09-05",
+            "2026-09-11",
+            "2026-10-04",
+            "2026-10-05",
+            "2026-10-24",
+            "2026-11-04",
+            "2026-11-12"
+          ],
+          "priorAppearanceCount": 7,
+          "isNew": false,
+          "githubStatus": "returning",
+          "detail": "功能根据本次读取的仓库 README 概括，未下载源码深入核验或实测。今日增星是观测快照，不表示项目今日发布；首次收录仅相对于本日报已核验的非连续历史。"
+        },
+        {
+          "title": "mvanhorn/last30days-skill",
+          "summary": "跨多个公开社区和网页收集近期话题材料，为 agent 生成带来源的研究摘要。",
+          "category": "开源项目",
+          "source": "GitHub / mvanhorn/last30days-skill",
+          "url": "https://github.com/mvanhorn/last30days-skill",
+          "sourceType": "github",
+          "language": "Python",
+          "languageObservedAt": "2026-11-13",
+          "starsToday": 112,
+          "priorAppearanceDates": [
+            "2026-10-14"
+          ],
+          "priorAppearanceCount": 1,
+          "isNew": false,
+          "githubStatus": "returning",
+          "detail": "功能根据本次读取的仓库 README 概括，未下载源码深入核验或实测。今日增星是观测快照，不表示项目今日发布；首次收录仅相对于本日报已核验的非连续历史。"
+        },
+        {
+          "title": "huggingface/transformers",
+          "summary": "统一文本、视觉、语音和多模态模型定义及训练、推理接口。",
+          "category": "开源项目",
+          "source": "GitHub / huggingface/transformers",
+          "url": "https://github.com/huggingface/transformers",
+          "sourceType": "github",
+          "language": "Python",
+          "languageObservedAt": "2026-11-13",
+          "starsToday": 98,
+          "priorAppearanceDates": [
+            "2026-10-12",
+            "2026-10-13"
+          ],
+          "priorAppearanceCount": 2,
+          "isNew": false,
+          "githubStatus": "returning",
+          "detail": "功能根据本次读取的仓库 README 概括，未下载源码深入核验或实测。今日增星是观测快照，不表示项目今日发布；首次收录仅相对于本日报已核验的非连续历史。"
+        },
+        {
+          "title": "microsoft/ai-agents-for-beginners",
+          "summary": "以课程与示例引导开发者理解并构建 AI agents。",
+          "category": "开源项目",
+          "source": "GitHub / microsoft/ai-agents-for-beginners",
+          "url": "https://github.com/microsoft/ai-agents-for-beginners",
+          "sourceType": "github",
+          "language": "Jupyter Notebook",
+          "languageObservedAt": "2026-11-13",
+          "starsToday": 88,
+          "priorAppearanceDates": [
+            "2026-09-05",
+            "2026-09-06",
+            "2026-09-11",
+            "2026-09-12",
+            "2026-10-14",
+            "2026-10-15",
+            "2026-10-17",
+            "2026-10-22",
+            "2026-10-23",
+            "2026-11-04",
+            "2026-11-10",
+            "2026-11-12"
+          ],
+          "priorAppearanceCount": 12,
+          "isNew": false,
+          "githubStatus": "returning",
+          "detail": "功能根据本次读取的仓库 README 概括，未下载源码深入核验或实测。今日增星是观测快照，不表示项目今日发布；首次收录仅相对于本日报已核验的非连续历史。"
+        },
+        {
+          "title": "lyogavin/airllm",
+          "summary": "用按层加载等方式减少大模型推理显存占用，需权衡存储、内存和数据搬运成本。",
+          "category": "开源项目",
+          "source": "GitHub / lyogavin/airllm",
+          "url": "https://github.com/lyogavin/airllm",
+          "sourceType": "github",
+          "language": "Jupyter Notebook",
+          "languageObservedAt": "2026-11-13",
+          "starsToday": 68,
+          "priorAppearanceDates": [
+            "2026-09-11",
+            "2026-09-12",
+            "2026-10-12",
+            "2026-10-13",
+            "2026-10-14",
+            "2026-10-15",
+            "2026-10-16",
+            "2026-10-22",
+            "2026-10-23",
+            "2026-10-24",
+            "2026-11-10"
+          ],
+          "priorAppearanceCount": 11,
+          "isNew": false,
+          "githubStatus": "returning",
+          "detail": "功能根据本次读取的仓库 README 概括，未下载源码深入核验或实测。今日增星是观测快照，不表示项目今日发布；首次收录仅相对于本日报已核验的非连续历史。"
+        },
+        {
+          "title": "karpathy/micrograd",
+          "summary": "以标量计算图实现自动微分和小型神经网络，适合学习反向传播。",
+          "category": "开源项目",
+          "source": "GitHub / karpathy/micrograd",
+          "url": "https://github.com/karpathy/micrograd",
+          "sourceType": "github",
+          "language": "Jupyter Notebook",
+          "languageObservedAt": "2026-11-13",
+          "starsToday": 48,
+          "priorAppearanceDates": [
+            "2026-09-12",
+            "2026-10-10",
+            "2026-10-14",
+            "2026-10-24"
+          ],
+          "priorAppearanceCount": 4,
+          "isNew": false,
+          "githubStatus": "returning",
+          "detail": "功能根据本次读取的仓库 README 概括，未下载源码深入核验或实测。今日增星是观测快照，不表示项目今日发布；首次收录仅相对于本日报已核验的非连续历史。"
+        },
+        {
+          "title": "karpathy/nn-zero-to-hero",
+          "summary": "配合视频从反向传播逐步学习神经网络与语言模型训练。",
+          "category": "开源项目",
+          "source": "GitHub / karpathy/nn-zero-to-hero",
+          "url": "https://github.com/karpathy/nn-zero-to-hero",
+          "sourceType": "github",
+          "language": "Jupyter Notebook",
+          "languageObservedAt": "2026-11-13",
+          "starsToday": 43,
+          "priorAppearanceDates": [
+            "2026-09-06",
+            "2026-10-10",
+            "2026-10-14",
+            "2026-10-15",
+            "2026-10-23",
+            "2026-11-04",
+            "2026-11-12"
+          ],
+          "priorAppearanceCount": 7,
+          "isNew": false,
+          "githubStatus": "returning",
+          "detail": "功能根据本次读取的仓库 README 概括，未下载源码深入核验或实测。今日增星是观测快照，不表示项目今日发布；首次收录仅相对于本日报已核验的非连续历史。"
+        },
+        {
+          "title": "chiphuyen/aie-book",
+          "summary": "整理基础模型应用工程的学习资料、提示示例和案例。",
+          "category": "开源项目",
+          "source": "GitHub / chiphuyen/aie-book",
+          "url": "https://github.com/chiphuyen/aie-book",
+          "sourceType": "github",
+          "language": "Jupyter Notebook",
+          "languageObservedAt": "2026-11-13",
+          "starsToday": 12,
+          "priorAppearanceDates": [
+            "2026-10-18",
+            "2026-10-19",
+            "2026-11-10"
+          ],
+          "priorAppearanceCount": 3,
+          "isNew": false,
+          "githubStatus": "returning",
+          "detail": "功能根据本次读取的仓库 README 概括，未下载源码深入核验或实测。今日增星是观测快照，不表示项目今日发布；首次收录仅相对于本日报已核验的非连续历史。"
+        },
+        {
+          "title": "ed-donner/llm_engineering",
+          "summary": "提供 LLM 工程课程的项目、notebooks 和环境配置材料。",
+          "category": "开源项目",
+          "source": "GitHub / ed-donner/llm_engineering",
+          "url": "https://github.com/ed-donner/llm_engineering",
+          "sourceType": "github",
+          "language": "Jupyter Notebook",
+          "languageObservedAt": "2026-11-13",
+          "starsToday": 9,
+          "priorAppearanceDates": [
+            "2026-09-09",
+            "2026-09-10",
+            "2026-10-04",
+            "2026-10-05",
+            "2026-10-17",
+            "2026-10-22",
+            "2026-10-23",
+            "2026-10-26",
+            "2026-10-31",
+            "2026-11-12"
+          ],
+          "priorAppearanceCount": 10,
+          "isNew": false,
+          "githubStatus": "returning",
+          "detail": "功能根据本次读取的仓库 README 概括，未下载源码深入核验或实测。今日增星是观测快照，不表示项目今日发布；首次收录仅相对于本日报已核验的非连续历史。"
+        },
+        {
+          "title": "GoogleCloudPlatform/generative-ai",
+          "summary": "提供 Google Cloud 上 Gemini 与生成式 AI 工作流的示例和 notebooks。",
+          "category": "开源项目",
+          "source": "GitHub / GoogleCloudPlatform/generative-ai",
+          "url": "https://github.com/GoogleCloudPlatform/generative-ai",
+          "sourceType": "github",
+          "language": "Jupyter Notebook",
+          "languageObservedAt": "2026-11-13",
+          "starsToday": 7,
+          "priorAppearanceDates": [
+            "2026-09-06",
+            "2026-10-23",
+            "2026-10-31",
+            "2026-11-12"
+          ],
+          "priorAppearanceCount": 4,
+          "isNew": false,
+          "githubStatus": "returning",
+          "detail": "功能根据本次读取的仓库 README 概括，未下载源码深入核验或实测。今日增星是观测快照，不表示项目今日发布；首次收录仅相对于本日报已核验的非连续历史。"
+        },
+        {
+          "title": "ageron/handson-mlp",
+          "summary": "以 Scikit-Learn 和 PyTorch 示例及习题讲解机器学习基础。",
+          "category": "开源项目",
+          "source": "GitHub / ageron/handson-mlp",
+          "url": "https://github.com/ageron/handson-mlp",
+          "sourceType": "github",
+          "language": "Jupyter Notebook",
+          "languageObservedAt": "2026-11-13",
+          "starsToday": 5,
+          "priorAppearanceDates": [
+            "2026-10-04",
+            "2026-10-05",
+            "2026-10-15",
+            "2026-11-10"
+          ],
+          "priorAppearanceCount": 4,
+          "isNew": false,
+          "githubStatus": "returning",
+          "detail": "功能根据本次读取的仓库 README 概括，未下载源码深入核验或实测。今日增星是观测快照，不表示项目今日发布；首次收录仅相对于本日报已核验的非连续历史。"
+        }
+      ]
+    },
+    {
       "date": "2026-11-12",
       "title": "AI Builders Digest — 2026-11-12",
       "summary": "本期关注Gemini Decisions API如何把有限选项判断从文本生成中拆出来、AWS Emulator的多agent工程流程，以及AlphaGenome 2的细胞状态建模；另有Every关于工作判断的播客。收录3位builder的3则X精选、1期播客、3篇官方博客，以及5个首次收录和22个历史出现的GitHub项目。",
