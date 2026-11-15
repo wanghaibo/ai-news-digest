@@ -2,6 +2,356 @@
   "schemaVersion": 1,
   "digests": [
     {
+      "date": "2026-11-15",
+      "title": "AI Builders Digest — 2026-11-15",
+      "summary": "本期补充Parallel Decisions将实时网页证据接入结构化判断的机制，明确为11月13日旧闻。另收录3位builder的3条X主题及1条跟帖、5个首次收录与7个历史出现的GitHub项目。新播客及窗口内官方新文缺口如实保留。",
+      "retrievedAt": "2026-11-15T17:10:31+08:00",
+      "timezone": "Asia/Shanghai",
+      "sourceNotes": [
+        "本期日期按北京时间2026-11-15确定，检索截止为2026-11-15T17:10:31+08:00，优先过去24小时。未核验到合格的窗口内官方新文，Parallel Decisions为11月13日旧闻补充；不把旧文或抓取日期当作今日新闻。",
+        "X feed生成于2026-11-15T06:26:52.164Z（北京时间14:26），完整读取13个账号26帖，其中21帖为北京时间今天发布；选入3位builder的3条主题及1条发布范围跟帖，均在本次24小时窗口内。已核验采集程序使用官方X API、优先note_tweet全文；所选原帖直读返回403，依照feed正文、作者、精确链接与时间核验，未读取媒体或引用帖上下文。feed生成后的动态覆盖不完整。未取得全文再现许可，采用原创中文摘要和原帖链接，不提供全文翻译。",
+        "播客feed生成于2026-11-15T06:26:56.378Z，仅有11月5日Ep97 Jev，已经11月6日日报收录，本期去重不重复刊登；未重新读完旧转录，不能声称本期全文复核。",
+        "博客feed生成于2026-11-15T06:26:56.846Z，blogs为空。本次未找到合格的窗口内官方新文；仅提供一篇11月13日未刊官方更新作可选旧闻补充。",
+        "搜索北京时间11月15日微信公众号AI文章，未取得同时具有mp.weixin.qq.com原文直链、实际首发日期、足够正文的合格候选，热度未核验。",
+        "Vercel Security Review的11月13日更新已阅读全文，但核心“不必部署在Vercel”的内容已见11月11日Rauch精选，建议不再凑数。",
+        "基于北京时间2026-11-15约17:03–17:06读取的GitHub Trending综合、Python、Jupyter Notebook规范Today页面，检索工具标记当日抓取；带since=daily参数的入口失败，未取得服务器精确缓存时刻。今日增星是观测快照，不是北京时间自然日完整统计。首次收录在已核验AI候选中按今日增星取前5，历史项目选7个简列并单独降序，不作全站绝对排名。功能依据README，未实测。"
+      ],
+      "sourceStatus": {
+        "xFeed": "fresh",
+        "podcastFeed": "stale",
+        "blogFeed": "empty",
+        "officialSources": "stale",
+        "wechat": "unavailable",
+        "githubTrending": "fresh"
+      },
+      "githubHistory": {
+        "priorTrackedDays": 37,
+        "scope": "37个非连续留存或已刊日期、28期公开日报",
+        "newCount": 5,
+        "returningCount": 7,
+        "newLabel": "首次收录于本日报",
+        "note": "核对37个非连续历史日期（2026-09-05至2026-11-14），包括28期公开日报及留存部分快照；11月14日为留存快照，检索时公开站点尚未刊登该期。按日期去重，不是全量或连续日榜。“首次收录于本日报”不表示首次登上GitHub Trending。"
+      },
+      "githubRankingNote": "基于北京时间2026-11-15约17:03–17:06读取的GitHub Trending综合、Python、Jupyter Notebook规范Today页面，检索工具标记当日抓取；带since=daily参数的入口失败，未取得服务器精确缓存时刻。今日增星是观测快照，不是北京时间自然日完整统计。首次收录在已核验AI候选中按今日增星取前5，历史项目选7个简列并单独降序，不作全站绝对排名。功能依据README，未实测。",
+      "contentStats": {
+        "xAuthors": 3,
+        "xOfficialAccounts": 0,
+        "xAccounts": 3,
+        "xPosts": 4,
+        "xItems": 3,
+        "podcastEpisodes": 0,
+        "officialArticles": 1,
+        "wechatArticles": 0,
+        "githubProjects": 12,
+        "githubFirstIncluded": 5,
+        "githubNewInTrackedHistory": 5,
+        "githubReturningInTrackedHistory": 7,
+        "totalItems": 16
+      },
+      "items": [
+        {
+          "title": "Josh Woodward · X 原帖",
+          "summary": "Josh Woodward 宣布 Gemini 可连接 Google Wallet，按个人支出生成图表、寻找订阅涨价并参考去年的消费制定假日预算。后续帖说明先向美国 Gemini app 用户开放；本条转述发布说明，未独立测试数据覆盖与分析准确率。",
+          "category": "观点洞察",
+          "source": "X / Josh Woodward",
+          "url": "https://x.com/joshwoodward/status/2121755282326102417",
+          "publishedAt": "2026-11-15T00:00:54.000Z",
+          "sourceType": "x",
+          "authorName": "Josh Woodward",
+          "authorBackground": "Google 副总裁，负责 Google Labs、Gemini app 与 AI Studio。",
+          "backgroundVerifiedAt": "2026-11-15",
+          "xDisplay": "official-embed",
+          "sourcePosts": [
+            {
+              "url": "https://x.com/joshwoodward/status/2121755282326102417",
+              "publishedAt": "2026-11-15T00:00:54.000Z"
+            },
+            {
+              "url": "https://x.com/joshwoodward/status/2121755283785699376",
+              "publishedAt": "2026-11-15T00:00:54.000Z"
+            }
+          ]
+        },
+        {
+          "title": "Guillermo Rauch · X 原帖",
+          "summary": "Guillermo Rauch 展示用 UI SDK 和 agent 制作界面的尝试：不用前端框架，以 Web Components 复用拖动、缩放、菜单切换、键盘焦点和快捷键等交互行为。他称这次产物使用了14种行为；本条仅根据文字说明，未运行产物或验证交互质量。",
+          "category": "观点洞察",
+          "source": "X / Guillermo Rauch",
+          "url": "https://x.com/rauchg/status/2121804295381377342",
+          "publishedAt": "2026-11-15T03:15:39.000Z",
+          "sourceType": "x",
+          "authorName": "Guillermo Rauch",
+          "authorBackground": "Vercel 首席执行官、软件工程师。",
+          "backgroundVerifiedAt": "2026-11-15",
+          "xDisplay": "official-embed",
+          "sourcePosts": [
+            {
+              "url": "https://x.com/rauchg/status/2121804295381377342",
+              "publishedAt": "2026-11-15T03:15:39.000Z"
+            }
+          ]
+        },
+        {
+          "title": "Aaron Levie · X 原帖",
+          "summary": "Aaron Levie 预测，模型的编码、工具调用和电脑操作能力提高，会让更多知识工作转化为可由代码与软件完成的任务。他举视频、游戏和三维内容生成为例，同时认为领域专家仍需判断结果是否有用；这是对发展方向的判断，不是效率对照实验。",
+          "category": "观点洞察",
+          "source": "X / Aaron Levie",
+          "url": "https://x.com/levie/status/2121686564078297461",
+          "publishedAt": "2026-11-14T19:27:50.000Z",
+          "sourceType": "x",
+          "authorName": "Aaron Levie",
+          "authorBackground": "Box 联合创始人兼首席执行官。",
+          "backgroundVerifiedAt": "2026-11-15",
+          "xDisplay": "official-embed",
+          "sourcePosts": [
+            {
+              "url": "https://x.com/levie/status/2121686564078297461",
+              "publishedAt": "2026-11-14T19:27:50.000Z"
+            }
+          ]
+        },
+        {
+          "title": "Parallel Decisions：把实时网页证据接入结构化判断",
+          "originalTitle": "Parallel Decisions now available on AI Gateway for free",
+          "summary": "Vercel 接入 Parallel Decisions Fast：先检索实时网页，再返回布尔、选项或评分答案及概率，适合核查产品能力等变化信息。调用 parallel/parallel-decisions-fast 无需另开 Parallel 账号。引用对应整次请求而非逐个答案，不能直接认定某条来源证明某个结论；应用仍需决定复核门槛。",
+          "category": "技术实践",
+          "source": "Vercel",
+          "sourceType": "blog",
+          "url": "https://vercel.com/changelog/parallel-decisions-now-available-on-ai-gateway-for-free",
+          "publishedAt": "2026-11-13",
+          "detail": "旧闻补充，不是11月15日首发，也不在优先24小时窗口内。已读官方原文全文及示例；页面time与datePublished均为2026-11-13T00:00+00:00，可能为日期规范值，不将午夜当实测发稿时刻。作者署名Jerilyn Zheng、Zachary Chen，具体职务本次未核实，不使用职务背书。官方限时免费截至11月23日；未实际调用或验证效果。"
+        },
+        {
+          "title": "ChromeDevTools/chrome-devtools-mcp",
+          "summary": "Chrome DevTools MCP把运行中的Chrome接入编码agent：可录制性能trace、检查网络请求和控制台错误，并通过Puppeteer执行浏览器操作，帮助开发者把“页面哪里慢、哪里错”变成可检查的证据。它同时提供MCP和CLI，但浏览器内容会暴露给客户端，默认还收集工具使用统计，接入前应检查数据边界；本期未实测。",
+          "category": "开源项目",
+          "source": "GitHub / ChromeDevTools/chrome-devtools-mcp",
+          "url": "https://github.com/ChromeDevTools/chrome-devtools-mcp",
+          "sourceType": "github",
+          "language": "TypeScript",
+          "languageObservedAt": "2026-11-15",
+          "starsToday": 664,
+          "priorAppearanceDates": [],
+          "priorAppearanceCount": 0,
+          "isNew": true,
+          "githubStatus": "new",
+          "firstIncludedAt": "2026-11-15",
+          "detail": "首次收录于本日报，不表示今日发布或首次上榜。功能来自本次读取的官方仓库README，未实测。"
+        },
+        {
+          "title": "dream-num/univer",
+          "summary": "Univer把电子表格、文档编辑和公式计算做成可嵌入的Office SDK，让人和agent使用同一组内容模型、命令与Facade API。例如应用可修改报价表、重新计算再保存，而不必让模型操作截图。仓库开源的是Web SDK核心及Sheets、Docs能力；Server SDK、商业插件和商业AI扩展另行授权，不能把完整产品家族都当作免费开源。",
+          "category": "开源项目",
+          "source": "GitHub / dream-num/univer",
+          "url": "https://github.com/dream-num/univer",
+          "sourceType": "github",
+          "language": "TypeScript",
+          "languageObservedAt": "2026-11-15",
+          "starsToday": 495,
+          "priorAppearanceDates": [],
+          "priorAppearanceCount": 0,
+          "isNew": true,
+          "githubStatus": "new",
+          "firstIncludedAt": "2026-11-15",
+          "detail": "首次收录于本日报，不表示今日发布或首次上榜。功能来自本次读取的官方仓库README，未实测。"
+        },
+        {
+          "title": "LibreTranslate/LibreTranslate",
+          "summary": "LibreTranslate提供可自行部署的机器翻译API，翻译引擎来自开源Argos Translate，不依赖Google或Azure的专有翻译服务。适合希望控制翻译服务部署位置与依赖的开发者；项目采用AGPL-3.0，本期未验证具体语言对质量或吞吐。",
+          "category": "开源项目",
+          "source": "GitHub / LibreTranslate/LibreTranslate",
+          "url": "https://github.com/LibreTranslate/LibreTranslate",
+          "sourceType": "github",
+          "language": "Python",
+          "languageObservedAt": "2026-11-15",
+          "starsToday": 130,
+          "priorAppearanceDates": [],
+          "priorAppearanceCount": 0,
+          "isNew": true,
+          "githubStatus": "new",
+          "firstIncludedAt": "2026-11-15",
+          "detail": "首次收录于本日报，不表示今日发布或首次上榜。功能来自本次读取的官方仓库README，未实测。"
+        },
+        {
+          "title": "elementalsouls/Claude-BugHunter",
+          "summary": "Claude-BugHunter把漏洞研究方法、验证与报告流程组织成Claude Code技能和命令，按测试主题加载相关资料，并提供项目目录脚手架及Burp MCP接入。它面向有授权的安全检查，把范围约束、证据整理和结果复核纳入工作流；技能不是安全保证，README示例也明确不是实测录像，本期未运行。",
+          "category": "开源项目",
+          "source": "GitHub / elementalsouls/Claude-BugHunter",
+          "url": "https://github.com/elementalsouls/Claude-BugHunter",
+          "sourceType": "github",
+          "language": "Python",
+          "languageObservedAt": "2026-11-15",
+          "starsToday": 124,
+          "priorAppearanceDates": [],
+          "priorAppearanceCount": 0,
+          "isNew": true,
+          "githubStatus": "new",
+          "firstIncludedAt": "2026-11-15",
+          "detail": "首次收录于本日报，不表示今日发布或首次上榜。功能来自本次读取的官方仓库README，未实测。"
+        },
+        {
+          "title": "andrewyng/openworker",
+          "summary": "OpenWorker同时提供桌面助手和可嵌入应用的Harness SDK：后者处理agent循环、工具调用、审批、流式输出和持久会话，应用负责具体产品体验。桌面版可接云端模型或Ollama，并可把命令放进OpenShell沙箱，而模型密钥和连接器留在沙箱外。当前处于公开测试阶段，审核模型的判断不是保证；本期仅核对README，未验证其隔离效果。",
+          "category": "开源项目",
+          "source": "GitHub / andrewyng/openworker",
+          "url": "https://github.com/andrewyng/openworker",
+          "sourceType": "github",
+          "language": "Python",
+          "languageObservedAt": "2026-11-15",
+          "starsToday": 100,
+          "priorAppearanceDates": [],
+          "priorAppearanceCount": 0,
+          "isNew": true,
+          "githubStatus": "new",
+          "firstIncludedAt": "2026-11-15",
+          "detail": "首次收录于本日报，不表示今日发布或首次上榜。功能来自本次读取的官方仓库README，未实测。"
+        },
+        {
+          "title": "GoogleChrome/modern-web-guidance-src",
+          "summary": "🔄 历史出现 3 次（2026-11-12、2026-11-13、2026-11-14）。将现代Web实践和浏览器兼容资料按需送入编码agent上下文。",
+          "category": "开源项目",
+          "source": "GitHub / GoogleChrome/modern-web-guidance-src",
+          "url": "https://github.com/GoogleChrome/modern-web-guidance-src",
+          "sourceType": "github",
+          "language": "TypeScript",
+          "languageObservedAt": "2026-11-15",
+          "starsToday": 1231,
+          "priorAppearanceDates": [
+            "2026-11-12",
+            "2026-11-13",
+            "2026-11-14"
+          ],
+          "priorAppearanceCount": 3,
+          "isNew": false,
+          "githubStatus": "returning",
+          "firstIncludedAt": "2026-11-12",
+          "detail": "出现次数按已核对的不同历史日期去重，含留存快照，不表示连续上榜；功能来自本次读取的README，未实测。"
+        },
+        {
+          "title": "alibaba/open-code-review",
+          "summary": "🔄 历史出现 2 次（2026-10-10、2026-11-14）。用确定性流程与LLM工具调用结合审查Git差异，输出行级问题。",
+          "category": "开源项目",
+          "source": "GitHub / alibaba/open-code-review",
+          "url": "https://github.com/alibaba/open-code-review",
+          "sourceType": "github",
+          "language": "Go",
+          "languageObservedAt": "2026-11-15",
+          "starsToday": 893,
+          "priorAppearanceDates": [
+            "2026-10-10",
+            "2026-11-14"
+          ],
+          "priorAppearanceCount": 2,
+          "isNew": false,
+          "githubStatus": "returning",
+          "firstIncludedAt": "2026-10-10",
+          "detail": "出现次数按已核对的不同历史日期去重，含留存快照，不表示连续上榜；功能来自本次读取的README，未实测。"
+        },
+        {
+          "title": "tradermonty/claude-trading-skills",
+          "summary": "🔄 历史出现 1 次（2026-11-14）。把市场复盘、风险管理和交易日志组织成技能工作流，不是自动交易或收益承诺。",
+          "category": "开源项目",
+          "source": "GitHub / tradermonty/claude-trading-skills",
+          "url": "https://github.com/tradermonty/claude-trading-skills",
+          "sourceType": "github",
+          "language": "Python",
+          "languageObservedAt": "2026-11-15",
+          "starsToday": 553,
+          "priorAppearanceDates": [
+            "2026-11-14"
+          ],
+          "priorAppearanceCount": 1,
+          "isNew": false,
+          "githubStatus": "returning",
+          "firstIncludedAt": "2026-11-14",
+          "detail": "出现次数按已核对的不同历史日期去重，含留存快照，不表示连续上榜；功能来自本次读取的README，未实测。"
+        },
+        {
+          "title": "backnotprop/plannotator",
+          "summary": "🔄 历史出现 1 次（2026-11-14）。在本地浏览器批注计划、文档和代码差异，再把反馈发送给agent。",
+          "category": "开源项目",
+          "source": "GitHub / backnotprop/plannotator",
+          "url": "https://github.com/backnotprop/plannotator",
+          "sourceType": "github",
+          "language": "TypeScript",
+          "languageObservedAt": "2026-11-15",
+          "starsToday": 408,
+          "priorAppearanceDates": [
+            "2026-11-14"
+          ],
+          "priorAppearanceCount": 1,
+          "isNew": false,
+          "githubStatus": "returning",
+          "firstIncludedAt": "2026-11-14",
+          "detail": "出现次数按已核对的不同历史日期去重，含留存快照，不表示连续上榜；功能来自本次读取的README，未实测。"
+        },
+        {
+          "title": "FinanceFlash/unvibecode",
+          "summary": "🔄 历史出现 1 次（2026-11-07）。把复杂代码库梳理为业务流程、相关代码和带证据的风险线索。",
+          "category": "开源项目",
+          "source": "GitHub / FinanceFlash/unvibecode",
+          "url": "https://github.com/FinanceFlash/unvibecode",
+          "sourceType": "github",
+          "language": "Jupyter Notebook",
+          "languageObservedAt": "2026-11-15",
+          "starsToday": 141,
+          "priorAppearanceDates": [
+            "2026-11-07"
+          ],
+          "priorAppearanceCount": 1,
+          "isNew": false,
+          "githubStatus": "returning",
+          "firstIncludedAt": "2026-11-07",
+          "detail": "出现次数按已核对的不同历史日期去重，含留存快照，不表示连续上榜；功能来自本次读取的README，未实测。"
+        },
+        {
+          "title": "anthropics/claude-plugins-official",
+          "summary": "🔄 历史出现 8 次（2026-10-15、2026-10-16、2026-10-17、2026-10-18、2026-10-19、2026-10-20、2026-11-10、2026-11-14）。Anthropic插件仓库；第三方提交已转向官方目录，安装前仍需审查信任边界。",
+          "category": "开源项目",
+          "source": "GitHub / anthropics/claude-plugins-official",
+          "url": "https://github.com/anthropics/claude-plugins-official",
+          "sourceType": "github",
+          "language": "Python",
+          "languageObservedAt": "2026-11-15",
+          "starsToday": 136,
+          "priorAppearanceDates": [
+            "2026-10-15",
+            "2026-10-16",
+            "2026-10-17",
+            "2026-10-18",
+            "2026-10-19",
+            "2026-10-20",
+            "2026-11-10",
+            "2026-11-14"
+          ],
+          "priorAppearanceCount": 8,
+          "isNew": false,
+          "githubStatus": "returning",
+          "firstIncludedAt": "2026-10-15",
+          "detail": "出现次数按已核对的不同历史日期去重，含留存快照，不表示连续上榜；功能来自本次读取的README，未实测。"
+        },
+        {
+          "title": "NVIDIA/SkillEvaluator",
+          "summary": "🔄 历史出现 1 次（2026-11-13）。先检查技能质量，再比较有无技能的任务结果，支持接入CI。",
+          "category": "开源项目",
+          "source": "GitHub / NVIDIA/SkillEvaluator",
+          "url": "https://github.com/NVIDIA/SkillEvaluator",
+          "sourceType": "github",
+          "language": "Python",
+          "languageObservedAt": "2026-11-15",
+          "starsToday": 133,
+          "priorAppearanceDates": [
+            "2026-11-13"
+          ],
+          "priorAppearanceCount": 1,
+          "isNew": false,
+          "githubStatus": "returning",
+          "firstIncludedAt": "2026-11-13",
+          "detail": "出现次数按已核对的不同历史日期去重，含留存快照，不表示连续上榜；功能来自本次读取的README，未实测。"
+        }
+      ]
+    },
+    {
       "date": "2026-11-13",
       "title": "AI Builders Digest — 2026-11-13",
       "summary": "本期关注 Claude Managed Agents 整体自托管、Gemini 4 Hydrogen 的多模型工作流，以及 Claude 的制造和会议协作工具；另有 No Priors 关于 AI 药物设计与真实实验验证的访谈。收录3位builder的3则X精选、1期播客、4篇官方博客，以及5个首次收录和19个历史出现的GitHub项目。",
