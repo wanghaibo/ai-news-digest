@@ -2,6 +2,348 @@
   "schemaVersion": 1,
   "digests": [
     {
+      "date": "2026-11-16",
+      "title": "AI Builders Digest — 2026-11-16",
+      "summary": "OpenAI 启动科学博客，并以标准模型格点构造候选展示 AI 辅助研究的过程与未解问题。另收录4位builder的5条X原帖，以及5个首次收录、6个历史出现的GitHub项目。",
+      "retrievedAt": "2026-11-16T17:11:00+08:00",
+      "timezone": "Asia/Shanghai",
+      "sourceNotes": [
+        "检索截止北京时间2026年11月16日17:11，优先过去24小时。官方两篇文章日期为11月15日，未取得精确时间；格点构造是10月预印本的研究过程介绍，不当作今天新论文。",
+        "完整读取X feed的11位作者19帖，全部为北京时间11月16日。采用4位作者5帖的原创中文摘要和精确原帖链接；原帖直读403，依据可靠feed完整正文，不描述未读取的媒体和引用帖上下文。feed生成于北京时间14:42，之后覆盖不完整。未取得全文转载许可；不提供全文翻译，不声称全站热榜。",
+        "博客feed为空；另查官方原文。播客feed仅有11月5日单期，不在窗口内，未为了凑数重复刊登。",
+        "当日微信公众号检索找到候选，但三条原文直链无法打开，未取得同时可核验的首发日期与足够正文，故不收录；热度未核验。",
+        "GitHub采用本次读取、工具标为今天抓取的综合与Python Today页面；带since=daily参数入口失败，Jupyter页面缓存为两天前，不用于今日排序。今日增星是观测快照，不是北京时间自然日全量统计。新项目从核验AI候选中按增星选前5，不作全站绝对排名。"
+      ],
+      "githubHistory": {
+        "priorTrackedDays": 37,
+        "newLabel": "首次收录于本日报",
+        "note": "核对此前37个非连续留存或已刊日期，含29期公开日报；不是完整连续全站榜单。"
+      },
+      "githubRankingNote": "综合与Python Trending Today观测快照，约北京时间17:07–17:09。首次收录和历史出现分别按今日增星降序；Jupyter旧缓存不参与。",
+      "contentStats": {
+        "xAuthors": 4,
+        "xOfficialAccounts": 0,
+        "xAccounts": 4,
+        "xPosts": 5,
+        "xItems": 4,
+        "podcastEpisodes": 0,
+        "officialArticles": 2,
+        "wechatArticles": 0,
+        "githubProjects": 11,
+        "githubFirstIncluded": 5,
+        "githubReturningInTrackedHistory": 6,
+        "totalItems": 17
+      },
+      "items": [
+        {
+          "title": "Thibault Sottiaux · X 原帖",
+          "summary": "Thibault Sottiaux 表示，Codex 团队可能已经修复此前频繁出现的“model at capacity”错误。原帖保留了不确定语气，没有给出覆盖用户范围、恢复比例或正式故障复盘。",
+          "category": "观点洞察",
+          "source": "X / Thibault Sottiaux",
+          "url": "https://x.com/thsottiaux/status/2122206990101536852",
+          "publishedAt": "2026-11-16T05:55:49.000Z",
+          "sourceType": "x",
+          "authorName": "Thibault Sottiaux",
+          "authorBackground": "OpenAI Codex 与 ChatGPT 团队成员。",
+          "backgroundVerifiedAt": "2026-11-16",
+          "xDisplay": "official-embed",
+          "sourcePosts": [
+            {
+              "url": "https://x.com/thsottiaux/status/2122206990101536852",
+              "publishedAt": "2026-11-16T05:55:49.000Z"
+            }
+          ]
+        },
+        {
+          "title": "Guillermo Rauch · X 原帖",
+          "summary": "Guillermo Rauch 发布 xeet，用 Rust / WebAssembly 在不启动浏览器的情况下把 X 帖子渲染为 PNG。他强调用 Chrome 作对照验证排版，并通过 CI 跟踪上游变化；速度和一致性是发布者报告，不是本日报独立测试。",
+          "category": "观点洞察",
+          "source": "X / Guillermo Rauch",
+          "url": "https://x.com/rauchg/status/2122184794209714368",
+          "publishedAt": "2026-11-16T04:27:37.000Z",
+          "sourceType": "x",
+          "authorName": "Guillermo Rauch",
+          "authorBackground": "Vercel 首席执行官、软件工程师。",
+          "backgroundVerifiedAt": "2026-11-16",
+          "xDisplay": "official-embed",
+          "sourcePosts": [
+            {
+              "url": "https://x.com/rauchg/status/2122184794209714368",
+              "publishedAt": "2026-11-16T04:27:37.000Z"
+            }
+          ]
+        },
+        {
+          "title": "Dan Shipper · X 原帖",
+          "summary": "Dan Shipper 分享用 autoresearch 迭代上下文摘要 skill 的尝试，称产物对摘要风格的贴合度达到其个人偏好的 80%。这是相对无 skill 基线的个人评价，不能当作通用准确率或可复现性能指标。",
+          "category": "观点洞察",
+          "source": "X / Dan Shipper",
+          "url": "https://x.com/danshipper/status/2122091033001337134",
+          "publishedAt": "2026-11-15T22:15:03.000Z",
+          "sourceType": "x",
+          "authorName": "Dan Shipper",
+          "authorBackground": "Every 联合创始人兼首席执行官。",
+          "backgroundVerifiedAt": "2026-11-16",
+          "xDisplay": "official-embed",
+          "sourcePosts": [
+            {
+              "url": "https://x.com/danshipper/status/2122091033001337134",
+              "publishedAt": "2026-11-15T22:15:03.000Z"
+            }
+          ]
+        },
+        {
+          "title": "Peter Yang · X 原帖",
+          "summary": "Peter Yang 分享对 Anthropic 设计师 Nate Parrott 的访谈片段：可以在提示中明确模型常见的字体和配色偏好，减少雷同设计；原型构建周期虽可缩短，把产品交给真实用户并判断是否有用的过程并未同样缩短。仅根据两条帖子文字，不替代完整访谈。",
+          "category": "观点洞察",
+          "source": "X / Peter Yang",
+          "url": "https://x.com/petergyang/status/2122132596352327816",
+          "publishedAt": "2026-11-16T01:00:12.000Z",
+          "sourceType": "x",
+          "authorName": "Peter Yang",
+          "authorBackground": "AI 教程与访谈作者。",
+          "backgroundVerifiedAt": "2026-11-16",
+          "xDisplay": "official-embed",
+          "sourcePosts": [
+            {
+              "url": "https://x.com/petergyang/status/2122132596352327816",
+              "publishedAt": "2026-11-16T01:00:12.000Z"
+            },
+            {
+              "url": "https://x.com/petergyang/status/2122060856498524510",
+              "publishedAt": "2026-11-15T20:15:08.000Z"
+            }
+          ]
+        },
+        {
+          "title": "OpenAI 科学博客：把发现、方法与检查过程放在一起",
+          "originalTitle": "Our new blog for science",
+          "summary": "OpenAI 新设科学博客，计划发布研究结果、可复用的方法和研究者的一手经验，覆盖科学计算、数据分析、文献探索及实验规划。栏目明确要讨论如何检查 AI 的工作以及方法的不足，而不是只展示答案；这是内容与交流平台的启动，不是新的科研产品或独立验证结论。",
+          "url": "https://openai.com/index/our-new-blog-for-science/",
+          "category": "技术实践",
+          "source": "OpenAI",
+          "sourceName": "OpenAI Science",
+          "sourceType": "blog",
+          "publishedAt": "2026-11-15",
+          "detail": "官方页面日期为11月15日，未取得精确发稿时间，不断言处于严格24小时内。第二篇回顾10月预印本，不是11月16日新论文。"
+        },
+        {
+          "title": "标准模型的格点构造：AI 协助证明，仍有关键性质待检验",
+          "originalTitle": "A step toward defining the Standard Model on a lattice",
+          "summary": "Nathaniel Craig（加州大学圣塔芭芭拉分校粒子理论研究组负责人、OpenAI 访问科学家）介绍与 GPT-6 Astra 合作提出的标准模型非微扰格点定义候选。方法比较逐步细化网格上的费米子态，累加相位修正；人类专家参与追问和审阅。结果仍需学术检验，有限格距下的反射正性等问题未解决，也远未成为可直接使用的现实模拟方案。",
+          "url": "https://openai.com/index/step-toward-defining-the-standard-model/",
+          "category": "技术实践",
+          "source": "OpenAI",
+          "sourceName": "OpenAI Science",
+          "sourceType": "blog",
+          "publishedAt": "2026-11-15",
+          "detail": "官方页面日期为11月15日，未取得精确发稿时间，不断言处于严格24小时内。第二篇回顾10月预印本，不是11月16日新论文。"
+        },
+        {
+          "title": "Tencent/LoopForge",
+          "summary": "LoopForge把编码agent的对话与可重复SOP放在自托管工作台中，用Agent、脚本和人工审批节点组织交付，保留每步产物与日志。默认Compose安装通过宿主机Docker socket创建工作区，因此适合可信团队，不能当作对抗不可信租户的隔离平台。",
+          "category": "开源项目",
+          "source": "GitHub / Tencent/LoopForge",
+          "url": "https://github.com/Tencent/LoopForge",
+          "sourceType": "github",
+          "language": "Go",
+          "languageObservedAt": "2026-11-16",
+          "starsToday": 423,
+          "priorAppearanceDates": [],
+          "priorAppearanceCount": 0,
+          "isNew": true,
+          "githubStatus": "new",
+          "firstIncludedAt": "2026-11-16",
+          "detail": "首次收录于本日报，不表示今日发布或首次登上全站榜单。机制根据本次读取的官方README，未部署实测。"
+        },
+        {
+          "title": "ag-ui-protocol/ag-ui",
+          "summary": "AG-UI用事件协议连接agent后端与用户界面，承载流式消息、双向状态同步和人工介入，可通过SSE或WebSocket等传输。它解决应用与agent的交互，不替代给agent接工具的MCP或agent间通信的A2A；前端仍需实现具体体验。",
+          "category": "开源项目",
+          "source": "GitHub / ag-ui-protocol/ag-ui",
+          "url": "https://github.com/ag-ui-protocol/ag-ui",
+          "sourceType": "github",
+          "language": "TypeScript",
+          "languageObservedAt": "2026-11-16",
+          "starsToday": 355,
+          "priorAppearanceDates": [],
+          "priorAppearanceCount": 0,
+          "isNew": true,
+          "githubStatus": "new",
+          "firstIncludedAt": "2026-11-16",
+          "detail": "首次收录于本日报，不表示今日发布或首次登上全站榜单。机制根据本次读取的官方README，未部署实测。"
+        },
+        {
+          "title": "kajisho5/ffmpeg-skill",
+          "summary": "ffmpeg-skill把本地FFmpeg包装为42项结构化工具，要求先探测素材，再编辑、检查输出。工具输入schema从同一argparse定义导出，以减少CLI与MCP参数漂移；默认MCP只列12项核心工具。字幕转录另需本地语音模型，剪辑决策与内容质量仍由上层agent和人判断。",
+          "category": "开源项目",
+          "source": "GitHub / kajisho5/ffmpeg-skill",
+          "url": "https://github.com/kajisho5/ffmpeg-skill",
+          "sourceType": "github",
+          "language": "Python",
+          "languageObservedAt": "2026-11-16",
+          "starsToday": 331,
+          "priorAppearanceDates": [],
+          "priorAppearanceCount": 0,
+          "isNew": true,
+          "githubStatus": "new",
+          "firstIncludedAt": "2026-11-16",
+          "detail": "首次收录于本日报，不表示今日发布或首次登上全站榜单。机制根据本次读取的官方README，未部署实测。"
+        },
+        {
+          "title": "google-labs-code/stitch-skills",
+          "summary": "stitch-skills把Stitch设计、设计系统提取和React组件转换整理成Agent Skills与插件，可配合Stitch MCP在设计与代码间流转。设计、构建、辅助工具分开安装，接入还需完成Stitch MCP配置；仓库明确并非Google官方支持的产品。",
+          "category": "开源项目",
+          "source": "GitHub / google-labs-code/stitch-skills",
+          "url": "https://github.com/google-labs-code/stitch-skills",
+          "sourceType": "github",
+          "language": "TypeScript",
+          "languageObservedAt": "2026-11-16",
+          "starsToday": 247,
+          "priorAppearanceDates": [],
+          "priorAppearanceCount": 0,
+          "isNew": true,
+          "githubStatus": "new",
+          "firstIncludedAt": "2026-11-16",
+          "detail": "首次收录于本日报，不表示今日发布或首次登上全站榜单。机制根据本次读取的官方README，未部署实测。"
+        },
+        {
+          "title": "davila7/claude-code-templates",
+          "summary": "claude-code-templates将skills、subagents、hooks、MCP和设置集中成可搜索目录，CLI按组件写入文件并合并已有配置。开发者可先预览文件再组合安装；PR扫描和插件校验帮助发现问题，但不代替逐项审核第三方组件的权限与代码。",
+          "category": "开源项目",
+          "source": "GitHub / davila7/claude-code-templates",
+          "url": "https://github.com/davila7/claude-code-templates",
+          "sourceType": "github",
+          "language": "Python",
+          "languageObservedAt": "2026-11-16",
+          "starsToday": 174,
+          "priorAppearanceDates": [],
+          "priorAppearanceCount": 0,
+          "isNew": true,
+          "githubStatus": "new",
+          "firstIncludedAt": "2026-11-16",
+          "detail": "首次收录于本日报，不表示今日发布或首次登上全站榜单。机制根据本次读取的官方README，未部署实测。"
+        },
+        {
+          "title": "GoogleChrome/modern-web-guidance-src",
+          "summary": "🔄 历史出现 3 次（2026-11-12、2026-11-13、2026-11-15）。给编码agent按需提供现代Web实践与浏览器兼容资料。",
+          "category": "开源项目",
+          "source": "GitHub / GoogleChrome/modern-web-guidance-src",
+          "url": "https://github.com/GoogleChrome/modern-web-guidance-src",
+          "sourceType": "github",
+          "language": "TypeScript",
+          "languageObservedAt": "2026-11-16",
+          "starsToday": 1219,
+          "priorAppearanceDates": [
+            "2026-11-12",
+            "2026-11-13",
+            "2026-11-15"
+          ],
+          "priorAppearanceCount": 3,
+          "isNew": false,
+          "githubStatus": "returning",
+          "firstIncludedAt": "2026-11-12",
+          "detail": "出现次数来自非连续留存历史，不表示连续上榜。本期核对README，未实测。"
+        },
+        {
+          "title": "dream-num/univer",
+          "summary": "🔄 历史出现 1 次（2026-11-15）。可嵌入应用的Sheets与Docs开源核心，商业扩展另行授权。",
+          "category": "开源项目",
+          "source": "GitHub / dream-num/univer",
+          "url": "https://github.com/dream-num/univer",
+          "sourceType": "github",
+          "language": "TypeScript",
+          "languageObservedAt": "2026-11-16",
+          "starsToday": 988,
+          "priorAppearanceDates": [
+            "2026-11-15"
+          ],
+          "priorAppearanceCount": 1,
+          "isNew": false,
+          "githubStatus": "returning",
+          "firstIncludedAt": "2026-11-15",
+          "detail": "出现次数来自非连续留存历史，不表示连续上榜。本期核对README，未实测。"
+        },
+        {
+          "title": "backnotprop/plannotator",
+          "summary": "🔄 历史出现 1 次（2026-11-15）。本地浏览器审阅与批注agent产物，把反馈送回工作流。",
+          "category": "开源项目",
+          "source": "GitHub / backnotprop/plannotator",
+          "url": "https://github.com/backnotprop/plannotator",
+          "sourceType": "github",
+          "language": "TypeScript",
+          "languageObservedAt": "2026-11-16",
+          "starsToday": 866,
+          "priorAppearanceDates": [
+            "2026-11-15"
+          ],
+          "priorAppearanceCount": 1,
+          "isNew": false,
+          "githubStatus": "returning",
+          "firstIncludedAt": "2026-11-15",
+          "detail": "出现次数来自非连续留存历史，不表示连续上榜。本期核对README，未实测。"
+        },
+        {
+          "title": "ChromeDevTools/chrome-devtools-mcp",
+          "summary": "🔄 历史出现 1 次（2026-11-15）。向agent暴露Chrome调试与自动化能力，接入前检查浏览器数据暴露范围。",
+          "category": "开源项目",
+          "source": "GitHub / ChromeDevTools/chrome-devtools-mcp",
+          "url": "https://github.com/ChromeDevTools/chrome-devtools-mcp",
+          "sourceType": "github",
+          "language": "TypeScript",
+          "languageObservedAt": "2026-11-16",
+          "starsToday": 717,
+          "priorAppearanceDates": [
+            "2026-11-15"
+          ],
+          "priorAppearanceCount": 1,
+          "isNew": false,
+          "githubStatus": "returning",
+          "firstIncludedAt": "2026-11-15",
+          "detail": "出现次数来自非连续留存历史，不表示连续上榜。本期核对README，未实测。"
+        },
+        {
+          "title": "tradermonty/claude-trading-skills",
+          "summary": "🔄 历史出现 1 次（2026-11-15）。组织市场复盘、风险管理和交易日志，不代替买卖决策。",
+          "category": "开源项目",
+          "source": "GitHub / tradermonty/claude-trading-skills",
+          "url": "https://github.com/tradermonty/claude-trading-skills",
+          "sourceType": "github",
+          "language": "Python",
+          "languageObservedAt": "2026-11-16",
+          "starsToday": 706,
+          "priorAppearanceDates": [
+            "2026-11-15"
+          ],
+          "priorAppearanceCount": 1,
+          "isNew": false,
+          "githubStatus": "returning",
+          "firstIncludedAt": "2026-11-15",
+          "detail": "出现次数来自非连续留存历史，不表示连续上榜。本期核对README，未实测。"
+        },
+        {
+          "title": "alibaba/open-code-review",
+          "summary": "🔄 历史出现 2 次（2026-10-10、2026-11-15）。结合确定性流程与LLM工具调用审查Git差异。",
+          "category": "开源项目",
+          "source": "GitHub / alibaba/open-code-review",
+          "url": "https://github.com/alibaba/open-code-review",
+          "sourceType": "github",
+          "language": "Go",
+          "languageObservedAt": "2026-11-16",
+          "starsToday": 691,
+          "priorAppearanceDates": [
+            "2026-10-10",
+            "2026-11-15"
+          ],
+          "priorAppearanceCount": 2,
+          "isNew": false,
+          "githubStatus": "returning",
+          "firstIncludedAt": "2026-10-10",
+          "detail": "出现次数来自非连续留存历史，不表示连续上榜。本期核对README，未实测。"
+        }
+      ]
+    },
+    {
       "date": "2026-11-15",
       "title": "AI Builders Digest — 2026-11-15",
       "summary": "本期补充Parallel Decisions将实时网页证据接入结构化判断的机制，明确为11月13日旧闻。另收录3位builder的3条X主题及1条跟帖、5个首次收录与7个历史出现的GitHub项目。新播客及窗口内官方新文缺口如实保留。",
